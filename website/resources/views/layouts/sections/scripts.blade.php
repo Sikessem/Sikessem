@@ -16,6 +16,9 @@
 @vite(['resources/assets/js/main.js'])
 
 <!-- END: Theme JS-->
+
+@vite('resources/js/app.js')
+
 <!-- Pricing Modal JS-->
 @stack('pricing-script')
 <!-- END: Pricing Modal JS-->

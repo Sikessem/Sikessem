@@ -6,3 +6,9 @@ import.meta.glob([
   // '../assets/json/**',
   "../assets/vendor/fonts/**",
 ]);
+
+// Page loading animation
+$(window).on("load", () => {
+  $("#js-preloader").addClass("loaded");
+});
+
