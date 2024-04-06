@@ -1,43 +1,38 @@
-/**
- * App User View - Suspend User Script
- */
-'use strict';
-
-(function () {
-  const suspendUser = document.querySelector('.suspend-user');
+(() => {
+  const suspendUser = document.querySelector(".suspend-user");
 
   // Suspend User javascript
   if (suspendUser) {
-    suspendUser.onclick = function () {
+    suspendUser.onclick = () => {
       Swal.fire({
-        title: 'Are you sure?',
+        title: "Are you sure?",
         text: "You won't be able to revert user!",
-        icon: 'warning',
+        icon: "warning",
         showCancelButton: true,
-        confirmButtonText: 'Yes, Suspend user!',
+        confirmButtonText: "Yes, Suspend user!",
         customClass: {
-          confirmButton: 'btn btn-primary me-2 waves-effect waves-light',
-          cancelButton: 'btn btn-label-secondary waves-effect waves-light'
+          confirmButton: "btn btn-primary me-2 waves-effect waves-light",
+          cancelButton: "btn btn-label-secondary waves-effect waves-light",
         },
-        buttonsStyling: false
-      }).then(function (result) {
+        buttonsStyling: false,
+      }).then((result) => {
         if (result.value) {
           Swal.fire({
-            icon: 'success',
-            title: 'Suspended!',
-            text: 'User has been suspended.',
+            icon: "success",
+            title: "Suspended!",
+            text: "User has been suspended.",
             customClass: {
-              confirmButton: 'btn btn-success waves-effect waves-light'
-            }
+              confirmButton: "btn btn-success waves-effect waves-light",
+            },
           });
         } else if (result.dismiss === Swal.DismissReason.cancel) {
           Swal.fire({
-            title: 'Cancelled',
-            text: 'Cancelled Suspension :)',
-            icon: 'error',
+            title: "Cancelled",
+            text: "Cancelled Suspension :)",
+            icon: "error",
             customClass: {
-              confirmButton: 'btn btn-success waves-effect waves-light'
-            }
+              confirmButton: "btn btn-success waves-effect waves-light",
+            },
           });
         }
       });
@@ -46,40 +41,40 @@
 
   //? Billing page have multiple buttons
   // Cancel Subscription alert
-  const cancelSubscription = document.querySelectorAll('.cancel-subscription');
+  const cancelSubscription = document.querySelectorAll(".cancel-subscription");
 
   // Alert With Functional Confirm Button
   if (cancelSubscription) {
-    cancelSubscription.forEach(btnCancle => {
-      btnCancle.onclick = function () {
+    cancelSubscription.forEach((btnCancle) => {
+      btnCancle.onclick = () => {
         Swal.fire({
-          text: 'Are you sure you would like to cancel your subscription?',
-          icon: 'warning',
+          text: "Are you sure you would like to cancel your subscription?",
+          icon: "warning",
           showCancelButton: true,
-          confirmButtonText: 'Yes',
+          confirmButtonText: "Yes",
           customClass: {
-            confirmButton: 'btn btn-primary me-2 waves-effect waves-light',
-            cancelButton: 'btn btn-label-secondary waves-effect waves-light'
+            confirmButton: "btn btn-primary me-2 waves-effect waves-light",
+            cancelButton: "btn btn-label-secondary waves-effect waves-light",
           },
-          buttonsStyling: false
-        }).then(function (result) {
+          buttonsStyling: false,
+        }).then((result) => {
           if (result.value) {
             Swal.fire({
-              icon: 'success',
-              title: 'Unsubscribed!',
-              text: 'Your subscription cancelled successfully.',
+              icon: "success",
+              title: "Unsubscribed!",
+              text: "Your subscription cancelled successfully.",
               customClass: {
-                confirmButton: 'btn btn-success waves-effect waves-light'
-              }
+                confirmButton: "btn btn-success waves-effect waves-light",
+              },
             });
           } else if (result.dismiss === Swal.DismissReason.cancel) {
             Swal.fire({
-              title: 'Cancelled',
-              text: 'Unsubscription Cancelled!!',
-              icon: 'error',
+              title: "Cancelled",
+              text: "Unsubscription Cancelled!!",
+              icon: "error",
               customClass: {
-                confirmButton: 'btn btn-success waves-effect waves-light'
-              }
+                confirmButton: "btn btn-success waves-effect waves-light",
+              },
             });
           }
         });

@@ -1,10 +1,4 @@
-/**
- * File Upload
- */
-
-'use strict';
-
-(function () {
+(() => {
   // previewTemplate: Updated Dropzone default previewTemplate
   // ! Don't change it unless you really know what you are doing
   const previewTemplate = `<div class="dz-preview dz-file-preview">
@@ -28,26 +22,26 @@
 
   // Basic Dropzone
   // --------------------------------------------------------------------
-  const dropzoneBasic = document.querySelector('#dropzone-basic');
+  const dropzoneBasic = document.querySelector("#dropzone-basic");
   if (dropzoneBasic) {
     const myDropzone = new Dropzone(dropzoneBasic, {
       previewTemplate: previewTemplate,
       parallelUploads: 1,
       maxFilesize: 5,
       addRemoveLinks: true,
-      maxFiles: 1
+      maxFiles: 1,
     });
   }
 
   // Multiple Dropzone
   // --------------------------------------------------------------------
-  const dropzoneMulti = document.querySelector('#dropzone-multi');
+  const dropzoneMulti = document.querySelector("#dropzone-multi");
   if (dropzoneMulti) {
     const myDropzoneMulti = new Dropzone(dropzoneMulti, {
       previewTemplate: previewTemplate,
       parallelUploads: 1,
       maxFilesize: 5,
-      addRemoveLinks: true
+      addRemoveLinks: true,
     });
   }
 })();

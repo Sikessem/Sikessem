@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "organizeImports": {
     "enabled": true,
-    "ignore": ["node_modules", "vendor", "storage", "public/build"]
+    "ignore": ["node_modules", "vendor", "storage", "public"]
   },
   "linter": {
     "enabled": true,
@@ -14,13 +14,13 @@
         "noShoutyConstants": "warn"
       }
     },
-    "ignore": ["node_modules", "vendor", "storage", "public/build"]
+    "ignore": ["node_modules", "vendor", "storage", "public"]
   },
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
     "indentStyle": "space",
     "lineWidth": 80,
-    "ignore": ["node_modules", "vendor", "storage", "public/build"]
+    "ignore": ["node_modules", "vendor", "storage", "public"]
   }
 }

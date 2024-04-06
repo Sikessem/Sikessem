@@ -1,16 +1,10 @@
-/**
- * Timeline
- */
-
-'use strict';
-
-(function () {
+(() => {
   // Init Animation on scroll
   AOS.init({
-    disable: function () {
+    disable: () => {
       const maxWidth = 1024;
       return window.innerWidth < maxWidth;
     },
-    once: true
+    once: true,
   });
 })();

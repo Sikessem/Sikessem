@@ -1,17 +1,11 @@
-/**
- * Treeview (jquery)
- */
-
-'use strict';
-
-$(function () {
-  var theme = $('html').hasClass('light-style') ? 'default' : 'default-dark',
-    basicTree = $('#jstree-basic'),
-    customIconsTree = $('#jstree-custom-icons'),
-    contextMenu = $('#jstree-context-menu'),
-    dragDrop = $('#jstree-drag-drop'),
-    checkboxTree = $('#jstree-checkbox'),
-    ajaxTree = $('#jstree-ajax');
+$(() => {
+  const theme = $("html").hasClass("light-style") ? "default" : "default-dark";
+  const basicTree = $("#jstree-basic");
+  const customIconsTree = $("#jstree-custom-icons");
+  const contextMenu = $("#jstree-context-menu");
+  const dragDrop = $("#jstree-drag-drop");
+  const checkboxTree = $("#jstree-checkbox");
+  const ajaxTree = $("#jstree-ajax");
 
   // Basic
   // --------------------------------------------------------------------
@@ -19,9 +13,9 @@ $(function () {
     basicTree.jstree({
       core: {
         themes: {
-          name: theme
-        }
-      }
+          name: theme,
+        },
+      },
     });
   }
 
@@ -31,90 +25,90 @@ $(function () {
     customIconsTree.jstree({
       core: {
         themes: {
-          name: theme
+          name: theme,
         },
         data: [
           {
-            text: 'css',
+            text: "css",
             children: [
               {
-                text: 'app.css',
-                type: 'css'
+                text: "app.css",
+                type: "css",
               },
               {
-                text: 'style.css',
-                type: 'css'
-              }
-            ]
+                text: "style.css",
+                type: "css",
+              },
+            ],
           },
           {
-            text: 'img',
+            text: "img",
             state: {
-              opened: true
+              opened: true,
             },
             children: [
               {
-                text: 'bg.jpg',
-                type: 'img'
+                text: "bg.jpg",
+                type: "img",
               },
               {
-                text: 'logo.png',
-                type: 'img'
+                text: "logo.png",
+                type: "img",
               },
               {
-                text: 'avatar.png',
-                type: 'img'
-              }
-            ]
+                text: "avatar.png",
+                type: "img",
+              },
+            ],
           },
           {
-            text: 'js',
+            text: "js",
             state: {
-              opened: true
+              opened: true,
             },
             children: [
               {
-                text: 'jquery.js',
-                type: 'js'
+                text: "jquery.js",
+                type: "js",
               },
               {
-                text: 'app.js',
-                type: 'js'
-              }
-            ]
+                text: "app.js",
+                type: "js",
+              },
+            ],
           },
           {
-            text: 'index.html',
-            type: 'html'
+            text: "index.html",
+            type: "html",
           },
           {
-            text: 'page-one.html',
-            type: 'html'
+            text: "page-one.html",
+            type: "html",
           },
           {
-            text: 'page-two.html',
-            type: 'html'
-          }
-        ]
+            text: "page-two.html",
+            type: "html",
+          },
+        ],
       },
-      plugins: ['types'],
+      plugins: ["types"],
       types: {
         default: {
-          icon: 'ti ti-folder'
+          icon: "ti ti-folder",
         },
         html: {
-          icon: 'ti ti-brand-html5 text-danger'
+          icon: "ti ti-brand-html5 text-danger",
         },
         css: {
-          icon: 'ti ti-brand-css3 text-info'
+          icon: "ti ti-brand-css3 text-info",
         },
         img: {
-          icon: 'ti ti-photo text-success'
+          icon: "ti ti-photo text-success",
         },
         js: {
-          icon: 'ti ti-brand-javascript text-warning'
-        }
-      }
+          icon: "ti ti-brand-javascript text-warning",
+        },
+      },
     });
   }
 
@@ -124,91 +118,91 @@ $(function () {
     contextMenu.jstree({
       core: {
         themes: {
-          name: theme
+          name: theme,
         },
         check_callback: true,
         data: [
           {
-            text: 'css',
+            text: "css",
             children: [
               {
-                text: 'app.css',
-                type: 'css'
+                text: "app.css",
+                type: "css",
               },
               {
-                text: 'style.css',
-                type: 'css'
-              }
-            ]
+                text: "style.css",
+                type: "css",
+              },
+            ],
           },
           {
-            text: 'img',
+            text: "img",
             state: {
-              opened: true
+              opened: true,
             },
             children: [
               {
-                text: 'bg.jpg',
-                type: 'img'
+                text: "bg.jpg",
+                type: "img",
               },
               {
-                text: 'logo.png',
-                type: 'img'
+                text: "logo.png",
+                type: "img",
               },
               {
-                text: 'avatar.png',
-                type: 'img'
-              }
-            ]
+                text: "avatar.png",
+                type: "img",
+              },
+            ],
           },
           {
-            text: 'js',
+            text: "js",
             state: {
-              opened: true
+              opened: true,
             },
             children: [
               {
-                text: 'jquery.js',
-                type: 'js'
+                text: "jquery.js",
+                type: "js",
               },
               {
-                text: 'app.js',
-                type: 'js'
-              }
-            ]
+                text: "app.js",
+                type: "js",
+              },
+            ],
           },
           {
-            text: 'index.html',
-            type: 'html'
+            text: "index.html",
+            type: "html",
           },
           {
-            text: 'page-one.html',
-            type: 'html'
+            text: "page-one.html",
+            type: "html",
           },
           {
-            text: 'page-two.html',
-            type: 'html'
-          }
-        ]
+            text: "page-two.html",
+            type: "html",
+          },
+        ],
       },
-      plugins: ['types', 'contextmenu'],
+      plugins: ["types", "contextmenu"],
       types: {
         default: {
-          icon: 'ti ti-folder'
+          icon: "ti ti-folder",
         },
         html: {
-          icon: 'ti ti-brand-html5 text-danger'
+          icon: "ti ti-brand-html5 text-danger",
         },
         css: {
-          icon: 'ti ti-brand-css3 text-info'
+          icon: "ti ti-brand-css3 text-info",
         },
         img: {
-          icon: 'ti ti-photo text-success'
+          icon: "ti ti-photo text-success",
         },
         js: {
-          icon: 'ti ti-brand-javascript text-warning'
-        }
-      }
+          icon: "ti ti-brand-javascript text-warning",
+        },
+      },
     });
   }
 
@@ -218,91 +212,91 @@ $(function () {
     dragDrop.jstree({
       core: {
         themes: {
-          name: theme
+          name: theme,
         },
         check_callback: true,
         data: [
           {
-            text: 'css',
+            text: "css",
             children: [
               {
-                text: 'app.css',
-                type: 'css'
+                text: "app.css",
+                type: "css",
               },
               {
-                text: 'style.css',
-                type: 'css'
-              }
-            ]
+                text: "style.css",
+                type: "css",
+              },
+            ],
           },
           {
-            text: 'img',
+            text: "img",
             state: {
-              opened: true
+              opened: true,
             },
             children: [
               {
-                text: 'bg.jpg',
-                type: 'img'
+                text: "bg.jpg",
+                type: "img",
               },
               {
-                text: 'logo.png',
-                type: 'img'
+                text: "logo.png",
+                type: "img",
               },
               {
-                text: 'avatar.png',
-                type: 'img'
-              }
-            ]
+                text: "avatar.png",
+                type: "img",
+              },
+            ],
           },
           {
-            text: 'js',
+            text: "js",
             state: {
-              opened: true
+              opened: true,
             },
             children: [
               {
-                text: 'jquery.js',
-                type: 'js'
+                text: "jquery.js",
+                type: "js",
               },
               {
-                text: 'app.js',
-                type: 'js'
-              }
-            ]
+                text: "app.js",
+                type: "js",
+              },
+            ],
           },
           {
-            text: 'index.html',
-            type: 'html'
+            text: "index.html",
+            type: "html",
           },
           {
-            text: 'page-one.html',
-            type: 'html'
+            text: "page-one.html",
+            type: "html",
           },
           {
-            text: 'page-two.html',
-            type: 'html'
-          }
-        ]
+            text: "page-two.html",
+            type: "html",
+          },
+        ],
       },
-      plugins: ['types', 'dnd'],
+      plugins: ["types", "dnd"],
       types: {
         default: {
-          icon: 'ti ti-folder'
+          icon: "ti ti-folder",
         },
         html: {
-          icon: 'ti ti-brand-html5 text-danger'
+          icon: "ti ti-brand-html5 text-danger",
         },
         css: {
-          icon: 'ti ti-brand-css3 text-info'
+          icon: "ti ti-brand-css3 text-info",
         },
         img: {
-          icon: 'ti ti-photo text-success'
+          icon: "ti ti-photo text-success",
         },
         js: {
-          icon: 'ti ti-brand-javascript text-warning'
-        }
-      }
+          icon: "ti ti-brand-javascript text-warning",
+        },
+      },
     });
   }
 
@@ -312,90 +306,90 @@ $(function () {
     checkboxTree.jstree({
       core: {
         themes: {
-          name: theme
+          name: theme,
         },
         data: [
           {
-            text: 'css',
+            text: "css",
             children: [
               {
-                text: 'app.css',
-                type: 'css'
+                text: "app.css",
+                type: "css",
               },
               {
-                text: 'style.css',
-                type: 'css'
-              }
-            ]
+                text: "style.css",
+                type: "css",
+              },
+            ],
           },
           {
-            text: 'img',
+            text: "img",
             state: {
-              opened: true
+              opened: true,
             },
             children: [
               {
-                text: 'bg.jpg',
-                type: 'img'
+                text: "bg.jpg",
+                type: "img",
               },
               {
-                text: 'logo.png',
-                type: 'img'
+                text: "logo.png",
+                type: "img",
               },
               {
-                text: 'avatar.png',
-                type: 'img'
-              }
-            ]
+                text: "avatar.png",
+                type: "img",
+              },
+            ],
           },
           {
-            text: 'js',
+            text: "js",
             state: {
-              opened: true
+              opened: true,
             },
             children: [
               {
-                text: 'jquery.js',
-                type: 'js'
+                text: "jquery.js",
+                type: "js",
               },
               {
-                text: 'app.js',
-                type: 'js'
-              }
-            ]
+                text: "app.js",
+                type: "js",
+              },
+            ],
           },
           {
-            text: 'index.html',
-            type: 'html'
+            text: "index.html",
+            type: "html",
           },
           {
-            text: 'page-one.html',
-            type: 'html'
+            text: "page-one.html",
+            type: "html",
           },
           {
-            text: 'page-two.html',
-            type: 'html'
-          }
-        ]
+            text: "page-two.html",
+            type: "html",
+          },
+        ],
       },
-      plugins: ['types', 'checkbox', 'wholerow'],
+      plugins: ["types", "checkbox", "wholerow"],
       types: {
         default: {
-          icon: 'ti ti-folder'
+          icon: "ti ti-folder",
         },
         html: {
-          icon: 'ti ti-brand-html5 text-danger'
+          icon: "ti ti-brand-html5 text-danger",
         },
         css: {
-          icon: 'ti ti-brand-css3 text-info'
+          icon: "ti ti-brand-css3 text-info",
         },
         img: {
-          icon: 'ti ti-photo text-success'
+          icon: "ti ti-photo text-success",
         },
         js: {
-          icon: 'ti ti-brand-javascript text-warning'
-        }
-      }
+          icon: "ti ti-brand-javascript text-warning",
+        },
+      },
     });
   }
 
@@ -405,36 +399,34 @@ $(function () {
     ajaxTree.jstree({
       core: {
         themes: {
-          name: theme
+          name: theme,
         },
         data: {
-          url: assetsPath + 'json/jstree-data.json',
-          dataType: 'json',
-          data: function (node) {
-            return {
-              id: node.id
-            };
-          }
-        }
+          url: `${assetsPath}json/jstree-data.json`,
+          dataType: "json",
+          data: (node) => ({
+            id: node.id,
+          }),
+        },
       },
-      plugins: ['types', 'state'],
+      plugins: ["types", "state"],
       types: {
         default: {
-          icon: 'ti ti-folder'
+          icon: "ti ti-folder",
         },
         html: {
-          icon: 'ti ti-brand-html5 text-danger'
+          icon: "ti ti-brand-html5 text-danger",
         },
         css: {
-          icon: 'ti ti-brand-css3 text-info'
+          icon: "ti ti-brand-css3 text-info",
         },
         img: {
-          icon: 'ti ti-photo text-success'
+          icon: "ti ti-photo text-success",
         },
         js: {
-          icon: 'ti ti-brand-javascript text-warning'
-        }
-      }
+          icon: "ti ti-brand-javascript text-warning",
+        },
+      },
     });
   }
 });

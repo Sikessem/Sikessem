@@ -1,33 +1,30 @@
-/**
- * Form Input Groups
- */
-
-'use strict';
-
-(function () {
-  const speechToText = $('.speech-to-text'); // ! jQuery dependency for speech to text
+(() => {
+  const speechToText = $(".speech-to-text"); // ! jQuery dependency for speech to text
 
   // Speech To Text
   if (speechToText.length) {
-    var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+    const SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
     if (SpeechRecognition !== undefined && SpeechRecognition !== null) {
-      var recognition = new SpeechRecognition(),
-        listening = false;
-      speechToText.on('click', function () {
+      const recognition = new SpeechRecognition();
+      let listening = false;
+      speechToText.on("click", function () {
         const $this = $(this);
-        recognition.onspeechstart = function () {
+        recognition.onspeechstart = () => {
           listening = true;
         };
         if (listening === false) {
           recognition.start();
         }
-        recognition.onerror = function (event) {
+        recognition.onerror = (event) => {
           listening = false;
         };
-        recognition.onresult = function (event) {
-          $this.closest('.form-send-message').find('.message-input').val(event.results[0][0].transcript);
+        recognition.onresult = (event) => {
+          $this
+            .closest(".form-send-message")
+            .find(".message-input")
+            .val(event.results[0][0].transcript);
         };
-        recognition.onspeechend = function (event) {
+        recognition.onspeechend = (event) => {
           listening = false;
           recognition.stop();
         };

@@ -1,11 +1,19 @@
 {
-  "name": "Vuexy",
+  "name": "sikessem.com",
   "version": "1.4.1",
   "private": true,
   "license": "Commercial",
   "scripts": {
+    "build": "vite build",
+    "check": "biome ci .",
     "dev": "vite",
-    "build": "vite build"
+    "fix": "pnpm run format.fix && pnpm run lint.fix",
+    "format": "biome format .",
+    "format.fix": "biome format --write .",
+    "lint": "biome check .",
+    "lint.fix": "biome check --apply-unsafe .",
+    "prod": "vite build",
+    "type.check": "tsc --incremental --noEmit"
   },
   "devDependencies": {
     "@babel/core": "7.23.7",

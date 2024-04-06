@@ -2,19 +2,19 @@
  * App Invoice - Add
  */
 
-'use strict';
+"use strict";
 
 (function () {
-  const invoiceItemPriceList = document.querySelectorAll('.invoice-item-price'),
-    invoiceItemQtyList = document.querySelectorAll('.invoice-item-qty'),
-    invoiceDateList = document.querySelectorAll('.date-picker');
+  const invoiceItemPriceList = document.querySelectorAll(".invoice-item-price"),
+    invoiceItemQtyList = document.querySelectorAll(".invoice-item-qty"),
+    invoiceDateList = document.querySelectorAll(".date-picker");
 
   // Price
   if (invoiceItemPriceList) {
     invoiceItemPriceList.forEach(function (invoiceItemPrice) {
       new Cleave(invoiceItemPrice, {
-        delimiter: '',
-        numeral: true
+        delimiter: "",
+        numeral: true,
       });
     });
   }
@@ -23,8 +23,8 @@
   if (invoiceItemQtyList) {
     invoiceItemQtyList.forEach(function (invoiceItemQty) {
       new Cleave(invoiceItemQty, {
-        delimiter: '',
-        numeral: true
+        delimiter: "",
+        numeral: true,
       });
     });
   }
@@ -33,7 +33,7 @@
   if (invoiceDateList) {
     invoiceDateList.forEach(function (invoiceDateEl) {
       invoiceDateEl.flatpickr({
-        monthSelectorType: 'static'
+        monthSelectorType: "static",
       });
     });
   }
@@ -41,41 +41,41 @@
 
 // repeater (jquery)
 $(function () {
-  var applyChangesBtn = $('.btn-apply-changes'),
+  var applyChangesBtn = $(".btn-apply-changes"),
     discount,
     tax1,
     tax2,
     discountInput,
     tax1Input,
     tax2Input,
-    sourceItem = $('.source-item'),
+    sourceItem = $(".source-item"),
     adminDetails = {
-      'App Design': 'Designed UI kit & app pages.',
-      'App Customization': 'Customization & Bug Fixes.',
-      'ABC Template': 'Bootstrap 4 admin template.',
-      'App Development': 'Native App Development.'
+      "App Design": "Designed UI kit & app pages.",
+      "App Customization": "Customization & Bug Fixes.",
+      "ABC Template": "Bootstrap 4 admin template.",
+      "App Development": "Native App Development.",
     };
 
   // Prevent dropdown from closing on tax change
-  $(document).on('click', '.tax-select', function (e) {
+  $(document).on("click", ".tax-select", function (e) {
     e.stopPropagation();
   });
 
   // On tax change update it's value value
   function updateValue(listener, el) {
-    listener.closest('.repeater-wrapper').find(el).text(listener.val());
+    listener.closest(".repeater-wrapper").find(el).text(listener.val());
   }
 
   // Apply item changes btn
   if (applyChangesBtn.length) {
-    $(document).on('click', '.btn-apply-changes', function (e) {
+    $(document).on("click", ".btn-apply-changes", function (e) {
       var $this = $(this);
-      tax1Input = $this.closest('.dropdown-menu').find('#taxInput1');
-      tax2Input = $this.closest('.dropdown-menu').find('#taxInput2');
-      discountInput = $this.closest('.dropdown-menu').find('#discountInput');
-      tax1 = $this.closest('.repeater-wrapper').find('.tax-1');
-      tax2 = $this.closest('.repeater-wrapper').find('.tax-2');
-      discount = $('.discount');
+      tax1Input = $this.closest(".dropdown-menu").find("#taxInput1");
+      tax2Input = $this.closest(".dropdown-menu").find("#taxInput2");
+      discountInput = $this.closest(".dropdown-menu").find("#discountInput");
+      tax1 = $this.closest(".repeater-wrapper").find(".tax-1");
+      tax2 = $this.closest(".repeater-wrapper").find(".tax-2");
+      discount = $(".discount");
 
       if (tax1Input.val() !== null) {
         updateValue(tax1Input, tax1);
@@ -87,41 +87,45 @@ $(function () {
 
       if (discountInput.val().length) {
         $this
-          .closest('.repeater-wrapper')
+          .closest(".repeater-wrapper")
           .find(discount)
-          .text(discountInput.val() + '%');
+          .text(discountInput.val() + "%");
       }
     });
   }
 
   // Repeater init
   if (sourceItem.length) {
-    sourceItem.on('submit', function (e) {
+    sourceItem.on("submit", function (e) {
       e.preventDefault();
     });
     sourceItem.repeater({
       show: function () {
         $(this).slideDown();
         // Initialize tooltip on load of each item
-        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        const tooltipTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="tooltip"]'),
+        );
         tooltipTriggerList.map(function (tooltipTriggerEl) {
           return new bootstrap.Tooltip(tooltipTriggerEl);
         });
       },
       hide: function (e) {
         $(this).slideUp();
-      }
+      },
     });
   }
 
   // Item details select onchange
-  $(document).on('change', '.item-details', function () {
+  $(document).on("change", ".item-details", function () {
     var $this = $(this),
       value = adminDetails[$this.val()];
-    if ($this.next('textarea').length) {
-      $this.next('textarea').val(value);
+    if ($this.next("textarea").length) {
+      $this.next("textarea").val(value);
     } else {
-      $this.after('<textarea class="form-control" rows="2">' + value + '</textarea>');
+      $this.after(
+        '<textarea class="form-control" rows="2">' + value + "</textarea>",
+      );
     }
   });
 });

@@ -1,44 +1,38 @@
-/**
- * App User View - Billing
- */
-
-'use strict';
-
-(function () {
+(() => {
   // Cancel Subscription alert
-  const cancelSubscription = document.querySelector('.cancel-subscription');
+  const cancelSubscription = document.querySelector(".cancel-subscription");
 
   // Alert With Functional Confirm Button
   if (cancelSubscription) {
-    cancelSubscription.onclick = function () {
+    cancelSubscription.onclick = () => {
       Swal.fire({
-        text: 'Are you sure you would like to cancel your subscription?',
-        icon: 'warning',
+        text: "Are you sure you would like to cancel your subscription?",
+        icon: "warning",
         showCancelButton: true,
-        confirmButtonText: 'Yes',
+        confirmButtonText: "Yes",
         customClass: {
-          confirmButton: 'btn btn-primary me-2 waves-effect waves-light',
-          cancelButton: 'btn btn-label-secondary waves-effect waves-light'
+          confirmButton: "btn btn-primary me-2 waves-effect waves-light",
+          cancelButton: "btn btn-label-secondary waves-effect waves-light",
         },
-        buttonsStyling: false
-      }).then(function (result) {
+        buttonsStyling: false,
+      }).then((result) => {
         if (result.value) {
           Swal.fire({
-            icon: 'success',
-            title: 'Unsubscribed!',
-            text: 'Your subscription cancelled successfully.',
+            icon: "success",
+            title: "Unsubscribed!",
+            text: "Your subscription cancelled successfully.",
             customClass: {
-              confirmButton: 'btn btn-success waves-effect waves-light'
-            }
+              confirmButton: "btn btn-success waves-effect waves-light",
+            },
           });
         } else if (result.dismiss === Swal.DismissReason.cancel) {
           Swal.fire({
-            title: 'Cancelled',
-            text: 'Unsubscription Cancelled!!',
-            icon: 'error',
+            title: "Cancelled",
+            text: "Unsubscription Cancelled!!",
+            icon: "error",
             customClass: {
-              confirmButton: 'btn btn-success waves-effect waves-light'
-            }
+              confirmButton: "btn btn-success waves-effect waves-light",
+            },
           });
         }
       });
@@ -46,12 +40,12 @@
   }
 
   // On edit address click, update text of add address modal
-  const addressEdit = document.querySelector('.edit-address'),
-    addressTitle = document.querySelector('.address-title'),
-    addressSubTitle = document.querySelector('.address-subtitle');
+  const addressEdit = document.querySelector(".edit-address");
+  const addressTitle = document.querySelector(".address-title");
+  const addressSubTitle = document.querySelector(".address-subtitle");
 
-  addressEdit.onclick = function () {
-    addressTitle.innerHTML = 'Edit Address'; // reset text
-    addressSubTitle.innerHTML = 'Edit your current address';
+  addressEdit.onclick = () => {
+    addressTitle.innerHTML = "Edit Address"; // reset text
+    addressSubTitle.innerHTML = "Edit your current address";
   };
 })();

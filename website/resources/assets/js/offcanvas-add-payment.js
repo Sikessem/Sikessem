@@ -1,29 +1,23 @@
-/**
- * Add Payment Offcanvas
- */
-
-'use strict';
-
-(function () {
+(() => {
   // Invoice amount
-  const paymentAmount = document.querySelector('.invoice-amount');
+  const paymentAmount = document.querySelector(".invoice-amount");
 
   // Prefix
   if (paymentAmount) {
     new Cleave(paymentAmount, {
-      numeral: true
+      numeral: true,
     });
   }
 
   // Datepicker
-  const date = new Date(),
-    invoiceDateList = document.querySelectorAll('.invoice-date');
+  const date = new Date();
+  const invoiceDateList = document.querySelectorAll(".invoice-date");
 
   if (invoiceDateList) {
-    invoiceDateList.forEach(function (invoiceDateEl) {
+    invoiceDateList.forEach((invoiceDateEl) => {
       invoiceDateEl.flatpickr({
-        monthSelectorType: 'static',
-        defaultDate: date
+        monthSelectorType: "static",
+        defaultDate: date,
       });
     });
   }
