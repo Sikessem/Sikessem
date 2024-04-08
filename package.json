@@ -1,0 +1,48 @@
+{
+  "name": "sikessem.com",
+  "description": "The Sikessem Web Application",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "engines": {
+    "bun": ">=1.1.2",
+    "node": "prefer using bun",
+    "npm": "prefer using bun",
+    "pnpm": "prefer using bun",
+    "yarn": "prefer using bun"
+  },
+  "packageManager": "bun@1.1.2",
+  "scripts": {
+    "check": "biome ci .",
+    "dev": "vite",
+    "fix": "bun run format.fix && bun run lint.fix",
+    "format": "biome format .",
+    "format.fix": "biome format --write .",
+    "lint": "biome check .",
+    "lint.fix": "biome check --apply-unsafe .",
+    "prod": "vite build",
+    "test": "bun test",
+    "test.cov": "bun test --coverage",
+    "test.hot": "bun test --hot",
+    "test.watch": "bun test --watch",
+    "type.check": "tsc --incremental --noEmit"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.6.4",
+    "@fontsource-variable/figtree": "^5.0.20",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.12",
+    "@types/bun": "^1.0.12",
+    "@types/node": "^20.12.5",
+    "autoprefixer": "^10.4.19",
+    "axios": "^1.6.8",
+    "laravel-vite-plugin": "^1.0.2",
+    "postcss": "^8.4.38",
+    "sass": "^1.72.1",
+    "styliz": "^0.0.2",
+    "tailwindcss": "^3.4.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.4",
+    "vite": "^5.2.8"
+  }
+}
