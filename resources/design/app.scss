@@ -10,3 +10,8 @@
     @apply hidden;
 }
 
+.app {
+    &-brand {
+        content: url('@assets/logo.svg');
+    }
+}
