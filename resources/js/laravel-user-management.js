@@ -73,13 +73,11 @@ $(() => {
               "secondary",
             ];
             const $state = states[stateNum];
-            const $name = full.name;
             let $initials = $name.match(/\b\w/g) || [];
-            let $output;
             $initials = (
               ($initials.shift() || "") + ($initials.pop() || "")
             ).toUpperCase();
-            $output = `<span class="avatar-initial rounded-circle bg-label-${$state}">${$initials}</span>`;
+            const $output = `<span class="avatar-initial rounded-circle bg-label-${$state}">${$initials}</span>`;
 
             // Creates full output for row
             const $row_output = `<div class="d-flex justify-content-start align-items-center user-name"><div class="avatar-wrapper"><div class="avatar avatar-sm me-3">${$output}</div></div><div class="d-flex flex-column"><a href="${userView}" class="text-body text-truncate"><span class="fw-medium">${$name}</span></a></div></div>`;
@@ -101,11 +99,10 @@ $(() => {
           className: "text-center",
           render: (data, type, full, meta) => {
             const $verified = full.email_verified_at;
-            return `${
-              $verified
+            return `${$verified
                 ? '<i class="ti fs-4 ti-shield-check text-success"></i>'
                 : '<i class="ti fs-4 ti-shield-x text-danger" ></i>'
-            }`;
+              }`;
           },
         },
         {
@@ -327,7 +324,7 @@ $(() => {
   }
 
   // Delete Record
-  $(document).on("click", ".delete-record", function () {
+  $(document).on("click", ".delete-record", function() {
     const user_id = $(this).data("id");
     const dtrModal = $(".dtr-bs-modal.show");
 
@@ -385,7 +382,7 @@ $(() => {
   });
 
   // edit record
-  $(document).on("click", ".edit-record", function () {
+  $(document).on("click", ".edit-record", function() {
     const user_id = $(this).data("id");
     const dtrModal = $(".dtr-bs-modal.show");
 
@@ -514,11 +511,11 @@ $(() => {
 
   // Phone Number
   if (phoneMaskList) {
-    phoneMaskList.forEach((phoneMask) => {
+    for (const phoneMask of phoneMaskList) {
       new Cleave(phoneMask, {
         phone: true,
         phoneRegionCode: "US",
       });
-    });
+    }
   }
 });
