@@ -9,19 +9,19 @@ importers:
   .:
     devDependencies:
       '@biomejs/biome':
-        specifier: ^1.7.0
+        specifier: ^1.7.3
         version: 1.7.3
       '@fontsource-variable/figtree':
-        specifier: ^5.0.20
+        specifier: ^5.0.21
         version: 5.0.21
       '@tailwindcss/forms':
         specifier: ^0.5.7
         version: 0.5.7(tailwindcss@3.4.3(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5)))
       '@tailwindcss/typography':
-        specifier: ^0.5.12
+        specifier: ^0.5.13
         version: 0.5.13(tailwindcss@3.4.3(ts-node@10.9.2(@types/node@20.12.13)(typescript@5.4.5)))
       '@types/node':
-        specifier: ^20.12.7
+        specifier: ^20.12.13
         version: 20.12.13
       '@vitest/coverage-v8':
         specifier: ^1.6.0
@@ -33,16 +33,16 @@ importers:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.38)
       axios:
-        specifier: ^1.6.8
+        specifier: ^1.7.2
         version: 1.7.2
       laravel-vite-plugin:
-        specifier: ^1.0.2
+        specifier: ^1.0.4
         version: 1.0.4(vite@5.2.12(@types/node@20.12.13)(sass@1.77.2))
       postcss:
         specifier: ^8.4.38
         version: 8.4.38
       sass:
-        specifier: ^1.75.0
+        specifier: ^1.77.2
         version: 1.77.2
       styliz:
         specifier: ^0.0.2
@@ -57,7 +57,7 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
       vite:
-        specifier: ^5.2.8
+        specifier: ^5.2.12
         version: 5.2.12(@types/node@20.12.13)(sass@1.77.2)
       vitest:
         specifier: ^1.6.0
