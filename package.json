@@ -5,17 +5,15 @@
   "license": "AGPL-3.0-only",
   "type": "module",
   "engines": {
-    "bun": ">=1.1.2",
-    "node": "prefer using bun",
-    "npm": "prefer using bun",
-    "pnpm": "prefer using bun",
-    "yarn": "prefer using bun"
+    "node": ">=20.14.0",
+    "pnpm": ">=9.1.3",
+    "npm": "prefer pnpm instead"
   },
-  "packageManager": "bun@1.1.2",
+  "packageManager": "pnpm@9.1.3",
   "scripts": {
     "check": "biome ci .",
     "dev": "vite",
-    "fix": "bun run format.fix && bun run lint.fix",
+    "fix": "pnpm format.fix && pnpm lint.fix",
     "format": "biome format .",
     "format.fix": "biome format --write .",
     "lint": "biome check .",
