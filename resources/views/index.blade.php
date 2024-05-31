@@ -27,6 +27,7 @@ https://templatemo.com/tm-570-chain-app-dev
     <link rel="stylesheet" href="assets/css/animated.css">
     <link rel="stylesheet" href="assets/css/owl.css">
 
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
 
 <body>
