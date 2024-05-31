@@ -18,8 +18,6 @@
   'resources/assets/vendor/libs/typeahead-js/typeahead.scss'
 ])
 
-@vite('resources/css/app.css')
-
 <!-- Vendor Styles -->
 @yield('vendor-style')
 
