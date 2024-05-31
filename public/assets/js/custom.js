@@ -129,9 +129,9 @@
       });
       $(this).addClass("active");
 
-      const target = this.hash;
+      let target = this.hash;
       const menu = target;
-      const target = $(this.hash);
+      target = $(this.hash);
       $("html, body")
         .stop()
         .animate(

@@ -7,8 +7,3 @@ import.meta.glob([
   "../assets/vendor/fonts/**",
 ]);
 
-// Page loading animation
-$(window).on("load", () => {
-  $("#js-preloader").addClass("loaded");
-});
-
