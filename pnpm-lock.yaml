@@ -332,6 +332,9 @@ importers:
       browser-sync-webpack-plugin:
         specifier: 2.3.0
         version: 2.3.0(browser-sync@2.29.3)(webpack@5.88.1)
+      chokidar:
+        specifier: ^3.6.0
+        version: 3.6.0
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
