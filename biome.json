@@ -11,7 +11,14 @@
       "style": {
         "useBlockStatements": "error",
         "useShorthandArrayType": "error",
-        "noShoutyConstants": "warn"
+        "noShoutyConstants": "warn",
+        "noParameterAssign": "off"
+      },
+      "complexity": {
+        "noForEach": "warn"
+      },
+      "suspicious": {
+        "noAssignInExpressions": "off"
       }
     },
     "ignore": ["node_modules", "vendor", "storage", "public"]

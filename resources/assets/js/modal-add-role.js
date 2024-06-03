@@ -1,11 +1,5 @@
-/**
- * Add new role Modal JS
- */
-
-"use strict";
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  (function () {
+document.addEventListener("DOMContentLoaded", (e) => {
+  (() => {
     // add role form validation
     FormValidation.formValidation(document.getElementById("addRoleForm"), {
       fields: {
@@ -33,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     // Select All checkbox click
-    const selectAll = document.querySelector("#selectAll"),
-      checkboxList = document.querySelectorAll('[type="checkbox"]');
+    const selectAll = document.querySelector("#selectAll");
+    const checkboxList = document.querySelectorAll('[type="checkbox"]');
     selectAll.addEventListener("change", (t) => {
       checkboxList.forEach((e) => {
         e.checked = t.target.checked;

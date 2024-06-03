@@ -6,4 +6,3 @@ import.meta.glob([
   // '../assets/json/**',
   "../assets/vendor/fonts/**",
 ]);
-

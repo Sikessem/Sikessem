@@ -1,17 +1,12 @@
-/**
- * Typeahead (jquery)
- */
-
-"use strict";
-
-$(function () {
+$(() => {
   // String Matcher function
-  var substringMatcher = function (strs) {
-    return function findMatches(q, cb) {
-      var matches, substrRegex;
+  const substringMatcher = (strs) =>
+    function findMatches(q, cb) {
+      let matches;
+      let substrRegex;
       matches = [];
       substrRegex = new RegExp(q, "i");
-      $.each(strs, function (i, str) {
+      $.each(strs, (i, str) => {
         if (substrRegex.test(str)) {
           matches.push(str);
         }
@@ -19,8 +14,7 @@ $(function () {
 
       cb(matches);
     };
-  };
-  var states = [
+  const states = [
     "Alabama",
     "Alaska",
     "Arizona",
@@ -91,7 +85,7 @@ $(function () {
     },
   );
 
-  var bloodhoundBasicExample = new Bloodhound({
+  const bloodhoundBasicExample = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.whitespace,
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     local: states,
@@ -111,10 +105,10 @@ $(function () {
     },
   );
 
-  var prefetchExample = new Bloodhound({
+  const prefetchExample = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.whitespace,
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    prefetch: assetsPath + "json/typeahead.json",
+    prefetch: `${assetsPath}json/typeahead.json`,
   });
 
   // Prefetch Example
@@ -153,10 +147,10 @@ $(function () {
     },
   );
 
-  var customTemplate = new Bloodhound({
+  const customTemplate = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace("value"),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    prefetch: assetsPath + "json/typeahead-data-2.json",
+    prefetch: `${assetsPath}json/typeahead-data-2.json`,
   });
 
   // Custom Template
@@ -173,19 +167,12 @@ $(function () {
         "unable to find any Best Picture winners that match the current query",
         "</div>",
       ].join("\n"),
-      suggestion: function (data) {
-        return (
-          '<div><span class="fw-medium">' +
-          data.value +
-          "</span> – " +
-          data.year +
-          "</div>"
-        );
-      },
+      suggestion: (data) =>
+        `<div><span class="fw-medium">${data.value}</span> – ${data.year}</div>`,
     },
   });
 
-  var nbaTeams = [
+  const nbaTeams = [
     { team: "Boston Celtics" },
     { team: "Dallas Mavericks" },
     { team: "Brooklyn Nets" },
@@ -217,7 +204,7 @@ $(function () {
     { team: "Washington Wizards" },
     { team: "Sacramento Kings" },
   ];
-  var nhlTeams = [
+  const nhlTeams = [
     { team: "New Jersey Devils" },
     { team: "New York Islanders" },
     { team: "New York Rangers" },
@@ -250,12 +237,12 @@ $(function () {
     { team: "San Jose Sharks" },
   ];
 
-  var nbaExample = new Bloodhound({
+  const nbaExample = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace("team"),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     local: nbaTeams,
   });
-  var nhlExample = new Bloodhound({
+  const nhlExample = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace("team"),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     local: nhlTeams,

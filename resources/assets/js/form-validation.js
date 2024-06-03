@@ -1,6 +1,4 @@
-"use strict";
-
-(function () {
+(() => {
   // Init custom option check
   window.Helpers.initCustomOptionCheck();
 
@@ -23,10 +21,10 @@
   const bsValidationForms = document.querySelectorAll(".needs-validation");
 
   // Loop over them and prevent submission
-  Array.prototype.slice.call(bsValidationForms).forEach(function (form) {
+  Array.prototype.slice.call(bsValidationForms).forEach((form) => {
     form.addEventListener(
       "submit",
-      function (event) {
+      (event) => {
         if (!form.checkValidity()) {
           event.preventDefault();
           event.stopPropagation();
@@ -48,39 +46,39 @@
  * ? Though If we've miss any 3rd party libraries, then refer: https://formvalidation.io/guide/examples/integrating-with-3rd-party-libraries
  */
 //------------------------------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", function (e) {
-  (function () {
+document.addEventListener("DOMContentLoaded", (e) => {
+  (() => {
     const formValidationExamples = document.getElementById(
-        "formValidationExamples",
-      ),
-      formValidationSelect2Ele = jQuery(
-        formValidationExamples.querySelector('[name="formValidationSelect2"]'),
-      ),
-      formValidationTechEle = jQuery(
-        formValidationExamples.querySelector('[name="formValidationTech"]'),
-      ),
-      formValidationLangEle = formValidationExamples.querySelector(
-        '[name="formValidationLang"]',
-      ),
-      formValidationHobbiesEle = jQuery(
-        formValidationExamples.querySelector(".selectpicker"),
-      ),
-      tech = [
-        "ReactJS",
-        "Angular",
-        "VueJS",
-        "Html",
-        "Css",
-        "Sass",
-        "Pug",
-        "Gulp",
-        "Php",
-        "Laravel",
-        "Python",
-        "Bootstrap",
-        "Material Design",
-        "NodeJS",
-      ];
+      "formValidationExamples",
+    );
+    const formValidationSelect2Ele = jQuery(
+      formValidationExamples.querySelector('[name="formValidationSelect2"]'),
+    );
+    const formValidationTechEle = jQuery(
+      formValidationExamples.querySelector('[name="formValidationTech"]'),
+    );
+    const formValidationLangEle = formValidationExamples.querySelector(
+      '[name="formValidationLang"]',
+    );
+    const formValidationHobbiesEle = jQuery(
+      formValidationExamples.querySelector(".selectpicker"),
+    );
+    const tech = [
+      "ReactJS",
+      "Angular",
+      "VueJS",
+      "Html",
+      "Css",
+      "Sass",
+      "Pug",
+      "Gulp",
+      "Php",
+      "Laravel",
+      "Python",
+      "Bootstrap",
+      "Material Design",
+      "NodeJS",
+    ];
 
     const fv = FormValidation.formValidation(formValidationExamples, {
       fields: {
@@ -125,11 +123,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
               message: "Please confirm password",
             },
             identical: {
-              compare: function () {
-                return formValidationExamples.querySelector(
+              compare: () =>
+                formValidationExamples.querySelector(
                   '[name="formValidationPass"]',
-                ).value;
-              },
+                ).value,
               message: "The password and its confirm are not the same",
             },
           },
@@ -228,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
           // Use this for enabling/changing valid/invalid class
           // eleInvalidClass: '',
           eleValidClass: "",
-          rowSelector: function (field, ele) {
+          rowSelector: (field, ele) => {
             // field is the field name & ele is the field element
             switch (field) {
               case "formValidationName":
@@ -260,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         autoFocus: new FormValidation.plugins.AutoFocus(),
       },
       init: (instance) => {
-        instance.on("plugins.message.placed", function (e) {
+        instance.on("plugins.message.placed", (e) => {
           //* Move the error message out of the `input-group` element
           if (e.element.parentElement.classList.contains("input-group")) {
             // `e.field`: The field name
@@ -296,7 +293,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         // See https://flatpickr.js.org/formatting/
         dateFormat: "Y/m/d",
         // After selecting a date, we need to revalidate the field
-        onChange: function () {
+        onChange: () => {
           fv.revalidateField("formValidationDob");
         },
       });
@@ -310,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
           placeholder: "Select country",
           dropdownParent: formValidationSelect2Ele.parent(),
         })
-        .on("change", function () {
+        .on("change", () => {
           // Revalidate the color field when an option is chosen
           fv.revalidateField("formValidationSelect2");
         });
@@ -319,12 +316,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
     // Typeahead
 
     // String Matcher function for typeahead
-    const substringMatcher = function (strs) {
-      return function findMatches(q, cb) {
-        var matches, substrRegex;
+    const substringMatcher = (strs) =>
+      function findMatches(q, cb) {
+        let matches;
+        let substrRegex;
         matches = [];
         substrRegex = new RegExp(q, "i");
-        $.each(strs, function (i, str) {
+        $.each(strs, (i, str) => {
           if (substrRegex.test(str)) {
             matches.push(str);
           }
@@ -332,7 +330,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         cb(matches);
       };
-    };
 
     // Check if rtl
     if (isRtl) {
@@ -360,7 +357,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     );
 
     // Tagify
-    let formValidationLangTagify = new Tagify(formValidationLangEle);
+    const formValidationLangTagify = new Tagify(formValidationLangEle);
     formValidationLangEle.addEventListener("change", onChange);
     function onChange() {
       fv.revalidateField("formValidationLang");
@@ -369,7 +366,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     //Bootstrap select
     formValidationHobbiesEle.on(
       "changed.bs.select",
-      function (e, clickedIndex, isSelected, previousValue) {
+      (e, clickedIndex, isSelected, previousValue) => {
         fv.revalidateField("formValidationHobbies");
       },
     );

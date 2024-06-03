@@ -1,44 +1,30 @@
-/**
- * Ideal Timer (jquery)
- */
-
-"use strict";
-
-$(function () {
-  var timerDoc = $("#document-Status"),
-    btnPause = $("#document-Pause"),
-    btnResume = $("#document-Resume"),
-    btnElapsed = $("#document-Elapsed"),
-    btnDestroy = $("#document-Destroy"),
-    btnInit = $("#document-Init");
+$(() => {
+  const timerDoc = $("#document-Status");
+  const btnPause = $("#document-Pause");
+  const btnResume = $("#document-Resume");
+  const btnElapsed = $("#document-Elapsed");
+  const btnDestroy = $("#document-Destroy");
+  const btnInit = $("#document-Init");
 
   // Document 5 Sec Timeout
   // --------------------------------------------------------------------
   if (timerDoc.length) {
-    var docTimeout = 5000;
+    const docTimeout = 5000;
     // idle/active events
-    $(document).on("idle.idleTimer", function (event, elem, obj) {
+    $(document).on("idle.idleTimer", (event, elem, obj) => {
       timerDoc
-        .val(function (i, value) {
-          return value + "Idle @ " + moment().format() + " \n";
-        })
+        .val((i, value) => `${value}Idle @ ${moment().format()} \n`)
         .removeClass("alert-success")
         .addClass("alert-warning");
     });
-    $(document).on("active.idleTimer", function (event, elem, obj, e) {
+    $(document).on("active.idleTimer", (event, elem, obj, e) => {
       timerDoc
-        .val(function (i, value) {
-          return (
-            value +
-            "Active [" +
-            e.type +
-            "] [" +
-            e.target.nodeName +
-            "] @ " +
-            moment().format() +
-            " \n"
-          );
-        })
+        .val(
+          (i, value) =>
+            `${value}Active [${e.type}] [${
+              e.target.nodeName
+            }] @ ${moment().format()} \n`,
+        )
         .addClass("alert-success")
         .removeClass("alert-warning");
     });
@@ -47,31 +33,25 @@ $(function () {
     btnPause.on("click", function () {
       // Pause
       $(document).idleTimer("pause");
-      timerDoc.val(function (i, value) {
-        return value + "Paused @ " + moment().format() + " \n";
-      });
+      timerDoc.val((i, value) => `${value}Paused @ ${moment().format()} \n`);
       $(this).blur();
       return false;
     });
     btnResume.on("click", function () {
       // Resume
       $(document).idleTimer("resume");
-      timerDoc.val(function (i, value) {
-        return value + "Resumed @ " + moment().format() + " \n";
-      });
+      timerDoc.val((i, value) => `${value}Resumed @ ${moment().format()} \n`);
       $(this).blur();
       return false;
     });
     btnElapsed.on("click", function () {
       // Elapsed
-      timerDoc.val(function (i, value) {
-        return (
-          value +
-          "Elapsed (since becoming active): " +
-          $(document).idleTimer("getElapsedTime") +
-          " \n"
-        );
-      });
+      timerDoc.val(
+        (i, value) =>
+          `${value}Elapsed (since becoming active): ${$(document).idleTimer(
+            "getElapsedTime",
+          )} \n`,
+      );
       $(this).blur();
       return false;
     });
@@ -79,9 +59,7 @@ $(function () {
       // Destroy
       $(document).idleTimer("destroy");
       timerDoc
-        .val(function (i, value) {
-          return value + "Destroyed: @ " + moment().format() + " \n";
-        })
+        .val((i, value) => `${value}Destroyed: @ ${moment().format()} \n`)
         .removeClass("alert-success")
         .removeClass("alert-warning");
       $(this).blur();
@@ -93,9 +71,7 @@ $(function () {
       $(document).idleTimer({
         timeout: docTimeout,
       });
-      timerDoc.val(function (i, value) {
-        return value + "Init: @ " + moment().format() + " \n";
-      });
+      timerDoc.val((i, value) => `${value}Init: @ ${moment().format()} \n`);
 
       // Apply classes for default state
       if ($(document).idleTimer("isIdle")) {
@@ -116,16 +92,17 @@ $(function () {
     // style based on state
     if ($(document).idleTimer("isIdle")) {
       timerDoc
-        .val(function (i, value) {
-          return value + "Initial Idle State @ " + moment().format() + " \n";
-        })
+        .val(
+          (i, value) => `${value}Initial Idle State @ ${moment().format()} \n`,
+        )
         .removeClass("alert-success")
         .addClass("alert-warning");
     } else {
       timerDoc
-        .val(function (i, value) {
-          return value + "Initial Active State @ " + moment().format() + " \n";
-        })
+        .val(
+          (i, value) =>
+            `${value}Initial Active State @ ${moment().format()} \n`,
+        )
         .addClass("alert-success")
         .removeClass("alert-warning");
     }
@@ -133,31 +110,27 @@ $(function () {
 
   // Element 3 Sec Timeout
   // --------------------------------------------------------------------
-  var elementTimer = $("#element-Status"),
-    btnReset = $("#element-Reset"),
-    btnRemaining = $("#element-Remaining"),
-    btnLastActive = $("#element-LastActive"),
-    btnState = $("#element-State");
+  const elementTimer = $("#element-Status");
+  const btnReset = $("#element-Reset");
+  const btnRemaining = $("#element-Remaining");
+  const btnLastActive = $("#element-LastActive");
+  const btnState = $("#element-State");
   if (elementTimer.length) {
-    var elTimeout = 3000;
+    const elTimeout = 3000;
     // idle/active events
-    elementTimer.on("idle.idleTimer", function (event, elem, obj) {
+    elementTimer.on("idle.idleTimer", (event, elem, obj) => {
       event.stopPropagation();
 
       elementTimer
-        .val(function (i, value) {
-          return value + "Idle @ " + moment().format() + " \n";
-        })
+        .val((i, value) => `${value}Idle @ ${moment().format()} \n`)
         .removeClass("alert-success")
         .addClass("alert-warning");
     });
-    elementTimer.on("active.idleTimer", function (event) {
+    elementTimer.on("active.idleTimer", (event) => {
       event.stopPropagation();
 
       elementTimer
-        .val(function (i, value) {
-          return value + "Active @ " + moment().format() + " \n";
-        })
+        .val((i, value) => `${value}Active @ ${moment().format()} \n`)
         .addClass("alert-success")
         .removeClass("alert-warning");
     });
@@ -165,9 +138,9 @@ $(function () {
     // button events
     btnReset.on("click", function () {
       // Reset
-      elementTimer.idleTimer("reset").val(function (i, value) {
-        return value + "Reset @ " + moment().format() + " \n";
-      });
+      elementTimer
+        .idleTimer("reset")
+        .val((i, value) => `${value}Reset @ ${moment().format()} \n`);
 
       // classes for default state
       if ($("#element-Status").idleTimer("isIdle")) {
@@ -180,40 +153,32 @@ $(function () {
     });
     btnRemaining.on("click", function () {
       // Remaining
-      elementTimer.val(function (i, value) {
-        return (
-          value +
-          "Remaining: " +
-          elementTimer.idleTimer("getRemainingTime") +
-          " \n"
-        );
-      });
+      elementTimer.val(
+        (i, value) =>
+          `${value}Remaining: ${elementTimer.idleTimer("getRemainingTime")} \n`,
+      );
       $(this).blur();
       return false;
     });
     btnLastActive.on("click", function () {
       // Last Active
-      elementTimer.val(function (i, value) {
-        return (
-          value +
-          "LastActive: " +
-          elementTimer.idleTimer("getLastActiveTime") +
-          " \n"
-        );
-      });
+      elementTimer.val(
+        (i, value) =>
+          `${value}LastActive: ${elementTimer.idleTimer(
+            "getLastActiveTime",
+          )} \n`,
+      );
       $(this).blur();
       return false;
     });
     btnState.on("click", function () {
       // State
-      elementTimer.val(function (i, value) {
-        return (
-          value +
-          "State: " +
-          ($("#element-Status").idleTimer("isIdle") ? "idle" : "active") +
-          " \n"
-        );
-      });
+      elementTimer.val(
+        (i, value) =>
+          `${value}State: ${
+            $("#element-Status").idleTimer("isIdle") ? "idle" : "active"
+          } \n`,
+      );
       $(this).blur();
       return false;
     });
@@ -224,16 +189,12 @@ $(function () {
     // show initial state
     if (elementTimer.idleTimer("isIdle")) {
       elementTimer
-        .val(function (i, value) {
-          return value + "Initial Idle @ " + moment().format() + " \n";
-        })
+        .val((i, value) => `${value}Initial Idle @ ${moment().format()} \n`)
         .removeClass("alert-success")
         .addClass("alert-warning");
     } else {
       elementTimer
-        .val(function (i, value) {
-          return value + "Initial Active @ " + moment().format() + " \n";
-        })
+        .val((i, value) => `${value}Initial Active @ ${moment().format()} \n`)
         .addClass("alert-success")
         .removeClass("alert-warning");
     }

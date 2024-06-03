@@ -29,7 +29,7 @@
             size: show === "true" ? "50%" : "33%",
           },
           dataLabels: {
-            show: show === "true" ? true : false,
+            show: show === "true",
             value: {
               offsetY: -10,
               fontSize: "15px",

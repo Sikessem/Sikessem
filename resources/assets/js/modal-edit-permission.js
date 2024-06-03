@@ -1,12 +1,6 @@
-/**
- * Edit Permission Modal JS
- */
-
-"use strict";
-
 // Edit permission form validation
-document.addEventListener("DOMContentLoaded", function (e) {
-  (function () {
+document.addEventListener("DOMContentLoaded", (e) => {
+  (() => {
     FormValidation.formValidation(
       document.getElementById("editPermissionForm"),
       {

@@ -1,17 +1,11 @@
-/**
- * App Invoice List (jquery)
- */
-
-"use strict";
-
-$(function () {
+$(() => {
   // Variable declaration for table
-  var dt_invoice_table = $(".invoice-list-table");
+  const dt_invoice_table = $(".invoice-list-table");
 
   // Invoice datatable
   if (dt_invoice_table.length) {
-    var dt_invoice = dt_invoice_table.DataTable({
-      ajax: assetsPath + "json/invoice-list.json", // JSON file to add data
+    const dt_invoice = dt_invoice_table.DataTable({
+      ajax: `${assetsPath}json/invoice-list.json`, // JSON file to add data
       columns: [
         // columns according to JSON
         { data: "" },
@@ -31,33 +25,26 @@ $(function () {
           responsivePriority: 2,
           searchable: false,
           targets: 0,
-          render: function (data, type, full, meta) {
-            return "";
-          },
+          render: (data, type, full, meta) => "",
         },
         {
           // Invoice ID
           targets: 1,
-          render: function (data, type, full, meta) {
-            var $invoice_id = full["invoice_id"];
+          render: (data, type, full, meta) => {
+            const $invoice_id = full.invoice_id;
             // Creates full output for row
-            var $row_output =
-              '<a href="' +
-              baseUrl +
-              'app/invoice/preview">#' +
-              $invoice_id +
-              "</a>";
+            const $row_output = `<a href="${baseUrl}app/invoice/preview">#${$invoice_id}</a>`;
             return $row_output;
           },
         },
         {
           // Invoice status
           targets: 2,
-          render: function (data, type, full, meta) {
-            var $invoice_status = full["invoice_status"],
-              $due_date = full["due_date"],
-              $balance = full["balance"];
-            var roleBadgeObj = {
+          render: (data, type, full, meta) => {
+            const $invoice_status = full.invoice_status;
+            const $due_date = full.due_date;
+            const $balance = full.balance;
+            const roleBadgeObj = {
               Sent: '<span class="badge badge-center rounded-pill bg-label-secondary w-px-30 h-px-30"><i class="ti ti-circle-check ti-sm"></i></span>',
               Draft:
                 '<span class="badge badge-center rounded-pill bg-label-primary w-px-30 h-px-30"><i class="ti ti-device-floppy ti-sm"></i></span>',
@@ -69,102 +56,65 @@ $(function () {
               Downloaded:
                 '<span class="badge badge-center rounded-pill bg-label-info w-px-30 h-px-30"><i class="ti ti-arrow-down-circle ti-sm"></i></span>',
             };
-            return (
-              "<span data-bs-toggle='tooltip' data-bs-html='true' title='<span>" +
-              $invoice_status +
-              '<br> <span class="fw-medium">Balance:</span> ' +
-              $balance +
-              '<br> <span class="fw-medium">Due Date:</span> ' +
-              $due_date +
-              "</span>'>" +
-              roleBadgeObj[$invoice_status] +
-              "</span>"
-            );
+            return `<span data-bs-toggle='tooltip' data-bs-html='true' title='<span>${$invoice_status}<br> <span class="fw-medium">Balance:</span> ${$balance}<br> <span class="fw-medium">Due Date:</span> ${$due_date}</span>'>${roleBadgeObj[$invoice_status]}</span>`;
           },
         },
         {
           // Client name and Service
           targets: 3,
           responsivePriority: 4,
-          render: function (data, type, full, meta) {
-            var $name = full["client_name"],
-              $service = full["service"],
-              $image = full["avatar_image"],
-              $rand_num = Math.floor(Math.random() * 11) + 1,
-              $user_img = $rand_num + ".png";
+          render: (data, type, full, meta) => {
+            const $name = full.client_name;
+            const $service = full.service;
+            const $image = full.avatar_image;
+            const $rand_num = Math.floor(Math.random() * 11) + 1;
+            const $user_img = `${$rand_num}.png`;
             if ($image === true) {
               // For Avatar image
-              var $output =
-                '<img src="' +
-                assetsPath +
-                "img/avatars/" +
-                $user_img +
-                '" alt="Avatar" class="rounded-circle">';
+              const $output = `<img src="${assetsPath}img/avatars/${$user_img}" alt="Avatar" class="rounded-circle">`;
             } else {
               // For Avatar badge
-              var stateNum = Math.floor(Math.random() * 6),
-                states = [
-                  "success",
-                  "danger",
-                  "warning",
-                  "info",
-                  "primary",
-                  "secondary",
-                ],
-                $state = states[stateNum],
-                $name = full["client_name"],
-                $initials = $name.match(/\b\w/g) || [];
+              const stateNum = Math.floor(Math.random() * 6);
+              const states = [
+                "success",
+                "danger",
+                "warning",
+                "info",
+                "primary",
+                "secondary",
+              ];
+              const $state = states[stateNum];
+              const $name = full.client_name;
+              let $initials = $name.match(/\b\w/g) || [];
               $initials = (
                 ($initials.shift() || "") + ($initials.pop() || "")
               ).toUpperCase();
-              $output =
-                '<span class="avatar-initial rounded-circle bg-label-' +
-                $state +
-                '">' +
-                $initials +
-                "</span>";
+              $output = `<span class="avatar-initial rounded-circle bg-label-${$state}">${$initials}</span>`;
             }
             // Creates full output for row
-            var $row_output =
-              '<div class="d-flex justify-content-start align-items-center">' +
-              '<div class="avatar-wrapper">' +
-              '<div class="avatar me-2">' +
-              $output +
-              "</div>" +
-              "</div>" +
-              '<div class="d-flex flex-column">' +
-              '<a href="' +
-              baseUrl +
-              'pages/profile-user" class="text-body text-truncate"><span class="fw-medium">' +
-              $name +
-              "</span></a>" +
-              '<small class="text-truncate text-muted">' +
-              $service +
-              "</small>" +
-              "</div>" +
-              "</div>";
+            const $row_output = `<div class="d-flex justify-content-start align-items-center"><div class="avatar-wrapper"><div class="avatar me-2">${$output}</div></div><div class="d-flex flex-column"><a href="${baseUrl}pages/profile-user" class="text-body text-truncate"><span class="fw-medium">${$name}</span></a><small class="text-truncate text-muted">${$service}</small></div></div>`;
             return $row_output;
           },
         },
         {
           // Total Invoice Amount
           targets: 4,
-          render: function (data, type, full, meta) {
-            var $total = full["total"];
-            return '<span class="d-none">' + $total + "</span>$" + $total;
+          render: (data, type, full, meta) => {
+            const $total = full.total;
+            return `<span class="d-none">${$total}</span>$${$total}`;
           },
         },
         {
           // Due Date
           targets: 5,
-          render: function (data, type, full, meta) {
-            var $due_date = new Date(full["due_date"]);
+          render: (data, type, full, meta) => {
+            const $due_date = new Date(full.due_date);
             // Creates full output for row
-            var $row_output =
-              '<span class="d-none">' +
-              moment($due_date).format("YYYYMMDD") +
-              "</span>" +
-              moment($due_date).format("DD MMM YYYY");
+            const $row_output = `<span class="d-none">${moment(
+              $due_date,
+            ).format("YYYYMMDD")}</span>${moment($due_date).format(
+              "DD MMM YYYY",
+            )}`;
             $due_date;
             return $row_output;
           },
@@ -173,18 +123,13 @@ $(function () {
           // Client Balance/Status
           targets: 6,
           orderable: false,
-          render: function (data, type, full, meta) {
-            var $balance = full["balance"];
+          render: (data, type, full, meta) => {
+            const $balance = full.balance;
             if ($balance === 0) {
-              var $badge_class = "bg-label-success";
-              return (
-                '<span class="badge ' +
-                $badge_class +
-                '" text-capitalized> Paid </span>'
-              );
-            } else {
-              return '<span class="d-none">' + $balance + "</span>" + $balance;
+              const $badge_class = "bg-label-success";
+              return `<span class="badge ${$badge_class}" text-capitalized> Paid </span>`;
             }
+            return `<span class="d-none">${$balance}</span>${$balance}`;
           },
         },
         {
@@ -197,28 +142,8 @@ $(function () {
           title: "Actions",
           searchable: false,
           orderable: false,
-          render: function (data, type, full, meta) {
-            return (
-              '<div class="d-flex align-items-center">' +
-              '<a href="javascript:;" data-bs-toggle="tooltip" class="text-body" data-bs-placement="top" title="Send Mail"><i class="ti ti-mail mx-2 ti-sm"></i></a>' +
-              '<a href="' +
-              baseUrl +
-              'app/invoice/preview" data-bs-toggle="tooltip" class="text-body" data-bs-placement="top" title="Preview Invoice"><i class="ti ti-eye mx-2 ti-sm"></i></a>' +
-              '<div class="dropdown">' +
-              '<a href="javascript:;" class="btn dropdown-toggle hide-arrow text-body p-0" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical ti-sm"></i></a>' +
-              '<div class="dropdown-menu dropdown-menu-end">' +
-              '<a href="javascript:;" class="dropdown-item">Download</a>' +
-              '<a href="' +
-              baseUrl +
-              'app/invoice/edit" class="dropdown-item">Edit</a>' +
-              '<a href="javascript:;" class="dropdown-item">Duplicate</a>' +
-              '<div class="dropdown-divider"></div>' +
-              '<a href="javascript:;" class="dropdown-item delete-record text-danger">Delete</a>' +
-              "</div>" +
-              "</div>" +
-              "</div>"
-            );
-          },
+          render: (data, type, full, meta) =>
+            `<div class="d-flex align-items-center"><a href="javascript:;" data-bs-toggle="tooltip" class="text-body" data-bs-placement="top" title="Send Mail"><i class="ti ti-mail mx-2 ti-sm"></i></a><a href="${baseUrl}app/invoice/preview" data-bs-toggle="tooltip" class="text-body" data-bs-placement="top" title="Preview Invoice"><i class="ti ti-eye mx-2 ti-sm"></i></a><div class="dropdown"><a href="javascript:;" class="btn dropdown-toggle hide-arrow text-body p-0" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical ti-sm"></i></a><div class="dropdown-menu dropdown-menu-end"><a href="javascript:;" class="dropdown-item">Download</a><a href="${baseUrl}app/invoice/edit" class="dropdown-item">Edit</a><a href="javascript:;" class="dropdown-item">Duplicate</a><div class="dropdown-divider"></div><a href="javascript:;" class="dropdown-item delete-record text-danger">Delete</a></div></div></div>`,
         },
       ],
       order: [[1, "desc"]],
@@ -241,8 +166,8 @@ $(function () {
         {
           text: '<i class="ti ti-plus me-md-1"></i><span class="d-md-inline-block d-none">Create Invoice</span>',
           className: "btn btn-primary waves-effect waves-light",
-          action: function (e, dt, button, config) {
-            window.location = baseUrl + "app/invoice/add";
+          action: (e, dt, button, config) => {
+            window.location = `${baseUrl}app/invoice/add`;
           },
         },
       ],
@@ -250,30 +175,18 @@ $(function () {
       responsive: {
         details: {
           display: $.fn.dataTable.Responsive.display.modal({
-            header: function (row) {
-              var data = row.data();
-              return "Details of " + data["full_name"];
+            header: (row) => {
+              const data = row.data();
+              return `Details of ${data.full_name}`;
             },
           }),
           type: "column",
-          renderer: function (api, rowIdx, columns) {
-            var data = $.map(columns, function (col, i) {
-              return col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
-                ? '<tr data-dt-row="' +
-                    col.rowIndex +
-                    '" data-dt-column="' +
-                    col.columnIndex +
-                    '">' +
-                    "<td>" +
-                    col.title +
-                    ":" +
-                    "</td> " +
-                    "<td>" +
-                    col.data +
-                    "</td>" +
-                    "</tr>"
-                : "";
-            }).join("");
+          renderer: (api, rowIdx, columns) => {
+            const data = $.map(columns, (col, i) =>
+              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+                ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
+                : "",
+            ).join("");
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -286,27 +199,23 @@ $(function () {
         this.api()
           .columns(7)
           .every(function () {
-            var column = this;
-            var select = $(
+            const column = this;
+            const select = $(
               '<select id="UserRole" class="form-select"><option value=""> Select Status </option></select>',
             )
               .appendTo(".invoice_status")
               .on("change", function () {
-                var val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? "^" + val + "$" : "", true, false).draw();
+                const val = $.fn.dataTable.util.escapeRegex($(this).val());
+                column.search(val ? `^${val}$` : "", true, false).draw();
               });
 
             column
               .data()
               .unique()
               .sort()
-              .each(function (d, j) {
+              .each((d, j) => {
                 select.append(
-                  '<option value="' +
-                    d +
-                    '" class="text-capitalize">' +
-                    d +
-                    "</option>",
+                  `<option value="${d}" class="text-capitalize">${d}</option>`,
                 );
               });
           });
@@ -315,15 +224,16 @@ $(function () {
   }
 
   // On each datatable draw, initialize tooltip
-  dt_invoice_table.on("draw.dt", function () {
-    var tooltipTriggerList = [].slice.call(
+  dt_invoice_table.on("draw.dt", () => {
+    const tooltipTriggerList = [].slice.call(
       document.querySelectorAll('[data-bs-toggle="tooltip"]'),
     );
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl, {
-        boundary: document.body,
-      });
-    });
+    const tooltipList = tooltipTriggerList.map(
+      (tooltipTriggerEl) =>
+        new bootstrap.Tooltip(tooltipTriggerEl, {
+          boundary: document.body,
+        }),
+    );
   });
 
   // Delete Record

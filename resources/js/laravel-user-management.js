@@ -99,10 +99,11 @@ $(() => {
           className: "text-center",
           render: (data, type, full, meta) => {
             const $verified = full.email_verified_at;
-            return `${$verified
+            return `${
+              $verified
                 ? '<i class="ti fs-4 ti-shield-check text-success"></i>'
                 : '<i class="ti fs-4 ti-shield-x text-danger" ></i>'
-              }`;
+            }`;
           },
         },
         {
@@ -324,7 +325,7 @@ $(() => {
   }
 
   // Delete Record
-  $(document).on("click", ".delete-record", function() {
+  $(document).on("click", ".delete-record", function () {
     const user_id = $(this).data("id");
     const dtrModal = $(".dtr-bs-modal.show");
 
@@ -382,7 +383,7 @@ $(() => {
   });
 
   // edit record
-  $(document).on("click", ".edit-record", function() {
+  $(document).on("click", ".edit-record", function () {
     const user_id = $(this).data("id");
     const dtrModal = $(".dtr-bs-modal.show");
 

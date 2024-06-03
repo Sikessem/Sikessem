@@ -1,10 +1,4 @@
-/**
- * Send Invoice Offcanvas
- */
-
-"use strict";
-
-(function () {
+(() => {
   // Send invoice textarea
   const invoiceMsg = document.querySelector("#invoice-message");
 

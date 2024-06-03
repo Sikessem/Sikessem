@@ -43,19 +43,15 @@
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ],
     "post-create-project-cmd": [
-        "@php artisan key:generate --ansi",
-        "@php artisan migrate --graceful --ansi"
+      "@php artisan key:generate --ansi",
+      "@php artisan migrate --graceful --ansi"
     ],
-    "analyse": "phpstan analyse --ansi --memory-limit=-1 --debug",
+    "analyse": [
+      "phpinsights analyse",
+      "phpstan analyse --ansi --memory-limit=-1 --debug"
+    ],
     "check": "pint --test -v",
-    "debug": [
-      "@validate",
-      "@check",
-      "@analyse",
-      "@inspect",
-      "@review",
-      "@test"
-    ],
+    "debug": ["@check", "@analyse", "@inspect", "@review", "@test"],
     "devtools:init": ["psalm --init", "rector init", "pest --init"],
     "fix": ["@refactor", "@sanitize", "@format", "@lint"],
     "format": "psalter --issues=all",
@@ -67,8 +63,7 @@
     "sanitize": "phpinsights fix",
     "serve": "@php artisan octane:start",
     "start": "@php artisan octane:start --watch",
-    "stop": "@php artisan octane:stop",
-    "validate": "phpinsights analyse"
+    "stop": "@php artisan octane:stop"
   },
   "extra": {
     "laravel": {

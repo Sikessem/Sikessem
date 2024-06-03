@@ -1,5 +1,3 @@
-
-
 // Datatable (jquery)
 $(() => {
   let borderColor;
@@ -58,7 +56,8 @@ $(() => {
           orderable: false,
           searchable: false,
           responsivePriority: 3,
-          render: () => '<input type="checkbox" class="dt-checkboxes form-check-input">',
+          render: () =>
+            '<input type="checkbox" class="dt-checkboxes form-check-input">',
           checkboxes: {
             selectAllRender: '<input type="checkbox" class="form-check-input">',
           },
@@ -74,8 +73,7 @@ $(() => {
 
             if ($image) {
               // For Avatar image
-              const $output =
-                `<img src="${assetsPath}img/avatars/${$image}" alt="Avatar" class="rounded-circle">`;
+              const $output = `<img src="${assetsPath}img/avatars/${$image}" alt="Avatar" class="rounded-circle">`;
             } else {
               // For Avatar badge
               const stateNum = Math.floor(Math.random() * 6);
@@ -94,12 +92,10 @@ $(() => {
               $initials = (
                 ($initials.shift() || "") + ($initials.pop() || "")
               ).toUpperCase();
-              $output =
-                `<span class="avatar-initial rounded-circle bg-label-${$state}">${$initials}</span>`;
+              $output = `<span class="avatar-initial rounded-circle bg-label-${$state}">${$initials}</span>`;
             }
             // Creates full output for row
-            const $row_output =
-              `<div class="d-flex justify-content-start align-items-center customer-name"><div class="avatar-wrapper"><div class="avatar me-2">${$output}</div></div><div class="d-flex flex-column"><a href="${customerView}" ><span class="fw-medium">${$name}</span></a><small class="text-muted">${$email}</small></div></div>`;
+            const $row_output = `<div class="d-flex justify-content-start align-items-center customer-name"><div class="avatar-wrapper"><div class="avatar me-2">${$output}</div></div><div class="d-flex flex-column"><a href="${customerView}" ><span class="fw-medium">${$name}</span></a><small class="text-muted">${$email}</small></div></div>`;
             return $row_output;
           },
         },
@@ -126,8 +122,7 @@ $(() => {
               const $output_code = `<i class ="fis fi fi-xx rounded-circle me-2 fs-3"></i>`;
             }
 
-            const $row_output =
-              `<div class="d-flex justify-content-start align-items-center customer-country"><div>${$output_code}</div><div><span>${$plan}</span></div></div>`;
+            const $row_output = `<div class="d-flex justify-content-start align-items-center customer-country"><div>${$output_code}</div><div><span>${$plan}</span></div></div>`;
             return $row_output;
           },
         },
@@ -183,17 +178,19 @@ $(() => {
                 // prevent avatar to be print
                 format: {
                   body: (inner, coldex, rowdex) => {
-                    if (inner.length <= 0) { return inner; }
+                    if (inner.length <= 0) {
+                      return inner;
+                    }
                     const el = $.parseHTML(inner);
                     let result = "";
                     $.each(el, (index, item) => {
-                      if (
-                        item.classList?.contains("customer-name")
-                      ) {
+                      if (item.classList?.contains("customer-name")) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
-                      } else { result = result + item.innerText; }
+                      } else {
+                        result = result + item.innerText;
+                      }
                     });
                     return result;
                   },
@@ -222,17 +219,19 @@ $(() => {
                 // prevent avatar to be display
                 format: {
                   body: (inner, coldex, rowdex) => {
-                    if (inner.length <= 0) { return inner; }
+                    if (inner.length <= 0) {
+                      return inner;
+                    }
                     const el = $.parseHTML(inner);
                     let result = "";
                     $.each(el, (index, item) => {
-                      if (
-                        item.classList?.contains("customer-name")
-                      ) {
+                      if (item.classList?.contains("customer-name")) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
-                      } else { result = result + item.innerText; }
+                      } else {
+                        result = result + item.innerText;
+                      }
                     });
                     return result;
                   },
@@ -248,17 +247,19 @@ $(() => {
                 // prevent avatar to be display
                 format: {
                   body: (inner, coldex, rowdex) => {
-                    if (inner.length <= 0) { return inner; }
+                    if (inner.length <= 0) {
+                      return inner;
+                    }
                     const el = $.parseHTML(inner);
                     let result = "";
                     $.each(el, (index, item) => {
-                      if (
-                        item.classList?.contains("customer-name")
-                      ) {
+                      if (item.classList?.contains("customer-name")) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
-                      } else { result = result + item.innerText; }
+                      } else {
+                        result = result + item.innerText;
+                      }
                     });
                     return result;
                   },
@@ -274,17 +275,19 @@ $(() => {
                 // prevent avatar to be display
                 format: {
                   body: (inner, coldex, rowdex) => {
-                    if (inner.length <= 0) { return inner; }
+                    if (inner.length <= 0) {
+                      return inner;
+                    }
                     const el = $.parseHTML(inner);
                     let result = "";
                     $.each(el, (index, item) => {
-                      if (
-                        item.classList?.contains("customer-name")
-                      ) {
+                      if (item.classList?.contains("customer-name")) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
-                      } else { result = result + item.innerText; }
+                      } else {
+                        result = result + item.innerText;
+                      }
                     });
                     return result;
                   },
@@ -300,17 +303,19 @@ $(() => {
                 // prevent avatar to be display
                 format: {
                   body: (inner, coldex, rowdex) => {
-                    if (inner.length <= 0) { return inner; }
+                    if (inner.length <= 0) {
+                      return inner;
+                    }
                     const el = $.parseHTML(inner);
                     let result = "";
                     $.each(el, (index, item) => {
-                      if (
-                        item.classList?.contains("customer-name")
-                      ) {
+                      if (item.classList?.contains("customer-name")) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
-                      } else { result = result + item.innerText; }
+                      } else {
+                        result = result + item.innerText;
+                      }
                     });
                     return result;
                   },
@@ -339,9 +344,11 @@ $(() => {
           }),
           type: "column",
           renderer: (api, rowIdx, columns) => {
-            const data = $.map(columns, (col, i) => col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+            const data = $.map(columns, (col, i) =>
+              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "").join("");
+                : "",
+            ).join("");
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -373,8 +380,8 @@ $(() => {
 (() => {
   const phoneMaskList = document.querySelectorAll(".phone-mask");
   const eCommerceCustomerAddForm = document.getElementById(
-      "eCommerceCustomerAddForm",
-    );
+    "eCommerceCustomerAddForm",
+  );
 
   // Phone Number
   if (phoneMaskList) {

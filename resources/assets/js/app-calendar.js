@@ -492,7 +492,7 @@ document.addEventListener("DOMContentLoaded", () => {
               description: eventDescription.value,
             },
             display: "block",
-            allDay: allDaySwitch.checked ? true : false,
+            allDay: !!allDaySwitch.checked,
           };
 
           updateEvent(eventData);

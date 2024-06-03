@@ -58,7 +58,7 @@
     "assumeChangesOnlyAffectDirectDependencies": true,
     "sourceRoot": ".",
     "inlineSourceMap": true,
-    "inlineSources": true,
+    "inlineSources": true
   },
   "files": ["./biome.json"]
 }

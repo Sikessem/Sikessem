@@ -33,7 +33,7 @@ if (document.getElementById("layout-menu")) {
   layoutMenuEl.forEach((element) => {
     menu = new Menu(element, {
       orientation: isHorizontalLayout ? "horizontal" : "vertical",
-      closeChildren: isHorizontalLayout ? true : false,
+      closeChildren: !!isHorizontalLayout,
       // ? This option only works with Horizontal menu
       showDropdownOnHover: localStorage.getItem(
         `templateCustomizer-${templateName}--ShowDropdownOnHover`,
