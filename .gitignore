@@ -1,33 +1,78 @@
-/.phpunit.cache
-/node_modules
-
-/public/build
+# Build
+/public/assets/
+/lib/
+/lib-types/
+/server/
 /public/hot
 /public/storage
+/public/build/
 /storage/*.key
-/vendor
-
-# .env
-.env
-.env.backup
-.env.production
-.phpunit.result.cache
-
-docker-compose.override.yml
-
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-yarn.lock
-package-lock.json
-package-lock.log
-/.fleet
-/.idea
-/.vscode
-
 !/public/assets
 !/public/assets/*
 /public/css
 /public/js
-/public/mix-manifest.json
+
+# Environment
+.env
+.env.backup
+.env.production
+
+# Development
+/node_modules/
+/vendor/
+Homestead.json
+Homestead.yaml
+bun.lockb
+yarn.lock*
+pnpm-lock.yaml
+package-lock.json
+auth.json
+
+# Logs
+logs/
+*.log
+error_log*
+lerna-debug.log*
+npm-debug.log*
+package-lock.log
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache
+*.cache
+.mf
+.vscode/
+.rollup.cache
+tsconfig.tsbuildinfo
+
+# Backups
+*.backup
+backup_*
+
+# Editor
+/.fleet
+/.idea
+.vscode/
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Yarn
+.yarn/*
+!.yarn/releases
+
+# Tests
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/.phpunit.cache
+.phpunit.result.cache
+
+# Docker
+docker-compose.override.yml

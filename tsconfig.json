@@ -1,5 +1,11 @@
 {
-  "include": ["resources**/*"],
+  "include": [
+    "resources/design/**/*",
+    "resources/views/**/*",
+    "public/lib",
+    "public/js/main.js",
+    "public/js"
+  ],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "allowJs": true,
@@ -21,6 +27,21 @@
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "./resources/design/types",
+      "./node_modules/@types",
+      "./node_modules"
+    ],
+    "types": ["bun", "node", "vite/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./resources/assets/*"],
+      "~/*": ["./resources/design/*"]
+    },
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
     "noImplicitReturns": true,
     "pretty": true,
     "useDefineForClassFields": true,
@@ -32,19 +53,12 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "skipLibCheck": true,
     "allowArbitraryExtensions": true,
     "verbatimModuleSyntax": true,
     "assumeChangesOnlyAffectDirectDependencies": true,
     "sourceRoot": ".",
     "inlineSourceMap": true,
     "inlineSources": true,
-    "types": ["bun", "node", "vite/client"],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./resources/assets/*"],
-      "~/*": ["./resources/design/*"]
-    }
   },
   "files": ["./biome.json"]
 }

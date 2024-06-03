@@ -1,15 +1,4 @@
-* text eol=lf
-* text=auto
-
-*.blade.php diff=html
-*.css diff=css
-*.html diff=html
-*.md diff=markdown
-*.php diff=php
-
-/.github export-ignore
-CHANGELOG.md export-ignore
-
+* text=auto eol=lf
 
 ## GITATTRIBUTES FOR WEB PROJECTS
 #
@@ -94,6 +83,7 @@ readme            text
 TODO              text
 
 # Templates
+*.blade.php       text diff=html
 *.dot             text
 *.ejs             text
 *.erb             text
@@ -122,6 +112,8 @@ TODO              text
 .gitconfig        text
 .htaccess         text
 *.lock            text -diff
+bun.lockb         binary
+bunfig.toml       text eol=lf -diff
 package.json      text eol=lf
 package-lock.json text eol=lf -diff
 pnpm-lock.yaml    text eol=lf -diff
@@ -154,6 +146,7 @@ Procfile          text
 *.png             binary
 *.psb             binary
 *.psd             binary
+
 # SVG treated as an asset (binary) by default.
 # *.svg             text
 # If you want to treat it as binary,
@@ -218,3 +211,8 @@ Procfile          text
 
 # Ignore files (like .npmignore or .gitignore)
 *.*ignore         text
+
+.styleci.yml export-ignore
+/.github export-ignore
+CHANGELOG.md export-ignore
+

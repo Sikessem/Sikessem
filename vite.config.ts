@@ -5,10 +5,8 @@ import { defineConfig } from "vite";
 
 /**
  * Get Files from a directory
- * @param {string} query
- * @returns array
  */
-function GetFilesArray(query) {
+function GetFilesArray(query: string): string[] {
   return glob.sync(query);
 }
 /**
@@ -62,6 +60,8 @@ export default defineConfig({
   plugins: [
     laravel({
       input: [
+        "resources/design/app.scss",
+        "resources/design/app.ts",
         "resources/assets/css/demo.css",
         "resources/js/app.js",
         ...pageJsFiles,
@@ -78,4 +78,9 @@ export default defineConfig({
     html(),
     libsWindowAssignment(),
   ],
+  resolve: {
+    alias: {
+      "@assets": "resources/assets",
+    },
+  },
 });

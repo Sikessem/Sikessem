@@ -34,5 +34,5 @@ $breadcrumbs = [['link' => 'home', 'name' => 'Home'], ['link' => 'javascript:voi
   @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
     @livewire('profile.delete-user-form')
   @endif
-
 @endsection
+

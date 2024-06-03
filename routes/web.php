@@ -41,6 +41,7 @@ use App\Http\Controllers\apps\UserViewBilling;
 use App\Http\Controllers\apps\UserViewConnections;
 use App\Http\Controllers\apps\UserViewNotifications;
 use App\Http\Controllers\apps\UserViewSecurity;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\authentications\ForgotPasswordBasic;
 use App\Http\Controllers\authentications\ForgotPasswordCover;
 use App\Http\Controllers\authentications\LoginBasic;
@@ -159,6 +160,22 @@ use App\Http\Controllers\wizard_example\Checkout as WizardCheckout;
 use App\Http\Controllers\wizard_example\CreateDeal;
 use App\Http\Controllers\wizard_example\PropertyListing;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
+
+Route::post('/auth', AuthController::class);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/auth/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
 // Main Page Route
 Route::get('/', fn () => view('index'));

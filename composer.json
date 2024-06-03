@@ -1,29 +1,21 @@
 {
-  "name": "siguici/sikessem.com",
+  "name": "sikessem/sikessem.com",
   "type": "project",
-  "version": "0.0.0",
-  "description": "The Sikessem Website.",
-  "keywords": ["sikessem", "website"],
+  "description": "The Sikessem Web Application",
+  "keywords": ["sikessem", "web-application"],
   "license": "AGPL-3.0-only",
+  "version": "0.0.0",
   "require": {
     "php": ">=8.3",
-    "guzzlehttp/guzzle": "^7.8",
-    "laravel/framework": "^10.48",
-    "laravel/jetstream": "^4.3",
-    "laravel/sanctum": "^3.3",
+    "laravel/framework": "^11.2",
+    "laravel/jetstream": "^5.0",
+    "laravel/sanctum": "^4.0",
     "laravel/tinker": "^2.9",
     "livewire/livewire": "^3.4"
   },
   "require-dev": {
-    "fakerphp/faker": "^1.23",
-    "laravel/pint": "^1.15",
     "laravel/sail": "^1.29",
-    "mockery/mockery": "^1.6",
-    "nunomaduro/collision": "^7.10",
-    "pestphp/pest": "^2.34",
-    "pestphp/pest-plugin-laravel": "^2.3",
-    "sikessem/laravel-devtools": "^0.9.0",
-    "spatie/laravel-ignition": "^2.5"
+    "sikessem/laravel-devtools": "^0.10.0"
   },
   "autoload": {
     "psr-4": {
@@ -49,7 +41,10 @@
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ],
-    "post-create-project-cmd": ["@php artisan key:generate --ansi"],
+    "post-create-project-cmd": [
+        "@php artisan key:generate --ansi",
+        "@php artisan migrate --graceful --ansi"
+    ],
     "analyse": "phpstan analyse --ansi --memory-limit=-1 --debug",
     "check": "pint --test -v",
     "debug": [
