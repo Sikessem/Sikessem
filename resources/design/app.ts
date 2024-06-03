@@ -1,4 +1,4 @@
 import "@fontsource-variable/figtree";
 import "./bootstrap";
 
-import.meta.glob(["../assets/**/*"]);
+import.meta.glob(["../assets/*"]);
