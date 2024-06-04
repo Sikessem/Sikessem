@@ -15,7 +15,7 @@ class MakeAdminCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:admin {name} {username?} {email?} {password?} {role?}';
+    protected $signature = 'make:admin {name : The full name of the admin} {--u|username= : The (unique) username of the admin} {--e|email= : The email address of the admin} {--p|password= : The password of the admin} {--r|role=admin : The role of the admin}';
 
     /**
      * The console command description.
@@ -29,9 +29,49 @@ class MakeAdminCommand extends Command
      */
     public function handle()
     {
+        $name = $this->argument('name');
+
+        $username = $this->option('username');
+        if (! $username) {
+            $username = Str::slug($name);
+            if (! $this->confirm("Would you like to use '{$username}' as the username?", true)) {
+                $username = $this->ask('What is the admin username?');
+            }
+        }
+
+        $email = $this->option('email');
+        if (! $email) {
+            $email = Admin::where('username', $username)->first()?->email ?? "{$username}@sikessem.com";
+            if (! $this->confirm("Would you like to use '{$email}' as the email?", true)) {
+                $email = $this->ask('What is the admin email address?');
+            }
+        }
+
+        $exists = Admin::where('username', $username)->exists() || Admin::where('email', $email)->exists();
+
+        $this->info(($exists ? 'Updating' : 'Creating') . " admin '{$name}' with username '{$username}' and email '{$email}'...");
+
+        $password = $this->option('password');
+
+        if ($password) {
+            $this->warn('It is not safe to use the --password option');
+        }
+
+        if (!$password && (!$exists || $this->confirm("Would you like to change the admin password?", true))) {
+            $password = $this->secret('Please enter the '.($exists ? 'new ' : '').'admin password');
+            do {
+                if (isset($confirmedPassword)) {
+                    $this->error('Passwords do not match. Please try again.');
+                }
+                $confirmedPassword = $this->secret('Please confirm the '.($exists ? 'new ' : '').'admin password');
+            } while ($password !== $confirmedPassword);
+        }
+
+        $admin = Admin::updateOrCreate(['username' => $username, 'email' => $email], ['name' => $name, 'password' => Hash::make($password)]);
+
         $guard = config('admin.guard', 'admin');
-        $role = $this->argument('role');
-        $defaultRole = config('admin.role', 'admin');
+        $role = $this->option('role');
+        $defaultRole = $exists ? $admin->roles->first()->name : config('admin.role', 'admin');
 
         if (!$role && $this->confirm("Would you like to use the '{$defaultRole}' role?", true)) {
             $role = $defaultRole;
@@ -41,20 +81,10 @@ class MakeAdminCommand extends Command
 
         $this->info("Using '{$role}' role");
         $role = Role::firstOrCreate(['name' => $role], ['guard_name' => $guard]);
-
-        $name = $this->argument('name');
-        $this->info("Making '{$name}' with '{$role->name}' role");
-
-        $username = $this->argument('username') ?? Str::slug($name);
-        $email = $this->argument('email') ?? "{$username}@sikessem.com";
-        
-        $password = $this->argument('password') ?? Admin::where('username', $username)->first() ?: Admin::where('email', $email) ?: $this->secret('Please enter a password');
-
-        $admin = Admin::updateOrCreate(['username' => $username, 'email' => $email], ['name' => $name, 'password' => Hash::make($password)]);
         $admin->assignRole($role);
 
-        $this->info("Admin '{$admin->name}' created successfully with role '{$role->name}'!");
-        $this->info('Details:');
+        $this->info("{$name}({$username})<{$email}> ".($exists ? 'created' : 'updated').' successfully!');
+
         $this->table(['Name', 'Role', 'Guard', 'Username', 'Email'], [[$admin->name, $role->name, $guard, $admin->username, $admin->email]]);
     }
 }
