@@ -85,6 +85,7 @@ class MakeAdminCommand extends Command
 
         $this->info("{$name}({$username})<{$email}> ".($exists ? 'created' : 'updated').' successfully!');
 
-        $this->table(['Name', 'Role', 'Guard', 'Username', 'Email'], [[$admin->name, $role->name, $guard, $admin->username, $admin->email]]);
+        $admins = Admin::with('roles')->get()->map(fn ($admin) => [$admin->name, $admin->roles->implode('name', ','), $admin->username, $admin->email])->toArray();
+        $this->table(['Name', 'Role', 'Username', 'Email'], $admins);
     }
 }
