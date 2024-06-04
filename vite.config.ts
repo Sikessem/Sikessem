@@ -2,6 +2,7 @@ import html from "@rollup/plugin-html";
 import { glob } from "glob";
 import laravel from "laravel-vite-plugin";
 import { defineConfig } from "vite";
+import { join } from "node:path";
 
 /**
  * Get Files from a directory
@@ -80,7 +81,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@assets": "resources/assets",
+      "@assets": join(import.meta.dirname, "./resources/assets"),
     },
   },
 });
