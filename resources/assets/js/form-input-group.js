@@ -3,7 +3,7 @@
 
   // Speech To Text
   if (speechToText.length) {
-    const SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+    SpeechRecognition = SpeechRecognition ?? webkitSpeechRecognition;
     if (SpeechRecognition !== undefined && SpeechRecognition !== null) {
       const recognition = new SpeechRecognition();
       let listening = false;

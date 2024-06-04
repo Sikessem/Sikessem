@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
         newRecord.addEventListener("click", () => {
           offCanvasEl = new bootstrap.Offcanvas(offCanvasElement);
           // Empty fields on offCanvas open
-          (offCanvasElement.querySelector(".dt-full-name").value = ""),
-            (offCanvasElement.querySelector(".dt-post").value = ""),
-            (offCanvasElement.querySelector(".dt-email").value = ""),
-            (offCanvasElement.querySelector(".dt-date").value = ""),
-            (offCanvasElement.querySelector(".dt-salary").value = "");
+          offCanvasElement.querySelector(".dt-full-name").value = "";
+          offCanvasElement.querySelector(".dt-post").value = "";
+          offCanvasElement.querySelector(".dt-email").value = "";
+          offCanvasElement.querySelector(".dt-date").value = "";
+          offCanvasElement.querySelector(".dt-salary").value = "";
           // Open offCanvas with form
           offCanvasEl.show();
         });

@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ------------------------------
     // Email list scrollbar
     if (emailList) {
-      const emailListInstance = new PerfectScrollbar(emailList, {
+      new PerfectScrollbar(emailList, {
         wheelPropagation: false,
         suppressScrollX: true,
       });

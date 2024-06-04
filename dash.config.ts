@@ -54,7 +54,7 @@ function libsWindowAssignment() {
   return {
     name: "libsWindowAssignment",
 
-    transform(src, id) {
+    transform(src: string, id: string) {
       if (id.includes("jkanban.js")) {
         return src.replace("this.jKanban", "window.jKanban");
       }

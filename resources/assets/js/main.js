@@ -482,8 +482,7 @@ if (typeof $ !== "undefined") {
       // Filter config
       const filterConfig = (data) =>
         function findMatches(q, cb) {
-          let matches;
-          matches = [];
+          const matches = [];
           data.filter((i) => {
             if (i.name.toLowerCase().startsWith(q.toLowerCase())) {
               matches.push(i);

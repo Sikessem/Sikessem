@@ -1,5 +1,4 @@
 (async () => {
-  let boards;
   const kanbanSidebar = document.querySelector(".kanban-update-item-sidebar");
   const kanbanWrapper = document.querySelector(".kanban-wrapper");
   const commentEditor = document.querySelector(".comment-editor");
@@ -22,7 +21,7 @@
   if (!kanbanResponse.ok) {
     console.error("error", kanbanResponse);
   }
-  boards = await kanbanResponse.json();
+  const boards = await kanbanResponse.json();
 
   // datepicker init
   if (datePicker) {

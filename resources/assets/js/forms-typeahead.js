@@ -2,10 +2,8 @@ $(() => {
   // String Matcher function
   const substringMatcher = (strs) =>
     function findMatches(q, cb) {
-      let matches;
-      let substrRegex;
-      matches = [];
-      substrRegex = new RegExp(q, "i");
+      const matches = [];
+      const substrRegex = new RegExp(q, "i");
       $.each(strs, (i, str) => {
         if (substrRegex.test(str)) {
           matches.push(str);
