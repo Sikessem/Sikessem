@@ -13,14 +13,20 @@
   "packageManager": "pnpm@9.1.4",
   "scripts": {
     "build": "vite build",
+    "build.app": "vite build --config app.config.ts",
+    "build.dash": "vite build --config dash.config.ts",
     "check": "biome ci .",
     "dev": "vite",
+    "dev.app": "vite --config app.config.ts",
+    "dev.dash": "vite --config dash.config.ts",
     "fix": "pnpm format.fix && pnpm lint.fix",
     "format": "biome format .",
     "format.fix": "biome format --write .",
     "lint": "biome check .",
     "lint.fix": "biome check --apply-unsafe .",
-    "prod": "vite build",
+    "prod": "pnpm type.check && pnpm build",
+    "prod.app": "pnpm type.check && pnpm build.app",
+    "prod.dash": "pnpm type.check && pnpm build.dash",
     "type.check": "tsc --incremental --noEmit"
   },
   "devDependencies": {
