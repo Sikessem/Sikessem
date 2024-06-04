@@ -34,16 +34,26 @@ class MakeAdminCommand extends Command
         $username = $this->option('username');
         if (! $username) {
             $username = Str::slug($name);
-            if (! $this->confirm("Would you like to use '{$username}' as the username?", true)) {
-                $username = $this->ask('What is the admin username?');
+            if (! $this->confirm("Would you like to use the username {$username}?", true)) {
+                do {
+                    if (isset($exists) && $exists) {
+                        $this->error("'{$username}' already exists. Please choose another username.");
+                        unset($exists);
+                    }
+                    $username = Str::slug($this->ask('What is the admin username?'));
+                } while(($exists = Admin::where('username', $username)->exists()) && ! $this->confirm("{$username} already exists. Do you want to use it?", true));
             }
         }
 
         $email = $this->option('email');
         if (! $email) {
             $email = Admin::where('username', $username)->first()?->email ?? "{$username}@sikessem.com";
-            if (! $this->confirm("Would you like to use '{$email}' as the email?", true)) {
-                $email = $this->ask('What is the admin email address?');
+            if (! $this->confirm("Would you like to use the email address '{$email}'?", true)) {
+                do {
+                    if (isset($exists) && $exists) {
+                        $this->error("'{$email}' already exists. Please choose another email address.");
+                    }
+                } while(($exists = Admin::where('email', $email)->exists()) && ! $this->confirm("{$email} already exists. Do you want to use it?", true));
             }
         }
 
