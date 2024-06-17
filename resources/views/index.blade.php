@@ -47,7 +47,7 @@ https://templatemo.com/tm-570-chain-app-dev
 
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-12">
           <nav class="main-nav">
