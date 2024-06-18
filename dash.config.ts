@@ -59,7 +59,7 @@ function libsWindowAssignment() {
         return src.replace("this.jKanban", "window.jKanban");
       }
       if (id.includes("vfs_fonts")) {
-        return src.replace("this.pdfMake", "window.pdfMake");
+        return src.replace(/this\.pdfMake/g, "window.pdfMake");
       }
     },
   };
