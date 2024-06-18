@@ -1,32 +1,22 @@
 import {
-  laravelConfig as appLaravelConfig,
-  plugins as appPlugins,
-} from "./app.config";
-import {
-  laravelConfig as dashLaravelConfig,
-  plugins as dashPlugins,
-} from "./dash.config";
-import {
   laravel,
-  mainLaravelConfig,
-  mainViteConfig,
+  laravelConfig,
   mergeConfig,
   mergeInput,
   vite,
+  viteConfig,
 } from "./sikessem.config";
 
 export default vite(
-  mergeConfig(mainViteConfig, {
+  mergeConfig(viteConfig, {
     plugins: [
       laravel({
-        ...mainLaravelConfig,
-        input: mergeInput(mainLaravelConfig.input, [
-          ...appLaravelConfig.input,
-          ...dashLaravelConfig.input,
+        ...laravelConfig,
+        input: mergeInput(laravelConfig.input, [
+          "resources/design/app.scss",
+          "resources/design/app.ts",
         ]),
       }),
-      ...appPlugins,
-      ...dashPlugins,
     ],
   }),
 );

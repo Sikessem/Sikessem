@@ -8,9 +8,6 @@ import type {
   UserConfig as ViteUserConfig,
 } from "vite";
 
-export type ViteConfig = ViteUserConfig;
-export type VitePlugins = VitePlugin[];
-
 export interface LaravelConfig {
   /**
    * The path or paths of the entry points to compile.
@@ -98,12 +95,12 @@ export const refreshPaths = [
   "routes/**",
 ].filter((path) => fs.existsSync(path.replace(/\*\*$/, "")));
 
-export const mainLaravelConfig: LaravelConfig = {
+export const laravelConfig: LaravelConfig = {
   input: [],
   refresh: true,
 };
 
-export const mainViteConfig: ViteConfig = {
+export const viteConfig: ViteUserConfig = {
   resolve: {
     alias: {
       "@assets": "/resources/assets",

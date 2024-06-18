@@ -5,11 +5,11 @@ import {
   type ViteConfig,
   type VitePlugins,
   laravel,
-  mainLaravelConfig,
-  mainViteConfig,
+  laravelConfig,
   mergeConfig,
   mergeInput,
   vite,
+  viteConfig,
 } from "./sikessem.config";
 
 /**
@@ -65,30 +65,26 @@ function libsWindowAssignment() {
   };
 }
 
-export const laravelConfig: LaravelConfig = {
-  ...mainLaravelConfig,
-  input: mergeInput(mainLaravelConfig.input, [
-    "resources/assets/css/demo.css",
-    "resources/js/app.js",
-    ...pageJsFiles,
-    ...vendorJsFiles,
-    ...LibsJsFiles,
-    "resources/js/laravel-user-management.js", // Processing Laravel User Management CRUD JS File
-    ...CoreScssFiles,
-    ...LibsScssFiles,
-    ...LibsCssFiles,
-    ...FontsScssFiles,
-  ]),
-};
-
-export const plugins: VitePlugins = [
-  laravel(laravelConfig),
-  html(),
-  libsWindowAssignment(),
-];
-
-export const viteConfig: ViteConfig = mergeConfig(mainViteConfig, {
-  plugins,
-});
-
-export default vite(viteConfig);
+export default vite(
+  mergeConfig(viteConfig, {
+    plugins: [
+      laravel({
+        ...laravelConfig,
+        input: mergeInput(laravelConfig.input, [
+          "resources/assets/css/demo.css",
+          "resources/js/app.js",
+          ...pageJsFiles,
+          ...vendorJsFiles,
+          ...LibsJsFiles,
+          "resources/js/laravel-user-management.js", // Processing Laravel User Management CRUD JS File
+          ...CoreScssFiles,
+          ...LibsScssFiles,
+          ...LibsCssFiles,
+          ...FontsScssFiles,
+        ]),
+      }),
+      html(),
+      libsWindowAssignment(),
+    ],
+  }),
+);
