@@ -2,8 +2,8 @@ import html from "@rollup/plugin-html";
 import { glob } from "glob";
 import {
   type LaravelConfig,
-  type Plugins,
   type ViteConfig,
+  type VitePlugins,
   laravel,
   mainLaravelConfig,
   mainViteConfig,
@@ -59,7 +59,7 @@ function libsWindowAssignment() {
         return src.replace("this.jKanban", "window.jKanban");
       }
       if (id.includes("vfs_fonts")) {
-        return src.replaceAll("this.pdfMake", "window.pdfMake");
+        return src.replace("this.pdfMake", "window.pdfMake");
       }
     },
   };
@@ -81,7 +81,7 @@ export const laravelConfig: LaravelConfig = {
   ]),
 };
 
-export const plugins: Plugins = [
+export const plugins: VitePlugins = [
   laravel(laravelConfig),
   html(),
   libsWindowAssignment(),
