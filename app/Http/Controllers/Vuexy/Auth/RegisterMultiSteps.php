@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\authentications;
+namespace App\Http\Controllers\Vuexy\Auth;
 
 use App\Http\Controllers\Controller;
 
@@ -10,6 +10,6 @@ class RegisterMultiSteps extends Controller
     {
         $pageConfigs = ['myLayout' => 'blank'];
 
-        return view('content.authentications.auth-register-multisteps', ['pageConfigs' => $pageConfigs]);
+        return view('content.vuexy.auth-register-multisteps', ['pageConfigs' => $pageConfigs]);
     }
 }

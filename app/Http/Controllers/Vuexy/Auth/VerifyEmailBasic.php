@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\authentications;
+namespace App\Http\Controllers\Vuexy\Auth;
 
 use App\Http\Controllers\Controller;
 
@@ -10,6 +10,6 @@ class VerifyEmailBasic extends Controller
     {
         $pageConfigs = ['myLayout' => 'blank'];
 
-        return view('content.authentications.auth-verify-email-basic', ['pageConfigs' => $pageConfigs]);
+        return view('content.vuexy.auth-verify-email-basic', ['pageConfigs' => $pageConfigs]);
     }
 }
