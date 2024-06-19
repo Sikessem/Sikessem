@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\cards;
+namespace App\Http\Controllers\Cards;
 
 use App\Http\Controllers\Controller;
 
@@ -8,6 +8,6 @@ class CardAdvance extends Controller
 {
     public function index()
     {
-        return view('content.cards.cards-advance');
+        return view('content.vuexy.cards-advance');
     }
 }
