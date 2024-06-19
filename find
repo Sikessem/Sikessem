@@ -1,0 +1,43 @@
+#!/usr/bin/env php
+<?php
+
+$path = getcwd().DIRECTORY_SEPARATOR.($argv[1] ?? '');
+
+if (!file_exists($path)) {
+    echo $path, ' does not exist', PHP_EOL;
+    exit(1);
+}
+
+if (!isset($argv[2])) {
+    exit('Nothing to do');
+}
+
+$search = $argv[2];
+
+if (isset($argv[3])) {
+    $replace = $argv[3];
+    $message = "Replace $search by $replace";
+    $callback = fn (string $file) => file_put_contents($file,  str_starts_with($search, '/') && str_ends_with($search, '/') ? preg_replace($search, $replace, file_get_contents($file)) : str_replace($search, $replace, file_get_contents($file)));
+} else {
+    $message = "Search $search";
+    $callback = fn (string $file) => str_starts_with($search, '/') && str_ends_with($search, '/') ? preg_match($search, file_get_contents($file)) > 0 : str_contains(file_get_contents($file), $search);
+}
+
+function find_path(string $path, callable $callback, string $message) {
+    return is_dir($path) ? find_dir($path, $callback, $message) : find_file($path, $callback, $message);
+}
+
+function find_file(string $path, callable $callback, string $message) {
+    echo $message, ' in ', $path, ' ', ($callback($path) ? 'OK' : 'Failed'), PHP_EOL;
+}
+
+function find_dir(string $path, callable $callback, string $message) {
+    $files = scandir($path);
+    foreach ($files as $file) {
+        if (!in_array($file, ['.', '..'])) {
+            find_path($path.DIRECTORY_SEPARATOR.$file, $callback, $message);
+        }
+    }
+}
+
+find_path($path, $callback, $message);
