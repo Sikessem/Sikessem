@@ -38,6 +38,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Cache dependencies
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: dependencies-php-${{ matrix.php-version }}-composer-${{ hashFiles('composer.json') }}
+          restore-keys: |
+            dependencies-php-${{ matrix.php-version }}-composer-
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
