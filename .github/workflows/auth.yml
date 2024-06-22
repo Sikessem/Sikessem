@@ -77,18 +77,13 @@ jobs:
       - name: Setup Environment
         run: |
           cp .env.example .env
+          php artisan key:generate
           set -e
           sed -i "s|^\(APP_ENV=\s*\).*$|\1$APP_ENV|" .env
           sed -i "s|^\(APP_URL=\s*\).*$|\1$APP_URL|" .env
           sed -i "s|^\(DB_DATABASE=\s*\).*$|\1$DB_NAME|" .env
           sed -i "s|^\(DB_USERNAME=\s*\).*$|\1\"$DB_USERNAME\"|" .env
           sed -i "s|^\(DB_PASSWORD=\s*\).*$|\1\"$DB_PASSWORD\"|" .env
-
-      - name: Generate Key
-        run: |
-          set -e
-          php artisan key:generate
-          php artisan queue:restart
 
       - name: Directory Permissions
         run: |
