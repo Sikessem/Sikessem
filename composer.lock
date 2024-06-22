@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5923222929711b40e65ee8715f7ceb5b",
+    "content-hash": "73caede95c28a4b3f243f6511612211f",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -5742,6 +5742,85 @@
                 "source": "https://github.com/sikessem/framework"
             },
             "time": "2024-06-22T04:38:05+00:00"
+        },
+        {
+            "name": "sikessem/ui",
+            "version": "v0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sikessem/ui.git",
+                "reference": "63244aa3da281ce4ea9e89689d3a70dd0e3c44b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sikessem/ui/zipball/63244aa3da281ce4ea9e89689d3a70dd0e3c44b3",
+                "reference": "63244aa3da281ce4ea9e89689d3a70dd0e3c44b3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/view": "^11.11",
+                "php": ">=8.2"
+            },
+            "conflict": {
+                "laravel/framework": "<11.0.0 || >=12.0.0"
+            },
+            "require-dev": {
+                "sikessem/framework": "^0.6.0",
+                "sikessem/laravel-devtools": "^0.11.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Sikessem\\UI\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "UI": "Sikessem\\UI\\Facade"
+                    },
+                    "dont-discover": []
+                },
+                "branch-alias": {
+                    "dev-main": "0.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/ui.php"
+                ],
+                "psr-4": {
+                    "Sikessem\\UI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sigui Kessé Emmanuel",
+                    "email": "contact@sigui.ci",
+                    "homepage": "https://github.com/siguici"
+                }
+            ],
+            "description": "Blade and TailwindCSS components to design faster.",
+            "homepage": "https://sikessem.github.io/packages/ui",
+            "keywords": [
+                "blade",
+                "components",
+                "css",
+                "laravel",
+                "php",
+                "sikessem",
+                "tailwindcss",
+                "typescript",
+                "widgets"
+            ],
+            "support": {
+                "chat": "https://github.com/orgs/sikessem/discussions",
+                "issues": "https://github.com/sikessem/ui/issues",
+                "source": "https://github.com/sikessem/ui"
+            },
+            "time": "2024-06-22T19:59:51+00:00"
         },
         {
             "name": "spatie/laravel-permission",
