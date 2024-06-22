@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a33da930d0cda9ab8c69d060853bdf4a",
+    "content-hash": "5923222929711b40e65ee8715f7ceb5b",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -14254,33 +14254,33 @@
         },
         {
             "name": "sikessem/devtools",
-            "version": "v0.7.0",
+            "version": "v0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sikessem/devtools.git",
-                "reference": "bfa2ed4ad4c8ed717ab2f77b47f01a7c50a25509"
+                "reference": "cceccbf434f90b84fbc87f0aa343a358791aded8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sikessem/devtools/zipball/bfa2ed4ad4c8ed717ab2f77b47f01a7c50a25509",
-                "reference": "bfa2ed4ad4c8ed717ab2f77b47f01a7c50a25509",
+                "url": "https://api.github.com/repos/sikessem/devtools/zipball/cceccbf434f90b84fbc87f0aa343a358791aded8",
+                "reference": "cceccbf434f90b84fbc87f0aa343a358791aded8",
                 "shasum": ""
             },
             "require": {
                 "fakerphp/faker": "^1.23",
-                "laravel/pint": "^1.15",
+                "laravel/pint": "^1.16",
                 "mockery/mockery": "^1.6",
                 "nunomaduro/collision": "^8.1",
                 "nunomaduro/phpinsights": "^2.11",
                 "pestphp/pest": "^2.34",
                 "php": ">=8.2",
-                "phpstan/phpstan": "^1.10",
+                "phpstan/phpstan": "^1.11",
                 "phpunit/phpunit": "^10.5",
-                "rector/rector": "^1.0",
-                "spatie/ignition": "^1.13",
+                "rector/rector": "^1.1",
+                "spatie/ignition": "^1.14",
                 "spatie/ray": "^1.41",
-                "symfony/var-dumper": "^7.0",
-                "vimeo/psalm": "^5.23"
+                "symfony/var-dumper": "^7.1",
+                "vimeo/psalm": "^5.25"
             },
             "type": "library",
             "extra": {
@@ -14347,20 +14347,20 @@
                 "issues": "https://github.com/sikessem/devtools/issues",
                 "source": "https://github.com/sikessem/devtools"
             },
-            "time": "2024-04-09T17:58:14+00:00"
+            "time": "2024-06-22T03:25:10+00:00"
         },
         {
             "name": "sikessem/laravel-devtools",
-            "version": "0.10.0",
+            "version": "v0.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sikessem/laravel-devtools.git",
-                "reference": "77c159535bc4e855de19893c2d0cb3a21f34e173"
+                "reference": "762be4b56f67d4278f26cffcb25b940a514cc30d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sikessem/laravel-devtools/zipball/77c159535bc4e855de19893c2d0cb3a21f34e173",
-                "reference": "77c159535bc4e855de19893c2d0cb3a21f34e173",
+                "url": "https://api.github.com/repos/sikessem/laravel-devtools/zipball/762be4b56f67d4278f26cffcb25b940a514cc30d",
+                "reference": "762be4b56f67d4278f26cffcb25b940a514cc30d",
                 "shasum": ""
             },
             "require": {
@@ -14368,17 +14368,17 @@
                 "barryvdh/laravel-ide-helper": "^3.0",
                 "larastan/larastan": "^2.9",
                 "laravel/sail": "^1.29",
-                "orchestra/testbench": "^9.0",
+                "orchestra/testbench": "^9.1",
                 "pestphp/pest-plugin-faker": "^2.0",
-                "pestphp/pest-plugin-laravel": "^2.3",
+                "pestphp/pest-plugin-laravel": "^2.4",
                 "pestphp/pest-plugin-livewire": "^2.1",
                 "pestphp/pest-plugin-watch": "^2.1",
                 "php": ">=8.2",
                 "psalm/plugin-laravel": "^2.11",
-                "sikessem/devtools": "^0.7.0",
-                "spatie/laravel-ignition": "^2.5",
+                "sikessem/devtools": "^0.8.0",
+                "spatie/laravel-ignition": "^2.8",
                 "spatie/laravel-ray": "^1.36",
-                "wulfheart/laravel-actions-ide-helper": "^0.7.2"
+                "wulfheart/laravel-actions-ide-helper": "^0.7.3"
             },
             "type": "library",
             "extra": {
@@ -14455,7 +14455,7 @@
                 "issues": "https://github.com/sikessem/laravel-devtools/issues",
                 "source": "https://github.com/sikessem/laravel-devtools"
             },
-            "time": "2024-04-12T21:31:16+00:00"
+            "time": "2024-06-22T03:38:02+00:00"
         },
         {
             "name": "slevomat/coding-standard",
@@ -16678,7 +16678,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "laravel/reverb": 10
     },
