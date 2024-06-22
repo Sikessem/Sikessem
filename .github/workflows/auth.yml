@@ -38,6 +38,11 @@ jobs:
     - name: Create sqlite file
       run: touch database/database.sqlite
 
+    - name: Setup .env file
+      run: |
+        cp .env.example .env
+        php artisan key:generate
+
     - name: List out .env
       run: cat .env
 
