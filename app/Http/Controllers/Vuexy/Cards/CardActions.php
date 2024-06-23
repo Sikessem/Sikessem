@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Cards;
+namespace App\Http\Controllers\Vuexy\Cards;
 
 use App\Http\Controllers\Controller;
 
