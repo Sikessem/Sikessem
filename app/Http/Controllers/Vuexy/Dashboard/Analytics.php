@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\dashboard;
+namespace App\Http\Controllers\Vuexy\Dashboard;
 
 use App\Http\Controllers\Controller;
 
@@ -8,6 +8,6 @@ class Analytics extends Controller
 {
     public function index()
     {
-        return view('content.dashboard.dashboards-analytics');
+        return view('content.vuexy.dashboard.analytics');
     }
 }

@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\dashboard\Analytics;
-use App\Http\Controllers\dashboard\Crm;
 use App\Http\Controllers\extended_ui\Avatar;
 use App\Http\Controllers\extended_ui\BlockUI;
 use App\Http\Controllers\extended_ui\DragAndDrop;
@@ -121,6 +119,8 @@ use App\Http\Controllers\Vuexy\Cards\CardStatistics;
 use App\Http\Controllers\Vuexy\Charts\ApexCharts;
 use App\Http\Controllers\Vuexy\Charts\ChartJs;
 use App\Http\Controllers\Vuexy\Chat;
+use App\Http\Controllers\Vuexy\Dashboard\Analytics;
+use App\Http\Controllers\Vuexy\Dashboard\Crm;
 use App\Http\Controllers\Vuexy\EcommerceCustomerAll;
 use App\Http\Controllers\Vuexy\EcommerceCustomerDetailsBilling;
 use App\Http\Controllers\Vuexy\EcommerceCustomerDetailsNotifications;
@@ -162,7 +162,7 @@ use Illuminate\Support\Facades\Route;
 
 // Main Page Route
 Route::get('/', fn () => view('index'));
-Route::get('/dashboard', [Analytics::class, 'index'])->name('dashboard-analytics');
+Route::get('/dashboard/analytics', [Analytics::class, 'index'])->name('dashboard-analytics');
 Route::get('/dashboard/crm', [Crm::class, 'index'])->name('dashboard-crm');
 // locale
 Route::get('lang/{locale}', [LanguageController::class, 'swap']);
