@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\maps;
+namespace App\Http\Controllers\Vuexy\Maps;
 
 use App\Http\Controllers\Controller;
 
@@ -8,6 +8,6 @@ class Leaflet extends Controller
 {
     public function index()
     {
-        return view('content.maps.maps-leaflet');
+        return view('content.vuexy.maps.leaflet');
     }
 }
