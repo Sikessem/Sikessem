@@ -43,7 +43,6 @@ class Admin extends Authenticatable
         'profile_photo_url',
     ];
 
-
     /**
      * The attributes that should be hidden for serialization.
      *
