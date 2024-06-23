@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\charts\ApexCharts;
-use App\Http\Controllers\charts\ChartJs;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\dashboard\Crm;
 use App\Http\Controllers\extended_ui\Avatar;
@@ -120,6 +118,8 @@ use App\Http\Controllers\Vuexy\Cards\CardAnalytics;
 use App\Http\Controllers\Vuexy\Cards\CardBasic;
 use App\Http\Controllers\Vuexy\Cards\CardGamifications;
 use App\Http\Controllers\Vuexy\Cards\CardStatistics;
+use App\Http\Controllers\Vuexy\Charts\ApexCharts;
+use App\Http\Controllers\Vuexy\Charts\ChartJs;
 use App\Http\Controllers\Vuexy\Chat;
 use App\Http\Controllers\Vuexy\EcommerceCustomerAll;
 use App\Http\Controllers\Vuexy\EcommerceCustomerDetailsBilling;
