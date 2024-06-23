@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Devdojo\Auth\Models\User as AuthUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
-use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasPermissions;
@@ -17,7 +17,6 @@ class User extends AuthUser
     use HasApiTokens;
     use HasFactory;
     use HasPermissions;
-    use HasProfilePhoto;
     use HasRoles;
     use HasTeams;
     use Notifiable;
@@ -47,15 +46,6 @@ class User extends AuthUser
     ];
 
     /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array<int, string>
-     */
-    protected $appends = [
-        'profile_photo_url',
-    ];
-
-    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
@@ -66,5 +56,10 @@ class User extends AuthUser
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function profile(): HasOne
+    {
+        return $this->hasOne(Profile::class);
     }
 }
