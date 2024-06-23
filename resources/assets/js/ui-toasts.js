@@ -1,10 +1,10 @@
 (() => {
   // Bootstrap toasts example
   // --------------------------------------------------------------------
-  const toastAnimationExample = document.querySelector(".toast-ex");
-  const toastPlacementExample = document.querySelector(".toast-placement-ex");
-  const toastAnimationBtn = document.querySelector("#showToastAnimation");
-  const toastPlacementBtn = document.querySelector("#showToastPlacement");
+  const toastAnimationExample = document.querySelector('.toast-ex');
+  const toastPlacementExample = document.querySelector('.toast-placement-ex');
+  const toastAnimationBtn = document.querySelector('#showToastAnimation');
+  const toastPlacementBtn = document.querySelector('#showToastPlacement');
   let selectedType;
   let selectedAnimation;
   let selectedPlacement;
@@ -18,10 +18,10 @@
       if (toastAnimation) {
         toastDispose(toastAnimation);
       }
-      selectedType = document.querySelector("#selectType").value;
-      selectedAnimation = document.querySelector("#selectAnimation").value;
+      selectedType = document.querySelector('#selectType').value;
+      selectedAnimation = document.querySelector('#selectAnimation').value;
       toastAnimationExample.classList.add(selectedAnimation);
-      toastAnimationExample.querySelector(".ti").classList.add(selectedType);
+      toastAnimationExample.querySelector('.ti').classList.add(selectedType);
       toastAnimation = new bootstrap.Toast(toastAnimationExample);
       toastAnimation.show();
     };
@@ -33,7 +33,7 @@
       if (toastPlacementExample) {
         toastPlacementExample.classList.remove(selectedType);
         toastPlacementExample
-          .querySelector(".ti")
+          .querySelector('.ti')
           .classList.remove(selectedType);
         DOMTokenList.prototype.remove.apply(
           toastPlacementExample.classList,
@@ -43,7 +43,7 @@
       if (toastAnimationExample) {
         toastAnimationExample.classList.remove(selectedType, selectedAnimation);
         toastAnimationExample
-          .querySelector(".ti")
+          .querySelector('.ti')
           .classList.remove(selectedType);
       }
       toast.dispose();
@@ -55,12 +55,12 @@
       if (toastPlacement) {
         toastDispose(toastPlacement);
       }
-      selectedType = document.querySelector("#selectTypeOpt").value;
+      selectedType = document.querySelector('#selectTypeOpt').value;
       selectedPlacement = document
-        .querySelector("#selectPlacement")
-        .value.split(" ");
+        .querySelector('#selectPlacement')
+        .value.split(' ');
 
-      toastPlacementExample.querySelector(".ti").classList.add(selectedType);
+      toastPlacementExample.querySelector('.ti').classList.add(selectedType);
       DOMTokenList.prototype.add.apply(
         toastPlacementExample.classList,
         selectedPlacement,
@@ -81,10 +81,10 @@ $(() => {
     const msgs = [
       "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.",
       '<div class="mb-3"><input class="input-small form-control" value="Textbox"/>&nbsp;<a href="http://johnpapa.net" target="_blank">This is a hyperlink</a></div><div class="d-flex"><button type="button" id="okBtn" class="btn btn-primary btn-sm me-2 waves-effect waves-light">Close me</button><button type="button" id="surpriseBtn" class="btn btn-sm btn-secondary waves-effect waves-light">Surprise me</button></div>',
-      "Live the Life of Your Dreams",
-      "Believe in Your Self!",
-      "Be mindful. Be grateful. Be positive.",
-      "Accept yourself, love yourself!",
+      'Live the Life of Your Dreams',
+      'Believe in Your Self!',
+      'Be mindful. Be grateful. Be positive.',
+      'Accept yourself, love yourself!',
     ];
     i++;
     if (i === msgs.length) {
@@ -93,51 +93,51 @@ $(() => {
     return msgs[i];
   };
   const getMessageWithClearButton = (msg) => {
-    msg = msg ? msg : "Clear itself?";
+    msg = msg ? msg : 'Clear itself?';
     msg +=
       '<br /><br /><button type="button" class="btn btn-secondary clear waves-effect waves-light">Yes</button>';
     return msg;
   };
-  $("#closeButton").on("click", function () {
-    if ($(this).is(":checked")) {
-      $("#addBehaviorOnToastCloseClick").prop("disabled", false);
+  $('#closeButton').on('click', function () {
+    if ($(this).is(':checked')) {
+      $('#addBehaviorOnToastCloseClick').prop('disabled', false);
     } else {
-      $("#addBehaviorOnToastCloseClick").prop("disabled", true);
-      $("#addBehaviorOnToastCloseClick").prop("checked", false);
+      $('#addBehaviorOnToastCloseClick').prop('disabled', true);
+      $('#addBehaviorOnToastCloseClick').prop('checked', false);
     }
   });
-  $("#showtoast").on("click", () => {
-    const shortCutFunction = $("#toastTypeGroup input:radio:checked").val();
-    const isRtl = $("html").attr("dir") === "rtl";
-    let msg = $("#message").val();
-    const title = $("#title").val() || "";
-    const $showDuration = $("#showDuration");
-    const $hideDuration = $("#hideDuration");
-    const $timeOut = $("#timeOut");
-    const $extendedTimeOut = $("#extendedTimeOut");
-    const $showEasing = $("#showEasing");
-    const $hideEasing = $("#hideEasing");
-    const $showMethod = $("#showMethod");
-    const $hideMethod = $("#hideMethod");
+  $('#showtoast').on('click', () => {
+    const shortCutFunction = $('#toastTypeGroup input:radio:checked').val();
+    const isRtl = $('html').attr('dir') === 'rtl';
+    let msg = $('#message').val();
+    const title = $('#title').val() || '';
+    const $showDuration = $('#showDuration');
+    const $hideDuration = $('#hideDuration');
+    const $timeOut = $('#timeOut');
+    const $extendedTimeOut = $('#extendedTimeOut');
+    const $showEasing = $('#showEasing');
+    const $hideEasing = $('#hideEasing');
+    const $showMethod = $('#showMethod');
+    const $hideMethod = $('#hideMethod');
     const toastIndex = toastCount++;
-    const addClear = $("#addClear").prop("checked");
-    let prePositionClass = "toast-top-right";
+    const addClear = $('#addClear').prop('checked');
+    let prePositionClass = 'toast-top-right';
 
     prePositionClass =
-      typeof toastr.options.positionClass === "undefined"
-        ? "toast-top-right"
+      typeof toastr.options.positionClass === 'undefined'
+        ? 'toast-top-right'
         : toastr.options.positionClass;
 
     toastr.options = {
       maxOpened: 1,
       autoDismiss: true,
-      closeButton: $("#closeButton").prop("checked"),
-      debug: $("#debugInfo").prop("checked"),
-      newestOnTop: $("#newestOnTop").prop("checked"),
-      progressBar: $("#progressBar").prop("checked"),
+      closeButton: $('#closeButton').prop('checked'),
+      debug: $('#debugInfo').prop('checked'),
+      newestOnTop: $('#newestOnTop').prop('checked'),
+      progressBar: $('#progressBar').prop('checked'),
       positionClass:
-        $("#positionGroup input:radio:checked").val() || "toast-top-right",
-      preventDuplicates: $("#preventDuplicates").prop("checked"),
+        $('#positionGroup input:radio:checked').val() || 'toast-top-right',
+      preventDuplicates: $('#preventDuplicates').prop('checked'),
       onclick: null,
       rtl: isRtl,
     };
@@ -148,15 +148,15 @@ $(() => {
       toastr.clear();
     }
 
-    if ($("#addBehaviorOnToastClick").prop("checked")) {
+    if ($('#addBehaviorOnToastClick').prop('checked')) {
       toastr.options.onclick = () => {
-        alert("You can perform some custom action after a toast goes away");
+        alert('You can perform some custom action after a toast goes away');
       };
     }
-    if ($("#addBehaviorOnToastCloseClick").prop("checked")) {
+    if ($('#addBehaviorOnToastCloseClick').prop('checked')) {
       toastr.options.onCloseClick = () => {
         alert(
-          "You can perform some custom action when the close button is clicked",
+          'You can perform some custom action when the close button is clicked',
         );
       };
     }
@@ -195,24 +195,24 @@ $(() => {
     }
     const $toast = toastr[shortCutFunction](msg, title); // Wire up an event handler to a button in the toast, if it exists
     $toastlast = $toast;
-    if (typeof $toast === "undefined") {
+    if (typeof $toast === 'undefined') {
       return;
     }
-    if ($toast.find("#okBtn").length) {
-      $toast.delegate("#okBtn", "click", () => {
+    if ($toast.find('#okBtn').length) {
+      $toast.delegate('#okBtn', 'click', () => {
         alert(`you clicked me. i was toast #${toastIndex}. goodbye!`);
         $toast.remove();
       });
     }
-    if ($toast.find("#surpriseBtn").length) {
-      $toast.delegate("#surpriseBtn", "click", () => {
+    if ($toast.find('#surpriseBtn').length) {
+      $toast.delegate('#surpriseBtn', 'click', () => {
         alert(
           `Surprise! you clicked me. i was toast #${toastIndex}. You could perform an action here.`,
         );
       });
     }
-    if ($toast.find(".clear").length) {
-      $toast.delegate(".clear", "click", () => {
+    if ($toast.find('.clear').length) {
+      $toast.delegate('.clear', 'click', () => {
         toastr.clear($toast, {
           force: true,
         });
@@ -223,10 +223,10 @@ $(() => {
   function getLastToast() {
     return $toastlast;
   }
-  $("#clearlasttoast").on("click", () => {
+  $('#clearlasttoast').on('click', () => {
     toastr.clear(getLastToast());
   });
-  $("#cleartoasts").on("click", () => {
+  $('#cleartoasts').on('click', () => {
     toastr.clear();
   });
 });

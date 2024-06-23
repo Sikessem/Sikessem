@@ -1,6 +1,6 @@
-import focus from "@alpinejs/focus";
-import Alpine from "alpinejs";
-import axios from "axios";
+import focus from '@alpinejs/focus';
+import Alpine from 'alpinejs';
+import axios from 'axios';
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -8,7 +8,7 @@ import axios from "axios";
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 window.axios = axios;
-window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 window.Alpine = Alpine;
 Alpine.plugin(focus);

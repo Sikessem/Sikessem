@@ -1,8 +1,8 @@
 $(() => {
-  const dt_scrollable_table = $(".dt-scrollableTable");
-  const dt_fixedheader_table = $(".dt-fixedheader");
-  const dt_fixedcolumns_table = $(".dt-fixedcolumns");
-  const dt_select_table = $(".dt-select-table");
+  const dt_scrollable_table = $('.dt-scrollableTable');
+  const dt_fixedheader_table = $('.dt-fixedheader');
+  const dt_fixedcolumns_table = $('.dt-fixedcolumns');
+  const dt_select_table = $('.dt-select-table');
 
   // Scrollable
   // --------------------------------------------------------------------
@@ -11,16 +11,16 @@ $(() => {
     const dt_scrollableTable = dt_scrollable_table.DataTable({
       ajax: `${assetsPath}json/table-datatable.json`,
       columns: [
-        { data: "full_name" },
-        { data: "post" },
-        { data: "email" },
-        { data: "city" },
-        { data: "start_date" },
-        { data: "salary" },
-        { data: "age" },
-        { data: "experience" },
-        { data: "" },
-        { data: "" },
+        { data: 'full_name' },
+        { data: 'post' },
+        { data: 'email' },
+        { data: 'city' },
+        { data: 'start_date' },
+        { data: 'salary' },
+        { data: 'age' },
+        { data: 'experience' },
+        { data: '' },
+        { data: '' },
       ],
       columnDefs: [
         {
@@ -29,13 +29,13 @@ $(() => {
           render: (data, type, full, meta) => {
             const $status_number = full.status;
             const $status = {
-              1: { title: "Current", class: "bg-label-primary" },
-              2: { title: "Professional", class: " bg-label-success" },
-              3: { title: "Rejected", class: " bg-label-danger" },
-              4: { title: "Resigned", class: " bg-label-warning" },
-              5: { title: "Applied", class: " bg-label-info" },
+              1: { title: 'Current', class: 'bg-label-primary' },
+              2: { title: 'Professional', class: ' bg-label-success' },
+              3: { title: 'Rejected', class: ' bg-label-danger' },
+              4: { title: 'Resigned', class: ' bg-label-warning' },
+              5: { title: 'Applied', class: ' bg-label-info' },
             };
-            if (typeof $status[$status_number] === "undefined") {
+            if (typeof $status[$status_number] === 'undefined') {
               return data;
             }
             return `<span class="badge ${$status[$status_number].class}">${$status[$status_number].title}</span>`;
@@ -44,7 +44,7 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           searchable: false,
           orderable: false,
           render: (data, type, full, meta) =>
@@ -55,18 +55,18 @@ $(() => {
             '<a href="javascript:;" class="dropdown-item">Archive</a>' +
             '<div class="dropdown-divider"></div>' +
             '<a href="javascript:;" class="dropdown-item text-danger delete-record">Delete</a>' +
-            "</div>" +
-            "</div>" +
+            '</div>' +
+            '</div>' +
             '<a href="javascript:;" class="item-edit text-body"><i class="text-primary ti ti-pencil"></i></a>',
         },
       ],
       // Scroll options
-      scrollY: "300px",
+      scrollY: '300px',
       scrollX: true,
       dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end"f>>t<"row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
       initComplete: (settings, json) => {
         // Add the mti-n1 class to the first row in tbody
-        dt_scrollable_table.find("tbody tr:first").addClass("border-top-0");
+        dt_scrollable_table.find('tbody tr:first').addClass('border-top-0');
       },
     });
   }
@@ -78,23 +78,23 @@ $(() => {
     const dt_fixedheader = dt_fixedheader_table.DataTable({
       ajax: `${assetsPath}json/table-datatable.json`,
       columns: [
-        { data: "" },
-        { data: "id" },
-        { data: "id" },
-        { data: "full_name" },
-        { data: "email" },
-        { data: "start_date" },
-        { data: "salary" },
-        { data: "status" },
-        { data: "" },
+        { data: '' },
+        { data: 'id' },
+        { data: 'id' },
+        { data: 'full_name' },
+        { data: 'email' },
+        { data: 'start_date' },
+        { data: 'salary' },
+        { data: 'status' },
+        { data: '' },
       ],
       columnDefs: [
         {
-          className: "control",
+          className: 'control',
           orderable: false,
           targets: 0,
           responsivePriority: 3,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // For Checkboxes
@@ -125,18 +125,18 @@ $(() => {
               // For Avatar badge
               const stateNum = Math.floor(Math.random() * 6);
               const states = [
-                "success",
-                "danger",
-                "warning",
-                "info",
-                "primary",
-                "secondary",
+                'success',
+                'danger',
+                'warning',
+                'info',
+                'primary',
+                'secondary',
               ];
               const $state = states[stateNum];
               const $name = full.full_name;
               let $initials = $name.match(/\b\w/g) || [];
               $initials = (
-                ($initials.shift() || "") + ($initials.pop() || "")
+                ($initials.shift() || '') + ($initials.pop() || '')
               ).toUpperCase();
               $output = `<span class="avatar-initial rounded-circle bg-label-${$state}">${$initials}</span>`;
             }
@@ -162,13 +162,13 @@ $(() => {
             // var $rand_num = Math.floor(Math.random() * 5) + 1;
             const $status_number = full.status;
             const $status = {
-              1: { title: "Current", class: "bg-label-primary" },
-              2: { title: "Professional", class: " bg-label-success" },
-              3: { title: "Rejected", class: " bg-label-danger" },
-              4: { title: "Resigned", class: " bg-label-warning" },
-              5: { title: "Applied", class: " bg-label-info" },
+              1: { title: 'Current', class: 'bg-label-primary' },
+              2: { title: 'Professional', class: ' bg-label-success' },
+              3: { title: 'Rejected', class: ' bg-label-danger' },
+              4: { title: 'Resigned', class: ' bg-label-warning' },
+              5: { title: 'Applied', class: ' bg-label-info' },
             };
-            if (typeof $status[$status_number] === "undefined") {
+            if (typeof $status[$status_number] === 'undefined') {
               return data;
             }
             return `<span class="badge ${$status[$status_number].class}">${$status[$status_number].title}</span>`;
@@ -177,7 +177,7 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           orderable: false,
           render: (data, type, full, meta) =>
             '<div class="d-inline-block">' +
@@ -187,12 +187,12 @@ $(() => {
             '<a href="javascript:;" class="dropdown-item">Archive</a>' +
             '<div class="dropdown-divider"></div>' +
             '<a href="javascript:;" class="dropdown-item text-danger delete-record">Delete</a>' +
-            "</div>" +
-            "</div>" +
+            '</div>' +
+            '</div>' +
             '<a href="javascript:;" class="btn btn-sm btn-icon item-edit"><i class="text-primary ti ti-pencil"></i></a>',
         },
       ],
-      order: [[2, "desc"]],
+      order: [[2, 'desc']],
       dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end"f>>t<"row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
       displayLength: 7,
       lengthMenu: [7, 10, 25, 50, 75, 100],
@@ -204,13 +204,13 @@ $(() => {
               return `Details of ${data.full_name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -221,7 +221,7 @@ $(() => {
     });
     // Fixed header
     if (window.Helpers.isNavbarFixed()) {
-      const navHeight = $("#layout-navbar").outerHeight();
+      const navHeight = $('#layout-navbar').outerHeight();
       new $.fn.dataTable.FixedHeader(dt_fixedheader).headerOffset(navHeight);
     } else {
       new $.fn.dataTable.FixedHeader(dt_fixedheader);
@@ -235,16 +235,16 @@ $(() => {
     const dt_fixedcolumns = dt_fixedcolumns_table.DataTable({
       ajax: `${assetsPath}json/table-datatable.json`,
       columns: [
-        { data: "full_name" },
-        { data: "post" },
-        { data: "email" },
-        { data: "city" },
-        { data: "start_date" },
-        { data: "salary" },
-        { data: "age" },
-        { data: "experience" },
-        { data: "status" },
-        { data: "id" },
+        { data: 'full_name' },
+        { data: 'post' },
+        { data: 'email' },
+        { data: 'city' },
+        { data: 'start_date' },
+        { data: 'salary' },
+        { data: 'age' },
+        { data: 'experience' },
+        { data: 'status' },
+        { data: 'id' },
       ],
       columnDefs: [
         {
@@ -253,13 +253,13 @@ $(() => {
           render: (data, type, full, meta) => {
             const $status_number = full.status;
             const $status = {
-              1: { title: "Current", class: "bg-label-primary" },
-              2: { title: "Professional", class: " bg-label-success" },
-              3: { title: "Rejected", class: " bg-label-danger" },
-              4: { title: "Resigned", class: " bg-label-warning" },
-              5: { title: "Applied", class: " bg-label-info" },
+              1: { title: 'Current', class: 'bg-label-primary' },
+              2: { title: 'Professional', class: ' bg-label-success' },
+              3: { title: 'Rejected', class: ' bg-label-danger' },
+              4: { title: 'Resigned', class: ' bg-label-warning' },
+              5: { title: 'Applied', class: ' bg-label-info' },
             };
-            if (typeof $status[$status_number] === "undefined") {
+            if (typeof $status[$status_number] === 'undefined') {
               return data;
             }
             return `<span class="badge ${$status[$status_number].class}">${$status[$status_number].title}</span>`;
@@ -268,7 +268,7 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           searchable: false,
           orderable: false,
           render: (data, type, full, meta) =>
@@ -279,8 +279,8 @@ $(() => {
             '<a href="javascript:;" class="dropdown-item">Archive</a>' +
             '<div class="dropdown-divider"></div>' +
             '<a href="javascript:;" class="dropdown-item text-danger delete-record"></i>Delete</a>' +
-            "</div>" +
-            "</div>" +
+            '</div>' +
+            '</div>' +
             '<a href="javascript:;" class="item-edit text-body"><i class="text-primary ti ti-pencil"></i></a>',
         },
       ],
@@ -294,7 +294,7 @@ $(() => {
       fixedColumns: true,
       initComplete: (settings, json) => {
         // Add the mti-n1 class to the first row in tbody
-        dt_fixedcolumns_table.find("tbody tr:first").addClass("border-top-0");
+        dt_fixedcolumns_table.find('tbody tr:first').addClass('border-top-0');
       },
     });
   }
@@ -306,14 +306,14 @@ $(() => {
     const dt_select = dt_select_table.DataTable({
       ajax: `${assetsPath}json/table-datatable.json`,
       columns: [
-        { data: "id" },
-        { data: "full_name" },
-        { data: "post" },
-        { data: "email" },
-        { data: "city" },
-        { data: "start_date" },
-        { data: "salary" },
-        { data: "status" },
+        { data: 'id' },
+        { data: 'full_name' },
+        { data: 'post' },
+        { data: 'email' },
+        { data: 'city' },
+        { data: 'start_date' },
+        { data: 'salary' },
+        { data: 'status' },
       ],
       columnDefs: [
         {
@@ -334,24 +334,24 @@ $(() => {
           render: (data, type, full, meta) => {
             const $status_number = full.status;
             const $status = {
-              1: { title: "Current", class: "bg-label-primary" },
-              2: { title: "Professional", class: " bg-label-success" },
-              3: { title: "Rejected", class: " bg-label-danger" },
-              4: { title: "Resigned", class: " bg-label-warning" },
-              5: { title: "Applied", class: " bg-label-info" },
+              1: { title: 'Current', class: 'bg-label-primary' },
+              2: { title: 'Professional', class: ' bg-label-success' },
+              3: { title: 'Rejected', class: ' bg-label-danger' },
+              4: { title: 'Resigned', class: ' bg-label-warning' },
+              5: { title: 'Applied', class: ' bg-label-info' },
             };
-            if (typeof $status[$status_number] === "undefined") {
+            if (typeof $status[$status_number] === 'undefined') {
               return data;
             }
             return `<span class="badge ${$status[$status_number].class}">${$status[$status_number].title}</span>`;
           },
         },
       ],
-      order: [[1, "desc"]],
+      order: [[1, 'desc']],
       dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end"f>><"table-responsive"t><"row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
       select: {
         // Select style
-        style: "multi",
+        style: 'multi',
       },
     });
   }
@@ -359,7 +359,7 @@ $(() => {
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 200);
 });

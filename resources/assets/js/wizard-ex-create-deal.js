@@ -1,9 +1,9 @@
 (() => {
   // flatpickrRange
-  const flatpickrRange = document.querySelector("#dealDuration");
+  const flatpickrRange = document.querySelector('#dealDuration');
   if (flatpickrRange) {
     flatpickrRange.flatpickr({
-      mode: "range",
+      mode: 'range',
     });
   }
 
@@ -12,27 +12,27 @@
   // Vertical Wizard
   // --------------------------------------------------------------------
 
-  const wizardCreateDeal = document.querySelector("#wizard-create-deal");
-  if (typeof wizardCreateDeal !== "undefined" && wizardCreateDeal !== null) {
+  const wizardCreateDeal = document.querySelector('#wizard-create-deal');
+  if (typeof wizardCreateDeal !== 'undefined' && wizardCreateDeal !== null) {
     // Wizard form
     const wizardCreateDealForm = wizardCreateDeal.querySelector(
-      "#wizard-create-deal-form",
+      '#wizard-create-deal-form',
     );
     // Wizard steps
     const wizardCreateDealFormStep1 =
-      wizardCreateDealForm.querySelector("#deal-type");
+      wizardCreateDealForm.querySelector('#deal-type');
     const wizardCreateDealFormStep2 =
-      wizardCreateDealForm.querySelector("#deal-details");
+      wizardCreateDealForm.querySelector('#deal-details');
     const wizardCreateDealFormStep3 =
-      wizardCreateDealForm.querySelector("#deal-usage");
+      wizardCreateDealForm.querySelector('#deal-usage');
     const wizardCreateDealFormStep4 =
-      wizardCreateDealForm.querySelector("#review-complete");
+      wizardCreateDealForm.querySelector('#review-complete');
     // Wizard next prev button
     const wizardCreateDealNext = [].slice.call(
-      wizardCreateDealForm.querySelectorAll(".btn-next"),
+      wizardCreateDealForm.querySelectorAll('.btn-next'),
     );
     const wizardCreateDealPrev = [].slice.call(
-      wizardCreateDealForm.querySelectorAll(".btn-prev"),
+      wizardCreateDealForm.querySelectorAll('.btn-prev'),
     );
 
     const validationStepper = new Stepper(wizardCreateDeal, {
@@ -47,17 +47,17 @@
           dealAmount: {
             validators: {
               notEmpty: {
-                message: "Please enter amount",
+                message: 'Please enter amount',
               },
               numeric: {
-                message: "The amount must be a number",
+                message: 'The amount must be a number',
               },
             },
           },
           dealRegion: {
             validators: {
               notEmpty: {
-                message: "Please select region",
+                message: 'Please select region',
               },
             },
           },
@@ -68,30 +68,30 @@
           bootstrap5: new FormValidation.plugins.Bootstrap5({
             // Use this for enabling/changing valid/invalid class
             // eleInvalidClass: '',
-            eleValidClass: "",
-            rowSelector: ".col-sm-6",
+            eleValidClass: '',
+            rowSelector: '.col-sm-6',
           }),
           autoFocus: new FormValidation.plugins.AutoFocus(),
           submitButton: new FormValidation.plugins.SubmitButton(),
         },
       },
-    ).on("core.form.valid", () => {
+    ).on('core.form.valid', () => {
       // Jump to the next step when all fields in the current step are valid
       validationStepper.next();
     });
 
     // select2 (Region)
-    const dealRegion = $("#dealRegion");
+    const dealRegion = $('#dealRegion');
     if (dealRegion.length) {
       dealRegion.wrap('<div class="position-relative"></div>');
       dealRegion
         .select2({
-          placeholder: "Select an region",
+          placeholder: 'Select an region',
           dropdownParent: dealRegion.parent(),
         })
-        .on("change", () => {
+        .on('change', () => {
           // Revalidate the region field when an option is chosen
-          FormValidation1.revalidateField("dealRegion");
+          FormValidation1.revalidateField('dealRegion');
         });
     }
 
@@ -104,25 +104,25 @@
           dealTitle: {
             validators: {
               notEmpty: {
-                message: "Please enter deal title",
+                message: 'Please enter deal title',
               },
             },
           },
           dealCode: {
             validators: {
               notEmpty: {
-                message: "Please enter deal code",
+                message: 'Please enter deal code',
               },
               stringLength: {
                 min: 4,
                 max: 10,
                 message:
-                  "The deal code must be more than 4 and less than 10 characters long",
+                  'The deal code must be more than 4 and less than 10 characters long',
               },
               regexp: {
                 regexp: /^[A-Z0-9]+$/,
                 message:
-                  "The deal code can only consist of capital alphabetical and number",
+                  'The deal code can only consist of capital alphabetical and number',
               },
             },
           },
@@ -132,28 +132,28 @@
           bootstrap5: new FormValidation.plugins.Bootstrap5({
             // Use this for enabling/changing valid/invalid class
             // eleInvalidClass: '',
-            eleValidClass: "",
-            rowSelector: ".col-sm-6",
+            eleValidClass: '',
+            rowSelector: '.col-sm-6',
           }),
           autoFocus: new FormValidation.plugins.AutoFocus(),
           submitButton: new FormValidation.plugins.SubmitButton(),
         },
       },
-    ).on("core.form.valid", () => {
+    ).on('core.form.valid', () => {
       // Jump to the next step when all fields in the current step are valid
       validationStepper.next();
     });
 
     // select2 (Offered Item)
-    const dealOfferedItem = $("#dealOfferedItem");
+    const dealOfferedItem = $('#dealOfferedItem');
     if (dealOfferedItem.length) {
       dealOfferedItem.wrap('<div class="position-relative"></div>');
       dealOfferedItem
         .select2({
-          placeholder: "Select an offered item",
+          placeholder: 'Select an offered item',
           dropdownParent: dealOfferedItem.parent(),
         })
-        .on("change", () => {
+        .on('change', () => {
           // Revalidate the field if needed when an option is chosen
           // FormValidation2.revalidateField('dealOfferedItem');
         });
@@ -171,14 +171,14 @@
           bootstrap5: new FormValidation.plugins.Bootstrap5({
             // Use this for enabling/changing valid/invalid class
             // eleInvalidClass: '',
-            eleValidClass: "",
-            rowSelector: ".col-sm-6",
+            eleValidClass: '',
+            rowSelector: '.col-sm-6',
           }),
           autoFocus: new FormValidation.plugins.AutoFocus(),
           submitButton: new FormValidation.plugins.SubmitButton(),
         },
       },
-    ).on("core.form.valid", () => {
+    ).on('core.form.valid', () => {
       validationStepper.next();
     });
 
@@ -194,23 +194,23 @@
           bootstrap5: new FormValidation.plugins.Bootstrap5({
             // Use this for enabling/changing valid/invalid class
             // eleInvalidClass: '',
-            eleValidClass: "",
-            rowSelector: ".col-md-12",
+            eleValidClass: '',
+            rowSelector: '.col-md-12',
           }),
           autoFocus: new FormValidation.plugins.AutoFocus(),
           submitButton: new FormValidation.plugins.SubmitButton(),
         },
       },
-    ).on("core.form.valid", () => {
+    ).on('core.form.valid', () => {
       // You can submit the form
       // wizardCreateDealForm.submit()
       // or send the form data to server via an Ajax request
       // To make the demo simple, I just placed an alert
-      alert("Submitted..!!");
+      alert('Submitted..!!');
     });
 
     wizardCreateDealNext.forEach((item) => {
-      item.addEventListener("click", (event) => {
+      item.addEventListener('click', (event) => {
         // When click the Next button, we will validate the current step
         switch (validationStepper._currentIndex) {
           case 0:
@@ -236,7 +236,7 @@
     });
 
     wizardCreateDealPrev.forEach((item) => {
-      item.addEventListener("click", (event) => {
+      item.addEventListener('click', (event) => {
         switch (validationStepper._currentIndex) {
           case 3:
             validationStepper.previous();

@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   (() => {
-    const verticalExample = document.getElementById("vertical-example");
-    const horizontalExample = document.getElementById("horizontal-example");
-    const horizVertExample = document.getElementById("both-scrollbars-example");
+    const verticalExample = document.getElementById('vertical-example');
+    const horizontalExample = document.getElementById('horizontal-example');
+    const horizVertExample = document.getElementById('both-scrollbars-example');
 
     // Vertical Example
     // --------------------------------------------------------------------

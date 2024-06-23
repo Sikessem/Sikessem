@@ -1,7 +1,7 @@
 $(() => {
-  const selectPicker = $(".selectpicker");
-  const select2 = $(".select2");
-  const select2Icons = $(".select2-icons");
+  const selectPicker = $('.selectpicker');
+  const select2 = $('.select2');
+  const select2Icons = $('.select2-icons');
 
   // Bootstrap Select
   // --------------------------------------------------------------------
@@ -17,7 +17,7 @@ $(() => {
     select2.each(function () {
       const $this = $(this);
       $this.wrap('<div class="position-relative"></div>').select2({
-        placeholder: "Select value",
+        placeholder: 'Select value',
         dropdownParent: $this.parent(),
       });
     });
@@ -30,7 +30,7 @@ $(() => {
       if (!option.id) {
         return option.text;
       }
-      const $icon = `<i class='${$(option.element).data("icon")} me-2'></i>${
+      const $icon = `<i class='${$(option.element).data('icon')} me-2'></i>${
         option.text
       }`;
 

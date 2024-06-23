@@ -23,15 +23,15 @@
   const chartColors = {
     donut: {
       series1: config.colors.success,
-      series2: "#28c76fb3",
-      series3: "#28c76f80",
+      series2: '#28c76fb3',
+      series3: '#28c76f80',
       series4: config.colors_label.success,
     },
   };
 
   // Expenses Radial Bar Chart
   // --------------------------------------------------------------------
-  const expensesRadialChartEl = document.querySelector("#expensesChart");
+  const expensesRadialChartEl = document.querySelector('#expensesChart');
   const expensesRadialChartConfig = {
     chart: {
       height: 145,
@@ -39,7 +39,7 @@
         enabled: true,
       },
       parentHeightOffset: 0,
-      type: "radialBar",
+      type: 'radialBar',
     },
     colors: [config.colors.warning],
     series: [78],
@@ -49,10 +49,10 @@
         startAngle: -90,
         endAngle: 90,
         hollow: {
-          size: "65%",
+          size: '65%',
         },
         track: {
-          strokeWidth: "45%",
+          strokeWidth: '45%',
           background: borderColor,
         },
         dataLabels: {
@@ -60,7 +60,7 @@
             show: false,
           },
           value: {
-            fontSize: "22px",
+            fontSize: '22px',
             color: headingColor,
             fontWeight: 500,
             offsetY: -5,
@@ -75,9 +75,9 @@
       },
     },
     stroke: {
-      lineCap: "round",
+      lineCap: 'round',
     },
-    labels: ["Progress"],
+    labels: ['Progress'],
     responsive: [
       {
         breakpoint: 1442,
@@ -89,11 +89,11 @@
             radialBar: {
               dataLabels: {
                 value: {
-                  fontSize: "18px",
+                  fontSize: '18px',
                 },
               },
               hollow: {
-                size: "60%",
+                size: '60%',
               },
             },
           },
@@ -108,11 +108,11 @@
           plotOptions: {
             radialBar: {
               hollow: {
-                size: "65%",
+                size: '65%',
               },
               dataLabels: {
                 value: {
-                  fontSize: "18px",
+                  fontSize: '18px',
                 },
               },
             },
@@ -128,7 +128,7 @@
           plotOptions: {
             radialBar: {
               hollow: {
-                size: "55%",
+                size: '55%',
               },
             },
           },
@@ -143,7 +143,7 @@
           plotOptions: {
             radialBar: {
               hollow: {
-                size: "65%",
+                size: '65%',
               },
             },
           },
@@ -163,7 +163,7 @@
           plotOptions: {
             radialBar: {
               hollow: {
-                size: "60%",
+                size: '60%',
               },
             },
           },
@@ -172,7 +172,7 @@
     ],
   };
   if (
-    typeof expensesRadialChartEl !== "undefined" &&
+    typeof expensesRadialChartEl !== 'undefined' &&
     expensesRadialChartEl !== null
   ) {
     const expensesRadialChart = new ApexCharts(
@@ -184,11 +184,11 @@
 
   // Profit last month Line Chart
   // --------------------------------------------------------------------
-  const profitLastMonthEl = document.querySelector("#profitLastMonth");
+  const profitLastMonthEl = document.querySelector('#profitLastMonth');
   const profitLastMonthConfig = {
     chart: {
       height: 90,
-      type: "line",
+      type: 'line',
       parentHeightOffset: 0,
       toolbar: {
         show: false,
@@ -200,7 +200,7 @@
       xaxis: {
         lines: {
           show: true,
-          colors: "#000",
+          colors: '#000',
         },
       },
       yaxis: {
@@ -246,7 +246,7 @@
     markers: {
       size: 3.5,
       fillColor: config.colors.info,
-      strokeColors: "transparent",
+      strokeColors: 'transparent',
       strokeWidth: 3.2,
       discrete: [
         {
@@ -255,7 +255,7 @@
           fillColor: cardColor,
           strokeColor: config.colors.info,
           size: 5,
-          shape: "circle",
+          shape: 'circle',
         },
       ],
       hover: {
@@ -289,7 +289,7 @@
       },
     ],
   };
-  if (typeof profitLastMonthEl !== "undefined" && profitLastMonthEl !== null) {
+  if (typeof profitLastMonthEl !== 'undefined' && profitLastMonthEl !== null) {
     const profitLastMonth = new ApexCharts(
       profitLastMonthEl,
       profitLastMonthConfig,
@@ -299,15 +299,15 @@
 
   // Generated Leads Chart
   // --------------------------------------------------------------------
-  const generatedLeadsChartEl = document.querySelector("#generatedLeadsChart");
+  const generatedLeadsChartEl = document.querySelector('#generatedLeadsChart');
   const generatedLeadsChartConfig = {
     chart: {
       height: 147,
       width: 130,
       parentHeightOffset: 0,
-      type: "donut",
+      type: 'donut',
     },
-    labels: ["Electronic", "Sports", "Decor", "Fashion"],
+    labels: ['Electronic', 'Sports', 'Decor', 'Fashion'],
     series: [45, 58, 30, 50],
     colors: [
       chartColors.donut.series1,
@@ -338,19 +338,19 @@
     states: {
       hover: {
         filter: {
-          type: "none",
+          type: 'none',
         },
       },
     },
     plotOptions: {
       pie: {
         donut: {
-          size: "70%",
+          size: '70%',
           labels: {
             show: true,
             value: {
-              fontSize: "1.375rem",
-              fontFamily: "Public Sans",
+              fontSize: '1.375rem',
+              fontFamily: 'Public Sans',
               color: headingColor,
               fontWeight: 500,
               offsetY: -15,
@@ -358,16 +358,16 @@
             },
             name: {
               offsetY: 20,
-              fontFamily: "Public Sans",
+              fontFamily: 'Public Sans',
             },
             total: {
               show: true,
               showAlways: true,
               color: config.colors.success,
-              fontSize: ".8125rem",
-              label: "Total",
-              fontFamily: "Public Sans",
-              formatter: (w) => "184",
+              fontSize: '.8125rem',
+              label: 'Total',
+              fontFamily: 'Public Sans',
+              formatter: (w) => '184',
             },
           },
         },
@@ -402,7 +402,7 @@
     ],
   };
   if (
-    typeof generatedLeadsChartEl !== "undefined" &&
+    typeof generatedLeadsChartEl !== 'undefined' &&
     generatedLeadsChartEl !== null
   ) {
     const generatedLeadsChart = new ApexCharts(
@@ -414,15 +414,15 @@
 
   // Total Revenue Report Chart - Bar Chart
   // --------------------------------------------------------------------
-  const totalRevenueChartEl = document.querySelector("#totalRevenueChart");
+  const totalRevenueChartEl = document.querySelector('#totalRevenueChart');
   const totalRevenueChartOptions = {
     series: [
       {
-        name: "Earning",
+        name: 'Earning',
         data: [270, 210, 180, 200, 250, 280, 250, 270, 150],
       },
       {
-        name: "Expense",
+        name: 'Expense',
         data: [-140, -160, -180, -150, -100, -60, -80, -100, -180],
       },
     ],
@@ -430,7 +430,7 @@
       height: 413,
       parentHeightOffset: 0,
       stacked: true,
-      type: "bar",
+      type: 'bar',
       toolbar: { show: false },
     },
     tooltip: {
@@ -439,10 +439,10 @@
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "40%",
+        columnWidth: '40%',
         borderRadius: 9,
-        startingShape: "rounded",
-        endingShape: "rounded",
+        startingShape: 'rounded',
+        endingShape: 'rounded',
       },
     },
     colors: [config.colors.primary, config.colors.warning],
@@ -450,16 +450,16 @@
       enabled: false,
     },
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       width: 6,
-      lineCap: "round",
+      lineCap: 'round',
       colors: [cardColor],
     },
     legend: {
       show: true,
-      horizontalAlign: "right",
-      position: "top",
-      fontFamily: "Public Sans",
+      horizontalAlign: 'right',
+      position: 'top',
+      fontFamily: 'Public Sans',
       markers: {
         height: 12,
         width: 12,
@@ -484,21 +484,21 @@
     },
     xaxis: {
       categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
       ],
       labels: {
         style: {
-          fontSize: "13px",
+          fontSize: '13px',
           colors: labelColor,
-          fontFamily: "Public Sans",
+          fontFamily: 'Public Sans',
         },
       },
       axisTicks: {
@@ -512,9 +512,9 @@
       labels: {
         offsetX: -16,
         style: {
-          fontSize: "13px",
+          fontSize: '13px',
           colors: labelColor,
-          fontFamily: "Public Sans",
+          fontFamily: 'Public Sans',
         },
       },
       min: -200,
@@ -527,7 +527,7 @@
         options: {
           plotOptions: {
             bar: {
-              columnWidth: "43%",
+              columnWidth: '43%',
             },
           },
         },
@@ -537,7 +537,7 @@
         options: {
           plotOptions: {
             bar: {
-              columnWidth: "50%",
+              columnWidth: '50%',
             },
           },
           chart: {
@@ -550,7 +550,7 @@
         options: {
           plotOptions: {
             bar: {
-              columnWidth: "50%",
+              columnWidth: '50%',
             },
           },
         },
@@ -560,7 +560,7 @@
         options: {
           plotOptions: {
             bar: {
-              columnWidth: "50%",
+              columnWidth: '50%',
             },
           },
           chart: {
@@ -573,7 +573,7 @@
         options: {
           plotOptions: {
             bar: {
-              columnWidth: "38%",
+              columnWidth: '38%',
             },
           },
         },
@@ -583,7 +583,7 @@
         options: {
           plotOptions: {
             bar: {
-              columnWidth: "50%",
+              columnWidth: '50%',
             },
           },
         },
@@ -593,7 +593,7 @@
         options: {
           plotOptions: {
             bar: {
-              columnWidth: "73%",
+              columnWidth: '73%',
             },
           },
           chart: {
@@ -606,8 +606,8 @@
           },
           legend: {
             show: true,
-            horizontalAlign: "right",
-            position: "top",
+            horizontalAlign: 'right',
+            position: 'top',
             itemMargin: {
               horizontal: 10,
               vertical: 0,
@@ -620,13 +620,13 @@
         options: {
           plotOptions: {
             bar: {
-              columnWidth: "88%",
+              columnWidth: '88%',
             },
           },
           legend: {
             show: true,
-            horizontalAlign: "center",
-            position: "bottom",
+            horizontalAlign: 'center',
+            position: 'bottom',
             markers: {
               offsetX: -3,
               offsetY: 0,
@@ -642,18 +642,18 @@
     states: {
       hover: {
         filter: {
-          type: "none",
+          type: 'none',
         },
       },
       active: {
         filter: {
-          type: "none",
+          type: 'none',
         },
       },
     },
   };
   if (
-    typeof totalRevenueChartEl !== "undefined" &&
+    typeof totalRevenueChartEl !== 'undefined' &&
     totalRevenueChartEl !== null
   ) {
     const totalRevenueChart = new ApexCharts(
@@ -664,26 +664,26 @@
   }
 
   // Total Revenue Report Budget Line Chart
-  const budgetChartEl = document.querySelector("#budgetChart");
+  const budgetChartEl = document.querySelector('#budgetChart');
   const budgetChartOptions = {
     chart: {
       height: 100,
       toolbar: { show: false },
       zoom: { enabled: false },
-      type: "line",
+      type: 'line',
     },
     series: [
       {
-        name: "Last Month",
+        name: 'Last Month',
         data: [20, 10, 30, 16, 24, 5, 40, 23, 28, 5, 30],
       },
       {
-        name: "This Month",
+        name: 'This Month',
         data: [50, 40, 60, 46, 54, 35, 70, 53, 58, 35, 60],
       },
     ],
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       dashArray: [5, 0],
       width: [1, 2],
     },
@@ -721,28 +721,28 @@
       enabled: false,
     },
   };
-  if (typeof budgetChartEl !== "undefined" && budgetChartEl !== null) {
+  if (typeof budgetChartEl !== 'undefined' && budgetChartEl !== null) {
     const budgetChart = new ApexCharts(budgetChartEl, budgetChartOptions);
     budgetChart.render();
   }
 
   // Earning Reports Bar Chart
   // --------------------------------------------------------------------
-  const reportBarChartEl = document.querySelector("#reportBarChart");
+  const reportBarChartEl = document.querySelector('#reportBarChart');
   const reportBarChartConfig = {
     chart: {
       height: 230,
-      type: "bar",
+      type: 'bar',
       toolbar: {
         show: false,
       },
     },
     plotOptions: {
       bar: {
-        barHeight: "60%",
-        columnWidth: "60%",
-        startingShape: "rounded",
-        endingShape: "rounded",
+        barHeight: '60%',
+        columnWidth: '60%',
+        startingShape: 'rounded',
+        endingShape: 'rounded',
         borderRadius: 4,
         distributed: true,
       },
@@ -777,7 +777,7 @@
       show: false,
     },
     xaxis: {
-      categories: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+      categories: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
       axisBorder: {
         show: false,
       },
@@ -787,7 +787,7 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
@@ -815,13 +815,13 @@
       },
     ],
   };
-  if (typeof reportBarChartEl !== "undefined" && reportBarChartEl !== null) {
+  if (typeof reportBarChartEl !== 'undefined' && reportBarChartEl !== null) {
     const barChart = new ApexCharts(reportBarChartEl, reportBarChartConfig);
     barChart.render();
   }
 
   // Variable declaration for table
-  const dt_invoice_table = $(".datatable-invoice");
+  const dt_invoice_table = $('.datatable-invoice');
   // Invoice datatable
   // --------------------------------------------------------------------
   if (dt_invoice_table.length) {
@@ -829,21 +829,21 @@
       ajax: `${assetsPath}json/invoice-list.json`, // JSON file to add data
       columns: [
         // columns according to JSON
-        { data: "" },
-        { data: "invoice_id" },
-        { data: "invoice_status" },
-        { data: "total" },
-        { data: "issued_date" },
-        { data: "invoice_status" },
-        { data: "action" },
+        { data: '' },
+        { data: 'invoice_id' },
+        { data: 'invoice_status' },
+        { data: 'total' },
+        { data: 'issued_date' },
+        { data: 'invoice_status' },
+        { data: 'action' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           responsivePriority: 2,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // Invoice ID
@@ -866,9 +866,9 @@
               Sent: '<span class="badge badge-center rounded-pill bg-label-secondary w-px-30 h-px-30"><i class="ti ti-circle-check ti-sm"></i></span>',
               Draft:
                 '<span class="badge badge-center rounded-pill bg-label-primary w-px-30 h-px-30"><i class="ti ti-device-floppy ti-sm"></i></span>',
-              "Past Due":
+              'Past Due':
                 '<span class="badge badge-center rounded-pill bg-label-danger w-px-30 h-px-30"><i class="ti ti-info-circle ti-sm"></i></span>',
-              "Partial Payment":
+              'Partial Payment':
                 '<span class="badge badge-center rounded-pill bg-label-success w-px-30 h-px-30"><i class="ti ti-circle-half-2 ti-sm"></i></span>',
               Paid: '<span class="badge badge-center rounded-pill bg-label-warning w-px-30 h-px-30"><i class="ti ti-chart-pie ti-sm"></i></span>',
               Downloaded:
@@ -888,7 +888,7 @@
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           orderable: false,
           render: (data, type, full, meta) =>
             `<div class="d-flex align-items-center"><a href="javascript:;" class="text-body" data-bs-toggle="tooltip" title="Send Mail"><i class="ti ti-mail me-2 ti-sm"></i></a><a href="${baseUrl}app/invoice/preview"class="text-body" data-bs-toggle="tooltip" title="Preview"><i class="ti ti-eye mx-2 ti-sm"></i></a><div class="d-inline-block"><a href="javascript:;" class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical ti-sm lh-1"></i></a><div class="dropdown-menu dropdown-menu-end m-0"><a href="javascript:;" class="dropdown-item">Details</a><a href="javascript:;" class="dropdown-item">Archive</a><div class="dropdown-divider"></div><a href="javascript:;" class="dropdown-item text-danger delete-record">Delete</a></div></div></div>`,
@@ -899,28 +899,28 @@
           visible: false,
         },
       ],
-      order: [[1, "asc"]],
+      order: [[1, 'asc']],
       dom:
         '<"row ms-2 me-3"' +
         '<"col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start gap-2"l<"dt-action-buttons text-xl-end text-lg-start text-md-end text-start mt-md-0 mt-3"B>>' +
         '<"col-12 col-md-6 d-flex align-items-center justify-content-end flex-column flex-md-row pe-3 gap-md-2"f<"invoice_status mb-3 mb-md-0">>' +
-        ">t" +
+        '>t' +
         '<"row d-flex align-items-center mx-2"' +
         '<"col-sm-12 col-md-6"i>' +
         '<"col-sm-12 col-md-6 mt-1"p>' +
-        ">",
+        '>',
       displayLength: 7,
       lengthMenu: [7, 10, 25, 50, 75, 100],
       language: {
-        sLengthMenu: "_MENU_",
-        search: "",
-        searchPlaceholder: "Search Invoice",
+        sLengthMenu: '_MENU_',
+        search: '',
+        searchPlaceholder: 'Search Invoice',
       },
       // Buttons
       buttons: [
         {
           text: '<i class="ti ti-plus me-md-2"></i><span class="d-md-inline-block d-none">Create Invoice</span>',
-          className: "btn btn-primary waves-effect waves-light",
+          className: 'btn btn-primary waves-effect waves-light',
           action: (e, dt, button, config) => {
             window.location = `${baseUrl}app/invoice/add`;
           },
@@ -935,13 +935,13 @@
               return `Details of ${data.full_name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -958,10 +958,10 @@
             const select = $(
               '<select id="UserRole" class="form-select"><option value=""> Select Status </option></select>',
             )
-              .appendTo(".invoice_status")
-              .on("change", function () {
+              .appendTo('.invoice_status')
+              .on('change', function () {
                 const val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? `^${val}$` : "", true, false).draw();
+                column.search(val ? `^${val}$` : '', true, false).draw();
               });
 
             column
@@ -978,7 +978,7 @@
     });
   }
   // On each datatable draw, initialize tooltip
-  dt_invoice_table.on("draw.dt", () => {
+  dt_invoice_table.on('draw.dt', () => {
     const tooltipTriggerList = [].slice.call(
       document.querySelectorAll('[data-bs-toggle="tooltip"]'),
     );
@@ -993,7 +993,7 @@
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
 })();

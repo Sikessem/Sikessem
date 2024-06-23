@@ -1,15 +1,15 @@
 (() => {
   // Color Variables
-  const purpleColor = "#836AF9";
-  const yellowColor = "#ffe800";
-  const cyanColor = "#28dac6";
-  const orangeColor = "#FF8132";
-  const orangeLightColor = "#FDAC34";
-  const oceanBlueColor = "#299AFF";
-  const greyColor = "#4F5D70";
-  const greyLightColor = "#EDF1F4";
-  const blueColor = "#2B9AFF";
-  const blueLightColor = "#84D0FF";
+  const purpleColor = '#836AF9';
+  const yellowColor = '#ffe800';
+  const cyanColor = '#28dac6';
+  const orangeColor = '#FF8132';
+  const orangeLightColor = '#FDAC34';
+  const oceanBlueColor = '#299AFF';
+  const greyColor = '#4F5D70';
+  const greyLightColor = '#EDF1F4';
+  const blueColor = '#2B9AFF';
+  const blueLightColor = '#84D0FF';
 
   let cardColor;
   let headingColor;
@@ -33,38 +33,38 @@
 
   // Set height according to their data-height
   // --------------------------------------------------------------------
-  const chartList = document.querySelectorAll(".chartjs");
+  const chartList = document.querySelectorAll('.chartjs');
   chartList.forEach((chartListItem) => {
     chartListItem.height = chartListItem.dataset.height;
   });
 
   // Bar Chart
   // --------------------------------------------------------------------
-  const barChart = document.getElementById("barChart");
+  const barChart = document.getElementById('barChart');
   if (barChart) {
     const barChartVar = new Chart(barChart, {
-      type: "bar",
+      type: 'bar',
       data: {
         labels: [
-          "7/12",
-          "8/12",
-          "9/12",
-          "10/12",
-          "11/12",
-          "12/12",
-          "13/12",
-          "14/12",
-          "15/12",
-          "16/12",
-          "17/12",
-          "18/12",
-          "19/12",
+          '7/12',
+          '8/12',
+          '9/12',
+          '10/12',
+          '11/12',
+          '12/12',
+          '13/12',
+          '14/12',
+          '15/12',
+          '16/12',
+          '17/12',
+          '18/12',
+          '19/12',
         ],
         datasets: [
           {
             data: [275, 90, 190, 205, 125, 85, 55, 87, 127, 150, 230, 280, 190],
             backgroundColor: cyanColor,
-            borderColor: "transparent",
+            borderColor: 'transparent',
             maxBarThickness: 15,
             borderRadius: {
               topRight: 15,
@@ -124,23 +124,23 @@
   // Horizontal Bar Chart
   // --------------------------------------------------------------------
 
-  const horizontalBarChart = document.getElementById("horizontalBarChart");
+  const horizontalBarChart = document.getElementById('horizontalBarChart');
   if (horizontalBarChart) {
     const horizontalBarChartVar = new Chart(horizontalBarChart, {
-      type: "bar",
+      type: 'bar',
       data: {
-        labels: ["MON", "TUE", "WED ", "THU", "FRI", "SAT", "SUN"],
+        labels: ['MON', 'TUE', 'WED ', 'THU', 'FRI', 'SAT', 'SUN'],
         datasets: [
           {
             data: [710, 350, 470, 580, 230, 460, 120],
             backgroundColor: config.colors.info,
-            borderColor: "transparent",
+            borderColor: 'transparent',
             maxBarThickness: 15,
           },
         ],
       },
       options: {
-        indexAxis: "y",
+        indexAxis: 'y',
         responsive: true,
         maintainAspectRatio: false,
         animation: {
@@ -196,10 +196,10 @@
   // Line Chart
   // --------------------------------------------------------------------
 
-  const lineChart = document.getElementById("lineChart");
+  const lineChart = document.getElementById('lineChart');
   if (lineChart) {
     const lineChartVar = new Chart(lineChart, {
-      type: "line",
+      type: 'line',
       data: {
         labels: [
           0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140,
@@ -210,16 +210,16 @@
               80, 150, 180, 270, 210, 160, 160, 202, 265, 210, 270, 255, 290,
               360, 375,
             ],
-            label: "Europe",
+            label: 'Europe',
             borderColor: config.colors.danger,
             tension: 0.5,
-            pointStyle: "circle",
+            pointStyle: 'circle',
             backgroundColor: config.colors.danger,
             fill: false,
             pointRadius: 1,
             pointHoverRadius: 5,
             pointHoverBorderWidth: 5,
-            pointBorderColor: "transparent",
+            pointBorderColor: 'transparent',
             pointHoverBorderColor: cardColor,
             pointHoverBackgroundColor: config.colors.danger,
           },
@@ -228,16 +228,16 @@
               80, 125, 105, 130, 215, 195, 140, 160, 230, 300, 220, 170, 210,
               200, 280,
             ],
-            label: "Asia",
+            label: 'Asia',
             borderColor: config.colors.primary,
             tension: 0.5,
-            pointStyle: "circle",
+            pointStyle: 'circle',
             backgroundColor: config.colors.primary,
             fill: false,
             pointRadius: 1,
             pointHoverRadius: 5,
             pointHoverBorderWidth: 5,
-            pointBorderColor: "transparent",
+            pointBorderColor: 'transparent',
             pointHoverBorderColor: cardColor,
             pointHoverBackgroundColor: config.colors.primary,
           },
@@ -246,16 +246,16 @@
               80, 99, 82, 90, 115, 115, 74, 75, 130, 155, 125, 90, 140, 130,
               180,
             ],
-            label: "Africa",
+            label: 'Africa',
             borderColor: yellowColor,
             tension: 0.5,
-            pointStyle: "circle",
+            pointStyle: 'circle',
             backgroundColor: yellowColor,
             fill: false,
             pointRadius: 1,
             pointHoverRadius: 5,
             pointHoverBorderWidth: 5,
-            pointBorderColor: "transparent",
+            pointBorderColor: 'transparent',
             pointHoverBorderColor: cardColor,
             pointHoverBackgroundColor: yellowColor,
           },
@@ -303,8 +303,8 @@
             borderColor: borderColor,
           },
           legend: {
-            position: "top",
-            align: "start",
+            position: 'top',
+            align: 'start',
             rtl: isRtl,
             labels: {
               usePointStyle: true,
@@ -322,43 +322,43 @@
   // Radar Chart
   // --------------------------------------------------------------------
 
-  const radarChart = document.getElementById("radarChart");
+  const radarChart = document.getElementById('radarChart');
   if (radarChart) {
     // For radar gradient color
     const gradientBlue = radarChart
-      .getContext("2d")
+      .getContext('2d')
       .createLinearGradient(0, 0, 0, 150);
-    gradientBlue.addColorStop(0, "rgba(85, 85, 255, 0.9)");
-    gradientBlue.addColorStop(1, "rgba(151, 135, 255, 0.8)");
+    gradientBlue.addColorStop(0, 'rgba(85, 85, 255, 0.9)');
+    gradientBlue.addColorStop(1, 'rgba(151, 135, 255, 0.8)');
 
     const gradientRed = radarChart
-      .getContext("2d")
+      .getContext('2d')
       .createLinearGradient(0, 0, 0, 150);
-    gradientRed.addColorStop(0, "rgba(255, 85, 184, 0.9)");
-    gradientRed.addColorStop(1, "rgba(255, 135, 135, 0.8)");
+    gradientRed.addColorStop(0, 'rgba(255, 85, 184, 0.9)');
+    gradientRed.addColorStop(1, 'rgba(255, 135, 135, 0.8)');
 
     const radarChartVar = new Chart(radarChart, {
-      type: "radar",
+      type: 'radar',
       data: {
-        labels: ["STA", "STR", "AGI", "VIT", "CHA", "INT"],
+        labels: ['STA', 'STR', 'AGI', 'VIT', 'CHA', 'INT'],
         datasets: [
           {
-            label: "Donté Panlin",
+            label: 'Donté Panlin',
             data: [25, 59, 90, 81, 60, 82],
             fill: true,
-            pointStyle: "dash",
+            pointStyle: 'dash',
             backgroundColor: gradientRed,
-            borderColor: "transparent",
-            pointBorderColor: "transparent",
+            borderColor: 'transparent',
+            pointBorderColor: 'transparent',
           },
           {
-            label: "Mireska Sunbreeze",
+            label: 'Mireska Sunbreeze',
             data: [40, 100, 40, 90, 40, 90],
             fill: true,
-            pointStyle: "dash",
+            pointStyle: 'dash',
             backgroundColor: gradientBlue,
-            borderColor: "transparent",
-            pointBorderColor: "transparent",
+            borderColor: 'transparent',
+            pointBorderColor: 'transparent',
           },
         ],
       },
@@ -387,7 +387,7 @@
         plugins: {
           legend: {
             rtl: isRtl,
-            position: "top",
+            position: 'top',
             labels: {
               padding: 25,
               color: legendColor,
@@ -410,22 +410,22 @@
   // Polar Chart
   // --------------------------------------------------------------------
 
-  const polarChart = document.getElementById("polarChart");
+  const polarChart = document.getElementById('polarChart');
   if (polarChart) {
     const polarChartVar = new Chart(polarChart, {
-      type: "polarArea",
+      type: 'polarArea',
       data: {
         labels: [
-          "Africa",
-          "Asia",
-          "Europe",
-          "America",
-          "Antarctica",
-          "Australia",
+          'Africa',
+          'Asia',
+          'Europe',
+          'America',
+          'Antarctica',
+          'Australia',
         ],
         datasets: [
           {
-            label: "Population (millions)",
+            label: 'Population (millions)',
             backgroundColor: [
               purpleColor,
               yellowColor,
@@ -468,7 +468,7 @@
           },
           legend: {
             rtl: isRtl,
-            position: "right",
+            position: 'right',
             labels: {
               usePointStyle: true,
               padding: 25,
@@ -485,17 +485,17 @@
   // Bubble Chart
   // --------------------------------------------------------------------
 
-  const bubbleChart = document.getElementById("bubbleChart");
+  const bubbleChart = document.getElementById('bubbleChart');
   if (bubbleChart) {
     const bubbleChartVar = new Chart(bubbleChart, {
-      type: "bubble",
+      type: 'bubble',
       data: {
         animation: {
           duration: 10000,
         },
         datasets: [
           {
-            label: "Dataset 1",
+            label: 'Dataset 1',
             backgroundColor: purpleColor,
             borderColor: purpleColor,
             data: [
@@ -567,7 +567,7 @@
             ],
           },
           {
-            label: "Dataset 2",
+            label: 'Dataset 2',
             backgroundColor: yellowColor,
             borderColor: yellowColor,
             data: [
@@ -693,48 +693,48 @@
   // LineArea Chart
   // --------------------------------------------------------------------
 
-  const lineAreaChart = document.getElementById("lineAreaChart");
+  const lineAreaChart = document.getElementById('lineAreaChart');
   if (lineAreaChart) {
     const lineAreaChartVar = new Chart(lineAreaChart, {
-      type: "line",
+      type: 'line',
       data: {
         labels: [
-          "7/12",
-          "8/12",
-          "9/12",
-          "10/12",
-          "11/12",
-          "12/12",
-          "13/12",
-          "14/12",
-          "15/12",
-          "16/12",
-          "17/12",
-          "18/12",
-          "19/12",
-          "20/12",
-          "",
+          '7/12',
+          '8/12',
+          '9/12',
+          '10/12',
+          '11/12',
+          '12/12',
+          '13/12',
+          '14/12',
+          '15/12',
+          '16/12',
+          '17/12',
+          '18/12',
+          '19/12',
+          '20/12',
+          '',
         ],
         datasets: [
           {
-            label: "Africa",
+            label: 'Africa',
             data: [
               40, 55, 45, 75, 65, 55, 70, 60, 100, 98, 90, 120, 125, 140, 155,
             ],
             tension: 0,
             fill: true,
             backgroundColor: blueColor,
-            pointStyle: "circle",
-            borderColor: "transparent",
+            pointStyle: 'circle',
+            borderColor: 'transparent',
             pointRadius: 0.5,
             pointHoverRadius: 5,
             pointHoverBorderWidth: 5,
-            pointBorderColor: "transparent",
+            pointBorderColor: 'transparent',
             pointHoverBackgroundColor: blueColor,
             pointHoverBorderColor: cardColor,
           },
           {
-            label: "Asia",
+            label: 'Asia',
             data: [
               70, 85, 75, 150, 100, 140, 110, 105, 160, 150, 125, 190, 200, 240,
               275,
@@ -742,17 +742,17 @@
             tension: 0,
             fill: true,
             backgroundColor: blueLightColor,
-            pointStyle: "circle",
-            borderColor: "transparent",
+            pointStyle: 'circle',
+            borderColor: 'transparent',
             pointRadius: 0.5,
             pointHoverRadius: 5,
             pointHoverBorderWidth: 5,
-            pointBorderColor: "transparent",
+            pointBorderColor: 'transparent',
             pointHoverBackgroundColor: blueLightColor,
             pointHoverBorderColor: cardColor,
           },
           {
-            label: "Europe",
+            label: 'Europe',
             data: [
               240, 195, 160, 215, 185, 215, 185, 200, 250, 210, 195, 250, 235,
               300, 315,
@@ -760,12 +760,12 @@
             tension: 0,
             fill: true,
             backgroundColor: greyLightColor,
-            pointStyle: "circle",
-            borderColor: "transparent",
+            pointStyle: 'circle',
+            borderColor: 'transparent',
             pointRadius: 0.5,
             pointHoverRadius: 5,
             pointHoverBorderWidth: 5,
-            pointBorderColor: "transparent",
+            pointBorderColor: 'transparent',
             pointHoverBackgroundColor: greyLightColor,
             pointHoverBorderColor: cardColor,
           },
@@ -776,9 +776,9 @@
         maintainAspectRatio: false,
         plugins: {
           legend: {
-            position: "top",
+            position: 'top',
             rtl: isRtl,
-            align: "start",
+            align: 'start',
             labels: {
               usePointStyle: true,
               padding: 35,
@@ -800,7 +800,7 @@
         scales: {
           x: {
             grid: {
-              color: "transparent",
+              color: 'transparent',
               borderColor: borderColor,
             },
             ticks: {
@@ -811,7 +811,7 @@
             min: 0,
             max: 400,
             grid: {
-              color: "transparent",
+              color: 'transparent',
               borderColor: borderColor,
             },
             ticks: {
@@ -827,12 +827,12 @@
   // Doughnut Chart
   // --------------------------------------------------------------------
 
-  const doughnutChart = document.getElementById("doughnutChart");
+  const doughnutChart = document.getElementById('doughnutChart');
   if (doughnutChart) {
     const doughnutChartVar = new Chart(doughnutChart, {
-      type: "doughnut",
+      type: 'doughnut',
       data: {
-        labels: ["Tablet", "Mobile", "Desktop"],
+        labels: ['Tablet', 'Mobile', 'Desktop'],
         datasets: [
           {
             data: [10, 10, 80],
@@ -842,7 +842,7 @@
               config.colors.primary,
             ],
             borderWidth: 0,
-            pointStyle: "rectRounded",
+            pointStyle: 'rectRounded',
           },
         ],
       },
@@ -851,7 +851,7 @@
         animation: {
           duration: 500,
         },
-        cutout: "68%",
+        cutout: '68%',
         plugins: {
           legend: {
             display: false,
@@ -859,7 +859,7 @@
           tooltip: {
             callbacks: {
               label: (context) => {
-                const label = context.labels || "";
+                const label = context.labels || '';
                 const value = context.parsed;
                 const output = ` ${label} : ${value} %`;
                 return output;
@@ -881,14 +881,14 @@
   // Scatter Chart
   // --------------------------------------------------------------------
 
-  const scatterChart = document.getElementById("scatterChart");
+  const scatterChart = document.getElementById('scatterChart');
   if (scatterChart) {
     const scatterChartVar = new Chart(scatterChart, {
-      type: "scatter",
+      type: 'scatter',
       data: {
         datasets: [
           {
-            label: "iPhone",
+            label: 'iPhone',
             data: [
               {
                 x: 72,
@@ -956,13 +956,13 @@
               },
             ],
             backgroundColor: config.colors.primary,
-            borderColor: "transparent",
+            borderColor: 'transparent',
             pointBorderWidth: 2,
             pointHoverBorderWidth: 2,
             pointRadius: 5,
           },
           {
-            label: "Samsung Note",
+            label: 'Samsung Note',
             data: [
               {
                 x: 13,
@@ -1026,11 +1026,11 @@
               },
             ],
             backgroundColor: yellowColor,
-            borderColor: "transparent",
+            borderColor: 'transparent',
             pointRadius: 5,
           },
           {
-            label: "OnePlus",
+            label: 'OnePlus',
             data: [
               {
                 x: 70,
@@ -1090,7 +1090,7 @@
               },
             ],
             backgroundColor: cyanColor,
-            borderColor: "transparent",
+            borderColor: 'transparent',
             pointBorderWidth: 2,
             pointHoverBorderWidth: 2,
             pointRadius: 5,
@@ -1105,9 +1105,9 @@
         },
         plugins: {
           legend: {
-            position: "top",
+            position: 'top',
             rtl: isRtl,
-            align: "start",
+            align: 'start',
             labels: {
               usePointStyle: true,
               padding: 25,

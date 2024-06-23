@@ -18,24 +18,24 @@
   // Donut Chart Colors
   const chartColors = {
     donut: {
-      series1: "#22A95E",
-      series2: "#24B364",
+      series1: '#22A95E',
+      series2: '#24B364',
       series3: config.colors.success,
-      series4: "#53D28C",
-      series5: "#7EDDA9",
-      series6: "#A9E9C5",
+      series4: '#53D28C',
+      series5: '#7EDDA9',
+      series6: '#A9E9C5',
     },
   };
 
-  const leadsReportChartEl = document.querySelector("#leadsReportChart");
+  const leadsReportChartEl = document.querySelector('#leadsReportChart');
   const leadsReportChartConfig = {
     chart: {
       height: 157,
       width: 130,
       parentHeightOffset: 0,
-      type: "donut",
+      type: 'donut',
     },
-    labels: ["36h", "56h", "16h", "32h", "56h", "16h"],
+    labels: ['36h', '56h', '16h', '32h', '56h', '16h'],
     series: [23, 35, 10, 20, 35, 23],
     colors: [
       chartColors.donut.series1,
@@ -66,12 +66,12 @@
     plotOptions: {
       pie: {
         donut: {
-          size: "75%",
+          size: '75%',
           labels: {
             show: true,
             value: {
-              fontSize: "1.5rem",
-              fontFamily: "Public Sans",
+              fontSize: '1.5rem',
+              fontFamily: 'Public Sans',
               color: headingColor,
               fontWeight: 500,
               offsetY: -15,
@@ -79,14 +79,14 @@
             },
             name: {
               offsetY: 20,
-              fontFamily: "Public Sans",
+              fontFamily: 'Public Sans',
             },
             total: {
               show: true,
-              fontSize: ".7rem",
-              label: "Total",
+              fontSize: '.7rem',
+              label: 'Total',
               color: labelColor,
-              formatter: (w) => "231h",
+              formatter: (w) => '231h',
             },
           },
         },
@@ -94,7 +94,7 @@
     },
   };
   if (
-    typeof leadsReportChartEl !== "undefined" &&
+    typeof leadsReportChartEl !== 'undefined' &&
     leadsReportChartEl !== null
   ) {
     const leadsReportChart = new ApexCharts(
@@ -106,11 +106,11 @@
 
   // datatbale bar chart
 
-  const horizontalBarChartEl = document.querySelector("#horizontalBarChart");
+  const horizontalBarChartEl = document.querySelector('#horizontalBarChart');
   const horizontalBarChartConfig = {
     chart: {
       height: 270,
-      type: "bar",
+      type: 'bar',
       toolbar: {
         show: false,
       },
@@ -118,9 +118,9 @@
     plotOptions: {
       bar: {
         horizontal: true,
-        barHeight: "70%",
+        barHeight: '70%',
         distributed: true,
-        startingShape: "rounded",
+        startingShape: 'rounded',
         borderRadius: 7,
       },
     },
@@ -154,10 +154,10 @@
     dataLabels: {
       enabled: true,
       style: {
-        colors: ["#fff"],
+        colors: ['#fff'],
         fontWeight: 200,
-        fontSize: "13px",
-        fontFamily: "Public Sans",
+        fontSize: '13px',
+        fontFamily: 'Public Sans',
       },
       formatter: (val, opts) =>
         horizontalBarChartConfig.labels[opts.dataPointIndex],
@@ -166,7 +166,7 @@
         enabled: false,
       },
     },
-    labels: ["UI Design", "UX Design", "Music", "Animation", "React", "SEO"],
+    labels: ['UI Design', 'UX Design', 'Music', 'Animation', 'React', 'SEO'],
     series: [
       {
         data: [35, 20, 14, 12, 10, 9],
@@ -174,7 +174,7 @@
     ],
 
     xaxis: {
-      categories: ["6", "5", "4", "3", "2", "1"],
+      categories: ['6', '5', '4', '3', '2', '1'],
       axisBorder: {
         show: false,
       },
@@ -184,7 +184,7 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
         formatter: (val) => `${val}%`,
       },
@@ -194,15 +194,15 @@
       labels: {
         style: {
           colors: [labelColor],
-          fontFamily: "Public Sans",
-          fontSize: "13px",
+          fontFamily: 'Public Sans',
+          fontSize: '13px',
         },
       },
     },
     tooltip: {
       enabled: true,
       style: {
-        fontSize: "12px",
+        fontSize: '12px',
       },
       onDatasetHover: {
         highlightDataSeries: false,
@@ -215,7 +215,7 @@
     },
   };
   if (
-    typeof horizontalBarChartEl !== "undefined" &&
+    typeof horizontalBarChartEl !== 'undefined' &&
     horizontalBarChartEl !== null
   ) {
     const horizontalBarChart = new ApexCharts(
@@ -231,22 +231,22 @@
   function radialBarChart(color, value, show) {
     const radialBarChartOpt = {
       chart: {
-        height: show === "true" ? 58 : 53,
-        width: show === "true" ? 58 : 43,
-        type: "radialBar",
+        height: show === 'true' ? 58 : 53,
+        width: show === 'true' ? 58 : 43,
+        type: 'radialBar',
       },
       plotOptions: {
         radialBar: {
           hollow: {
-            size: show === "true" ? "45%" : "33%",
+            size: show === 'true' ? '45%' : '33%',
           },
           dataLabels: {
-            show: show === "true",
+            show: show === 'true',
             value: {
               offsetY: -10,
-              fontSize: "15px",
+              fontSize: '15px',
               fontWeight: 500,
-              fontFamily: "Public Sans",
+              fontFamily: 'Public Sans',
               color: headingColor,
             },
           },
@@ -256,24 +256,24 @@
         },
       },
       stroke: {
-        lineCap: "round",
+        lineCap: 'round',
       },
       colors: [color],
       grid: {
         padding: {
-          top: show === "true" ? -12 : -15,
-          bottom: show === "true" ? -17 : -15,
-          left: show === "true" ? -17 : -5,
+          top: show === 'true' ? -12 : -15,
+          bottom: show === 'true' ? -17 : -15,
+          left: show === 'true' ? -17 : -5,
           right: -15,
         },
       },
       series: [value],
-      labels: show === "true" ? [""] : ["Progress"],
+      labels: show === 'true' ? [''] : ['Progress'],
     };
     return radialBarChartOpt;
   }
 
-  const chartProgressList = document.querySelectorAll(".chart-progress");
+  const chartProgressList = document.querySelectorAll('.chart-progress');
   if (chartProgressList) {
     chartProgressList.forEach((chartProgressEl) => {
       const color = config.colors[chartProgressEl.dataset.color];
@@ -288,7 +288,7 @@
   // datatable
 
   // Variable declaration for table
-  const dt_academy_course = $(".datatables-academy-course");
+  const dt_academy_course = $('.datatables-academy-course');
   const logoObj = {
     angular:
       '<span class="badge bg-label-danger p-2"><i class="ti ti-brand-angular ti-md"></i></span>',
@@ -307,22 +307,22 @@
       ajax: `${assetsPath}json/app-academy-dashboard.json`, // JSON file to add data
       columns: [
         // columns according to JSON
-        { data: "" },
-        { data: "id" },
-        { data: "course name" },
-        { data: "time" },
-        { data: "progress" },
-        { data: "status" },
+        { data: '' },
+        { data: 'id' },
+        { data: 'course name' },
+        { data: 'time' },
+        { data: 'progress' },
+        { data: 'status' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           searchable: false,
           orderable: false,
           responsivePriority: 2,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // For Checkboxes
@@ -351,19 +351,19 @@
               // For Avatar badge
               const stateNum = Math.floor(Math.random() * 6);
               const states = [
-                "success",
-                "danger",
-                "warning",
-                "info",
-                "dark",
-                "primary",
-                "secondary",
+                'success',
+                'danger',
+                'warning',
+                'info',
+                'dark',
+                'primary',
+                'secondary',
               ];
               const $state = states[stateNum];
               const $name = full.user;
               let $initials = $name.match(/\b\w/g) || [];
               $initials = (
-                ($initials.shift() || "") + ($initials.pop() || "")
+                ($initials.shift() || '') + ($initials.pop() || '')
               ).toUpperCase();
               $output = `<span class="avatar-initial rounded-circle bg-label-${$state}">${$initials}</span>`;
             }
@@ -405,19 +405,19 @@
           },
         },
       ],
-      order: [[2, "desc"]],
+      order: [[2, 'desc']],
       dom:
         '<"card-header py-sm-0"<"head-label text-center">f' +
-        ">t" +
+        '>t' +
         '<"row mx-4"' +
         '<"col-sm-6 col-12 text-center text-xl-start pb-2 pb-xl-0 px-0"i>' +
         '<"col-sm-6 col-12 d-flex justify-content-center justify-content-xl-end px-0"p>' +
-        ">",
+        '>',
       lengthMenu: [5],
       language: {
-        sLengthMenu: "_MENU_",
-        search: "",
-        searchPlaceholder: "Course Name",
+        sLengthMenu: '_MENU_',
+        search: '',
+        searchPlaceholder: 'Course Name',
       },
       // Buttons with Dropdown
 
@@ -430,13 +430,13 @@
               return `Details of ${data.order}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -445,20 +445,20 @@
         },
       },
     });
-    $("div.head-label").html(
+    $('div.head-label').html(
       '<h5 class="card-title mb-0 text-nowrap">Course you are taking</h5>',
     );
   }
 
   // Delete Record
-  $(".datatables-orders tbody").on("click", ".delete-record", function () {
-    dt_course.row($(this).parents("tr")).remove().draw();
+  $('.datatables-orders tbody').on('click', '.delete-record', function () {
+    dt_course.row($(this).parents('tr')).remove().draw();
   });
 
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
 })();

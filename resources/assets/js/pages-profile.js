@@ -1,28 +1,28 @@
 $(() => {
   //  Projects table
-  const dt_projects_table = $(".datatables-projects");
+  const dt_projects_table = $('.datatables-projects');
 
   if (dt_projects_table.length) {
     const dt_project = dt_projects_table.DataTable({
       ajax: `${assetsPath}json/user-profile.json`,
       columns: [
-        { data: "" },
-        { data: "id" },
-        { data: "project_name" },
-        { data: "project_leader" },
-        { data: "" },
-        { data: "status" },
-        { data: "" },
+        { data: '' },
+        { data: 'id' },
+        { data: 'project_name' },
+        { data: 'project_leader' },
+        { data: '' },
+        { data: 'status' },
+        { data: '' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           searchable: false,
           orderable: false,
           responsivePriority: 2,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // For Checkboxes
@@ -51,18 +51,18 @@ $(() => {
               // For Avatar badge
               const stateNum = Math.floor(Math.random() * 6);
               const states = [
-                "success",
-                "danger",
-                "warning",
-                "info",
-                "primary",
-                "secondary",
+                'success',
+                'danger',
+                'warning',
+                'info',
+                'primary',
+                'secondary',
               ];
               const $state = states[stateNum];
               const $name = full.project_name;
               let $initials = $name.match(/\b\w/g) || [];
               $initials = (
-                ($initials.shift() || "") + ($initials.pop() || "")
+                ($initials.shift() || '') + ($initials.pop() || '')
               ).toUpperCase();
               $output = `<span class="avatar-initial rounded-circle bg-label-${$state}">${$initials}</span>`;
             }
@@ -83,7 +83,7 @@ $(() => {
             for (let i = 0; i < $team.length; i++) {
               $output += `<div class="avatar avatar-sm"><img src="${assetsPath}img/avatars/${$team[i]}" alt="Avatar" class="rounded-circle pull-up"></div>`;
             }
-            $output += "</div>";
+            $output += '</div>';
             return $output;
           },
         },
@@ -99,7 +99,7 @@ $(() => {
           // Actions
           targets: -1,
           searchable: false,
-          title: "Actions",
+          title: 'Actions',
           orderable: false,
           render: (data, type, full, meta) =>
             '<div class="d-inline-block">' +
@@ -109,11 +109,11 @@ $(() => {
             '<a href="javascript:;" class="dropdown-item">Archive</a>' +
             '<div class="dropdown-divider"></div>' +
             '<a href="javascript:;" class="dropdown-item text-danger delete-record">Delete</a>' +
-            "</div>" +
-            "</div>",
+            '</div>' +
+            '</div>',
         },
       ],
-      order: [[2, "desc"]],
+      order: [[2, 'desc']],
       dom: '<"card-header pb-0 pt-sm-0"<"head-label text-center"><"d-flex justify-content-center justify-content-md-end"f>>t<"row mx-2"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
       displayLength: 7,
       lengthMenu: [7, 10, 25, 50, 75, 100],
@@ -125,13 +125,13 @@ $(() => {
               return `Details of "${data.project_name}" Project`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -140,13 +140,13 @@ $(() => {
         },
       },
     });
-    $("div.head-label").html('<h5 class="card-title mb-0">Projects</h5>');
+    $('div.head-label').html('<h5 class="card-title mb-0">Projects</h5>');
   }
 
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
 });

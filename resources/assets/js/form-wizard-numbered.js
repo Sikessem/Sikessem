@@ -1,6 +1,6 @@
 $(() => {
-  const select2 = $(".select2");
-  const selectPicker = $(".selectpicker");
+  const select2 = $('.select2');
+  const selectPicker = $('.selectpicker');
 
   // Bootstrap select
   if (selectPicker.length) {
@@ -13,7 +13,7 @@ $(() => {
       const $this = $(this);
       $this.wrap('<div class="position-relative"></div>');
       $this.select2({
-        placeholder: "Select value",
+        placeholder: 'Select value',
         dropdownParent: $this.parent(),
       });
     });
@@ -22,108 +22,108 @@ $(() => {
 (() => {
   // Numbered Wizard
   // --------------------------------------------------------------------
-  const wizardNumbered = document.querySelector(".wizard-numbered");
+  const wizardNumbered = document.querySelector('.wizard-numbered');
   const wizardNumberedBtnNextList = [].slice.call(
-    wizardNumbered.querySelectorAll(".btn-next"),
+    wizardNumbered.querySelectorAll('.btn-next'),
   );
   const wizardNumberedBtnPrevList = [].slice.call(
-    wizardNumbered.querySelectorAll(".btn-prev"),
+    wizardNumbered.querySelectorAll('.btn-prev'),
   );
-  const wizardNumberedBtnSubmit = wizardNumbered.querySelector(".btn-submit");
+  const wizardNumberedBtnSubmit = wizardNumbered.querySelector('.btn-submit');
 
-  if (typeof wizardNumbered !== "undefined" && wizardNumbered !== null) {
+  if (typeof wizardNumbered !== 'undefined' && wizardNumbered !== null) {
     const numberedStepper = new Stepper(wizardNumbered, {
       linear: false,
     });
     if (wizardNumberedBtnNextList) {
       wizardNumberedBtnNextList.forEach((wizardNumberedBtnNext) => {
-        wizardNumberedBtnNext.addEventListener("click", (event) => {
+        wizardNumberedBtnNext.addEventListener('click', (event) => {
           numberedStepper.next();
         });
       });
     }
     if (wizardNumberedBtnPrevList) {
       wizardNumberedBtnPrevList.forEach((wizardNumberedBtnPrev) => {
-        wizardNumberedBtnPrev.addEventListener("click", (event) => {
+        wizardNumberedBtnPrev.addEventListener('click', (event) => {
           numberedStepper.previous();
         });
       });
     }
     if (wizardNumberedBtnSubmit) {
-      wizardNumberedBtnSubmit.addEventListener("click", (event) => {
-        alert("Submitted..!!");
+      wizardNumberedBtnSubmit.addEventListener('click', (event) => {
+        alert('Submitted..!!');
       });
     }
   }
 
   // Vertical Wizard
   // --------------------------------------------------------------------
-  const wizardVertical = document.querySelector(".wizard-vertical");
+  const wizardVertical = document.querySelector('.wizard-vertical');
   const wizardVerticalBtnNextList = [].slice.call(
-    wizardVertical.querySelectorAll(".btn-next"),
+    wizardVertical.querySelectorAll('.btn-next'),
   );
   const wizardVerticalBtnPrevList = [].slice.call(
-    wizardVertical.querySelectorAll(".btn-prev"),
+    wizardVertical.querySelectorAll('.btn-prev'),
   );
-  const wizardVerticalBtnSubmit = wizardVertical.querySelector(".btn-submit");
+  const wizardVerticalBtnSubmit = wizardVertical.querySelector('.btn-submit');
 
-  if (typeof wizardVertical !== "undefined" && wizardVertical !== null) {
+  if (typeof wizardVertical !== 'undefined' && wizardVertical !== null) {
     const verticalStepper = new Stepper(wizardVertical, {
       linear: false,
     });
     if (wizardVerticalBtnNextList) {
       wizardVerticalBtnNextList.forEach((wizardVerticalBtnNext) => {
-        wizardVerticalBtnNext.addEventListener("click", (event) => {
+        wizardVerticalBtnNext.addEventListener('click', (event) => {
           verticalStepper.next();
         });
       });
     }
     if (wizardVerticalBtnPrevList) {
       wizardVerticalBtnPrevList.forEach((wizardVerticalBtnPrev) => {
-        wizardVerticalBtnPrev.addEventListener("click", (event) => {
+        wizardVerticalBtnPrev.addEventListener('click', (event) => {
           verticalStepper.previous();
         });
       });
     }
 
     if (wizardVerticalBtnSubmit) {
-      wizardVerticalBtnSubmit.addEventListener("click", (event) => {
-        alert("Submitted..!!");
+      wizardVerticalBtnSubmit.addEventListener('click', (event) => {
+        alert('Submitted..!!');
       });
     }
   }
 
   // Modern Wizard
   // --------------------------------------------------------------------
-  const wizardModern = document.querySelector(".wizard-modern-example");
+  const wizardModern = document.querySelector('.wizard-modern-example');
   const wizardModernBtnNextList = [].slice.call(
-    wizardModern.querySelectorAll(".btn-next"),
+    wizardModern.querySelectorAll('.btn-next'),
   );
   const wizardModernBtnPrevList = [].slice.call(
-    wizardModern.querySelectorAll(".btn-prev"),
+    wizardModern.querySelectorAll('.btn-prev'),
   );
-  const wizardModernBtnSubmit = wizardModern.querySelector(".btn-submit");
-  if (typeof wizardModern !== "undefined" && wizardModern !== null) {
+  const wizardModernBtnSubmit = wizardModern.querySelector('.btn-submit');
+  if (typeof wizardModern !== 'undefined' && wizardModern !== null) {
     const modernStepper = new Stepper(wizardModern, {
       linear: false,
     });
     if (wizardModernBtnNextList) {
       wizardModernBtnNextList.forEach((wizardModernBtnNext) => {
-        wizardModernBtnNext.addEventListener("click", (event) => {
+        wizardModernBtnNext.addEventListener('click', (event) => {
           modernStepper.next();
         });
       });
     }
     if (wizardModernBtnPrevList) {
       wizardModernBtnPrevList.forEach((wizardModernBtnPrev) => {
-        wizardModernBtnPrev.addEventListener("click", (event) => {
+        wizardModernBtnPrev.addEventListener('click', (event) => {
           modernStepper.previous();
         });
       });
     }
     if (wizardModernBtnSubmit) {
-      wizardModernBtnSubmit.addEventListener("click", (event) => {
-        alert("Submitted..!!");
+      wizardModernBtnSubmit.addEventListener('click', (event) => {
+        alert('Submitted..!!');
       });
     }
   }
@@ -131,18 +131,18 @@ $(() => {
   // Modern Vertical Wizard
   // --------------------------------------------------------------------
   const wizardModernVertical = document.querySelector(
-    ".wizard-modern-vertical",
+    '.wizard-modern-vertical',
   );
   const wizardModernVerticalBtnNextList = [].slice.call(
-    wizardModernVertical.querySelectorAll(".btn-next"),
+    wizardModernVertical.querySelectorAll('.btn-next'),
   );
   const wizardModernVerticalBtnPrevList = [].slice.call(
-    wizardModernVertical.querySelectorAll(".btn-prev"),
+    wizardModernVertical.querySelectorAll('.btn-prev'),
   );
   const wizardModernVerticalBtnSubmit =
-    wizardModernVertical.querySelector(".btn-submit");
+    wizardModernVertical.querySelector('.btn-submit');
   if (
-    typeof wizardModernVertical !== "undefined" &&
+    typeof wizardModernVertical !== 'undefined' &&
     wizardModernVertical !== null
   ) {
     const modernVerticalStepper = new Stepper(wizardModernVertical, {
@@ -150,21 +150,21 @@ $(() => {
     });
     if (wizardModernVerticalBtnNextList) {
       wizardModernVerticalBtnNextList.forEach((wizardModernVerticalBtnNext) => {
-        wizardModernVerticalBtnNext.addEventListener("click", (event) => {
+        wizardModernVerticalBtnNext.addEventListener('click', (event) => {
           modernVerticalStepper.next();
         });
       });
     }
     if (wizardModernVerticalBtnPrevList) {
       wizardModernVerticalBtnPrevList.forEach((wizardModernVerticalBtnPrev) => {
-        wizardModernVerticalBtnPrev.addEventListener("click", (event) => {
+        wizardModernVerticalBtnPrev.addEventListener('click', (event) => {
           modernVerticalStepper.previous();
         });
       });
     }
     if (wizardModernVerticalBtnSubmit) {
-      wizardModernVerticalBtnSubmit.addEventListener("click", (event) => {
-        alert("Submitted..!!");
+      wizardModernVerticalBtnSubmit.addEventListener('click', (event) => {
+        alert('Submitted..!!');
       });
     }
   }

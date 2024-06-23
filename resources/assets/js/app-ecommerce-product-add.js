@@ -3,15 +3,15 @@
 (() => {
   // Comment editor
 
-  const commentEditor = document.querySelector(".comment-editor");
+  const commentEditor = document.querySelector('.comment-editor');
 
   if (commentEditor) {
     new Quill(commentEditor, {
       modules: {
-        toolbar: ".comment-toolbar",
+        toolbar: '.comment-toolbar',
       },
-      placeholder: "Product Description",
-      theme: "snow",
+      placeholder: 'Product Description',
+      theme: 'snow',
     });
   }
 
@@ -40,13 +40,13 @@
 
   // Basic Dropzone
 
-  const dropzoneBasic = document.querySelector("#dropzone-basic");
+  const dropzoneBasic = document.querySelector('#dropzone-basic');
   if (dropzoneBasic) {
     const myDropzone = new Dropzone(dropzoneBasic, {
       previewTemplate: previewTemplate,
       parallelUploads: 1,
       maxFilesize: 5,
-      acceptedFiles: ".jpg,.jpeg,.png,.gif",
+      acceptedFiles: '.jpg,.jpeg,.png,.gif',
       addRemoveLinks: true,
       maxFiles: 1,
     });
@@ -54,7 +54,7 @@
 
   // Basic Tags
 
-  const tagifyBasicEl = document.querySelector("#ecommerce-product-tags");
+  const tagifyBasicEl = document.querySelector('#ecommerce-product-tags');
   const TagifyBasic = new Tagify(tagifyBasicEl);
 
   // Flatpickr
@@ -62,11 +62,11 @@
   // Datepicker
   const date = new Date();
 
-  const productDate = document.querySelector(".product-date");
+  const productDate = document.querySelector('.product-date');
 
   if (productDate) {
     productDate.flatpickr({
-      monthSelectorType: "static",
+      monthSelectorType: 'static',
       defaultDate: date,
     });
   }
@@ -76,18 +76,18 @@
 
 $(() => {
   // Select2
-  const select2 = $(".select2");
+  const select2 = $('.select2');
   if (select2.length) {
     select2.each(function () {
       const $this = $(this);
       $this.wrap('<div class="position-relative"></div>').select2({
         dropdownParent: $this.parent(),
-        placeholder: $this.data("placeholder"), // for dynamic placeholder
+        placeholder: $this.data('placeholder'), // for dynamic placeholder
       });
     });
   }
 
-  const formRepeater = $(".form-repeater");
+  const formRepeater = $('.form-repeater');
 
   // Form Repeater
   // ! Using jQuery each loop to add dynamic id and class for inputs. You may need to improve it based on form fields.
@@ -96,35 +96,35 @@ $(() => {
   if (formRepeater.length) {
     let row = 2;
     let col = 1;
-    formRepeater.on("submit", (e) => {
+    formRepeater.on('submit', (e) => {
       e.preventDefault();
     });
     formRepeater.repeater({
       show: function () {
-        const fromControl = $(this).find(".form-control, .form-select");
-        const formLabel = $(this).find(".form-label");
+        const fromControl = $(this).find('.form-control, .form-select');
+        const formLabel = $(this).find('.form-label');
 
         fromControl.each((i) => {
           const id = `form-repeater-${row}-${col}`;
-          $(fromControl[i]).attr("id", id);
-          $(formLabel[i]).attr("for", id);
+          $(fromControl[i]).attr('id', id);
+          $(formLabel[i]).attr('for', id);
           col++;
         });
 
         row++;
         $(this).slideDown();
-        $(".select2-container").remove();
-        $(".select2.form-select").select2({
-          placeholder: "Placeholder text",
+        $('.select2-container').remove();
+        $('.select2.form-select').select2({
+          placeholder: 'Placeholder text',
         });
-        $(".select2-container").css("width", "100%");
-        $(".form-repeater:first .form-select").select2({
+        $('.select2-container').css('width', '100%');
+        $('.form-repeater:first .form-select').select2({
           dropdownParent: $(this).parent(),
-          placeholder: "Placeholder text",
+          placeholder: 'Placeholder text',
         });
-        $(".position-relative .select2").each(function () {
+        $('.position-relative .select2').each(function () {
           $(this).select2({
-            dropdownParent: $(this).closest(".position-relative"),
+            dropdownParent: $(this).closest('.position-relative'),
           });
         });
       },

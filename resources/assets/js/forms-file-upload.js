@@ -22,7 +22,7 @@
 
   // Basic Dropzone
   // --------------------------------------------------------------------
-  const dropzoneBasic = document.querySelector("#dropzone-basic");
+  const dropzoneBasic = document.querySelector('#dropzone-basic');
   if (dropzoneBasic) {
     const myDropzone = new Dropzone(dropzoneBasic, {
       previewTemplate: previewTemplate,
@@ -35,7 +35,7 @@
 
   // Multiple Dropzone
   // --------------------------------------------------------------------
-  const dropzoneMulti = document.querySelector("#dropzone-multi");
+  const dropzoneMulti = document.querySelector('#dropzone-multi');
   if (dropzoneMulti) {
     const myDropzoneMulti = new Dropzone(dropzoneMulti, {
       previewTemplate: previewTemplate,

@@ -29,5 +29,17 @@
     "indentStyle": "space",
     "lineWidth": 80,
     "ignore": ["node_modules", "vendor", "storage", "public"]
+  },
+  "javascript": {
+    "formatter": {
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
+    }
   }
 }

@@ -22,20 +22,20 @@
   // Color constant
   const chartColors = {
     column: {
-      series1: "#826af9",
-      series2: "#d2b0ff",
-      bg: "#f8d3ff",
+      series1: '#826af9',
+      series2: '#d2b0ff',
+      bg: '#f8d3ff',
     },
     donut: {
-      series1: "#fee802",
-      series2: "#3fd0bd",
-      series3: "#826bf8",
-      series4: "#2b9bf4",
+      series1: '#fee802',
+      series2: '#3fd0bd',
+      series3: '#826bf8',
+      series4: '#2b9bf4',
     },
     area: {
-      series1: "#29dac7",
-      series2: "#60f2ca",
-      series3: "#a5f8cd",
+      series1: '#29dac7',
+      series2: '#60f2ca',
+      series3: '#a5f8cd',
     },
   };
 
@@ -59,11 +59,11 @@
 
   // Line Area Chart
   // --------------------------------------------------------------------
-  const areaChartEl = document.querySelector("#lineAreaChart");
+  const areaChartEl = document.querySelector('#lineAreaChart');
   const areaChartConfig = {
     chart: {
       height: 400,
-      type: "area",
+      type: 'area',
       parentHeightOffset: 0,
       toolbar: {
         show: false,
@@ -74,12 +74,12 @@
     },
     stroke: {
       show: false,
-      curve: "straight",
+      curve: 'straight',
     },
     legend: {
       show: true,
-      position: "top",
-      horizontalAlign: "start",
+      position: 'top',
+      horizontalAlign: 'start',
       labels: {
         colors: legendColor,
         useSeriesColors: false,
@@ -100,34 +100,34 @@
     ],
     series: [
       {
-        name: "Visits",
+        name: 'Visits',
         data: [100, 120, 90, 170, 130, 160, 140, 240, 220, 180, 270, 280, 375],
       },
       {
-        name: "Clicks",
+        name: 'Clicks',
         data: [60, 80, 70, 110, 80, 100, 90, 180, 160, 140, 200, 220, 275],
       },
       {
-        name: "Sales",
+        name: 'Sales',
         data: [20, 40, 30, 70, 40, 60, 50, 140, 120, 100, 140, 180, 220],
       },
     ],
     xaxis: {
       categories: [
-        "7/12",
-        "8/12",
-        "9/12",
-        "10/12",
-        "11/12",
-        "12/12",
-        "13/12",
-        "14/12",
-        "15/12",
-        "16/12",
-        "17/12",
-        "18/12",
-        "19/12",
-        "20/12",
+        '7/12',
+        '8/12',
+        '9/12',
+        '10/12',
+        '11/12',
+        '12/12',
+        '13/12',
+        '14/12',
+        '15/12',
+        '16/12',
+        '17/12',
+        '18/12',
+        '19/12',
+        '20/12',
       ],
       axisBorder: {
         show: false,
@@ -138,7 +138,7 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
@@ -146,30 +146,30 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
     fill: {
       opacity: 1,
-      type: "solid",
+      type: 'solid',
     },
     tooltip: {
       shared: false,
     },
   };
-  if (typeof areaChartEl !== "undefined" && areaChartEl !== null) {
+  if (typeof areaChartEl !== 'undefined' && areaChartEl !== null) {
     const areaChart = new ApexCharts(areaChartEl, areaChartConfig);
     areaChart.render();
   }
 
   // Bar Chart
   // --------------------------------------------------------------------
-  const barChartEl = document.querySelector("#barChart");
+  const barChartEl = document.querySelector('#barChart');
   const barChartConfig = {
     chart: {
       height: 400,
-      type: "bar",
+      type: 'bar',
       stacked: true,
       parentHeightOffset: 0,
       toolbar: {
@@ -178,7 +178,7 @@
     },
     plotOptions: {
       bar: {
-        columnWidth: "15%",
+        columnWidth: '15%',
         colors: {
           backgroundBarColors: [
             chartColors.column.bg,
@@ -196,8 +196,8 @@
     },
     legend: {
       show: true,
-      position: "top",
-      horizontalAlign: "start",
+      position: 'top',
+      horizontalAlign: 'start',
       labels: {
         colors: legendColor,
         useSeriesColors: false,
@@ -206,7 +206,7 @@
     colors: [chartColors.column.series1, chartColors.column.series2],
     stroke: {
       show: true,
-      colors: ["transparent"],
+      colors: ['transparent'],
     },
     grid: {
       borderColor: borderColor,
@@ -218,26 +218,26 @@
     },
     series: [
       {
-        name: "Apple",
+        name: 'Apple',
         data: [90, 120, 55, 100, 80, 125, 175, 70, 88, 180],
       },
       {
-        name: "Samsung",
+        name: 'Samsung',
         data: [85, 100, 30, 40, 95, 90, 30, 110, 62, 20],
       },
     ],
     xaxis: {
       categories: [
-        "7/12",
-        "8/12",
-        "9/12",
-        "10/12",
-        "11/12",
-        "12/12",
-        "13/12",
-        "14/12",
-        "15/12",
-        "16/12",
+        '7/12',
+        '8/12',
+        '9/12',
+        '10/12',
+        '11/12',
+        '12/12',
+        '13/12',
+        '14/12',
+        '15/12',
+        '16/12',
       ],
       axisBorder: {
         show: false,
@@ -248,7 +248,7 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
@@ -256,7 +256,7 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
@@ -264,21 +264,21 @@
       opacity: 1,
     },
   };
-  if (typeof barChartEl !== "undefined" && barChartEl !== null) {
+  if (typeof barChartEl !== 'undefined' && barChartEl !== null) {
     const barChart = new ApexCharts(barChartEl, barChartConfig);
     barChart.render();
   }
 
   // Scatter Chart
   // --------------------------------------------------------------------
-  const scatterChartEl = document.querySelector("#scatterChart");
+  const scatterChartEl = document.querySelector('#scatterChart');
   const scatterChartConfig = {
     chart: {
       height: 400,
-      type: "scatter",
+      type: 'scatter',
       zoom: {
         enabled: true,
-        type: "xy",
+        type: 'xy',
       },
       parentHeightOffset: 0,
       toolbar: {
@@ -295,8 +295,8 @@
     },
     legend: {
       show: true,
-      position: "top",
-      horizontalAlign: "start",
+      position: 'top',
+      horizontalAlign: 'start',
       labels: {
         colors: legendColor,
         useSeriesColors: false,
@@ -309,7 +309,7 @@
     ],
     series: [
       {
-        name: "Angular",
+        name: 'Angular',
         data: [
           [5.4, 170],
           [5.4, 100],
@@ -329,7 +329,7 @@
         ],
       },
       {
-        name: "Vue",
+        name: 'Vue',
         data: [
           [14.0, 220],
           [15.0, 280],
@@ -347,7 +347,7 @@
         ],
       },
       {
-        name: "React",
+        name: 'React',
         data: [
           [14.0, 290],
           [13.0, 190],
@@ -375,7 +375,7 @@
         formatter: (val) => Number.parseFloat(val).toFixed(1),
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
@@ -383,23 +383,23 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
   };
-  if (typeof scatterChartEl !== "undefined" && scatterChartEl !== null) {
+  if (typeof scatterChartEl !== 'undefined' && scatterChartEl !== null) {
     const scatterChart = new ApexCharts(scatterChartEl, scatterChartConfig);
     scatterChart.render();
   }
 
   // Line Chart
   // --------------------------------------------------------------------
-  const lineChartEl = document.querySelector("#lineChart");
+  const lineChartEl = document.querySelector('#lineChart');
   const lineChartConfig = {
     chart: {
       height: 400,
-      type: "line",
+      type: 'line',
       parentHeightOffset: 0,
       zoom: {
         enabled: false,
@@ -426,7 +426,7 @@
       enabled: false,
     },
     stroke: {
-      curve: "straight",
+      curve: 'straight',
     },
     colors: [config.colors.warning],
     grid: {
@@ -446,21 +446,21 @@
     },
     xaxis: {
       categories: [
-        "7/12",
-        "8/12",
-        "9/12",
-        "10/12",
-        "11/12",
-        "12/12",
-        "13/12",
-        "14/12",
-        "15/12",
-        "16/12",
-        "17/12",
-        "18/12",
-        "19/12",
-        "20/12",
-        "21/12",
+        '7/12',
+        '8/12',
+        '9/12',
+        '10/12',
+        '11/12',
+        '12/12',
+        '13/12',
+        '14/12',
+        '15/12',
+        '16/12',
+        '17/12',
+        '18/12',
+        '19/12',
+        '20/12',
+        '21/12',
       ],
       axisBorder: {
         show: false,
@@ -471,7 +471,7 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
@@ -479,23 +479,23 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
   };
-  if (typeof lineChartEl !== "undefined" && lineChartEl !== null) {
+  if (typeof lineChartEl !== 'undefined' && lineChartEl !== null) {
     const lineChart = new ApexCharts(lineChartEl, lineChartConfig);
     lineChart.render();
   }
 
   // Horizontal Bar Chart
   // --------------------------------------------------------------------
-  const horizontalBarChartEl = document.querySelector("#horizontalBarChart");
+  const horizontalBarChartEl = document.querySelector('#horizontalBarChart');
   const horizontalBarChartConfig = {
     chart: {
       height: 400,
-      type: "bar",
+      type: 'bar',
       toolbar: {
         show: false,
       },
@@ -503,8 +503,8 @@
     plotOptions: {
       bar: {
         horizontal: true,
-        barHeight: "30%",
-        startingShape: "rounded",
+        barHeight: '30%',
+        startingShape: 'rounded',
         borderRadius: 8,
       },
     },
@@ -531,13 +531,13 @@
     ],
     xaxis: {
       categories: [
-        "MON, 11",
-        "THU, 14",
-        "FRI, 15",
-        "MON, 18",
-        "WED, 20",
-        "FRI, 21",
-        "MON, 23",
+        'MON, 11',
+        'THU, 14',
+        'FRI, 15',
+        'MON, 18',
+        'WED, 20',
+        'FRI, 21',
+        'MON, 23',
       ],
       axisBorder: {
         show: false,
@@ -548,7 +548,7 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
@@ -556,13 +556,13 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
   };
   if (
-    typeof horizontalBarChartEl !== "undefined" &&
+    typeof horizontalBarChartEl !== 'undefined' &&
     horizontalBarChartEl !== null
   ) {
     const horizontalBarChart = new ApexCharts(
@@ -574,11 +574,11 @@
 
   // Candlestick Chart
   // --------------------------------------------------------------------
-  const candlestickEl = document.querySelector("#candleStickChart");
+  const candlestickEl = document.querySelector('#candleStickChart');
   const candlestickChartConfig = {
     chart: {
       height: 410,
-      type: "candlestick",
+      type: 'candlestick',
       parentHeightOffset: 0,
       toolbar: {
         show: false,
@@ -647,7 +647,7 @@
       },
     ],
     xaxis: {
-      type: "datetime",
+      type: 'datetime',
       axisBorder: {
         show: false,
       },
@@ -657,7 +657,7 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
@@ -668,7 +668,7 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
@@ -691,11 +691,11 @@
         },
       },
       bar: {
-        columnWidth: "40%",
+        columnWidth: '40%',
       },
     },
   };
-  if (typeof candlestickEl !== "undefined" && candlestickEl !== null) {
+  if (typeof candlestickEl !== 'undefined' && candlestickEl !== null) {
     const candlestickChart = new ApexCharts(
       candlestickEl,
       candlestickChartConfig,
@@ -705,11 +705,11 @@
 
   // Heat map chart
   // --------------------------------------------------------------------
-  const heatMapEl = document.querySelector("#heatMapChart");
+  const heatMapEl = document.querySelector('#heatMapChart');
   const heatMapChartConfig = {
     chart: {
       height: 350,
-      type: "heatmap",
+      type: 'heatmap',
       parentHeightOffset: 0,
       toolbar: {
         show: false,
@@ -724,38 +724,38 @@
             {
               from: 0,
               to: 10,
-              name: "0-10",
-              color: "#90B3F3",
+              name: '0-10',
+              color: '#90B3F3',
             },
             {
               from: 11,
               to: 20,
-              name: "10-20",
-              color: "#7EA6F1",
+              name: '10-20',
+              color: '#7EA6F1',
             },
             {
               from: 21,
               to: 30,
-              name: "20-30",
-              color: "#6B9AEF",
+              name: '20-30',
+              color: '#6B9AEF',
             },
             {
               from: 31,
               to: 40,
-              name: "30-40",
-              color: "#598DEE",
+              name: '30-40',
+              color: '#598DEE',
             },
             {
               from: 41,
               to: 50,
-              name: "40-50",
-              color: "#4680EC",
+              name: '40-50',
+              color: '#4680EC',
             },
             {
               from: 51,
               to: 60,
-              name: "50-60",
-              color: "#3474EA",
+              name: '50-60',
+              color: '#3474EA',
             },
           ],
         },
@@ -769,8 +769,8 @@
     },
     legend: {
       show: true,
-      position: "top",
-      horizontalAlign: "start",
+      position: 'top',
+      horizontalAlign: 'start',
       labels: {
         colors: legendColor,
         useSeriesColors: false,
@@ -785,56 +785,56 @@
       },
     },
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       width: 4,
-      lineCap: "round",
+      lineCap: 'round',
       colors: [cardColor],
     },
     series: [
       {
-        name: "SUN",
+        name: 'SUN',
         data: generateDataHeat(24, {
           min: 0,
           max: 60,
         }),
       },
       {
-        name: "MON",
+        name: 'MON',
         data: generateDataHeat(24, {
           min: 0,
           max: 60,
         }),
       },
       {
-        name: "TUE",
+        name: 'TUE',
         data: generateDataHeat(24, {
           min: 0,
           max: 60,
         }),
       },
       {
-        name: "WED",
+        name: 'WED',
         data: generateDataHeat(24, {
           min: 0,
           max: 60,
         }),
       },
       {
-        name: "THU",
+        name: 'THU',
         data: generateDataHeat(24, {
           min: 0,
           max: 60,
         }),
       },
       {
-        name: "FRI",
+        name: 'FRI',
         data: generateDataHeat(24, {
           min: 0,
           max: 60,
         }),
       },
       {
-        name: "SAT",
+        name: 'SAT',
         data: generateDataHeat(24, {
           min: 0,
           max: 60,
@@ -846,7 +846,7 @@
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
       axisBorder: {
@@ -860,23 +860,23 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
+          fontSize: '13px',
         },
       },
     },
   };
-  if (typeof heatMapEl !== "undefined" && heatMapEl !== null) {
+  if (typeof heatMapEl !== 'undefined' && heatMapEl !== null) {
     const heatMapChart = new ApexCharts(heatMapEl, heatMapChartConfig);
     heatMapChart.render();
   }
 
   // Radial Bar Chart
   // --------------------------------------------------------------------
-  const radialBarChartEl = document.querySelector("#radialBarChart");
+  const radialBarChartEl = document.querySelector('#radialBarChart');
   const radialBarChartConfig = {
     chart: {
       height: 380,
-      type: "radialBar",
+      type: 'radialBar',
     },
     colors: [
       chartColors.donut.series1,
@@ -887,7 +887,7 @@
       radialBar: {
         size: 185,
         hollow: {
-          size: "40%",
+          size: '40%',
         },
         track: {
           margin: 10,
@@ -895,21 +895,21 @@
         },
         dataLabels: {
           name: {
-            fontSize: "2rem",
-            fontFamily: "Public Sans",
+            fontSize: '2rem',
+            fontFamily: 'Public Sans',
           },
           value: {
-            fontSize: "1.2rem",
+            fontSize: '1.2rem',
             color: legendColor,
-            fontFamily: "Public Sans",
+            fontFamily: 'Public Sans',
           },
           total: {
             show: true,
             fontWeight: 400,
-            fontSize: "1.3rem",
+            fontSize: '1.3rem',
             color: headingColor,
-            label: "Comments",
-            formatter: (w) => "80%",
+            label: 'Comments',
+            formatter: (w) => '80%',
           },
         },
       },
@@ -923,30 +923,30 @@
     },
     legend: {
       show: true,
-      position: "bottom",
+      position: 'bottom',
       labels: {
         colors: legendColor,
         useSeriesColors: false,
       },
     },
     stroke: {
-      lineCap: "round",
+      lineCap: 'round',
     },
     series: [80, 50, 35],
-    labels: ["Comments", "Replies", "Shares"],
+    labels: ['Comments', 'Replies', 'Shares'],
   };
-  if (typeof radialBarChartEl !== "undefined" && radialBarChartEl !== null) {
+  if (typeof radialBarChartEl !== 'undefined' && radialBarChartEl !== null) {
     const radialChart = new ApexCharts(radialBarChartEl, radialBarChartConfig);
     radialChart.render();
   }
 
   // Radar Chart
   // --------------------------------------------------------------------
-  const radarChartEl = document.querySelector("#radarChart");
+  const radarChartEl = document.querySelector('#radarChart');
   const radarChartConfig = {
     chart: {
       height: 350,
-      type: "radar",
+      type: 'radar',
       toolbar: {
         show: false,
       },
@@ -960,7 +960,7 @@
     },
     legend: {
       show: true,
-      position: "bottom",
+      position: 'bottom',
       labels: {
         colors: legendColor,
         useSeriesColors: false,
@@ -979,25 +979,25 @@
     },
     series: [
       {
-        name: "iPhone 12",
+        name: 'iPhone 12',
         data: [41, 64, 81, 60, 42, 42, 33, 23],
       },
       {
-        name: "Samsung s20",
+        name: 'Samsung s20',
         data: [65, 46, 42, 25, 58, 63, 76, 43],
       },
     ],
     colors: [chartColors.donut.series1, chartColors.donut.series3],
     xaxis: {
       categories: [
-        "Battery",
-        "Brand",
-        "Camera",
-        "Memory",
-        "Storage",
-        "Display",
-        "OS",
-        "Price",
+        'Battery',
+        'Brand',
+        'Camera',
+        'Memory',
+        'Storage',
+        'Display',
+        'OS',
+        'Price',
       ],
       labels: {
         show: true,
@@ -1012,8 +1012,8 @@
             labelColor,
             labelColor,
           ],
-          fontSize: "13px",
-          fontFamily: "Public Sans",
+          fontSize: '13px',
+          fontFamily: 'Public Sans',
         },
       },
     },
@@ -1035,20 +1035,20 @@
       },
     },
   };
-  if (typeof radarChartEl !== "undefined" && radarChartEl !== null) {
+  if (typeof radarChartEl !== 'undefined' && radarChartEl !== null) {
     const radarChart = new ApexCharts(radarChartEl, radarChartConfig);
     radarChart.render();
   }
 
   // Donut Chart
   // --------------------------------------------------------------------
-  const donutChartEl = document.querySelector("#donutChart");
+  const donutChartEl = document.querySelector('#donutChart');
   const donutChartConfig = {
     chart: {
       height: 390,
-      type: "donut",
+      type: 'donut',
     },
-    labels: ["Operational", "Networking", "Hiring", "R&D"],
+    labels: ['Operational', 'Networking', 'Hiring', 'R&D'],
     series: [42, 7, 25, 25],
     colors: [
       chartColors.donut.series1,
@@ -1058,7 +1058,7 @@
     ],
     stroke: {
       show: false,
-      curve: "straight",
+      curve: 'straight',
     },
     dataLabels: {
       enabled: true,
@@ -1066,7 +1066,7 @@
     },
     legend: {
       show: true,
-      position: "bottom",
+      position: 'bottom',
       markers: { offsetX: -3 },
       itemMargin: {
         vertical: 3,
@@ -1083,21 +1083,21 @@
           labels: {
             show: true,
             name: {
-              fontSize: "2rem",
-              fontFamily: "Public Sans",
+              fontSize: '2rem',
+              fontFamily: 'Public Sans',
             },
             value: {
-              fontSize: "1.2rem",
+              fontSize: '1.2rem',
               color: legendColor,
-              fontFamily: "Public Sans",
+              fontFamily: 'Public Sans',
               formatter: (val) => `${Number.parseInt(val, 10)}%`,
             },
             total: {
               show: true,
-              fontSize: "1.5rem",
+              fontSize: '1.5rem',
               color: headingColor,
-              label: "Operational",
-              formatter: (w) => "42%",
+              label: 'Operational',
+              formatter: (w) => '42%',
             },
           },
         },
@@ -1111,7 +1111,7 @@
             height: 380,
           },
           legend: {
-            position: "bottom",
+            position: 'bottom',
             labels: {
               colors: legendColor,
               useSeriesColors: false,
@@ -1131,20 +1131,20 @@
                 labels: {
                   show: true,
                   name: {
-                    fontSize: "1.5rem",
+                    fontSize: '1.5rem',
                   },
                   value: {
-                    fontSize: "1rem",
+                    fontSize: '1rem',
                   },
                   total: {
-                    fontSize: "1.5rem",
+                    fontSize: '1.5rem',
                   },
                 },
               },
             },
           },
           legend: {
-            position: "bottom",
+            position: 'bottom',
             labels: {
               colors: legendColor,
               useSeriesColors: false,
@@ -1176,7 +1176,7 @@
       },
     ],
   };
-  if (typeof donutChartEl !== "undefined" && donutChartEl !== null) {
+  if (typeof donutChartEl !== 'undefined' && donutChartEl !== null) {
     const donutChart = new ApexCharts(donutChartEl, donutChartConfig);
     donutChart.render();
   }

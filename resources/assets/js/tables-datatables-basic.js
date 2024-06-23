@@ -1,23 +1,23 @@
 let fv;
 let offCanvasEl;
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener('DOMContentLoaded', (e) => {
   (() => {
-    const formAddNewRecord = document.getElementById("form-add-new-record");
+    const formAddNewRecord = document.getElementById('form-add-new-record');
 
     setTimeout(() => {
-      const newRecord = document.querySelector(".create-new");
-      const offCanvasElement = document.querySelector("#add-new-record");
+      const newRecord = document.querySelector('.create-new');
+      const offCanvasElement = document.querySelector('#add-new-record');
 
       // To open offCanvas, to add new record
       if (newRecord) {
-        newRecord.addEventListener("click", () => {
+        newRecord.addEventListener('click', () => {
           offCanvasEl = new bootstrap.Offcanvas(offCanvasElement);
           // Empty fields on offCanvas open
-          offCanvasElement.querySelector(".dt-full-name").value = "";
-          offCanvasElement.querySelector(".dt-post").value = "";
-          offCanvasElement.querySelector(".dt-email").value = "";
-          offCanvasElement.querySelector(".dt-date").value = "";
-          offCanvasElement.querySelector(".dt-salary").value = "";
+          offCanvasElement.querySelector('.dt-full-name').value = '';
+          offCanvasElement.querySelector('.dt-post').value = '';
+          offCanvasElement.querySelector('.dt-email').value = '';
+          offCanvasElement.querySelector('.dt-date').value = '';
+          offCanvasElement.querySelector('.dt-salary').value = '';
           // Open offCanvas with form
           offCanvasEl.show();
         });
@@ -30,42 +30,42 @@ document.addEventListener("DOMContentLoaded", (e) => {
         basicFullname: {
           validators: {
             notEmpty: {
-              message: "The name is required",
+              message: 'The name is required',
             },
           },
         },
         basicPost: {
           validators: {
             notEmpty: {
-              message: "Post field is required",
+              message: 'Post field is required',
             },
           },
         },
         basicEmail: {
           validators: {
             notEmpty: {
-              message: "The Email is required",
+              message: 'The Email is required',
             },
             emailAddress: {
-              message: "The value is not a valid email address",
+              message: 'The value is not a valid email address',
             },
           },
         },
         basicDate: {
           validators: {
             notEmpty: {
-              message: "Joining Date is required",
+              message: 'Joining Date is required',
             },
             date: {
-              format: "MM/DD/YYYY",
-              message: "The value is not a valid date",
+              format: 'MM/DD/YYYY',
+              message: 'The value is not a valid date',
             },
           },
         },
         basicSalary: {
           validators: {
             notEmpty: {
-              message: "Basic Salary is required",
+              message: 'Basic Salary is required',
             },
           },
         },
@@ -75,18 +75,18 @@ document.addEventListener("DOMContentLoaded", (e) => {
         bootstrap5: new FormValidation.plugins.Bootstrap5({
           // Use this for enabling/changing valid/invalid class
           // eleInvalidClass: '',
-          eleValidClass: "",
-          rowSelector: ".col-sm-12",
+          eleValidClass: '',
+          rowSelector: '.col-sm-12',
         }),
         submitButton: new FormValidation.plugins.SubmitButton(),
         // defaultSubmit: new FormValidation.plugins.DefaultSubmit(),
         autoFocus: new FormValidation.plugins.AutoFocus(),
       },
       init: (instance) => {
-        instance.on("plugins.message.placed", (e) => {
-          if (e.element.parentElement.classList.contains("input-group")) {
+        instance.on('plugins.message.placed', (e) => {
+          if (e.element.parentElement.classList.contains('input-group')) {
             e.element.parentElement.insertAdjacentElement(
-              "afterend",
+              'afterend',
               e.messageElement,
             );
           }
@@ -101,10 +101,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
       flatpickrDate.flatpickr({
         enableTime: false,
         // See https://flatpickr.js.org/formatting/
-        dateFormat: "m/d/Y",
+        dateFormat: 'm/d/Y',
         // After selecting a date, we need to revalidate the field
         onChange: () => {
-          fv.revalidateField("basicDate");
+          fv.revalidateField('basicDate');
         },
       });
     }
@@ -113,10 +113,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 // datatable (jquery)
 $(() => {
-  const dt_basic_table = $(".datatables-basic");
-  const dt_complex_header_table = $(".dt-complex-header");
-  const dt_row_grouping_table = $(".dt-row-grouping");
-  const dt_multilingual_table = $(".dt-multilingual");
+  const dt_basic_table = $('.datatables-basic');
+  const dt_complex_header_table = $('.dt-complex-header');
+  const dt_row_grouping_table = $('.dt-row-grouping');
+  const dt_multilingual_table = $('.dt-multilingual');
   let dt_basic;
 
   // DataTable with buttons
@@ -126,25 +126,25 @@ $(() => {
     dt_basic = dt_basic_table.DataTable({
       ajax: `${assetsPath}json/table-datatable.json`,
       columns: [
-        { data: "" },
-        { data: "id" },
-        { data: "id" },
-        { data: "full_name" },
-        { data: "email" },
-        { data: "start_date" },
-        { data: "salary" },
-        { data: "status" },
-        { data: "" },
+        { data: '' },
+        { data: 'id' },
+        { data: 'id' },
+        { data: 'full_name' },
+        { data: 'email' },
+        { data: 'start_date' },
+        { data: 'salary' },
+        { data: 'status' },
+        { data: '' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           orderable: false,
           searchable: false,
           responsivePriority: 2,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // For Checkboxes
@@ -178,18 +178,18 @@ $(() => {
               // For Avatar badge
               const stateNum = Math.floor(Math.random() * 6);
               const states = [
-                "success",
-                "danger",
-                "warning",
-                "info",
-                "primary",
-                "secondary",
+                'success',
+                'danger',
+                'warning',
+                'info',
+                'primary',
+                'secondary',
               ];
               const $state = states[stateNum];
               const $name = full.full_name;
               let $initials = $name.match(/\b\w/g) || [];
               $initials = (
-                ($initials.shift() || "") + ($initials.pop() || "")
+                ($initials.shift() || '') + ($initials.pop() || '')
               ).toUpperCase();
               $output = `<span class="avatar-initial rounded-circle bg-label-${$state}">${$initials}</span>`;
             }
@@ -208,13 +208,13 @@ $(() => {
           render: (data, type, full, meta) => {
             const $status_number = full.status;
             const $status = {
-              1: { title: "Current", class: "bg-label-primary" },
-              2: { title: "Professional", class: " bg-label-success" },
-              3: { title: "Rejected", class: " bg-label-danger" },
-              4: { title: "Resigned", class: " bg-label-warning" },
-              5: { title: "Applied", class: " bg-label-info" },
+              1: { title: 'Current', class: 'bg-label-primary' },
+              2: { title: 'Professional', class: ' bg-label-success' },
+              3: { title: 'Rejected', class: ' bg-label-danger' },
+              4: { title: 'Resigned', class: ' bg-label-warning' },
+              5: { title: 'Applied', class: ' bg-label-info' },
             };
-            if (typeof $status[$status_number] === "undefined") {
+            if (typeof $status[$status_number] === 'undefined') {
               return data;
             }
             return `<span class="badge ${$status[$status_number].class}">${$status[$status_number].title}</span>`;
@@ -223,7 +223,7 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           orderable: false,
           searchable: false,
           render: (data, type, full, meta) =>
@@ -234,26 +234,26 @@ $(() => {
             '<li><a href="javascript:;" class="dropdown-item">Archive</a></li>' +
             '<div class="dropdown-divider"></div>' +
             '<li><a href="javascript:;" class="dropdown-item text-danger delete-record">Delete</a></li>' +
-            "</ul>" +
-            "</div>" +
+            '</ul>' +
+            '</div>' +
             '<a href="javascript:;" class="btn btn-sm btn-icon item-edit"><i class="text-primary ti ti-pencil"></i></a>',
         },
       ],
-      order: [[2, "desc"]],
+      order: [[2, 'desc']],
       dom: '<"card-header flex-column flex-md-row"<"head-label text-center"><"dt-action-buttons text-end pt-3 pt-md-0"B>><"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end"f>>t<"row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
       displayLength: 7,
       lengthMenu: [7, 10, 25, 50, 75, 100],
       buttons: [
         {
-          extend: "collection",
+          extend: 'collection',
           className:
-            "btn btn-label-primary dropdown-toggle me-2 waves-effect waves-light",
+            'btn btn-label-primary dropdown-toggle me-2 waves-effect waves-light',
           text: '<i class="ti ti-file-export me-sm-1"></i> <span class="d-none d-sm-inline-block">Export</span>',
           buttons: [
             {
-              extend: "print",
+              extend: 'print',
               text: '<i class="ti ti-printer me-1" ></i>Print',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [3, 4, 5, 6, 7],
                 // prevent avatar to be display
@@ -263,9 +263,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("user-name")) {
+                      if (item.classList?.contains('user-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -280,21 +280,21 @@ $(() => {
               customize: (win) => {
                 //customize print view for dark
                 $(win.document.body)
-                  .css("color", config.colors.headingColor)
-                  .css("border-color", config.colors.borderColor)
-                  .css("background-color", config.colors.bodyBg);
+                  .css('color', config.colors.headingColor)
+                  .css('border-color', config.colors.borderColor)
+                  .css('background-color', config.colors.bodyBg);
                 $(win.document.body)
-                  .find("table")
-                  .addClass("compact")
-                  .css("color", "inherit")
-                  .css("border-color", "inherit")
-                  .css("background-color", "inherit");
+                  .find('table')
+                  .addClass('compact')
+                  .css('color', 'inherit')
+                  .css('border-color', 'inherit')
+                  .css('background-color', 'inherit');
               },
             },
             {
-              extend: "csv",
+              extend: 'csv',
               text: '<i class="ti ti-file-text me-1" ></i>Csv',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [3, 4, 5, 6, 7],
                 // prevent avatar to be display
@@ -304,9 +304,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("user-name")) {
+                      if (item.classList?.contains('user-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -320,9 +320,9 @@ $(() => {
               },
             },
             {
-              extend: "excel",
+              extend: 'excel',
               text: '<i class="ti ti-file-spreadsheet me-1"></i>Excel',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [3, 4, 5, 6, 7],
                 // prevent avatar to be display
@@ -332,9 +332,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("user-name")) {
+                      if (item.classList?.contains('user-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -348,9 +348,9 @@ $(() => {
               },
             },
             {
-              extend: "pdf",
+              extend: 'pdf',
               text: '<i class="ti ti-file-description me-1"></i>Pdf',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [3, 4, 5, 6, 7],
                 // prevent avatar to be display
@@ -360,9 +360,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("user-name")) {
+                      if (item.classList?.contains('user-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -376,9 +376,9 @@ $(() => {
               },
             },
             {
-              extend: "copy",
+              extend: 'copy',
               text: '<i class="ti ti-copy me-1" ></i>Copy',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [3, 4, 5, 6, 7],
                 // prevent avatar to be display
@@ -388,9 +388,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("user-name")) {
+                      if (item.classList?.contains('user-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -407,7 +407,7 @@ $(() => {
         },
         {
           text: '<i class="ti ti-plus me-sm-1"></i> <span class="d-none d-sm-inline-block">Add New Record</span>',
-          className: "create-new btn btn-primary waves-effect waves-light",
+          className: 'create-new btn btn-primary waves-effect waves-light',
         },
       ],
       responsive: {
@@ -418,13 +418,13 @@ $(() => {
               return `Details of ${data.full_name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -433,7 +433,7 @@ $(() => {
         },
       },
     });
-    $("div.head-label").html(
+    $('div.head-label').html(
       '<h5 class="card-title mb-0">DataTable with Buttons</h5>',
     );
   }
@@ -442,14 +442,14 @@ $(() => {
   // ? Remove/Update this code as per your requirements
   let count = 101;
   // On form submit, if form is valid
-  fv.on("core.form.valid", () => {
-    const $new_name = $(".add-new-record .dt-full-name").val();
-    const $new_post = $(".add-new-record .dt-post").val();
-    const $new_email = $(".add-new-record .dt-email").val();
-    const $new_date = $(".add-new-record .dt-date").val();
-    const $new_salary = $(".add-new-record .dt-salary").val();
+  fv.on('core.form.valid', () => {
+    const $new_name = $('.add-new-record .dt-full-name').val();
+    const $new_post = $('.add-new-record .dt-post').val();
+    const $new_email = $('.add-new-record .dt-email').val();
+    const $new_date = $('.add-new-record .dt-date').val();
+    const $new_salary = $('.add-new-record .dt-salary').val();
 
-    if ($new_name !== "") {
+    if ($new_name !== '') {
       dt_basic.row
         .add({
           id: count,
@@ -469,8 +469,8 @@ $(() => {
   });
 
   // Delete Record
-  $(".datatables-basic tbody").on("click", ".delete-record", function () {
-    dt_basic.row($(this).parents("tr")).remove().draw();
+  $('.datatables-basic tbody').on('click', '.delete-record', function () {
+    dt_basic.row($(this).parents('tr')).remove().draw();
   });
 
   // Complex Header DataTable
@@ -480,13 +480,13 @@ $(() => {
     const dt_complex = dt_complex_header_table.DataTable({
       ajax: `${assetsPath}json/table-datatable.json`,
       columns: [
-        { data: "full_name" },
-        { data: "email" },
-        { data: "city" },
-        { data: "post" },
-        { data: "salary" },
-        { data: "status" },
-        { data: "" },
+        { data: 'full_name' },
+        { data: 'email' },
+        { data: 'city' },
+        { data: 'post' },
+        { data: 'salary' },
+        { data: 'status' },
+        { data: '' },
       ],
       columnDefs: [
         {
@@ -495,13 +495,13 @@ $(() => {
           render: (data, type, full, meta) => {
             const $status_number = full.status;
             const $status = {
-              1: { title: "Current", class: "bg-label-primary" },
-              2: { title: "Professional", class: " bg-label-success" },
-              3: { title: "Rejected", class: " bg-label-danger" },
-              4: { title: "Resigned", class: " bg-label-warning" },
-              5: { title: "Applied", class: " bg-label-info" },
+              1: { title: 'Current', class: 'bg-label-primary' },
+              2: { title: 'Professional', class: ' bg-label-success' },
+              3: { title: 'Rejected', class: ' bg-label-danger' },
+              4: { title: 'Resigned', class: ' bg-label-warning' },
+              5: { title: 'Applied', class: ' bg-label-info' },
             };
-            if (typeof $status[$status_number] === "undefined") {
+            if (typeof $status[$status_number] === 'undefined') {
               return data;
             }
             return `<span class="badge ${$status[$status_number].class}">${$status[$status_number].title}</span>`;
@@ -510,7 +510,7 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           orderable: false,
           render: (data, type, full, meta) =>
             '<div class="d-inline-block">' +
@@ -520,8 +520,8 @@ $(() => {
             '<a href="javascript:;" class="dropdown-item">Archive</a>' +
             '<div class="dropdown-divider"></div>' +
             '<a href="javascript:;" class="dropdown-item text-danger delete-record">Delete</a>' +
-            "</div>" +
-            "</div>" +
+            '</div>' +
+            '</div>' +
             '<a href="javascript:;" class="btn btn-sm btn-icon item-edit"><i class="text-primary ti ti-pencil"></i></a>',
         },
       ],
@@ -539,24 +539,24 @@ $(() => {
     const groupingTable = dt_row_grouping_table.DataTable({
       ajax: `${assetsPath}json/table-datatable.json`,
       columns: [
-        { data: "" },
-        { data: "full_name" },
-        { data: "post" },
-        { data: "email" },
-        { data: "city" },
-        { data: "start_date" },
-        { data: "salary" },
-        { data: "status" },
-        { data: "" },
+        { data: '' },
+        { data: 'full_name' },
+        { data: 'post' },
+        { data: 'email' },
+        { data: 'city' },
+        { data: 'start_date' },
+        { data: 'salary' },
+        { data: 'status' },
+        { data: '' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           orderable: false,
           targets: 0,
           searchable: false,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         { visible: false, targets: groupColumn },
         {
@@ -565,13 +565,13 @@ $(() => {
           render: (data, type, full, meta) => {
             const $status_number = full.status;
             const $status = {
-              1: { title: "Current", class: "bg-label-primary" },
-              2: { title: "Professional", class: " bg-label-success" },
-              3: { title: "Rejected", class: " bg-label-danger" },
-              4: { title: "Resigned", class: " bg-label-warning" },
-              5: { title: "Applied", class: " bg-label-info" },
+              1: { title: 'Current', class: 'bg-label-primary' },
+              2: { title: 'Professional', class: ' bg-label-success' },
+              3: { title: 'Rejected', class: ' bg-label-danger' },
+              4: { title: 'Resigned', class: ' bg-label-warning' },
+              5: { title: 'Applied', class: ' bg-label-info' },
             };
-            if (typeof $status[$status_number] === "undefined") {
+            if (typeof $status[$status_number] === 'undefined') {
               return data;
             }
             return `<span class="badge ${$status[$status_number].class}">${$status[$status_number].title}</span>`;
@@ -580,7 +580,7 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           orderable: false,
           searchable: false,
           render: (data, type, full, meta) =>
@@ -591,22 +591,22 @@ $(() => {
             '<a href="javascript:;" class="dropdown-item">Archive</a>' +
             '<div class="dropdown-divider"></div>' +
             '<a href="javascript:;" class="dropdown-item text-danger delete-record">Delete</a>' +
-            "</div>" +
-            "</div>" +
+            '</div>' +
+            '</div>' +
             '<a href="javascript:;" class="btn btn-sm btn-icon item-edit"><i class="text-primary ti ti-pencil"></i></a>',
         },
       ],
-      order: [[groupColumn, "asc"]],
+      order: [[groupColumn, 'asc']],
       dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end"f>>t<"row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
       displayLength: 7,
       lengthMenu: [7, 10, 25, 50, 75, 100],
       drawCallback: function (settings) {
         const api = this.api();
-        const rows = api.rows({ page: "current" }).nodes();
+        const rows = api.rows({ page: 'current' }).nodes();
         let last = null;
 
         api
-          .column(groupColumn, { page: "current" })
+          .column(groupColumn, { page: 'current' })
           .data()
           .each((group, i) => {
             if (last !== group) {
@@ -626,13 +626,13 @@ $(() => {
               return `Details of ${data.full_name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -643,12 +643,12 @@ $(() => {
     });
 
     // Order by the grouping
-    $(".dt-row-grouping tbody").on("click", "tr.group", () => {
+    $('.dt-row-grouping tbody').on('click', 'tr.group', () => {
       const currentOrder = groupingTable.order()[0];
-      if (currentOrder[0] === groupColumn && currentOrder[1] === "asc") {
-        groupingTable.order([groupColumn, "desc"]).draw();
+      if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
+        groupingTable.order([groupColumn, 'desc']).draw();
       } else {
-        groupingTable.order([groupColumn, "asc"]).draw();
+        groupingTable.order([groupColumn, 'asc']).draw();
       }
     });
   }
@@ -656,28 +656,28 @@ $(() => {
   // Multilingual DataTable
   // --------------------------------------------------------------------
 
-  const lang = "German";
+  const lang = 'German';
   if (dt_multilingual_table.length) {
     const table_language = dt_multilingual_table.DataTable({
       ajax: `${assetsPath}json/table-datatable.json`,
       columns: [
-        { data: "" },
-        { data: "full_name" },
-        { data: "post" },
-        { data: "email" },
-        { data: "start_date" },
-        { data: "salary" },
-        { data: "status" },
-        { data: "" },
+        { data: '' },
+        { data: 'full_name' },
+        { data: 'post' },
+        { data: 'email' },
+        { data: 'start_date' },
+        { data: 'salary' },
+        { data: 'status' },
+        { data: '' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           orderable: false,
           targets: 0,
           searchable: false,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // Label
@@ -685,13 +685,13 @@ $(() => {
           render: (data, type, full, meta) => {
             const $status_number = full.status;
             const $status = {
-              1: { title: "Current", class: "bg-label-primary" },
-              2: { title: "Professional", class: " bg-label-success" },
-              3: { title: "Rejected", class: " bg-label-danger" },
-              4: { title: "Resigned", class: " bg-label-warning" },
-              5: { title: "Applied", class: " bg-label-info" },
+              1: { title: 'Current', class: 'bg-label-primary' },
+              2: { title: 'Professional', class: ' bg-label-success' },
+              3: { title: 'Rejected', class: ' bg-label-danger' },
+              4: { title: 'Resigned', class: ' bg-label-warning' },
+              5: { title: 'Applied', class: ' bg-label-info' },
             };
-            if (typeof $status[$status_number] === "undefined") {
+            if (typeof $status[$status_number] === 'undefined') {
               return data;
             }
             return `<span class="badge ${$status[$status_number].class}">${$status[$status_number].title}</span>`;
@@ -700,7 +700,7 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           orderable: false,
           searchable: false,
           render: (data, type, full, meta) =>
@@ -711,8 +711,8 @@ $(() => {
             '<a href="javascript:;" class="dropdown-item">Archive</a>' +
             '<div class="dropdown-divider"></div>' +
             '<a href="javascript:;" class="dropdown-item text-danger delete-record">Delete</a>' +
-            "</div>" +
-            "</div>" +
+            '</div>' +
+            '</div>' +
             '<a href="javascript:;" class="btn btn-sm btn-icon item-edit"><i class="text-primary ti ti-pencil"></i></a>',
         },
       ],
@@ -730,13 +730,13 @@ $(() => {
               return `Details of ${data.full_name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -750,7 +750,7 @@ $(() => {
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
 });

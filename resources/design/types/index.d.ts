@@ -1,5 +1,5 @@
-import type { Alpine } from "alpinejs";
-import type Axios from "axios";
+import type { Alpine } from 'alpinejs';
+import type Axios from 'axios';
 
 declare global {
   interface Window {

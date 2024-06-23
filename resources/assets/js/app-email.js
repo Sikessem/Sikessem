@@ -1,39 +1,39 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   (() => {
-    const emailList = document.querySelector(".email-list");
+    const emailList = document.querySelector('.email-list');
     const emailListItems = [].slice.call(
-      document.querySelectorAll(".email-list-item"),
+      document.querySelectorAll('.email-list-item'),
     );
     const emailListItemInputs = [].slice.call(
-      document.querySelectorAll(".email-list-item-input"),
+      document.querySelectorAll('.email-list-item-input'),
     );
-    const emailView = document.querySelector(".app-email-view-content");
-    const emailFilters = document.querySelector(".email-filters");
+    const emailView = document.querySelector('.app-email-view-content');
+    const emailFilters = document.querySelector('.email-filters');
     const emailFilterByFolders = [].slice.call(
-      document.querySelectorAll(".email-filter-folders li"),
+      document.querySelectorAll('.email-filter-folders li'),
     );
-    const emailEditor = document.querySelector(".email-editor");
-    const appEmailSidebar = document.querySelector(".app-email-sidebar");
-    const appOverlay = document.querySelector(".app-overlay");
-    const emailReplyEditor = document.querySelector(".email-reply-editor");
+    const emailEditor = document.querySelector('.email-editor');
+    const appEmailSidebar = document.querySelector('.app-email-sidebar');
+    const appOverlay = document.querySelector('.app-overlay');
+    const emailReplyEditor = document.querySelector('.email-reply-editor');
     const bookmarkEmail = [].slice.call(
-      document.querySelectorAll(".email-list-item-bookmark"),
+      document.querySelectorAll('.email-list-item-bookmark'),
     );
-    const selectAllEmails = document.getElementById("email-select-all");
-    const emailSearch = document.querySelector(".email-search-input");
-    const toggleCC = document.querySelector(".email-compose-toggle-cc");
-    const toggleBCC = document.querySelector(".email-compose-toggle-bcc");
-    const emailCompose = document.querySelector(".app-email-compose");
-    const emailListDelete = document.querySelector(".email-list-delete");
-    const emailListRead = document.querySelector(".email-list-read");
-    const emailListEmpty = document.querySelector(".email-list-empty");
-    const refreshEmails = document.querySelector(".email-refresh");
-    const emailViewContainer = document.getElementById("app-email-view");
+    const selectAllEmails = document.getElementById('email-select-all');
+    const emailSearch = document.querySelector('.email-search-input');
+    const toggleCC = document.querySelector('.email-compose-toggle-cc');
+    const toggleBCC = document.querySelector('.email-compose-toggle-bcc');
+    const emailCompose = document.querySelector('.app-email-compose');
+    const emailListDelete = document.querySelector('.email-list-delete');
+    const emailListRead = document.querySelector('.email-list-read');
+    const emailListEmpty = document.querySelector('.email-list-empty');
+    const refreshEmails = document.querySelector('.email-refresh');
+    const emailViewContainer = document.getElementById('app-email-view');
     const emailFilterFolderLists = [].slice.call(
-      document.querySelectorAll(".email-filter-folders li"),
+      document.querySelectorAll('.email-filter-folders li'),
     );
     const emailListItemActions = [].slice.call(
-      document.querySelectorAll(".email-list-item-actions li"),
+      document.querySelectorAll('.email-list-item-actions li'),
     );
 
     // Initialize PerfectScrollbar
@@ -65,36 +65,36 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize Quill Editor
     // ------------------------------
     if (emailEditor) {
-      new Quill(".email-editor", {
+      new Quill('.email-editor', {
         modules: {
-          toolbar: ".email-editor-toolbar",
+          toolbar: '.email-editor-toolbar',
         },
-        placeholder: "Write your message... ",
-        theme: "snow",
+        placeholder: 'Write your message... ',
+        theme: 'snow',
       });
     }
 
     if (emailReplyEditor) {
-      new Quill(".email-reply-editor", {
+      new Quill('.email-reply-editor', {
         modules: {
-          toolbar: ".email-reply-toolbar",
+          toolbar: '.email-reply-toolbar',
         },
-        placeholder: "Write your message... ",
-        theme: "snow",
+        placeholder: 'Write your message... ',
+        theme: 'snow',
       });
     }
 
     // Bookmark email
     if (bookmarkEmail) {
       bookmarkEmail.forEach((emailItem) => {
-        emailItem.addEventListener("click", (e) => {
+        emailItem.addEventListener('click', (e) => {
           const emailItem = e.currentTarget.parentNode.parentNode;
-          const starredAttr = emailItem.getAttribute("data-starred");
+          const starredAttr = emailItem.getAttribute('data-starred');
           e.stopPropagation();
           if (!starredAttr) {
-            emailItem.setAttribute("data-starred", "true");
+            emailItem.setAttribute('data-starred', 'true');
           } else {
-            emailItem.removeAttribute("data-starred");
+            emailItem.removeAttribute('data-starred');
           }
         });
       });
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Select all
     if (selectAllEmails) {
-      selectAllEmails.addEventListener("click", (e) => {
+      selectAllEmails.addEventListener('click', (e) => {
         if (e.currentTarget.checked) {
           emailListItemInputs.forEach((c) => (c.checked = 1));
         } else {
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Select single email
     if (emailListItemInputs) {
       emailListItemInputs.forEach((emailListItemInput) => {
-        emailListItemInput.addEventListener("click", (e) => {
+        emailListItemInput.addEventListener('click', (e) => {
           e.stopPropagation();
           // Check input count to reset the indeterminate state
           let emailListItemInputCount = 0;
@@ -144,15 +144,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Search email based on searched text
     if (emailSearch) {
-      emailSearch.addEventListener("keyup", (e) => {
+      emailSearch.addEventListener('keyup', (e) => {
         const searchValue = e.currentTarget.value.toLowerCase();
         let searchEmailListItems = {};
         const selectedFolderFilter = document
-          .querySelector(".email-filter-folders .active")
-          .getAttribute("data-target");
+          .querySelector('.email-filter-folders .active')
+          .getAttribute('data-target');
 
         // Filter emails based on selected folders
-        if (selectedFolderFilter !== "inbox") {
+        if (selectedFolderFilter !== 'inbox') {
           searchEmailListItems = [].slice.call(
             document.querySelectorAll(
               `.email-list-item[data-${selectedFolderFilter}="true"]`,
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
           );
         } else {
           searchEmailListItems = [].slice.call(
-            document.querySelectorAll(".email-list-item"),
+            document.querySelectorAll('.email-list-item'),
           );
         }
 
@@ -170,12 +170,12 @@ document.addEventListener("DOMContentLoaded", () => {
             searchEmailListItem.textContent.toLowerCase();
           if (searchValue) {
             if (-1 < searchEmailListItemText.indexOf(searchValue)) {
-              searchEmailListItem.classList.add("d-block");
+              searchEmailListItem.classList.add('d-block');
             } else {
-              searchEmailListItem.classList.add("d-none");
+              searchEmailListItem.classList.add('d-none');
             }
           } else {
-            searchEmailListItem.classList.remove("d-none");
+            searchEmailListItem.classList.remove('d-none');
           }
         });
       });
@@ -183,28 +183,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Filter based on folder type (Inbox, Sent, Draft etc...)
     emailFilterByFolders.forEach((emailFilterByFolder) => {
-      emailFilterByFolder.addEventListener("click", (e) => {
+      emailFilterByFolder.addEventListener('click', (e) => {
         const currentTarget = e.currentTarget;
-        const currentTargetData = currentTarget.getAttribute("data-target");
+        const currentTargetData = currentTarget.getAttribute('data-target');
 
-        appEmailSidebar.classList.remove("show");
-        appOverlay.classList.remove("show");
+        appEmailSidebar.classList.remove('show');
+        appOverlay.classList.remove('show');
 
         // Remove active class from each folder filters
-        Helpers._removeClass("active", emailFilterByFolders);
+        Helpers._removeClass('active', emailFilterByFolders);
         // Add active class to selected folder filters
-        currentTarget.classList.add("active");
+        currentTarget.classList.add('active');
         emailListItems.forEach((emailListItem) => {
           // If folder filter is Inbox
-          if (currentTargetData === "inbox") {
-            emailListItem.classList.add("d-block");
-            emailListItem.classList.remove("d-none");
+          if (currentTargetData === 'inbox') {
+            emailListItem.classList.add('d-block');
+            emailListItem.classList.remove('d-none');
           } else if (emailListItem.hasAttribute(`data-${currentTargetData}`)) {
-            emailListItem.classList.add("d-block");
-            emailListItem.classList.remove("d-none");
+            emailListItem.classList.add('d-block');
+            emailListItem.classList.remove('d-none');
           } else {
-            emailListItem.classList.add("d-none");
-            emailListItem.classList.remove("d-block");
+            emailListItem.classList.add('d-none');
+            emailListItem.classList.remove('d-block');
           }
         });
       });
@@ -212,71 +212,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Toggle CC/BCC input
     if (toggleBCC) {
-      toggleBCC.addEventListener("click", (e) => {
+      toggleBCC.addEventListener('click', (e) => {
         Helpers._toggleClass(
-          document.querySelector(".email-compose-bcc"),
-          "d-block",
-          "d-none",
+          document.querySelector('.email-compose-bcc'),
+          'd-block',
+          'd-none',
         );
       });
     }
 
     if (toggleCC) {
-      toggleCC.addEventListener("click", (e) => {
+      toggleCC.addEventListener('click', (e) => {
         Helpers._toggleClass(
-          document.querySelector(".email-compose-cc"),
-          "d-block",
-          "d-none",
+          document.querySelector('.email-compose-cc'),
+          'd-block',
+          'd-none',
         );
       });
     }
 
     // Empty compose email message inputs when modal is hidden
-    emailCompose.addEventListener("hidden.bs.modal", (event) => {
-      document.querySelector(".email-editor .ql-editor").innerHTML = "";
-      $("#emailContacts").val("");
+    emailCompose.addEventListener('hidden.bs.modal', (event) => {
+      document.querySelector('.email-editor .ql-editor').innerHTML = '';
+      $('#emailContacts').val('');
       initSelect2();
     });
 
     // Delete multiple email
     if (emailListDelete) {
-      emailListDelete.addEventListener("click", (e) => {
+      emailListDelete.addEventListener('click', (e) => {
         emailListItemInputs.forEach((emailListItemInput) => {
           if (emailListItemInput.checked) {
             emailListItemInput.parentNode
-              .closest("li.email-list-item")
+              .closest('li.email-list-item')
               .remove();
           }
         });
         selectAllEmails.indeterminate = false;
         selectAllEmails.checked = false;
-        const emailListItem = document.querySelectorAll(".email-list-item");
+        const emailListItem = document.querySelectorAll('.email-list-item');
         if (emailListItem.length === 0) {
-          emailListEmpty.classList.remove("d-none");
+          emailListEmpty.classList.remove('d-none');
         }
       });
     }
 
     // Mark as read
     if (emailListRead) {
-      emailListRead.addEventListener("click", (e) => {
+      emailListRead.addEventListener('click', (e) => {
         emailListItemInputs.forEach((emailListItemInput) => {
           if (emailListItemInput.checked) {
             emailListItemInput.checked = false;
             emailListItemInput.parentNode
-              .closest("li.email-list-item")
-              .classList.add("email-marked-read");
+              .closest('li.email-list-item')
+              .classList.add('email-marked-read');
             const emailItemEnvelop = emailListItemInput.parentNode
-              .closest("li.email-list-item")
-              .querySelector(".email-list-item-actions li");
+              .closest('li.email-list-item')
+              .querySelector('.email-list-item-actions li');
 
-            if (Helpers._hasClass("email-read", emailItemEnvelop)) {
-              emailItemEnvelop.classList.remove("email-read");
-              emailItemEnvelop.classList.add("email-unread");
+            if (Helpers._hasClass('email-read', emailItemEnvelop)) {
+              emailItemEnvelop.classList.remove('email-read');
+              emailItemEnvelop.classList.add('email-unread');
               emailItemEnvelop
-                .querySelector("i")
-                .classList.remove("ti-mail-opened");
-              emailItemEnvelop.querySelector("i").classList.add("ti-mail");
+                .querySelector('i')
+                .classList.remove('ti-mail-opened');
+              emailItemEnvelop.querySelector('i').classList.add('ti-mail');
             }
           }
         });
@@ -288,23 +288,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // Refresh Mails
 
     if (refreshEmails && emailList) {
-      const emailListJq = $(".email-list");
+      const emailListJq = $('.email-list');
       const emailListInstance = new PerfectScrollbar(emailList, {
         wheelPropagation: false,
         suppressScrollX: true,
       });
       // ? Using jquery vars due to BlockUI jQuery dependency
-      refreshEmails.addEventListener("click", (e) => {
+      refreshEmails.addEventListener('click', (e) => {
         emailListJq.block({
           message:
             '<div class="spinner-border text-primary" role="status"></div>',
           timeout: 1000,
           css: {
-            backgroundColor: "transparent",
-            border: "0",
+            backgroundColor: 'transparent',
+            border: '0',
           },
           overlayCSS: {
-            backgroundColor: "#000",
+            backgroundColor: '#000',
             opacity: 0.1,
           },
           onBlock: () => {
@@ -319,19 +319,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Earlier msgs
     // ? Using jquery vars due to jQuery animation (slideToggle) dependency
-    const earlierMsg = $(".email-earlier-msgs");
+    const earlierMsg = $('.email-earlier-msgs');
     if (earlierMsg.length) {
-      earlierMsg.on("click", function () {
+      earlierMsg.on('click', function () {
         const $this = $(this);
-        $this.parents().find(".email-card-last").addClass("hide-pseudo");
-        $this.next(".email-card-prev").slideToggle();
+        $this.parents().find('.email-card-last').addClass('hide-pseudo');
+        $this.next('.email-card-prev').slideToggle();
         $this.remove();
       });
     }
 
     // Email contacts (select2)
     // ? Using jquery vars due to select2 jQuery dependency
-    const emailContacts = $("#emailContacts");
+    const emailContacts = $('#emailContacts');
     function initSelect2() {
       if (emailContacts.length) {
         function renderContactsAvatar(option) {
@@ -340,14 +340,14 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           const $avatar = `<div class='d-flex flex-wrap align-items-center'><div class='avatar avatar-xs me-2 w-px-20 h-px-20'><img src='${assetsPath}img/avatars/${$(
             option.element,
-          ).data("avatar")}' alt='avatar' class='rounded-circle' /></div>${
+          ).data('avatar')}' alt='avatar' class='rounded-circle' /></div>${
             option.text
           }</div>`;
 
           return $avatar;
         }
         emailContacts.wrap('<div class="position-relative"></div>').select2({
-          placeholder: "Select value",
+          placeholder: 'Select value',
           dropdownParent: emailContacts.parent(),
           closeOnSelect: false,
           templateResult: renderContactsAvatar,
@@ -360,8 +360,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Scroll to bottom on reply click
     // ? Using jquery vars due to jQuery animation dependency
-    const emailViewContent = $(".app-email-view-content");
-    emailViewContent.find(".scroll-to-reply").on("click", () => {
+    const emailViewContent = $('.app-email-view-content');
+    emailViewContent.find('.scroll-to-reply').on('click', () => {
       if (emailViewContent[0].scrollTop === 0) {
         emailViewContent.animate(
           {
@@ -375,8 +375,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Close view on email filter folder list click
     if (emailFilterFolderLists) {
       emailFilterFolderLists.forEach((emailFilterFolderList) => {
-        emailFilterFolderList.addEventListener("click", (e) => {
-          emailViewContainer.classList.remove("show");
+        emailFilterFolderList.addEventListener('click', (e) => {
+          emailViewContainer.classList.remove('show');
         });
       });
     }
@@ -384,34 +384,34 @@ document.addEventListener("DOMContentLoaded", () => {
     // Email List Items Actions
     if (emailListItemActions) {
       emailListItemActions.forEach((emailListItemAction) => {
-        emailListItemAction.addEventListener("click", (e) => {
+        emailListItemAction.addEventListener('click', (e) => {
           e.stopPropagation();
           const currentTarget = e.currentTarget;
-          if (Helpers._hasClass("email-delete", currentTarget)) {
-            currentTarget.parentNode.closest("li.email-list-item").remove();
-            const emailListItem = document.querySelectorAll(".email-list-item");
+          if (Helpers._hasClass('email-delete', currentTarget)) {
+            currentTarget.parentNode.closest('li.email-list-item').remove();
+            const emailListItem = document.querySelectorAll('.email-list-item');
             if (emailListItem.length === 0) {
-              emailListEmpty.classList.remove("d-none");
+              emailListEmpty.classList.remove('d-none');
             }
-          } else if (Helpers._hasClass("email-read", currentTarget)) {
+          } else if (Helpers._hasClass('email-read', currentTarget)) {
             currentTarget.parentNode
-              .closest("li.email-list-item")
-              .classList.add("email-marked-read");
-            Helpers._toggleClass(currentTarget, "email-read", "email-unread");
+              .closest('li.email-list-item')
+              .classList.add('email-marked-read');
+            Helpers._toggleClass(currentTarget, 'email-read', 'email-unread');
             Helpers._toggleClass(
-              currentTarget.querySelector("i"),
-              "ti-mail-opened",
-              "ti-mail",
+              currentTarget.querySelector('i'),
+              'ti-mail-opened',
+              'ti-mail',
             );
-          } else if (Helpers._hasClass("email-unread", currentTarget)) {
+          } else if (Helpers._hasClass('email-unread', currentTarget)) {
             currentTarget.parentNode
-              .closest("li.email-list-item")
-              .classList.remove("email-marked-read");
-            Helpers._toggleClass(currentTarget, "email-read", "email-unread");
+              .closest('li.email-list-item')
+              .classList.remove('email-marked-read');
+            Helpers._toggleClass(currentTarget, 'email-read', 'email-unread');
             Helpers._toggleClass(
-              currentTarget.querySelector("i"),
-              "ti-mail-opened",
-              "ti-mail",
+              currentTarget.querySelector('i'),
+              'ti-mail-opened',
+              'ti-mail',
             );
           }
         });

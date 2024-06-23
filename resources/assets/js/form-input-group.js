@@ -1,5 +1,5 @@
 (() => {
-  const speechToText = $(".speech-to-text"); // ! jQuery dependency for speech to text
+  const speechToText = $('.speech-to-text'); // ! jQuery dependency for speech to text
 
   // Speech To Text
   if (speechToText.length) {
@@ -7,7 +7,7 @@
     if (SpeechRecognition !== undefined && SpeechRecognition !== null) {
       const recognition = new SpeechRecognition();
       let listening = false;
-      speechToText.on("click", function () {
+      speechToText.on('click', function () {
         const $this = $(this);
         recognition.onspeechstart = () => {
           listening = true;
@@ -20,8 +20,8 @@
         };
         recognition.onresult = (event) => {
           $this
-            .closest(".form-send-message")
-            .find(".message-input")
+            .closest('.form-send-message')
+            .find('.message-input')
             .val(event.results[0][0].transcript);
         };
         recognition.onspeechend = (event) => {

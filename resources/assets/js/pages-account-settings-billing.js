@@ -1,19 +1,19 @@
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener('DOMContentLoaded', (e) => {
   (() => {
-    const creditCardMask = document.querySelector(".credit-card-mask");
-    const expiryDateMask = document.querySelector(".expiry-date-mask");
-    const CVVMask = document.querySelector(".cvv-code-mask");
+    const creditCardMask = document.querySelector('.credit-card-mask');
+    const expiryDateMask = document.querySelector('.expiry-date-mask');
+    const CVVMask = document.querySelector('.cvv-code-mask');
 
     // Credit Card
     if (creditCardMask) {
       new Cleave(creditCardMask, {
         creditCard: true,
         onCreditCardTypeChanged: (type) => {
-          if (type !== "" && type !== "unknown") {
-            document.querySelector(".card-type").innerHTML =
+          if (type !== '' && type !== 'unknown') {
+            document.querySelector('.card-type').innerHTML =
               `<img src="${assetsPath}img/icons/payments/${type}-cc.png" height="28"/>`;
           } else {
-            document.querySelector(".card-type").innerHTML = "";
+            document.querySelector('.card-type').innerHTML = '';
           }
         },
       });
@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     if (expiryDateMask) {
       new Cleave(expiryDateMask, {
         date: true,
-        delimiter: "/",
-        datePattern: ["m", "y"],
+        delimiter: '/',
+        datePattern: ['m', 'y'],
       });
     }
 
@@ -36,10 +36,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
       });
     }
 
-    const formAccSettings = document.getElementById("formAccountSettings");
-    const mobileNumber = document.querySelector(".mobile-number");
-    const zipCode = document.querySelector(".zip-code");
-    const creditCardForm = document.getElementById("creditCardForm");
+    const formAccSettings = document.getElementById('formAccountSettings');
+    const mobileNumber = document.querySelector('.mobile-number');
+    const zipCode = document.querySelector('.zip-code');
+    const creditCardForm = document.getElementById('creditCardForm');
 
     // Form validation
     if (formAccSettings) {
@@ -48,17 +48,17 @@ document.addEventListener("DOMContentLoaded", (e) => {
           companyName: {
             validators: {
               notEmpty: {
-                message: "Please enter company name",
+                message: 'Please enter company name',
               },
             },
           },
           billingEmail: {
             validators: {
               notEmpty: {
-                message: "Please enter billing email",
+                message: 'Please enter billing email',
               },
               emailAddress: {
-                message: "Please enter valid email address",
+                message: 'Please enter valid email address',
               },
             },
           },
@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
         plugins: {
           trigger: new FormValidation.plugins.Trigger(),
           bootstrap5: new FormValidation.plugins.Bootstrap5({
-            eleValidClass: "",
-            rowSelector: ".col-sm-6",
+            eleValidClass: '',
+            rowSelector: '.col-sm-6',
           }),
           submitButton: new FormValidation.plugins.SubmitButton(),
           // Submit the form when all fields are valid
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           paymentCard: {
             validators: {
               notEmpty: {
-                message: "Please enter your credit card number",
+                message: 'Please enter your credit card number',
               },
             },
           },
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           bootstrap5: new FormValidation.plugins.Bootstrap5({
             // Use this for enabling/changing valid/invalid class
             // eleInvalidClass: '',
-            eleValidClass: "",
+            eleValidClass: '',
           }),
           submitButton: new FormValidation.plugins.SubmitButton(),
           // Submit the form when all fields are valid
@@ -102,11 +102,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
           autoFocus: new FormValidation.plugins.AutoFocus(),
         },
         init: (instance) => {
-          instance.on("plugins.message.placed", (e) => {
+          instance.on('plugins.message.placed', (e) => {
             //* Move the error message out of the `input-group` element
-            if (e.element.parentElement.classList.contains("input-group")) {
+            if (e.element.parentElement.classList.contains('input-group')) {
               e.element.parentElement.insertAdjacentElement(
-                "afterend",
+                'afterend',
                 e.messageElement,
               );
             }
@@ -116,38 +116,38 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
 
     // Cancel Subscription alert
-    const cancelSubscription = document.querySelector(".cancel-subscription");
+    const cancelSubscription = document.querySelector('.cancel-subscription');
 
     // Alert With Functional Confirm Button
     if (cancelSubscription) {
       cancelSubscription.onclick = () => {
         Swal.fire({
-          text: "Are you sure you would like to cancel your subscription?",
-          icon: "warning",
+          text: 'Are you sure you would like to cancel your subscription?',
+          icon: 'warning',
           showCancelButton: true,
-          confirmButtonText: "Yes",
+          confirmButtonText: 'Yes',
           customClass: {
-            confirmButton: "btn btn-primary me-2 waves-effect waves-light",
-            cancelButton: "btn btn-label-secondary waves-effect waves-light",
+            confirmButton: 'btn btn-primary me-2 waves-effect waves-light',
+            cancelButton: 'btn btn-label-secondary waves-effect waves-light',
           },
           buttonsStyling: false,
         }).then((result) => {
           if (result.value) {
             Swal.fire({
-              icon: "success",
-              title: "Unsubscribed!",
-              text: "Your subscription cancelled successfully.",
+              icon: 'success',
+              title: 'Unsubscribed!',
+              text: 'Your subscription cancelled successfully.',
               customClass: {
-                confirmButton: "btn btn-success waves-effect waves-light",
+                confirmButton: 'btn btn-success waves-effect waves-light',
               },
             });
           } else if (result.dismiss === Swal.DismissReason.cancel) {
             Swal.fire({
-              title: "Cancelled",
-              text: "Unsubscription Cancelled!!",
-              icon: "error",
+              title: 'Cancelled',
+              text: 'Unsubscription Cancelled!!',
+              icon: 'error',
               customClass: {
-                confirmButton: "btn btn-success waves-effect waves-light",
+                confirmButton: 'btn btn-success waves-effect waves-light',
               },
             });
           }
@@ -160,14 +160,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
     if (mobileNumber) {
       new Cleave(mobileNumber, {
         phone: true,
-        phoneRegionCode: "US",
+        phoneRegionCode: 'US',
       });
     }
 
     // Pincode
     if (zipCode) {
       new Cleave(zipCode, {
-        delimiter: "",
+        delimiter: '',
         numeral: true,
       });
     }
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 // Select2 (jquery)
 $(() => {
-  const select2 = $(".select2");
+  const select2 = $('.select2');
 
   // Select2
   if (select2.length) {

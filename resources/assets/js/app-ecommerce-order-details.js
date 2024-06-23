@@ -3,7 +3,7 @@
 $(() => {
   // Variable declaration for table
 
-  const dt_details_table = $(".datatables-order-details");
+  const dt_details_table = $('.datatables-order-details');
 
   // E-commerce Products datatable
   if (dt_details_table.length) {
@@ -11,22 +11,22 @@ $(() => {
       ajax: `${assetsPath}json/ecommerce-order-details.json`, // JSON file to add data
       columns: [
         // columns according to JSON
-        { data: "id" },
-        { data: "id" },
-        { data: "product_name" },
-        { data: "price" },
-        { data: "qty" },
-        { data: "" },
+        { data: 'id' },
+        { data: 'id' },
+        { data: 'product_name' },
+        { data: 'price' },
+        { data: 'qty' },
+        { data: '' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           searchable: false,
           orderable: false,
           responsivePriority: 2,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // For Checkboxes
@@ -56,19 +56,19 @@ $(() => {
               // For Product badge
               const stateNum = Math.floor(Math.random() * 6);
               const states = [
-                "success",
-                "danger",
-                "warning",
-                "info",
-                "dark",
-                "primary",
-                "secondary",
+                'success',
+                'danger',
+                'warning',
+                'info',
+                'dark',
+                'primary',
+                'secondary',
               ];
               const $state = states[stateNum];
               const $name = full.product_name;
               let $initials = $name.match(/\b\w/g) || [];
               $initials = (
-                ($initials.shift() || "") + ($initials.pop() || "")
+                ($initials.shift() || '') + ($initials.pop() || '')
               ).toUpperCase();
               $output = `<span class="avatar-initial rounded-2 bg-label-${$state}">${$initials}</span>`;
             }
@@ -111,8 +111,8 @@ $(() => {
           },
         },
       ],
-      order: [2, ""], //set any columns order asc/desc
-      dom: "t",
+      order: [2, ''], //set any columns order asc/desc
+      dom: 't',
       // For responsive popup
       responsive: {
         details: {
@@ -122,13 +122,13 @@ $(() => {
               return `Details of ${data.full_name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -141,45 +141,45 @@ $(() => {
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
 });
 
 //sweet alert
 (() => {
-  const deleteOrder = document.querySelector(".delete-order");
+  const deleteOrder = document.querySelector('.delete-order');
   // Suspend User javascript
   if (deleteOrder) {
     deleteOrder.onclick = () => {
       Swal.fire({
-        title: "Are you sure?",
+        title: 'Are you sure?',
         text: "You won't be able to revert order!",
-        icon: "warning",
+        icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: "Yes, Delete order!",
+        confirmButtonText: 'Yes, Delete order!',
         customClass: {
-          confirmButton: "btn btn-primary me-2 waves-effect waves-light",
-          cancelButton: "btn btn-label-secondary waves-effect waves-light",
+          confirmButton: 'btn btn-primary me-2 waves-effect waves-light',
+          cancelButton: 'btn btn-label-secondary waves-effect waves-light',
         },
         buttonsStyling: false,
       }).then((result) => {
         if (result.value) {
           Swal.fire({
-            icon: "success",
-            title: "Deleted!",
-            text: "Order has been removed.",
+            icon: 'success',
+            title: 'Deleted!',
+            text: 'Order has been removed.',
             customClass: {
-              confirmButton: "btn btn-success waves-effect waves-light",
+              confirmButton: 'btn btn-success waves-effect waves-light',
             },
           });
         } else if (result.dismiss === Swal.DismissReason.cancel) {
           Swal.fire({
-            title: "Cancelled",
-            text: "Cancelled Delete :)",
-            icon: "error",
+            title: 'Cancelled',
+            text: 'Cancelled Delete :)',
+            icon: 'error',
             customClass: {
-              confirmButton: "btn btn-success waves-effect waves-light",
+              confirmButton: 'btn btn-success waves-effect waves-light',
             },
           });
         }
@@ -194,5 +194,5 @@ $(() => {
   }
 
   const year = getCurrentYear();
-  document.getElementById("orderYear").innerHTML = year;
+  document.getElementById('orderYear').innerHTML = year;
 })();

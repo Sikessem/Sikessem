@@ -1,14 +1,14 @@
 // Comment editor
 
-const commentEditor = document.querySelector(".comment-editor");
+const commentEditor = document.querySelector('.comment-editor');
 
 if (commentEditor) {
   new Quill(commentEditor, {
     modules: {
-      toolbar: ".comment-toolbar",
+      toolbar: '.comment-toolbar',
     },
-    placeholder: "Enter category description...",
-    theme: "snow",
+    placeholder: 'Enter category description...',
+    theme: 'snow',
   });
 }
 
@@ -30,17 +30,17 @@ $(() => {
   }
 
   // Variable declaration for category list table
-  const dt_category_list_table = $(".datatables-category-list");
+  const dt_category_list_table = $('.datatables-category-list');
 
   //select2 for dropdowns in offcanvas
 
-  const select2 = $(".select2");
+  const select2 = $('.select2');
   if (select2.length) {
     select2.each(function () {
       const $this = $(this);
       $this.wrap('<div class="position-relative"></div>').select2({
         dropdownParent: $this.parent(),
-        placeholder: $this.data("placeholder"), //for dynamic placeholder
+        placeholder: $this.data('placeholder'), //for dynamic placeholder
       });
     });
   }
@@ -52,22 +52,22 @@ $(() => {
       ajax: `${assetsPath}json/ecommerce-category-list.json`, // JSON file to add data
       columns: [
         // columns according to JSON
-        { data: "" },
-        { data: "id" },
-        { data: "categories" },
-        { data: "total_products" },
-        { data: "total_earnings" },
-        { data: "" },
+        { data: '' },
+        { data: 'id' },
+        { data: 'categories' },
+        { data: 'total_products' },
+        { data: 'total_earnings' },
+        { data: '' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           searchable: false,
           orderable: false,
           responsivePriority: 1,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // For Checkboxes
@@ -97,19 +97,19 @@ $(() => {
               // For Product badge
               const stateNum = Math.floor(Math.random() * 6);
               const states = [
-                "success",
-                "danger",
-                "warning",
-                "info",
-                "dark",
-                "primary",
-                "secondary",
+                'success',
+                'danger',
+                'warning',
+                'info',
+                'dark',
+                'primary',
+                'secondary',
               ];
               const $state = states[stateNum];
               const $name = full.category_detail;
               let $initials = $name.match(/\b\w/g) || [];
               $initials = (
-                ($initials.shift() || "") + ($initials.pop() || "")
+                ($initials.shift() || '') + ($initials.pop() || '')
               ).toUpperCase();
               $output = `<span class="avatar-initial rounded-2 bg-label-${$state}">${$initials}</span>`;
             }
@@ -139,40 +139,40 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           searchable: false,
           orderable: false,
           render: (data, type, full, meta) =>
             '<div class="d-flex align-items-sm-center justify-content-sm-center">' +
             '<button class="btn btn-sm btn-icon delete-record me-2"><i class="ti ti-trash"></i></button>' +
             '<button class="btn btn-sm btn-icon"><i class="ti ti-edit"></i></button>' +
-            "</div>",
+            '</div>',
         },
       ],
-      order: [2, "desc"], //set any columns order asc/desc
+      order: [2, 'desc'], //set any columns order asc/desc
       dom:
         '<"card-header d-flex flex-wrap pb-2"' +
-        "<f>" +
+        '<f>' +
         '<"d-flex justify-content-center justify-content-md-end align-items-baseline"<"dt-action-buttons d-flex justify-content-center flex-md-row mb-3 mb-md-0 ps-1 ms-1 align-items-baseline"lB>>' +
-        ">t" +
+        '>t' +
         '<"row mx-2"' +
         '<"col-sm-12 col-md-6"i>' +
         '<"col-sm-12 col-md-6"p>' +
-        ">",
+        '>',
       lengthMenu: [7, 10, 20, 50, 70, 100], //for length of menu
       language: {
-        sLengthMenu: "_MENU_",
-        search: "",
-        searchPlaceholder: "Search Category",
+        sLengthMenu: '_MENU_',
+        search: '',
+        searchPlaceholder: 'Search Category',
       },
       // Button for offcanvas
       buttons: [
         {
           text: '<i class="ti ti-plus ti-xs me-0 me-sm-2"></i><span class="d-none d-sm-inline-block">Add Category</span>',
-          className: "add-new btn btn-primary ms-2 waves-effect waves-light",
+          className: 'add-new btn btn-primary ms-2 waves-effect waves-light',
           attr: {
-            "data-bs-toggle": "offcanvas",
-            "data-bs-target": "#offcanvasEcommerceCategoryList",
+            'data-bs-toggle': 'offcanvas',
+            'data-bs-target': '#offcanvasEcommerceCategoryList',
           },
         },
       ],
@@ -185,13 +185,13 @@ $(() => {
               return `Details of ${data.categories}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td> ${col.title}:</td> <td class="ps-0">${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -200,31 +200,31 @@ $(() => {
         },
       },
     });
-    $(".dt-action-buttons").addClass("pt-0");
-    $(".dataTables_filter").addClass("me-3 ps-0");
+    $('.dt-action-buttons').addClass('pt-0');
+    $('.dataTables_filter').addClass('me-3 ps-0');
   }
 
   // Delete Record
-  $(".datatables-category-list tbody").on(
-    "click",
-    ".delete-record",
+  $('.datatables-category-list tbody').on(
+    'click',
+    '.delete-record',
     function () {
-      dt_category.row($(this).parents("tr")).remove().draw();
+      dt_category.row($(this).parents('tr')).remove().draw();
     },
   );
 
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
 });
 
 //For form validation
 (() => {
   const eCommerceCategoryListForm = document.getElementById(
-    "eCommerceCategoryListForm",
+    'eCommerceCategoryListForm',
   );
 
   //Add New customer Form Validation
@@ -233,14 +233,14 @@ $(() => {
       categoryTitle: {
         validators: {
           notEmpty: {
-            message: "Please enter category title",
+            message: 'Please enter category title',
           },
         },
       },
       slug: {
         validators: {
           notEmpty: {
-            message: "Please enter slug",
+            message: 'Please enter slug',
           },
         },
       },
@@ -249,10 +249,10 @@ $(() => {
       trigger: new FormValidation.plugins.Trigger(),
       bootstrap5: new FormValidation.plugins.Bootstrap5({
         // Use this for enabling/changing valid/invalid class
-        eleValidClass: "is-valid",
+        eleValidClass: 'is-valid',
         rowSelector: (field, ele) => {
           // field is the field name & ele is the field element
-          return ".mb-3";
+          return '.mb-3';
         },
       }),
       submitButton: new FormValidation.plugins.SubmitButton(),
