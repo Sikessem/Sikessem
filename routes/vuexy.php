@@ -37,7 +37,6 @@ use App\Http\Controllers\front_pages\Payment;
 use App\Http\Controllers\front_pages\Pricing;
 use App\Http\Controllers\icons\FontAwesome;
 use App\Http\Controllers\icons\Tabler;
-use App\Http\Controllers\language\LanguageController;
 use App\Http\Controllers\laravel_example\UserManagement;
 use App\Http\Controllers\layouts\Blank;
 use App\Http\Controllers\layouts\CollapsedMenu;
@@ -164,8 +163,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', fn () => view('index'));
 Route::get('/dashboard/analytics', [Analytics::class, 'index'])->name('dashboard-analytics');
 Route::get('/dashboard/crm', [Crm::class, 'index'])->name('dashboard-crm');
-// locale
-Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 
 // layout
 Route::get('/layouts/collapsed-menu', [CollapsedMenu::class, 'index'])->name('layouts-collapsed-menu');
