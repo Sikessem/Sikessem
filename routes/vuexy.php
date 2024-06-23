@@ -155,9 +155,9 @@ use App\Http\Controllers\Vuexy\UserViewBilling;
 use App\Http\Controllers\Vuexy\UserViewConnections;
 use App\Http\Controllers\Vuexy\UserViewNotifications;
 use App\Http\Controllers\Vuexy\UserViewSecurity;
-use App\Http\Controllers\wizard_example\Checkout as WizardCheckout;
-use App\Http\Controllers\wizard_example\CreateDeal;
-use App\Http\Controllers\wizard_example\PropertyListing;
+use App\Http\Controllers\Vuexy\Wizard\Checkout as WizardCheckout;
+use App\Http\Controllers\Vuexy\Wizard\CreateDeal;
+use App\Http\Controllers\Vuexy\Wizard\PropertyListing;
 use Illuminate\Support\Facades\Route;
 
 // Main Page Route

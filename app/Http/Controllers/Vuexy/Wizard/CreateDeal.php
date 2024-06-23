@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\wizard_example;
+namespace App\Http\Controllers\Vuexy\Wizard;
 
 use App\Http\Controllers\Controller;
 
@@ -8,6 +8,6 @@ class CreateDeal extends Controller
 {
     public function index()
     {
-        return view('content.wizard-example.wizard-ex-create-deal');
+        return view('content.vuexy.wizard.create-deal');
     }
 }
