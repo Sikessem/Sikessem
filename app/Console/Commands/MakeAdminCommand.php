@@ -41,7 +41,7 @@ class MakeAdminCommand extends Command
                         unset($exists);
                     }
                     $username = Str::slug($this->ask('What is the admin username?'));
-                } while(($exists = Admin::where('username', $username)->exists()) && ! $this->confirm("{$username} already exists. Do you want to use it?", true));
+                } while (($exists = Admin::where('username', $username)->exists()) && ! $this->confirm("{$username} already exists. Do you want to use it?", true));
             }
         }
 
@@ -53,13 +53,13 @@ class MakeAdminCommand extends Command
                     if (isset($exists) && $exists) {
                         $this->error("'{$email}' already exists. Please choose another email address.");
                     }
-                } while(($exists = Admin::where('email', $email)->exists()) && ! $this->confirm("{$email} already exists. Do you want to use it?", true));
+                } while (($exists = Admin::where('email', $email)->exists()) && ! $this->confirm("{$email} already exists. Do you want to use it?", true));
             }
         }
 
         $exists = Admin::where('username', $username)->exists() || Admin::where('email', $email)->exists();
 
-        $this->info(($exists ? 'Updating' : 'Creating') . " admin '{$name}' with username '{$username}' and email '{$email}'...");
+        $this->info(($exists ? 'Updating' : 'Creating')." admin '{$name}' with username '{$username}' and email '{$email}'...");
 
         $password = $this->option('password');
 
@@ -67,7 +67,7 @@ class MakeAdminCommand extends Command
             $this->warn('It is not safe to use the --password option');
         }
 
-        if (!$password && (!$exists || $this->confirm("Would you like to change the admin password?", true))) {
+        if (! $password && (! $exists || $this->confirm('Would you like to change the admin password?', true))) {
             $password = $this->secret('Please enter the '.($exists ? 'new ' : '').'admin password');
             do {
                 if (isset($confirmedPassword)) {
@@ -83,7 +83,7 @@ class MakeAdminCommand extends Command
         $role = $this->option('role');
         $defaultRole = $exists ? $admin->roles->first()->name : config('admin.role', 'admin');
 
-        if (!$role && $this->confirm("Would you like to use the '{$defaultRole}' role?", true)) {
+        if (! $role && $this->confirm("Would you like to use the '{$defaultRole}' role?", true)) {
             $role = $defaultRole;
         } else {
             $role = $this->askWithCompletion('What is the admin role?', Role::where('guard_name', $guard)->get('name')->pluck('name')->toArray(), $defaultRole);
