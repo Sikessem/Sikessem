@@ -1,14 +1,14 @@
 (() => {
   // Data Variable
   const statesData = {
-    type: "FeatureCollection",
+    type: 'FeatureCollection',
     features: [
       {
-        type: "Feature",
-        id: "01",
-        properties: { name: "Alabama", density: 94.65 },
+        type: 'Feature',
+        id: '01',
+        properties: { name: 'Alabama', density: 94.65 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-87.359296, 35.00118],
@@ -49,11 +49,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "02",
-        properties: { name: "Alaska", density: 1.264 },
+        type: 'Feature',
+        id: '02',
+        properties: { name: 'Alaska', density: 1.264 },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -1289,11 +1289,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "04",
-        properties: { name: "Arizona", density: 57.05 },
+        type: 'Feature',
+        id: '04',
+        properties: { name: 'Arizona', density: 57.05 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-109.042503, 37.000263],
@@ -1333,11 +1333,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "05",
-        properties: { name: "Arkansas", density: 56.43 },
+        type: 'Feature',
+        id: '05',
+        properties: { name: 'Arkansas', density: 56.43 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-94.473842, 36.501861],
@@ -1382,11 +1382,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "06",
-        properties: { name: "California", density: 241.7 },
+        type: 'Feature',
+        id: '06',
+        properties: { name: 'California', density: 241.7 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-123.233256, 42.006186],
@@ -1487,11 +1487,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "08",
-        properties: { name: "Colorado", density: 49.33 },
+        type: 'Feature',
+        id: '08',
+        properties: { name: 'Colorado', density: 49.33 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-107.919731, 41.003906],
@@ -1515,11 +1515,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "09",
-        properties: { name: "Connecticut", density: 739.1 },
+        type: 'Feature',
+        id: '09',
+        properties: { name: 'Connecticut', density: 739.1 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-73.053528, 42.039048],
@@ -1543,11 +1543,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "10",
-        properties: { name: "Delaware", density: 464.3 },
+        type: 'Feature',
+        id: '10',
+        properties: { name: 'Delaware', density: 464.3 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-75.414089, 39.804456],
@@ -1568,11 +1568,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "11",
-        properties: { name: "District of Columbia", density: 10065 },
+        type: 'Feature',
+        id: '11',
+        properties: { name: 'District of Columbia', density: 10065 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-77.035264, 38.993869],
@@ -1585,11 +1585,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "12",
-        properties: { name: "Florida", density: 353.4 },
+        type: 'Feature',
+        id: '12',
+        properties: { name: 'Florida', density: 353.4 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-85.497137, 30.997536],
@@ -1675,11 +1675,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "13",
-        properties: { name: "Georgia", density: 169.5 },
+        type: 'Feature',
+        id: '13',
+        properties: { name: 'Georgia', density: 169.5 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-83.109191, 35.00118],
@@ -1738,11 +1738,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "15",
-        properties: { name: "Hawaii", density: 214.1 },
+        type: 'Feature',
+        id: '15',
+        properties: { name: 'Hawaii', density: 214.1 },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -1817,11 +1817,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "16",
-        properties: { name: "Idaho", density: 19.15 },
+        type: 'Feature',
+        id: '16',
+        properties: { name: 'Idaho', density: 19.15 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-116.04751, 49.000239],
@@ -1895,11 +1895,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "17",
-        properties: { name: "Illinois", density: 231.5 },
+        type: 'Feature',
+        id: '17',
+        properties: { name: 'Illinois', density: 231.5 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-90.639984, 42.510065],
@@ -1974,11 +1974,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "18",
-        properties: { name: "Indiana", density: 181.7 },
+        type: 'Feature',
+        id: '18',
+        properties: { name: 'Indiana', density: 181.7 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-85.990061, 41.759724],
@@ -2032,11 +2032,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "19",
-        properties: { name: "Iowa", density: 54.81 },
+        type: 'Feature',
+        id: '19',
+        properties: { name: 'Iowa', density: 54.81 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-91.368417, 43.501391],
@@ -2094,11 +2094,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "20",
-        properties: { name: "Kansas", density: 35.09 },
+        type: 'Feature',
+        id: '20',
+        properties: { name: 'Kansas', density: 35.09 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-101.90605, 40.001626],
@@ -2119,11 +2119,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "21",
-        properties: { name: "Kentucky", density: 110 },
+        type: 'Feature',
+        id: '21',
+        properties: { name: 'Kentucky', density: 110 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-83.903347, 38.769315],
@@ -2206,11 +2206,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "22",
-        properties: { name: "Louisiana", density: 105 },
+        type: 'Feature',
+        id: '22',
+        properties: { name: 'Louisiana', density: 105 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-93.608485, 33.018527],
@@ -2294,11 +2294,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "23",
-        properties: { name: "Maine", density: 43.04 },
+        type: 'Feature',
+        id: '23',
+        properties: { name: 'Maine', density: 43.04 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-70.703921, 43.057759],
@@ -2372,11 +2372,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "24",
-        properties: { name: "Maryland", density: 596.3 },
+        type: 'Feature',
+        id: '24',
+        properties: { name: 'Maryland', density: 596.3 },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -2454,11 +2454,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "25",
-        properties: { name: "Massachusetts", density: 840.2 },
+        type: 'Feature',
+        id: '25',
+        properties: { name: 'Massachusetts', density: 840.2 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-70.917521, 42.887974],
@@ -2501,11 +2501,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "26",
-        properties: { name: "Michigan", density: 173.9 },
+        type: 'Feature',
+        id: '26',
+        properties: { name: 'Michigan', density: 173.9 },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -2679,11 +2679,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "27",
-        properties: { name: "Minnesota", density: 67.14 },
+        type: 'Feature',
+        id: '27',
+        properties: { name: 'Minnesota', density: 67.14 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-92.014696, 46.705401],
@@ -2774,11 +2774,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "28",
-        properties: { name: "Mississippi", density: 63.5 },
+        type: 'Feature',
+        id: '28',
+        properties: { name: 'Mississippi', density: 63.5 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-88.471115, 34.995703],
@@ -2832,11 +2832,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "29",
-        properties: { name: "Missouri", density: 87.26 },
+        type: 'Feature',
+        id: '29',
+        properties: { name: 'Missouri', density: 87.26 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-91.833957, 40.609566],
@@ -2897,11 +2897,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "30",
-        properties: { name: "Montana", density: 6.858 },
+        type: 'Feature',
+        id: '30',
+        properties: { name: 'Montana', density: 6.858 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-104.047534, 49.000239],
@@ -2961,11 +2961,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "31",
-        properties: { name: "Nebraska", density: 23.97 },
+        type: 'Feature',
+        id: '31',
+        properties: { name: 'Nebraska', density: 23.97 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-103.324578, 43.002989],
@@ -3002,11 +3002,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "32",
-        properties: { name: "Nevada", density: 24.8 },
+        type: 'Feature',
+        id: '32',
+        properties: { name: 'Nevada', density: 24.8 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-117.027882, 42.000709],
@@ -3035,11 +3035,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "33",
-        properties: { name: "New Hampshire", density: 147 },
+        type: 'Feature',
+        id: '33',
+        properties: { name: 'New Hampshire', density: 147 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-71.08183, 45.303304],
@@ -3075,11 +3075,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "34",
-        properties: { name: "New Jersey", density: 1189 },
+        type: 'Feature',
+        id: '34',
+        properties: { name: 'New Jersey', density: 1189 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-74.236547, 41.14083],
@@ -3119,11 +3119,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "35",
-        properties: { name: "New Mexico", density: 17.16 },
+        type: 'Feature',
+        id: '35',
+        properties: { name: 'New Mexico', density: 17.16 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-107.421329, 37.000263],
@@ -3148,11 +3148,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "36",
-        properties: { name: "New York", density: 412.3 },
+        type: 'Feature',
+        id: '36',
+        properties: { name: 'New York', density: 412.3 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-73.343806, 45.013027],
@@ -3228,11 +3228,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "37",
-        properties: { name: "North Carolina", density: 198.2 },
+        type: 'Feature',
+        id: '37',
+        properties: { name: 'North Carolina', density: 198.2 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-80.978661, 36.562108],
@@ -3301,11 +3301,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "38",
-        properties: { name: "North Dakota", density: 9.916 },
+        type: 'Feature',
+        id: '38',
+        properties: { name: 'North Dakota', density: 9.916 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-97.228743, 49.000239],
@@ -3329,11 +3329,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "39",
-        properties: { name: "Ohio", density: 281.9 },
+        type: 'Feature',
+        id: '39',
+        properties: { name: 'Ohio', density: 281.9 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-80.518598, 41.978802],
@@ -3388,11 +3388,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "40",
-        properties: { name: "Oklahoma", density: 55.22 },
+        type: 'Feature',
+        id: '40',
+        properties: { name: 'Oklahoma', density: 55.22 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-100.087706, 37.000263],
@@ -3445,11 +3445,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "41",
-        properties: { name: "Oregon", density: 40.33 },
+        type: 'Feature',
+        id: '41',
+        properties: { name: 'Oregon', density: 40.33 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-123.211348, 46.174138],
@@ -3513,11 +3513,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "42",
-        properties: { name: "Pennsylvania", density: 284.3 },
+        type: 'Feature',
+        id: '42',
+        properties: { name: 'Pennsylvania', density: 284.3 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-79.76278, 42.252649],
@@ -3558,11 +3558,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "44",
-        properties: { name: "Rhode Island", density: 1006 },
+        type: 'Feature',
+        id: '44',
+        properties: { name: 'Rhode Island', density: 1006 },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -3591,11 +3591,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "45",
-        properties: { name: "South Carolina", density: 155.4 },
+        type: 'Feature',
+        id: '45',
+        properties: { name: 'South Carolina', density: 155.4 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-82.764143, 35.066903],
@@ -3647,11 +3647,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "46",
-        properties: { name: "South Dakota", density: 98.07 },
+        type: 'Feature',
+        id: '46',
+        properties: { name: 'South Dakota', density: 98.07 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-104.047534, 45.944106],
@@ -3688,11 +3688,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "47",
-        properties: { name: "Tennessee", density: 88.08 },
+        type: 'Feature',
+        id: '47',
+        properties: { name: 'Tennessee', density: 88.08 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-88.054868, 36.496384],
@@ -3743,11 +3743,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "48",
-        properties: { name: "Texas", density: 98.07 },
+        type: 'Feature',
+        id: '48',
+        properties: { name: 'Texas', density: 98.07 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-101.812942, 36.501861],
@@ -3907,11 +3907,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "49",
-        properties: { name: "Utah", density: 34.3 },
+        type: 'Feature',
+        id: '49',
+        properties: { name: 'Utah', density: 34.3 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-112.164359, 41.995232],
@@ -3931,11 +3931,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "50",
-        properties: { name: "Vermont", density: 67.73 },
+        type: 'Feature',
+        id: '50',
+        properties: { name: 'Vermont', density: 67.73 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-71.503554, 45.013027],
@@ -3971,11 +3971,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "51",
-        properties: { name: "Virginia", density: 204.5 },
+        type: 'Feature',
+        id: '51',
+        properties: { name: 'Virginia', density: 204.5 },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -4073,11 +4073,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "53",
-        properties: { name: "Washington", density: 102.6 },
+        type: 'Feature',
+        id: '53',
+        properties: { name: 'Washington', density: 102.6 },
         geometry: {
-          type: "MultiPolygon",
+          type: 'MultiPolygon',
           coordinates: [
             [
               [
@@ -4167,11 +4167,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "54",
-        properties: { name: "West Virginia", density: 77.06 },
+        type: 'Feature',
+        id: '54',
+        properties: { name: 'West Virginia', density: 77.06 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-80.518598, 40.636951],
@@ -4244,11 +4244,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "55",
-        properties: { name: "Wisconsin", density: 105.2 },
+        type: 'Feature',
+        id: '55',
+        properties: { name: 'Wisconsin', density: 105.2 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-90.415429, 46.568478],
@@ -4331,11 +4331,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "56",
-        properties: { name: "Wyoming", density: 5.851 },
+        type: 'Feature',
+        id: '56',
+        properties: { name: 'Wyoming', density: 5.851 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-109.080842, 45.002073],
@@ -4356,11 +4356,11 @@
         },
       },
       {
-        type: "Feature",
-        id: "72",
-        properties: { name: "Puerto Rico", density: 1082 },
+        type: 'Feature',
+        id: '72',
+        properties: { name: 'Puerto Rico', density: 1082 },
         geometry: {
-          type: "Polygon",
+          type: 'Polygon',
           coordinates: [
             [
               [-66.448338, 17.984326],
@@ -4389,10 +4389,10 @@
 
   // Basic
   // --------------------------------------------------------------------
-  const basicMapVar = document.getElementById("basicMap");
+  const basicMapVar = document.getElementById('basicMap');
   if (basicMapVar) {
-    const basicMap = L.map("basicMap").setView([42.35, -71.08], 10);
-    L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+    const basicMap = L.map('basicMap').setView([42.35, -71.08], 10);
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution:
         'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
       maxZoom: 18,
@@ -4401,13 +4401,13 @@
 
   // Markers
   // --------------------------------------------------------------------
-  const shapeMapVar = document.getElementById("shapeMap");
+  const shapeMapVar = document.getElementById('shapeMap');
   if (shapeMapVar) {
-    const markerMap = L.map("shapeMap").setView([51.5, -0.09], 12);
+    const markerMap = L.map('shapeMap').setView([51.5, -0.09], 12);
     const marker = L.marker([51.5, -0.09]).addTo(markerMap);
     const circle = L.circle([51.508, -0.11], {
-      color: "red",
-      fillColor: "#f03",
+      color: 'red',
+      fillColor: '#f03',
       fillOpacity: 0.5,
       radius: 500,
     }).addTo(markerMap);
@@ -4416,7 +4416,7 @@
       [51.503, -0.06],
       [51.51, -0.047],
     ]).addTo(markerMap);
-    L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution:
         'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
       maxZoom: 18,
@@ -4425,14 +4425,14 @@
 
   // Drag and popup
   // --------------------------------------------------------------------
-  const dragMapVar = document.getElementById("dragMap");
+  const dragMapVar = document.getElementById('dragMap');
   if (dragMapVar) {
-    const draggableMap = L.map("dragMap").setView([48.817152, 2.455], 12);
+    const draggableMap = L.map('dragMap').setView([48.817152, 2.455], 12);
     const markerLocation = L.marker([48.817152, 2.455], {
-      draggable: "true",
+      draggable: 'true',
     }).addTo(draggableMap);
     markerLocation.bindPopup("<b>You're here!</b>").openPopup();
-    L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution:
         'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
       maxZoom: 18,
@@ -4441,9 +4441,9 @@
 
   // User location
   // --------------------------------------------------------------------
-  const userLocationVar = document.getElementById("userLocation");
+  const userLocationVar = document.getElementById('userLocation');
   if (userLocationVar) {
-    const userLocation = L.map("userLocation").setView([42.35, -71.08], 10);
+    const userLocation = L.map('userLocation').setView([42.35, -71.08], 10);
     userLocation.locate({
       setView: true,
       maxZoom: 16,
@@ -4457,8 +4457,8 @@
         .openPopup();
       L.circle(e.latlng, radius).addTo(userLocation);
     }
-    userLocation.on("locationfound", onLocationFound);
-    L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+    userLocation.on('locationfound', onLocationFound);
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution:
         'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
       maxZoom: 18,
@@ -4467,9 +4467,9 @@
 
   // Custom Icons
   // --------------------------------------------------------------------
-  const customIconsVar = document.getElementById("customIcons");
+  const customIconsVar = document.getElementById('customIcons');
   if (customIconsVar) {
-    const customIcons = L.map("customIcons").setView([51.5, -0.09], 10);
+    const customIcons = L.map('customIcons').setView([51.5, -0.09], 10);
     const greenLeaf = L.icon({
       iconUrl: `${assetsPath}img/icons/misc/leaf-green.png`,
       shadowUrl: `${assetsPath}img/icons/misc/leaf-shadow.png`,
@@ -4506,7 +4506,7 @@
     L.marker([51.49, -0.45], {
       icon: orangeLeaf,
     }).addTo(customIcons);
-    L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution:
         'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
       maxZoom: 18,
@@ -4515,26 +4515,26 @@
 
   // Geojson
   // --------------------------------------------------------------------
-  const geoJsonVar = document.getElementById("geoJson");
+  const geoJsonVar = document.getElementById('geoJson');
   if (geoJsonVar) {
-    const geoJsonMap = L.map("geoJson").setView([44.2669, -72.576], 3);
+    const geoJsonMap = L.map('geoJson').setView([44.2669, -72.576], 3);
     L.geoJson(statesData).addTo(geoJsonMap);
     function getColor(d) {
       return d > 1000
-        ? "#800026"
+        ? '#800026'
         : d > 500
-          ? "#BD0026"
+          ? '#BD0026'
           : d > 200
-            ? "#E31A1C"
+            ? '#E31A1C'
             : d > 100
-              ? "#FC4E2A"
+              ? '#FC4E2A'
               : d > 50
-                ? "#FD8D3C"
+                ? '#FD8D3C'
                 : d > 20
-                  ? "#FEB24C"
+                  ? '#FEB24C'
                   : d > 10
-                    ? "#FED976"
-                    : "#FFEDA0";
+                    ? '#FED976'
+                    : '#FFEDA0';
     }
 
     function style(feature) {
@@ -4542,15 +4542,15 @@
         fillColor: getColor(feature.properties.density),
         weight: 2,
         opacity: 1,
-        color: "white",
-        dashArray: "3",
+        color: 'white',
+        dashArray: '3',
         fillOpacity: 0.7,
       };
     }
     L.geoJson(statesData, {
       style: style,
     }).addTo(geoJsonMap);
-    L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution:
         'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
       maxZoom: 18,
@@ -4559,29 +4559,29 @@
 
   // Layer Control
   // --------------------------------------------------------------------
-  const layerControlVar = document.getElementById("layerControl");
+  const layerControlVar = document.getElementById('layerControl');
   if (layerControlVar) {
     const littleton = L.marker([39.61, -105.02]).bindPopup(
-      "This is Littleton, CO.",
+      'This is Littleton, CO.',
     );
-    const denver = L.marker([39.74, -104.99]).bindPopup("This is Denver, CO.");
-    const aurora = L.marker([39.73, -104.8]).bindPopup("This is Aurora, CO.");
-    const golden = L.marker([39.77, -105.23]).bindPopup("This is Golden, CO.");
+    const denver = L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.');
+    const aurora = L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.');
+    const golden = L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.');
     const cities = L.layerGroup([littleton, denver, aurora, golden]);
-    const street = L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+    const street = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution:
         'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
       maxZoom: 18,
     });
     const watercolor = L.tileLayer(
-      "http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg",
+      'http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg',
       {
         attribution:
           'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
         maxZoom: 18,
       },
     );
-    const layerControl = L.map("layerControl", {
+    const layerControl = L.map('layerControl', {
       center: [39.73, -104.99],
       zoom: 10,
       layers: [street, cities],
@@ -4594,7 +4594,7 @@
       Cities: cities,
     };
     L.control.layers(baseMaps, overlayMaps).addTo(layerControl);
-    L.tileLayer("https://c.tile.osm.org/{z}/{x}/{y}.png", {
+    L.tileLayer('https://c.tile.osm.org/{z}/{x}/{y}.png', {
       attribution:
         'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
       maxZoom: 18,

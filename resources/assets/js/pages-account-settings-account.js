@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener('DOMContentLoaded', (e) => {
   (() => {
-    const formAccSettings = document.querySelector("#formAccountSettings");
-    const deactivateAcc = document.querySelector("#formAccountDeactivation");
-    const deactivateButton = deactivateAcc.querySelector(".deactivate-account");
+    const formAccSettings = document.querySelector('#formAccountSettings');
+    const deactivateAcc = document.querySelector('#formAccountDeactivation');
+    const deactivateButton = deactivateAcc.querySelector('.deactivate-account');
 
     // Form validation for Add new record
     if (formAccSettings) {
@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
           firstName: {
             validators: {
               notEmpty: {
-                message: "Please enter first name",
+                message: 'Please enter first name',
               },
             },
           },
           lastName: {
             validators: {
               notEmpty: {
-                message: "Please enter last name",
+                message: 'Please enter last name',
               },
             },
           },
@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
         plugins: {
           trigger: new FormValidation.plugins.Trigger(),
           bootstrap5: new FormValidation.plugins.Bootstrap5({
-            eleValidClass: "",
-            rowSelector: ".col-md-6",
+            eleValidClass: '',
+            rowSelector: '.col-md-6',
           }),
           submitButton: new FormValidation.plugins.SubmitButton(),
           // Submit the form when all fields are valid
@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
           autoFocus: new FormValidation.plugins.AutoFocus(),
         },
         init: (instance) => {
-          instance.on("plugins.message.placed", (e) => {
-            if (e.element.parentElement.classList.contains("input-group")) {
+          instance.on('plugins.message.placed', (e) => {
+            if (e.element.parentElement.classList.contains('input-group')) {
               e.element.parentElement.insertAdjacentElement(
-                "afterend",
+                'afterend',
                 e.messageElement,
               );
             }
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           accountActivation: {
             validators: {
               notEmpty: {
-                message: "Please confirm you want to delete account",
+                message: 'Please confirm you want to delete account',
               },
             },
           },
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         plugins: {
           trigger: new FormValidation.plugins.Trigger(),
           bootstrap5: new FormValidation.plugins.Bootstrap5({
-            eleValidClass: "",
+            eleValidClass: '',
           }),
           submitButton: new FormValidation.plugins.SubmitButton(),
           fieldStatus: new FormValidation.plugins.FieldStatus({
@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
               areFieldsValid
                 ? // Enable the submit button
                   // so user has a chance to submit the form again
-                  deactivateButton.removeAttribute("disabled")
+                  deactivateButton.removeAttribute('disabled')
                 : // Disable the submit button
-                  deactivateButton.setAttribute("disabled", "disabled");
+                  deactivateButton.setAttribute('disabled', 'disabled');
             },
           }),
           // Submit the form when all fields are valid
@@ -79,10 +79,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
           autoFocus: new FormValidation.plugins.AutoFocus(),
         },
         init: (instance) => {
-          instance.on("plugins.message.placed", (e) => {
-            if (e.element.parentElement.classList.contains("input-group")) {
+          instance.on('plugins.message.placed', (e) => {
+            if (e.element.parentElement.classList.contains('input-group')) {
               e.element.parentElement.insertAdjacentElement(
-                "afterend",
+                'afterend',
                 e.messageElement,
               );
             }
@@ -92,39 +92,39 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
 
     // Deactivate account alert
-    const accountActivation = document.querySelector("#accountActivation");
+    const accountActivation = document.querySelector('#accountActivation');
 
     // Alert With Functional Confirm Button
     if (deactivateButton) {
       deactivateButton.onclick = () => {
         if (accountActivation.checked === true) {
           Swal.fire({
-            text: "Are you sure you would like to deactivate your account?",
-            icon: "warning",
+            text: 'Are you sure you would like to deactivate your account?',
+            icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: "Yes",
+            confirmButtonText: 'Yes',
             customClass: {
-              confirmButton: "btn btn-primary me-2 waves-effect waves-light",
-              cancelButton: "btn btn-label-secondary waves-effect waves-light",
+              confirmButton: 'btn btn-primary me-2 waves-effect waves-light',
+              cancelButton: 'btn btn-label-secondary waves-effect waves-light',
             },
             buttonsStyling: false,
           }).then((result) => {
             if (result.value) {
               Swal.fire({
-                icon: "success",
-                title: "Deleted!",
-                text: "Your file has been deleted.",
+                icon: 'success',
+                title: 'Deleted!',
+                text: 'Your file has been deleted.',
                 customClass: {
-                  confirmButton: "btn btn-success waves-effect waves-light",
+                  confirmButton: 'btn btn-success waves-effect waves-light',
                 },
               });
             } else if (result.dismiss === Swal.DismissReason.cancel) {
               Swal.fire({
-                title: "Cancelled",
-                text: "Deactivation Cancelled!!",
-                icon: "error",
+                title: 'Cancelled',
+                text: 'Deactivation Cancelled!!',
+                icon: 'error',
                 customClass: {
-                  confirmButton: "btn btn-success waves-effect waves-light",
+                  confirmButton: 'btn btn-success waves-effect waves-light',
                 },
               });
             }
@@ -135,28 +135,28 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
     // CleaveJS validation
 
-    const phoneNumber = document.querySelector("#phoneNumber");
-    const zipCode = document.querySelector("#zipCode");
+    const phoneNumber = document.querySelector('#phoneNumber');
+    const zipCode = document.querySelector('#zipCode');
     // Phone Mask
     if (phoneNumber) {
       new Cleave(phoneNumber, {
         phone: true,
-        phoneRegionCode: "US",
+        phoneRegionCode: 'US',
       });
     }
 
     // Pincode
     if (zipCode) {
       new Cleave(zipCode, {
-        delimiter: "",
+        delimiter: '',
         numeral: true,
       });
     }
 
     // Update/reset user image of account page
-    const accountUserImage = document.getElementById("uploadedAvatar");
-    const fileInput = document.querySelector(".account-file-input");
-    const resetFileInput = document.querySelector(".account-image-reset");
+    const accountUserImage = document.getElementById('uploadedAvatar');
+    const fileInput = document.querySelector('.account-file-input');
+    const resetFileInput = document.querySelector('.account-image-reset');
 
     if (accountUserImage) {
       const resetImage = accountUserImage.src;
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         }
       };
       resetFileInput.onclick = () => {
-        fileInput.value = "";
+        fileInput.value = '';
         accountUserImage.src = resetImage;
       };
     }
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 // Select2 (jquery)
 $(() => {
-  const select2 = $(".select2");
+  const select2 = $('.select2');
   // For all Select2
   if (select2.length) {
     select2.each(function () {

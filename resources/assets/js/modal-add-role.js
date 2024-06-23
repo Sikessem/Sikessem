@@ -1,12 +1,12 @@
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener('DOMContentLoaded', (e) => {
   (() => {
     // add role form validation
-    FormValidation.formValidation(document.getElementById("addRoleForm"), {
+    FormValidation.formValidation(document.getElementById('addRoleForm'), {
       fields: {
         modalRoleName: {
           validators: {
             notEmpty: {
-              message: "Please enter role name",
+              message: 'Please enter role name',
             },
           },
         },
@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
         bootstrap5: new FormValidation.plugins.Bootstrap5({
           // Use this for enabling/changing valid/invalid class
           // eleInvalidClass: '',
-          eleValidClass: "",
-          rowSelector: ".col-12",
+          eleValidClass: '',
+          rowSelector: '.col-12',
         }),
         submitButton: new FormValidation.plugins.SubmitButton(),
         // Submit the form when all fields are valid
@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
     });
 
     // Select All checkbox click
-    const selectAll = document.querySelector("#selectAll");
+    const selectAll = document.querySelector('#selectAll');
     const checkboxList = document.querySelectorAll('[type="checkbox"]');
-    selectAll.addEventListener("change", (t) => {
+    selectAll.addEventListener('change', (t) => {
       checkboxList.forEach((e) => {
         e.checked = t.target.checked;
       });

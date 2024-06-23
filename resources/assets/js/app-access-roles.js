@@ -1,10 +1,10 @@
 // Datatable (jquery)
 $(() => {
-  const dtUserTable = $(".datatables-users");
+  const dtUserTable = $('.datatables-users');
   const statusObj = {
-    1: { title: "Pending", class: "bg-label-warning" },
-    2: { title: "Active", class: "bg-label-success" },
-    3: { title: "Inactive", class: "bg-label-secondary" },
+    1: { title: 'Pending', class: 'bg-label-warning' },
+    2: { title: 'Active', class: 'bg-label-success' },
+    3: { title: 'Inactive', class: 'bg-label-secondary' },
   };
 
   const userView = `${baseUrl}app/user/view/account`;
@@ -15,23 +15,23 @@ $(() => {
       ajax: `${assetsPath}json/user-list.json`, // JSON file to add data
       columns: [
         // columns according to JSON
-        { data: "" },
-        { data: "full_name" },
-        { data: "role" },
-        { data: "current_plan" },
-        { data: "billing" },
-        { data: "status" },
-        { data: "" },
+        { data: '' },
+        { data: 'full_name' },
+        { data: 'role' },
+        { data: 'current_plan' },
+        { data: 'billing' },
+        { data: 'status' },
+        { data: '' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           orderable: false,
           searchable: false,
           responsivePriority: 2,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // User full name and email
@@ -48,18 +48,18 @@ $(() => {
               // For Avatar badge
               const stateNum = Math.floor(Math.random() * 6);
               const states = [
-                "success",
-                "danger",
-                "warning",
-                "info",
-                "primary",
-                "secondary",
+                'success',
+                'danger',
+                'warning',
+                'info',
+                'primary',
+                'secondary',
               ];
               const $state = states[stateNum];
               const $name = full.full_name;
               let $initials = $name.match(/\b\w/g) || [];
               $initials = (
-                ($initials.shift() || "") + ($initials.pop() || "")
+                ($initials.shift() || '') + ($initials.pop() || '')
               ).toUpperCase();
               $output = `<span class="avatar-initial rounded-circle bg-label-${$state}">${$initials}</span>`;
             }
@@ -109,27 +109,27 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           searchable: false,
           orderable: false,
           render: (data, type, full, meta) =>
             `<div class="d-flex align-items-center"><a href="${userView}" class="btn btn-sm btn-icon"><i class="ti ti-eye"></i></a><a href="javascript:;" class="text-body delete-record"><i class="ti ti-trash ti-sm mx-2"></i></a><a href="javascript:;" class="text-body dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical ti-sm mx-1"></i></a><div class="dropdown-menu dropdown-menu-end m-0"><a href="javascript:;"" class="dropdown-item">Edit</a><a href="javascript:;" class="dropdown-item">Suspend</a></div></div>`,
         },
       ],
-      order: [[1, "desc"]],
+      order: [[1, 'desc']],
       dom:
         '<"row mx-2"' +
         '<"col-sm-12 col-md-4 col-lg-6" l>' +
         '<"col-sm-12 col-md-8 col-lg-6"<"dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-md-end justify-content-center align-items-center flex-sm-nowrap flex-wrap me-1"<"me-3"f><"user_role w-px-200 pb-3 pb-sm-0">>>' +
-        ">t" +
+        '>t' +
         '<"row mx-2"' +
         '<"col-sm-12 col-md-6"i>' +
         '<"col-sm-12 col-md-6"p>' +
-        ">",
+        '>',
       language: {
-        sLengthMenu: "Show _MENU_",
-        search: "Search",
-        searchPlaceholder: "Search..",
+        sLengthMenu: 'Show _MENU_',
+        search: 'Search',
+        searchPlaceholder: 'Search..',
       },
       // For responsive popup
       responsive: {
@@ -140,13 +140,13 @@ $(() => {
               return `Details of ${data.full_name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -163,10 +163,10 @@ $(() => {
             const select = $(
               '<select id="UserRole" class="form-select text-capitalize"><option value=""> Select Role </option></select>',
             )
-              .appendTo(".user_role")
-              .on("change", function () {
+              .appendTo('.user_role')
+              .on('change', function () {
                 const val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? `^${val}$` : "", true, false).draw();
+                column.search(val ? `^${val}$` : '', true, false).draw();
               });
 
             column
@@ -183,31 +183,31 @@ $(() => {
     });
   }
   // Delete Record
-  $(".datatables-users tbody").on("click", ".delete-record", function () {
-    dtUser.row($(this).parents("tr")).remove().draw();
+  $('.datatables-users tbody').on('click', '.delete-record', function () {
+    dtUser.row($(this).parents('tr')).remove().draw();
   });
 
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
 });
 
 (() => {
   // On edit role click, update text
-  const roleEditList = document.querySelectorAll(".role-edit-modal");
-  const roleAdd = document.querySelector(".add-new-role");
-  const roleTitle = document.querySelector(".role-title");
+  const roleEditList = document.querySelectorAll('.role-edit-modal');
+  const roleAdd = document.querySelector('.add-new-role');
+  const roleTitle = document.querySelector('.role-title');
 
   roleAdd.onclick = () => {
-    roleTitle.innerHTML = "Add New Role"; // reset text
+    roleTitle.innerHTML = 'Add New Role'; // reset text
   };
   if (roleEditList) {
     roleEditList.forEach((roleEditEl) => {
       roleEditEl.onclick = () => {
-        roleTitle.innerHTML = "Edit Role"; // reset text
+        roleTitle.innerHTML = 'Edit Role'; // reset text
       };
     });
   }

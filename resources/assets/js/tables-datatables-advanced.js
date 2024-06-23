@@ -1,38 +1,38 @@
 $(() => {
-  const dt_ajax_table = $(".datatables-ajax");
-  const dt_filter_table = $(".dt-column-search");
-  const dt_adv_filter_table = $(".dt-advanced-search");
-  const dt_responsive_table = $(".dt-responsive");
-  const startDateEle = $(".start_date");
-  const endDateEle = $(".end_date");
+  const dt_ajax_table = $('.datatables-ajax');
+  const dt_filter_table = $('.dt-column-search');
+  const dt_adv_filter_table = $('.dt-advanced-search');
+  const dt_responsive_table = $('.dt-responsive');
+  const startDateEle = $('.start_date');
+  const endDateEle = $('.end_date');
 
   // Advanced Search Functions Starts
   // --------------------------------------------------------------------
 
   // Datepicker for advanced filter
-  const rangePickr = $(".flatpickr-range");
-  const dateFormat = "MM/DD/YYYY";
+  const rangePickr = $('.flatpickr-range');
+  const dateFormat = 'MM/DD/YYYY';
 
   if (rangePickr.length) {
     rangePickr.flatpickr({
-      mode: "range",
-      dateFormat: "m/d/Y",
-      orientation: isRtl ? "auto right" : "auto left",
+      mode: 'range',
+      dateFormat: 'm/d/Y',
+      orientation: isRtl ? 'auto right' : 'auto left',
       locale: {
         format: dateFormat,
       },
       onClose: (selectedDates, dateStr, instance) => {
-        let startDate = "";
+        let startDate = '';
         let endDate = new Date();
         if (selectedDates[0] !== undefined) {
-          startDate = moment(selectedDates[0]).format("MM/DD/YYYY");
+          startDate = moment(selectedDates[0]).format('MM/DD/YYYY');
           startDateEle.val(startDate);
         }
         if (selectedDates[1] !== undefined) {
-          endDate = moment(selectedDates[1]).format("MM/DD/YYYY");
+          endDate = moment(selectedDates[1]).format('MM/DD/YYYY');
           endDateEle.val(endDate);
         }
-        $(rangePickr).trigger("change").trigger("keyup");
+        $(rangePickr).trigger('change').trigger('keyup');
       },
     });
   }
@@ -42,7 +42,7 @@ $(() => {
     if (i === 5) {
       const startDate = startDateEle.val();
       const endDate = endDateEle.val();
-      if (startDate !== "" && endDate !== "") {
+      if (startDate !== '' && endDate !== '') {
         $.fn.dataTableExt.afnFiltering.length = 0; // Reset datatable filter
         dt_adv_filter_table.dataTable().fnDraw(); // Draw table after filter
         filterByDate(i, startDate, endDate); // We call our filter function
@@ -67,10 +67,10 @@ $(() => {
       if (start <= rowDate && rowDate <= end) {
         return true;
       }
-      if (rowDate >= start && end === "" && start !== "") {
+      if (rowDate >= start && end === '' && start !== '') {
         return true;
       }
-      if (rowDate <= end && start === "" && end !== "") {
+      if (rowDate <= end && start === '' && end !== '') {
         return true;
       }
       return false;
@@ -103,24 +103,24 @@ $(() => {
 
   if (dt_filter_table.length) {
     // Setup - add a text input to each footer cell
-    $(".dt-column-search thead tr")
+    $('.dt-column-search thead tr')
       .clone(true)
-      .appendTo(".dt-column-search thead");
-    $(".dt-column-search thead tr:eq(1) th").each(function (i) {
+      .appendTo('.dt-column-search thead');
+    $('.dt-column-search thead tr:eq(1) th').each(function (i) {
       const title = $(this).text();
       const $input = $(
         `<input type="text" class="form-control" placeholder="Search ${title}" />`,
       );
 
       // Add left and right border styles to the parent element
-      $(this).css("border-left", "none");
-      if (i === $(".dt-column-search thead tr:eq(1) th").length - 1) {
-        $(this).css("border-right", "none");
+      $(this).css('border-left', 'none');
+      if (i === $('.dt-column-search thead tr:eq(1) th').length - 1) {
+        $(this).css('border-right', 'none');
       }
 
       $(this).html($input);
 
-      $("input", this).on("keyup change", function () {
+      $('input', this).on('keyup change', function () {
         if (dt_filter.column(i).search() !== this.value) {
           dt_filter.column(i).search(this.value).draw();
         }
@@ -130,12 +130,12 @@ $(() => {
     const dt_filter = dt_filter_table.DataTable({
       ajax: `${assetsPath}json/table-datatable.json`,
       columns: [
-        { data: "full_name" },
-        { data: "email" },
-        { data: "post" },
-        { data: "city" },
-        { data: "start_date" },
-        { data: "salary" },
+        { data: 'full_name' },
+        { data: 'email' },
+        { data: 'post' },
+        { data: 'city' },
+        { data: 'start_date' },
+        { data: 'salary' },
       ],
       orderCellsTop: true,
       dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6 d-flex justify-content-center justify-content-md-end"f>><"table-responsive"t><"row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
@@ -151,21 +151,21 @@ $(() => {
       dom: "<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6 dataTables_pager'p>>",
       ajax: `${assetsPath}json/table-datatable.json`,
       columns: [
-        { data: "" },
-        { data: "full_name" },
-        { data: "email" },
-        { data: "post" },
-        { data: "city" },
-        { data: "start_date" },
-        { data: "salary" },
+        { data: '' },
+        { data: 'full_name' },
+        { data: 'email' },
+        { data: 'post' },
+        { data: 'city' },
+        { data: 'start_date' },
+        { data: 'salary' },
       ],
 
       columnDefs: [
         {
-          className: "control",
+          className: 'control',
           orderable: false,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
       ],
       orderCellsTop: true,
@@ -177,13 +177,13 @@ $(() => {
               return `Details of ${data.full_name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -195,8 +195,8 @@ $(() => {
   }
 
   // on key up from input field
-  $("input.dt-input").on("keyup", function () {
-    filterColumn($(this).attr("data-column"), $(this).val());
+  $('input.dt-input').on('keyup', function () {
+    filterColumn($(this).attr('data-column'), $(this).val());
   });
 
   // Responsive Table
@@ -206,24 +206,24 @@ $(() => {
     const dt_responsive = dt_responsive_table.DataTable({
       ajax: `${assetsPath}json/table-datatable.json`,
       columns: [
-        { data: "" },
-        { data: "full_name" },
-        { data: "email" },
-        { data: "post" },
-        { data: "city" },
-        { data: "start_date" },
-        { data: "salary" },
-        { data: "age" },
-        { data: "experience" },
-        { data: "status" },
+        { data: '' },
+        { data: 'full_name' },
+        { data: 'email' },
+        { data: 'post' },
+        { data: 'city' },
+        { data: 'start_date' },
+        { data: 'salary' },
+        { data: 'age' },
+        { data: 'experience' },
+        { data: 'status' },
       ],
       columnDefs: [
         {
-          className: "control",
+          className: 'control',
           orderable: false,
           targets: 0,
           searchable: false,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // Label
@@ -231,13 +231,13 @@ $(() => {
           render: (data, type, full, meta) => {
             const $status_number = full.status;
             const $status = {
-              1: { title: "Current", class: "bg-label-primary" },
-              2: { title: "Professional", class: " bg-label-success" },
-              3: { title: "Rejected", class: " bg-label-danger" },
-              4: { title: "Resigned", class: " bg-label-warning" },
-              5: { title: "Applied", class: " bg-label-info" },
+              1: { title: 'Current', class: 'bg-label-primary' },
+              2: { title: 'Professional', class: ' bg-label-success' },
+              3: { title: 'Rejected', class: ' bg-label-danger' },
+              4: { title: 'Resigned', class: ' bg-label-warning' },
+              5: { title: 'Applied', class: ' bg-label-info' },
             };
-            if (typeof $status[$status_number] === "undefined") {
+            if (typeof $status[$status_number] === 'undefined') {
               return data;
             }
             return `<span class="badge ${$status[$status_number].class}">${$status[$status_number].title}</span>`;
@@ -255,13 +255,13 @@ $(() => {
               return `Details of ${data.full_name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -275,7 +275,7 @@ $(() => {
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 200);
 });

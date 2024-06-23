@@ -1,7 +1,7 @@
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener('DOMContentLoaded', (e) => {
   (() => {
-    const formChangePass = document.querySelector("#formAccountSettings");
-    const formApiKey = document.querySelector("#formAccountSettingsApiKey");
+    const formChangePass = document.querySelector('#formAccountSettings');
+    const formApiKey = document.querySelector('#formAccountSettingsApiKey');
 
     // Form validation for Change password
     if (formChangePass) {
@@ -10,38 +10,38 @@ document.addEventListener("DOMContentLoaded", (e) => {
           currentPassword: {
             validators: {
               notEmpty: {
-                message: "Please current password",
+                message: 'Please current password',
               },
               stringLength: {
                 min: 8,
-                message: "Password must be more than 8 characters",
+                message: 'Password must be more than 8 characters',
               },
             },
           },
           newPassword: {
             validators: {
               notEmpty: {
-                message: "Please enter new password",
+                message: 'Please enter new password',
               },
               stringLength: {
                 min: 8,
-                message: "Password must be more than 8 characters",
+                message: 'Password must be more than 8 characters',
               },
             },
           },
           confirmPassword: {
             validators: {
               notEmpty: {
-                message: "Please confirm new password",
+                message: 'Please confirm new password',
               },
               identical: {
                 compare: () =>
                   formChangePass.querySelector('[name="newPassword"]').value,
-                message: "The password and its confirm are not the same",
+                message: 'The password and its confirm are not the same',
               },
               stringLength: {
                 min: 8,
-                message: "Password must be more than 8 characters",
+                message: 'Password must be more than 8 characters',
               },
             },
           },
@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
         plugins: {
           trigger: new FormValidation.plugins.Trigger(),
           bootstrap5: new FormValidation.plugins.Bootstrap5({
-            eleValidClass: "",
-            rowSelector: ".col-md-6",
+            eleValidClass: '',
+            rowSelector: '.col-md-6',
           }),
           submitButton: new FormValidation.plugins.SubmitButton(),
           // Submit the form when all fields are valid
@@ -58,10 +58,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
           autoFocus: new FormValidation.plugins.AutoFocus(),
         },
         init: (instance) => {
-          instance.on("plugins.message.placed", (e) => {
-            if (e.element.parentElement.classList.contains("input-group")) {
+          instance.on('plugins.message.placed', (e) => {
+            if (e.element.parentElement.classList.contains('input-group')) {
               e.element.parentElement.insertAdjacentElement(
-                "afterend",
+                'afterend',
                 e.messageElement,
               );
             }
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           apiKey: {
             validators: {
               notEmpty: {
-                message: "Please enter API key name",
+                message: 'Please enter API key name',
               },
             },
           },
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         plugins: {
           trigger: new FormValidation.plugins.Trigger(),
           bootstrap5: new FormValidation.plugins.Bootstrap5({
-            eleValidClass: "",
+            eleValidClass: '',
           }),
           submitButton: new FormValidation.plugins.SubmitButton(),
           // Submit the form when all fields are valid
@@ -93,10 +93,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
           autoFocus: new FormValidation.plugins.AutoFocus(),
         },
         init: (instance) => {
-          instance.on("plugins.message.placed", (e) => {
-            if (e.element.parentElement.classList.contains("input-group")) {
+          instance.on('plugins.message.placed', (e) => {
+            if (e.element.parentElement.classList.contains('input-group')) {
               e.element.parentElement.insertAdjacentElement(
-                "afterend",
+                'afterend',
                 e.messageElement,
               );
             }
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 // Select2 (jquery)
 $(() => {
-  const select2 = $(".select2");
+  const select2 = $('.select2');
 
   // Select2 API Key
   if (select2.length) {

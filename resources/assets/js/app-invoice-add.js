@@ -1,13 +1,13 @@
 (() => {
-  const invoiceItemPriceList = document.querySelectorAll(".invoice-item-price");
-  const invoiceItemQtyList = document.querySelectorAll(".invoice-item-qty");
-  const invoiceDateList = document.querySelectorAll(".date-picker");
+  const invoiceItemPriceList = document.querySelectorAll('.invoice-item-price');
+  const invoiceItemQtyList = document.querySelectorAll('.invoice-item-qty');
+  const invoiceDateList = document.querySelectorAll('.date-picker');
 
   // Price
   if (invoiceItemPriceList) {
     invoiceItemPriceList.forEach((invoiceItemPrice) => {
       new Cleave(invoiceItemPrice, {
-        delimiter: "",
+        delimiter: '',
         numeral: true,
       });
     });
@@ -17,7 +17,7 @@
   if (invoiceItemQtyList) {
     invoiceItemQtyList.forEach((invoiceItemQty) => {
       new Cleave(invoiceItemQty, {
-        delimiter: "",
+        delimiter: '',
         numeral: true,
       });
     });
@@ -27,7 +27,7 @@
   if (invoiceDateList) {
     invoiceDateList.forEach((invoiceDateEl) => {
       invoiceDateEl.flatpickr({
-        monthSelectorType: "static",
+        monthSelectorType: 'static',
       });
     });
   }
@@ -35,41 +35,41 @@
 
 // repeater (jquery)
 $(() => {
-  const applyChangesBtn = $(".btn-apply-changes");
+  const applyChangesBtn = $('.btn-apply-changes');
   let discount;
   let tax1;
   let tax2;
   let discountInput;
   let tax1Input;
   let tax2Input;
-  const sourceItem = $(".source-item");
+  const sourceItem = $('.source-item');
   const adminDetails = {
-    "App Design": "Designed UI kit & app pages.",
-    "App Customization": "Customization & Bug Fixes.",
-    "ABC Template": "Bootstrap 4 admin template.",
-    "App Development": "Native App Development.",
+    'App Design': 'Designed UI kit & app pages.',
+    'App Customization': 'Customization & Bug Fixes.',
+    'ABC Template': 'Bootstrap 4 admin template.',
+    'App Development': 'Native App Development.',
   };
 
   // Prevent dropdown from closing on tax change
-  $(document).on("click", ".tax-select", (e) => {
+  $(document).on('click', '.tax-select', (e) => {
     e.stopPropagation();
   });
 
   // On tax change update it's value value
   function updateValue(listener, el) {
-    listener.closest(".repeater-wrapper").find(el).text(listener.val());
+    listener.closest('.repeater-wrapper').find(el).text(listener.val());
   }
 
   // Apply item changes btn
   if (applyChangesBtn.length) {
-    $(document).on("click", ".btn-apply-changes", function (e) {
+    $(document).on('click', '.btn-apply-changes', function (e) {
       const $this = $(this);
-      tax1Input = $this.closest(".dropdown-menu").find("#taxInput1");
-      tax2Input = $this.closest(".dropdown-menu").find("#taxInput2");
-      discountInput = $this.closest(".dropdown-menu").find("#discountInput");
-      tax1 = $this.closest(".repeater-wrapper").find(".tax-1");
-      tax2 = $this.closest(".repeater-wrapper").find(".tax-2");
-      discount = $(".discount");
+      tax1Input = $this.closest('.dropdown-menu').find('#taxInput1');
+      tax2Input = $this.closest('.dropdown-menu').find('#taxInput2');
+      discountInput = $this.closest('.dropdown-menu').find('#discountInput');
+      tax1 = $this.closest('.repeater-wrapper').find('.tax-1');
+      tax2 = $this.closest('.repeater-wrapper').find('.tax-2');
+      discount = $('.discount');
 
       if (tax1Input.val() !== null) {
         updateValue(tax1Input, tax1);
@@ -81,7 +81,7 @@ $(() => {
 
       if (discountInput.val().length) {
         $this
-          .closest(".repeater-wrapper")
+          .closest('.repeater-wrapper')
           .find(discount)
           .text(`${discountInput.val()}%`);
       }
@@ -90,7 +90,7 @@ $(() => {
 
   // Repeater init
   if (sourceItem.length) {
-    sourceItem.on("submit", (e) => {
+    sourceItem.on('submit', (e) => {
       e.preventDefault();
     });
     sourceItem.repeater({
@@ -111,11 +111,11 @@ $(() => {
   }
 
   // Item details select onchange
-  $(document).on("change", ".item-details", function () {
+  $(document).on('change', '.item-details', function () {
     const $this = $(this);
     const value = adminDetails[$this.val()];
-    if ($this.next("textarea").length) {
-      $this.next("textarea").val(value);
+    if ($this.next('textarea').length) {
+      $this.next('textarea').val(value);
     } else {
       $this.after(
         `<textarea class="form-control" rows="2">${value}</textarea>`,

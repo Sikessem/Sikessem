@@ -14,36 +14,36 @@
   const chartColors = {
     donut: {
       series1: config.colors.success,
-      series2: "#28c76fb3",
-      series3: "#28c76f80",
+      series2: '#28c76fb3',
+      series3: '#28c76f80',
       series4: config.colors_label.success,
     },
     line: {
       series1: config.colors.warning,
       series2: config.colors.primary,
-      series3: "#7367f029",
+      series3: '#7367f029',
     },
   };
 
   // Shipment statistics Chart
   // --------------------------------------------------------------------
-  const shipmentEl = document.querySelector("#shipmentStatisticsChart");
+  const shipmentEl = document.querySelector('#shipmentStatisticsChart');
   const shipmentConfig = {
     series: [
       {
-        name: "Shipment",
-        type: "column",
+        name: 'Shipment',
+        type: 'column',
         data: [38, 45, 33, 38, 32, 50, 48, 40, 42, 37],
       },
       {
-        name: "Delivery",
-        type: "line",
+        name: 'Delivery',
+        type: 'line',
         data: [23, 28, 23, 32, 28, 44, 32, 38, 26, 34],
       },
     ],
     chart: {
       height: 270,
-      type: "line",
+      type: 'line',
       stacked: false,
       parentHeightOffset: 0,
       toolbar: {
@@ -63,13 +63,13 @@
       borderRadius: 4,
     },
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       width: [0, 3],
-      lineCap: "round",
+      lineCap: 'round',
     },
     legend: {
       show: true,
-      position: "bottom",
+      position: 'bottom',
       markers: {
         width: 8,
         height: 8,
@@ -80,8 +80,8 @@
         horizontal: 10,
         vertical: 0,
       },
-      fontSize: "15px",
-      fontFamily: "Public Sans",
+      fontSize: '15px',
+      fontFamily: 'Public Sans',
       fontWeight: 400,
       labels: {
         colors: headingColor,
@@ -98,9 +98,9 @@
     },
     plotOptions: {
       bar: {
-        columnWidth: "30%",
-        startingShape: "rounded",
-        endingShape: "rounded",
+        columnWidth: '30%',
+        startingShape: 'rounded',
+        endingShape: 'rounded',
         borderRadius: 4,
       },
     },
@@ -110,22 +110,22 @@
     xaxis: {
       tickAmount: 10,
       categories: [
-        "1 Jan",
-        "2 Jan",
-        "3 Jan",
-        "4 Jan",
-        "5 Jan",
-        "6 Jan",
-        "7 Jan",
-        "8 Jan",
-        "9 Jan",
-        "10 Jan",
+        '1 Jan',
+        '2 Jan',
+        '3 Jan',
+        '4 Jan',
+        '5 Jan',
+        '6 Jan',
+        '7 Jan',
+        '8 Jan',
+        '9 Jan',
+        '10 Jan',
       ],
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
-          fontFamily: "Public Sans",
+          fontSize: '13px',
+          fontFamily: 'Public Sans',
           fontWeight: 400,
         },
       },
@@ -143,8 +143,8 @@
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "13px",
-          fontFamily: "Public Sans",
+          fontSize: '13px',
+          fontFamily: 'Public Sans',
           fontWeight: 400,
         },
         formatter: (val) => `${val}%`,
@@ -160,7 +160,7 @@
           xaxis: {
             labels: {
               style: {
-                fontSize: "10px",
+                fontSize: '10px',
               },
             },
           },
@@ -169,7 +169,7 @@
               vertical: 0,
               horizontal: 10,
             },
-            fontSize: "13px",
+            fontSize: '13px',
             offsetY: 12,
           },
         },
@@ -182,7 +182,7 @@
           },
           plotOptions: {
             bar: {
-              columnWidth: "50%",
+              columnWidth: '50%',
             },
           },
         },
@@ -192,7 +192,7 @@
         options: {
           plotOptions: {
             bar: {
-              columnWidth: "30%",
+              columnWidth: '30%',
             },
           },
         },
@@ -210,7 +210,7 @@
       },
     ],
   };
-  if (typeof shipmentEl !== "undefined" && shipmentEl !== null) {
+  if (typeof shipmentEl !== 'undefined' && shipmentEl !== null) {
     const shipment = new ApexCharts(shipmentEl, shipmentConfig);
     shipment.render();
   }
@@ -218,19 +218,19 @@
   // Reasons for delivery exceptions Chart
   // --------------------------------------------------------------------
   const deliveryExceptionsChartE1 = document.querySelector(
-    "#deliveryExceptionsChart",
+    '#deliveryExceptionsChart',
   );
   const deliveryExceptionsChartConfig = {
     chart: {
       height: 420,
       parentHeightOffset: 0,
-      type: "donut",
+      type: 'donut',
     },
     labels: [
-      "Incorrect address",
-      "Weather conditions",
-      "Federal Holidays",
-      "Damage during transit",
+      'Incorrect address',
+      'Weather conditions',
+      'Federal Holidays',
+      'Damage during transit',
     ],
     series: [13, 25, 22, 40],
     colors: [
@@ -248,7 +248,7 @@
     },
     legend: {
       show: true,
-      position: "bottom",
+      position: 'bottom',
       offsetY: 10,
       markers: {
         width: 8,
@@ -259,8 +259,8 @@
         horizontal: 15,
         vertical: 5,
       },
-      fontSize: "13px",
-      fontFamily: "Public Sans",
+      fontSize: '13px',
+      fontFamily: 'Public Sans',
       fontWeight: 400,
       labels: {
         colors: headingColor,
@@ -278,19 +278,19 @@
     states: {
       hover: {
         filter: {
-          type: "none",
+          type: 'none',
         },
       },
     },
     plotOptions: {
       pie: {
         donut: {
-          size: "77%",
+          size: '77%',
           labels: {
             show: true,
             value: {
-              fontSize: "26px",
-              fontFamily: "Public Sans",
+              fontSize: '26px',
+              fontFamily: 'Public Sans',
               color: headingColor,
               fontWeight: 500,
               offsetY: -30,
@@ -298,14 +298,14 @@
             },
             name: {
               offsetY: 20,
-              fontFamily: "Public Sans",
+              fontFamily: 'Public Sans',
             },
             total: {
               show: true,
-              fontSize: ".75rem",
-              label: "AVG. Exceptions",
+              fontSize: '.75rem',
+              label: 'AVG. Exceptions',
               color: labelColor,
-              formatter: (w) => "30%",
+              formatter: (w) => '30%',
             },
           },
         },
@@ -323,7 +323,7 @@
     ],
   };
   if (
-    typeof deliveryExceptionsChartE1 !== "undefined" &&
+    typeof deliveryExceptionsChartE1 !== 'undefined' &&
     deliveryExceptionsChartE1 !== null
   ) {
     const deliveryExceptionsChart = new ApexCharts(
@@ -338,30 +338,30 @@
 // --------------------------------------------------------------------
 $(() => {
   // Variable declaration for table
-  const dt_dashboard_table = $(".dt-route-vehicles");
+  const dt_dashboard_table = $('.dt-route-vehicles');
 
   // On route vehicles DataTable
   if (dt_dashboard_table.length) {
     const dt_dashboard = dt_dashboard_table.DataTable({
       ajax: `${assetsPath}json/logistics-dashboard.json`,
       columns: [
-        { data: "id" },
-        { data: "id" },
-        { data: "location" },
-        { data: "start_city" },
-        { data: "end_city" },
-        { data: "warnings" },
-        { data: "progress" },
+        { data: 'id' },
+        { data: 'id' },
+        { data: 'location' },
+        { data: 'start_city' },
+        { data: 'end_city' },
+        { data: 'warnings' },
+        { data: 'progress' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           orderable: false,
           searchable: false,
           responsivePriority: 2,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // For Checkboxes
@@ -412,16 +412,16 @@ $(() => {
           render: (data, type, full, meta) => {
             const $status_number = full.warnings;
             const $status = {
-              1: { title: "No Warnings", class: "bg-label-success" },
+              1: { title: 'No Warnings', class: 'bg-label-success' },
               2: {
-                title: "Temperature Not Optimal",
-                class: "bg-label-warning",
+                title: 'Temperature Not Optimal',
+                class: 'bg-label-warning',
               },
-              3: { title: "Ecu Not Responding", class: "bg-label-danger" },
-              4: { title: "Oil Leakage", class: "bg-label-info" },
-              5: { title: "fuel problems", class: "bg-label-primary" },
+              3: { title: 'Ecu Not Responding', class: 'bg-label-danger' },
+              4: { title: 'Oil Leakage', class: 'bg-label-info' },
+              5: { title: 'fuel problems', class: 'bg-label-primary' },
             };
-            if (typeof $status[$status_number] === "undefined") {
+            if (typeof $status[$status_number] === 'undefined') {
               return data;
             }
             return `<span class="badge rounded ${$status[$status_number].class}">${$status[$status_number].title}</span>`;
@@ -437,7 +437,7 @@ $(() => {
           },
         },
       ],
-      order: [2, "asc"],
+      order: [2, 'asc'],
       dom: '<"table-responsive"t><"row d-flex align-items-center"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
       displayLength: 5,
       responsive: {
@@ -448,13 +448,13 @@ $(() => {
               return `Details of ${data.location}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -463,6 +463,6 @@ $(() => {
         },
       },
     });
-    $(".dataTables_info").addClass("pt-0");
+    $('.dataTables_info').addClass('pt-0');
   }
 });

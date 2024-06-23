@@ -15,19 +15,19 @@ $(() => {
   }
 
   // Variable declaration for table
-  const dt_user_table = $(".datatables-users");
-  const select2 = $(".select2");
+  const dt_user_table = $('.datatables-users');
+  const select2 = $('.select2');
   const userView = `${baseUrl}app/user/view/account`;
   const statusObj = {
-    1: { title: "Pending", class: "bg-label-warning" },
-    2: { title: "Active", class: "bg-label-success" },
-    3: { title: "Inactive", class: "bg-label-secondary" },
+    1: { title: 'Pending', class: 'bg-label-warning' },
+    2: { title: 'Active', class: 'bg-label-success' },
+    3: { title: 'Inactive', class: 'bg-label-secondary' },
   };
 
   if (select2.length) {
     const $this = select2;
     $this.wrap('<div class="position-relative"></div>').select2({
-      placeholder: "Select Country",
+      placeholder: 'Select Country',
       dropdownParent: $this.parent(),
     });
   }
@@ -38,23 +38,23 @@ $(() => {
       ajax: `${assetsPath}json/user-list.json`, // JSON file to add data
       columns: [
         // columns according to JSON
-        { data: "" },
-        { data: "full_name" },
-        { data: "role" },
-        { data: "current_plan" },
-        { data: "billing" },
-        { data: "status" },
-        { data: "action" },
+        { data: '' },
+        { data: 'full_name' },
+        { data: 'role' },
+        { data: 'current_plan' },
+        { data: 'billing' },
+        { data: 'status' },
+        { data: 'action' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           searchable: false,
           orderable: false,
           responsivePriority: 2,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // User full name and email
@@ -71,18 +71,18 @@ $(() => {
               // For Avatar badge
               const stateNum = Math.floor(Math.random() * 6);
               const states = [
-                "success",
-                "danger",
-                "warning",
-                "info",
-                "primary",
-                "secondary",
+                'success',
+                'danger',
+                'warning',
+                'info',
+                'primary',
+                'secondary',
               ];
               const $state = states[stateNum];
               const $name = full.full_name;
               let $initials = $name.match(/\b\w/g) || [];
               $initials = (
-                ($initials.shift() || "") + ($initials.pop() || "")
+                ($initials.shift() || '') + ($initials.pop() || '')
               ).toUpperCase();
               $output = `<span class="avatar-initial rounded-circle bg-label-${$state}">${$initials}</span>`;
             }
@@ -132,40 +132,40 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           searchable: false,
           orderable: false,
           render: (data, type, full, meta) =>
             `<div class="d-flex align-items-center"><a href="javascript:;" class="text-body"><i class="ti ti-edit ti-sm me-2"></i></a><a href="javascript:;" class="text-body delete-record"><i class="ti ti-trash ti-sm mx-2"></i></a><a href="javascript:;" class="text-body dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical ti-sm mx-1"></i></a><div class="dropdown-menu dropdown-menu-end m-0"><a href="${userView}" class="dropdown-item">View</a><a href="javascript:;" class="dropdown-item">Suspend</a></div></div>`,
         },
       ],
-      order: [[1, "desc"]],
+      order: [[1, 'desc']],
       dom:
         '<"row me-2"' +
         '<"col-md-2"<"me-3"l>>' +
         '<"col-md-10"<"dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-3 mb-md-0"fB>>' +
-        ">t" +
+        '>t' +
         '<"row mx-2"' +
         '<"col-sm-12 col-md-6"i>' +
         '<"col-sm-12 col-md-6"p>' +
-        ">",
+        '>',
       language: {
-        sLengthMenu: "_MENU_",
-        search: "",
-        searchPlaceholder: "Search..",
+        sLengthMenu: '_MENU_',
+        search: '',
+        searchPlaceholder: 'Search..',
       },
       // Buttons with Dropdown
       buttons: [
         {
-          extend: "collection",
+          extend: 'collection',
           className:
-            "btn btn-label-secondary dropdown-toggle mx-3 waves-effect waves-light",
+            'btn btn-label-secondary dropdown-toggle mx-3 waves-effect waves-light',
           text: '<i class="ti ti-screen-share me-1 ti-xs"></i>Export',
           buttons: [
             {
-              extend: "print",
+              extend: 'print',
               text: '<i class="ti ti-printer me-2" ></i>Print',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5],
                 // prevent avatar to be print
@@ -175,9 +175,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("user-name")) {
+                      if (item.classList?.contains('user-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -192,21 +192,21 @@ $(() => {
               customize: (win) => {
                 //customize print view for dark
                 $(win.document.body)
-                  .css("color", headingColor)
-                  .css("border-color", borderColor)
-                  .css("background-color", bodyBg);
+                  .css('color', headingColor)
+                  .css('border-color', borderColor)
+                  .css('background-color', bodyBg);
                 $(win.document.body)
-                  .find("table")
-                  .addClass("compact")
-                  .css("color", "inherit")
-                  .css("border-color", "inherit")
-                  .css("background-color", "inherit");
+                  .find('table')
+                  .addClass('compact')
+                  .css('color', 'inherit')
+                  .css('border-color', 'inherit')
+                  .css('background-color', 'inherit');
               },
             },
             {
-              extend: "csv",
+              extend: 'csv',
               text: '<i class="ti ti-file-text me-2" ></i>Csv',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5],
                 // prevent avatar to be display
@@ -216,9 +216,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("user-name")) {
+                      if (item.classList?.contains('user-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -232,9 +232,9 @@ $(() => {
               },
             },
             {
-              extend: "excel",
+              extend: 'excel',
               text: '<i class="ti ti-file-spreadsheet me-2"></i>Excel',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5],
                 // prevent avatar to be display
@@ -244,9 +244,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("user-name")) {
+                      if (item.classList?.contains('user-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -260,9 +260,9 @@ $(() => {
               },
             },
             {
-              extend: "pdf",
+              extend: 'pdf',
               text: '<i class="ti ti-file-code-2 me-2"></i>Pdf',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5],
                 // prevent avatar to be display
@@ -272,9 +272,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("user-name")) {
+                      if (item.classList?.contains('user-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -288,9 +288,9 @@ $(() => {
               },
             },
             {
-              extend: "copy",
+              extend: 'copy',
               text: '<i class="ti ti-copy me-2" ></i>Copy',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5],
                 // prevent avatar to be display
@@ -300,9 +300,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("user-name")) {
+                      if (item.classList?.contains('user-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -319,10 +319,10 @@ $(() => {
         },
         {
           text: '<i class="ti ti-plus me-0 me-sm-1 ti-xs"></i><span class="d-none d-sm-inline-block">Add New User</span>',
-          className: "add-new btn btn-primary waves-effect waves-light",
+          className: 'add-new btn btn-primary waves-effect waves-light',
           attr: {
-            "data-bs-toggle": "offcanvas",
-            "data-bs-target": "#offcanvasAddUser",
+            'data-bs-toggle': 'offcanvas',
+            'data-bs-target': '#offcanvasAddUser',
           },
         },
       ],
@@ -335,13 +335,13 @@ $(() => {
               return `Details of ${data.full_name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -358,10 +358,10 @@ $(() => {
             const select = $(
               '<select id="UserRole" class="form-select text-capitalize"><option value=""> Select Role </option></select>',
             )
-              .appendTo(".user_role")
-              .on("change", function () {
+              .appendTo('.user_role')
+              .on('change', function () {
                 const val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? `^${val}$` : "", true, false).draw();
+                column.search(val ? `^${val}$` : '', true, false).draw();
               });
 
             column
@@ -380,10 +380,10 @@ $(() => {
             const select = $(
               '<select id="UserPlan" class="form-select text-capitalize"><option value=""> Select Plan </option></select>',
             )
-              .appendTo(".user_plan")
-              .on("change", function () {
+              .appendTo('.user_plan')
+              .on('change', function () {
                 const val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? `^${val}$` : "", true, false).draw();
+                column.search(val ? `^${val}$` : '', true, false).draw();
               });
 
             column
@@ -402,10 +402,10 @@ $(() => {
             const select = $(
               '<select id="FilterTransaction" class="form-select text-capitalize"><option value=""> Select Status </option></select>',
             )
-              .appendTo(".user_status")
-              .on("change", function () {
+              .appendTo('.user_status')
+              .on('change', function () {
                 const val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? `^${val}$` : "", true, false).draw();
+                column.search(val ? `^${val}$` : '', true, false).draw();
               });
 
             column
@@ -423,29 +423,29 @@ $(() => {
   }
 
   // Delete Record
-  $(".datatables-users tbody").on("click", ".delete-record", function () {
-    dt_user.row($(this).parents("tr")).remove().draw();
+  $('.datatables-users tbody').on('click', '.delete-record', function () {
+    dt_user.row($(this).parents('tr')).remove().draw();
   });
 
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
 });
 
 // Validation & Phone mask
 (() => {
-  const phoneMaskList = document.querySelectorAll(".phone-mask");
-  const addNewUserForm = document.getElementById("addNewUserForm");
+  const phoneMaskList = document.querySelectorAll('.phone-mask');
+  const addNewUserForm = document.getElementById('addNewUserForm');
 
   // Phone Number
   if (phoneMaskList) {
     phoneMaskList.forEach((phoneMask) => {
       new Cleave(phoneMask, {
         phone: true,
-        phoneRegionCode: "US",
+        phoneRegionCode: 'US',
       });
     });
   }
@@ -455,17 +455,17 @@ $(() => {
       userFullname: {
         validators: {
           notEmpty: {
-            message: "Please enter fullname ",
+            message: 'Please enter fullname ',
           },
         },
       },
       userEmail: {
         validators: {
           notEmpty: {
-            message: "Please enter your email",
+            message: 'Please enter your email',
           },
           emailAddress: {
-            message: "The value is not a valid email address",
+            message: 'The value is not a valid email address',
           },
         },
       },
@@ -474,10 +474,10 @@ $(() => {
       trigger: new FormValidation.plugins.Trigger(),
       bootstrap5: new FormValidation.plugins.Bootstrap5({
         // Use this for enabling/changing valid/invalid class
-        eleValidClass: "",
+        eleValidClass: '',
         rowSelector: (field, ele) => {
           // field is the field name & ele is the field element
-          return ".mb-3";
+          return '.mb-3';
         },
       }),
       submitButton: new FormValidation.plugins.SubmitButton(),

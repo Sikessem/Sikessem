@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener('DOMContentLoaded', (e) => {
   (() => {
-    const maskWrapper = document.querySelector(".numeral-mask-wrapper");
+    const maskWrapper = document.querySelector('.numeral-mask-wrapper');
 
     for (const pin of maskWrapper.children) {
       pin.onkeyup = function (e) {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
               pin.nextElementSibling.focus();
             }
           }
-        } else if (e.key === "Backspace") {
+        } else if (e.key === 'Backspace') {
           // While deleting entered value, go to previous
           if (pin.previousElementSibling) {
             pin.previousElementSibling.focus();
@@ -24,13 +24,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
       };
       // Prevent the default behavior for the minus key
       pin.onkeypress = (e) => {
-        if (e.key === "-") {
+        if (e.key === '-') {
           e.preventDefault();
         }
       };
     }
 
-    const twoStepsForm = document.querySelector("#twoStepsForm");
+    const twoStepsForm = document.querySelector('#twoStepsForm');
 
     // Form validation for Add new record
     if (twoStepsForm) {
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
           otp: {
             validators: {
               notEmpty: {
-                message: "Please enter otp",
+                message: 'Please enter otp',
               },
             },
           },
@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
         plugins: {
           trigger: new FormValidation.plugins.Trigger(),
           bootstrap5: new FormValidation.plugins.Bootstrap5({
-            eleValidClass: "",
-            rowSelector: ".mb-3",
+            eleValidClass: '',
+            rowSelector: '.mb-3',
           }),
           submitButton: new FormValidation.plugins.SubmitButton(),
 
@@ -57,14 +57,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
         },
       });
 
-      const numeralMaskList = twoStepsForm.querySelectorAll(".numeral-mask");
+      const numeralMaskList = twoStepsForm.querySelectorAll('.numeral-mask');
       const keyupHandler = () => {
         let otpFlag = true;
-        let otpVal = "";
+        let otpVal = '';
         numeralMaskList.forEach((numeralMaskEl) => {
-          if (numeralMaskEl.value === "") {
+          if (numeralMaskEl.value === '') {
             otpFlag = false;
-            twoStepsForm.querySelector('[name="otp"]').value = "";
+            twoStepsForm.querySelector('[name="otp"]').value = '';
           }
           otpVal = otpVal + numeralMaskEl.value;
         });
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         }
       };
       numeralMaskList.forEach((numeralMaskEle) => {
-        numeralMaskEle.addEventListener("keyup", keyupHandler);
+        numeralMaskEle.addEventListener('keyup', keyupHandler);
       });
     }
   })();

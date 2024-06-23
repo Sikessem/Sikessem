@@ -6,34 +6,34 @@
   //------------------------------------------------------------------------------------------
   // const flatPickrEL = $('.flatpickr-validation');
   const flatPickrList = [].slice.call(
-    document.querySelectorAll(".flatpickr-validation"),
+    document.querySelectorAll('.flatpickr-validation'),
   );
   // Flat pickr
   if (flatPickrList) {
     flatPickrList.forEach((flatPickr) => {
       flatPickr.flatpickr({
-        monthSelectorType: "static",
+        monthSelectorType: 'static',
       });
     });
   }
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const bsValidationForms = document.querySelectorAll(".needs-validation");
+  const bsValidationForms = document.querySelectorAll('.needs-validation');
 
   // Loop over them and prevent submission
   Array.prototype.slice.call(bsValidationForms).forEach((form) => {
     form.addEventListener(
-      "submit",
+      'submit',
       (event) => {
         if (!form.checkValidity()) {
           event.preventDefault();
           event.stopPropagation();
         } else {
           // Submit your form
-          alert("Submitted!!!");
+          alert('Submitted!!!');
         }
 
-        form.classList.add("was-validated");
+        form.classList.add('was-validated');
       },
       false,
     );
@@ -46,10 +46,10 @@
  * ? Though If we've miss any 3rd party libraries, then refer: https://formvalidation.io/guide/examples/integrating-with-3rd-party-libraries
  */
 //------------------------------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener('DOMContentLoaded', (e) => {
   (() => {
     const formValidationExamples = document.getElementById(
-      "formValidationExamples",
+      'formValidationExamples',
     );
     const formValidationSelect2Ele = jQuery(
       formValidationExamples.querySelector('[name="formValidationSelect2"]'),
@@ -61,23 +61,23 @@ document.addEventListener("DOMContentLoaded", (e) => {
       '[name="formValidationLang"]',
     );
     const formValidationHobbiesEle = jQuery(
-      formValidationExamples.querySelector(".selectpicker"),
+      formValidationExamples.querySelector('.selectpicker'),
     );
     const tech = [
-      "ReactJS",
-      "Angular",
-      "VueJS",
-      "Html",
-      "Css",
-      "Sass",
-      "Pug",
-      "Gulp",
-      "Php",
-      "Laravel",
-      "Python",
-      "Bootstrap",
-      "Material Design",
-      "NodeJS",
+      'ReactJS',
+      'Angular',
+      'VueJS',
+      'Html',
+      'Css',
+      'Sass',
+      'Pug',
+      'Gulp',
+      'Php',
+      'Laravel',
+      'Python',
+      'Bootstrap',
+      'Material Design',
+      'NodeJS',
     ];
 
     const fv = FormValidation.formValidation(formValidationExamples, {
@@ -85,136 +85,136 @@ document.addEventListener("DOMContentLoaded", (e) => {
         formValidationName: {
           validators: {
             notEmpty: {
-              message: "Please enter your name",
+              message: 'Please enter your name',
             },
             stringLength: {
               min: 6,
               max: 30,
               message:
-                "The name must be more than 6 and less than 30 characters long",
+                'The name must be more than 6 and less than 30 characters long',
             },
             regexp: {
               regexp: /^[a-zA-Z0-9 ]+$/,
               message:
-                "The name can only consist of alphabetical, number and space",
+                'The name can only consist of alphabetical, number and space',
             },
           },
         },
         formValidationEmail: {
           validators: {
             notEmpty: {
-              message: "Please enter your email",
+              message: 'Please enter your email',
             },
             emailAddress: {
-              message: "The value is not a valid email address",
+              message: 'The value is not a valid email address',
             },
           },
         },
         formValidationPass: {
           validators: {
             notEmpty: {
-              message: "Please enter your password",
+              message: 'Please enter your password',
             },
           },
         },
         formValidationConfirmPass: {
           validators: {
             notEmpty: {
-              message: "Please confirm password",
+              message: 'Please confirm password',
             },
             identical: {
               compare: () =>
                 formValidationExamples.querySelector(
                   '[name="formValidationPass"]',
                 ).value,
-              message: "The password and its confirm are not the same",
+              message: 'The password and its confirm are not the same',
             },
           },
         },
         formValidationFile: {
           validators: {
             notEmpty: {
-              message: "Please select the file",
+              message: 'Please select the file',
             },
           },
         },
         formValidationDob: {
           validators: {
             notEmpty: {
-              message: "Please select your DOB",
+              message: 'Please select your DOB',
             },
             date: {
-              format: "YYYY/MM/DD",
-              message: "The value is not a valid date",
+              format: 'YYYY/MM/DD',
+              message: 'The value is not a valid date',
             },
           },
         },
         formValidationSelect2: {
           validators: {
             notEmpty: {
-              message: "Please select your country",
+              message: 'Please select your country',
             },
           },
         },
         formValidationLang: {
           validators: {
             notEmpty: {
-              message: "Please add your language",
+              message: 'Please add your language',
             },
           },
         },
         formValidationTech: {
           validators: {
             notEmpty: {
-              message: "Please select technology",
+              message: 'Please select technology',
             },
           },
         },
         formValidationHobbies: {
           validators: {
             notEmpty: {
-              message: "Please select your hobbies",
+              message: 'Please select your hobbies',
             },
           },
         },
         formValidationBio: {
           validators: {
             notEmpty: {
-              message: "Please enter your bio",
+              message: 'Please enter your bio',
             },
             stringLength: {
               min: 100,
               max: 500,
               message:
-                "The bio must be more than 100 and less than 500 characters long",
+                'The bio must be more than 100 and less than 500 characters long',
             },
           },
         },
         formValidationGender: {
           validators: {
             notEmpty: {
-              message: "Please select your gender",
+              message: 'Please select your gender',
             },
           },
         },
         formValidationPlan: {
           validators: {
             notEmpty: {
-              message: "Please select your preferred plan",
+              message: 'Please select your preferred plan',
             },
           },
         },
         formValidationSwitch: {
           validators: {
             notEmpty: {
-              message: "Please select your preference",
+              message: 'Please select your preference',
             },
           },
         },
         formValidationCheckbox: {
           validators: {
             notEmpty: {
-              message: "Please confirm our T&C",
+              message: 'Please confirm our T&C',
             },
           },
         },
@@ -224,30 +224,30 @@ document.addEventListener("DOMContentLoaded", (e) => {
         bootstrap5: new FormValidation.plugins.Bootstrap5({
           // Use this for enabling/changing valid/invalid class
           // eleInvalidClass: '',
-          eleValidClass: "",
+          eleValidClass: '',
           rowSelector: (field, ele) => {
             // field is the field name & ele is the field element
             switch (field) {
-              case "formValidationName":
-              case "formValidationEmail":
-              case "formValidationPass":
-              case "formValidationConfirmPass":
-              case "formValidationFile":
-              case "formValidationDob":
-              case "formValidationSelect2":
-              case "formValidationLang":
-              case "formValidationTech":
-              case "formValidationHobbies":
-              case "formValidationBio":
-              case "formValidationGender":
-                return ".col-md-6";
-              case "formValidationPlan":
-                return ".col-xl-3";
-              case "formValidationSwitch":
-              case "formValidationCheckbox":
-                return ".col-12";
+              case 'formValidationName':
+              case 'formValidationEmail':
+              case 'formValidationPass':
+              case 'formValidationConfirmPass':
+              case 'formValidationFile':
+              case 'formValidationDob':
+              case 'formValidationSelect2':
+              case 'formValidationLang':
+              case 'formValidationTech':
+              case 'formValidationHobbies':
+              case 'formValidationBio':
+              case 'formValidationGender':
+                return '.col-md-6';
+              case 'formValidationPlan':
+                return '.col-xl-3';
+              case 'formValidationSwitch':
+              case 'formValidationCheckbox':
+                return '.col-12';
               default:
-                return ".row";
+                return '.row';
             }
           },
         }),
@@ -257,26 +257,26 @@ document.addEventListener("DOMContentLoaded", (e) => {
         autoFocus: new FormValidation.plugins.AutoFocus(),
       },
       init: (instance) => {
-        instance.on("plugins.message.placed", (e) => {
+        instance.on('plugins.message.placed', (e) => {
           //* Move the error message out of the `input-group` element
-          if (e.element.parentElement.classList.contains("input-group")) {
+          if (e.element.parentElement.classList.contains('input-group')) {
             // `e.field`: The field name
             // `e.messageElement`: The message element
             // `e.element`: The field element
             e.element.parentElement.insertAdjacentElement(
-              "afterend",
+              'afterend',
               e.messageElement,
             );
           }
           //* Move the error message out of the `row` element for custom-options
           if (
             e.element.parentElement.parentElement.classList.contains(
-              "custom-option",
+              'custom-option',
             )
           ) {
             e.element
-              .closest(".row")
-              .insertAdjacentElement("afterend", e.messageElement);
+              .closest('.row')
+              .insertAdjacentElement('afterend', e.messageElement);
           }
         });
       },
@@ -291,10 +291,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
       flatpickrDate.flatpickr({
         enableTime: false,
         // See https://flatpickr.js.org/formatting/
-        dateFormat: "Y/m/d",
+        dateFormat: 'Y/m/d',
         // After selecting a date, we need to revalidate the field
         onChange: () => {
-          fv.revalidateField("formValidationDob");
+          fv.revalidateField('formValidationDob');
         },
       });
     }
@@ -304,12 +304,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
       formValidationSelect2Ele.wrap('<div class="position-relative"></div>');
       formValidationSelect2Ele
         .select2({
-          placeholder: "Select country",
+          placeholder: 'Select country',
           dropdownParent: formValidationSelect2Ele.parent(),
         })
-        .on("change", () => {
+        .on('change', () => {
           // Revalidate the color field when an option is chosen
-          fv.revalidateField("formValidationSelect2");
+          fv.revalidateField('formValidationSelect2');
         });
     }
 
@@ -319,7 +319,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     const substringMatcher = (strs) =>
       function findMatches(q, cb) {
         const matches = [];
-        const substrRegex = new RegExp(q, "i");
+        const substrRegex = new RegExp(q, 'i');
         $.each(strs, (i, str) => {
           if (substrRegex.test(str)) {
             matches.push(str);
@@ -332,13 +332,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
     // Check if rtl
     if (isRtl) {
       const typeaheadList = [].slice.call(
-        document.querySelectorAll(".typeahead"),
+        document.querySelectorAll('.typeahead'),
       );
 
       // Flat pickr
       if (typeaheadList) {
         typeaheadList.forEach((typeahead) => {
-          typeahead.setAttribute("dir", "rtl");
+          typeahead.setAttribute('dir', 'rtl');
         });
       }
     }
@@ -349,23 +349,23 @@ document.addEventListener("DOMContentLoaded", (e) => {
         minLength: 1,
       },
       {
-        name: "tech",
+        name: 'tech',
         source: substringMatcher(tech),
       },
     );
 
     // Tagify
     const formValidationLangTagify = new Tagify(formValidationLangEle);
-    formValidationLangEle.addEventListener("change", onChange);
+    formValidationLangEle.addEventListener('change', onChange);
     function onChange() {
-      fv.revalidateField("formValidationLang");
+      fv.revalidateField('formValidationLang');
     }
 
     //Bootstrap select
     formValidationHobbiesEle.on(
-      "changed.bs.select",
+      'changed.bs.select',
       (e, clickedIndex, isSelected, previousValue) => {
-        fv.revalidateField("formValidationHobbies");
+        fv.revalidateField('formValidationHobbies');
       },
     );
   })();

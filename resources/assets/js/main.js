@@ -4,10 +4,10 @@ let menu;
 let animate;
 let isHorizontalLayout = false;
 
-if (document.getElementById("layout-menu")) {
+if (document.getElementById('layout-menu')) {
   isHorizontalLayout = document
-    .getElementById("layout-menu")
-    .classList.contains("menu-horizontal");
+    .getElementById('layout-menu')
+    .classList.contains('menu-horizontal');
 }
 
 (() => {
@@ -15,24 +15,24 @@ if (document.getElementById("layout-menu")) {
     window.Helpers.initCustomOptionCheck();
   }, 1000);
 
-  if (typeof Waves !== "undefined") {
+  if (typeof Waves !== 'undefined') {
     Waves.init();
     Waves.attach(
       ".btn[class*='btn-']:not([class*='btn-outline-']):not([class*='btn-label-'])",
-      ["waves-light"],
+      ['waves-light'],
     );
     Waves.attach("[class*='btn-outline-']");
     Waves.attach("[class*='btn-label-']");
-    Waves.attach(".pagination .page-item .page-link");
+    Waves.attach('.pagination .page-item .page-link');
   }
 
   // Initialize menu
   //-----------------
 
-  const layoutMenuEl = document.querySelectorAll("#layout-menu");
+  const layoutMenuEl = document.querySelectorAll('#layout-menu');
   layoutMenuEl.forEach((element) => {
     menu = new Menu(element, {
-      orientation: isHorizontalLayout ? "horizontal" : "vertical",
+      orientation: isHorizontalLayout ? 'horizontal' : 'vertical',
       closeChildren: !!isHorizontalLayout,
       // ? This option only works with Horizontal menu
       showDropdownOnHover: localStorage.getItem(
@@ -40,7 +40,7 @@ if (document.getElementById("layout-menu")) {
       ) // If value(showDropdownOnHover) is set in local storage
         ? localStorage.getItem(
             `templateCustomizer-${templateName}--ShowDropdownOnHover`,
-          ) === "true" // Use the local storage value
+          ) === 'true' // Use the local storage value
         : window.templateCustomizer !== undefined // If value is set in config.js
           ? window.templateCustomizer.settings.defaultShowDropdownOnHover // Use the config.js value
           : true, // Use this if you are not using the config.js and want to set value directly from here
@@ -51,9 +51,9 @@ if (document.getElementById("layout-menu")) {
   });
 
   // Initialize menu togglers and bind click on each
-  const menuToggler = document.querySelectorAll(".layout-menu-toggle");
+  const menuToggler = document.querySelectorAll('.layout-menu-toggle');
   menuToggler.forEach((item) => {
-    item.addEventListener("click", (event) => {
+    item.addEventListener('click', (event) => {
       event.preventDefault();
       window.Helpers.toggleCollapsed();
       // Enable menu state with local storage support if enableMenuLocalStorage = true from config.js
@@ -65,12 +65,12 @@ if (document.getElementById("layout-menu")) {
           );
           // Update customizer checkbox state on click of menu toggler
           const layoutCollapsedCustomizerOptions = document.querySelector(
-            ".template-customizer-layouts-options",
+            '.template-customizer-layouts-options',
           );
           if (layoutCollapsedCustomizerOptions) {
             const layoutCollapsedVal = window.Helpers.isCollapsed()
-              ? "collapsed"
-              : "expanded";
+              ? 'collapsed'
+              : 'expanded';
             layoutCollapsedCustomizerOptions
               .querySelector(`input[value="${layoutCollapsedVal}"]`)
               .click();
@@ -83,38 +83,38 @@ if (document.getElementById("layout-menu")) {
   // Menu swipe gesture
 
   // Detect swipe gesture on the target element and call swipe In
-  window.Helpers.swipeIn(".drag-target", (e) => {
+  window.Helpers.swipeIn('.drag-target', (e) => {
     window.Helpers.setCollapsed(false);
   });
 
   // Detect swipe gesture on the target element and call swipe Out
-  window.Helpers.swipeOut("#layout-menu", (e) => {
+  window.Helpers.swipeOut('#layout-menu', (e) => {
     if (window.Helpers.isSmallScreen()) {
       window.Helpers.setCollapsed(true);
     }
   });
 
   // Display in main menu when menu scrolls
-  const menuInnerContainer = document.getElementsByClassName("menu-inner");
+  const menuInnerContainer = document.getElementsByClassName('menu-inner');
   const menuInnerShadow =
-    document.getElementsByClassName("menu-inner-shadow")[0];
+    document.getElementsByClassName('menu-inner-shadow')[0];
   if (menuInnerContainer.length > 0 && menuInnerShadow) {
-    menuInnerContainer[0].addEventListener("ps-scroll-y", function () {
-      if (this.querySelector(".ps__thumb-y").offsetTop) {
-        menuInnerShadow.style.display = "block";
+    menuInnerContainer[0].addEventListener('ps-scroll-y', function () {
+      if (this.querySelector('.ps__thumb-y').offsetTop) {
+        menuInnerShadow.style.display = 'block';
       } else {
-        menuInnerShadow.style.display = "none";
+        menuInnerShadow.style.display = 'none';
       }
     });
   }
 
   // Update light/dark image based on current style
   function switchImage(style) {
-    if (style === "system") {
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        style = "dark";
+    if (style === 'system') {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        style = 'dark';
       } else {
-        style = "light";
+        style = 'light';
       }
     }
     const switchImagesList = [].slice.call(
@@ -127,52 +127,52 @@ if (document.getElementById("layout-menu")) {
   }
 
   //Style Switcher (Light/Dark/System Mode)
-  const styleSwitcher = document.querySelector(".dropdown-style-switcher");
+  const styleSwitcher = document.querySelector('.dropdown-style-switcher');
 
   // Get style from local storage or use 'system' as default
   const storedStyle =
     localStorage.getItem(`templateCustomizer-${templateName}--Style`) || //if no template style then use Customizer style
-    (window.templateCustomizer?.settings?.defaultStyle ?? "light"); //!if there is no Customizer then use default style as light
+    (window.templateCustomizer?.settings?.defaultStyle ?? 'light'); //!if there is no Customizer then use default style as light
 
   // Set style on click of style switcher item if template customizer is enabled
   if (window.templateCustomizer && styleSwitcher) {
     const styleSwitcherItems = [].slice.call(
-      styleSwitcher.children[1].querySelectorAll(".dropdown-item"),
+      styleSwitcher.children[1].querySelectorAll('.dropdown-item'),
     );
     styleSwitcherItems.forEach((item) => {
-      item.addEventListener("click", function () {
-        const currentStyle = this.getAttribute("data-theme");
-        if (currentStyle === "light") {
-          window.templateCustomizer.setStyle("light");
-        } else if (currentStyle === "dark") {
-          window.templateCustomizer.setStyle("dark");
+      item.addEventListener('click', function () {
+        const currentStyle = this.getAttribute('data-theme');
+        if (currentStyle === 'light') {
+          window.templateCustomizer.setStyle('light');
+        } else if (currentStyle === 'dark') {
+          window.templateCustomizer.setStyle('dark');
         } else {
-          window.templateCustomizer.setStyle("system");
+          window.templateCustomizer.setStyle('system');
         }
       });
     });
 
     // Update style switcher icon based on the stored style
 
-    const styleSwitcherIcon = styleSwitcher.querySelector("i");
+    const styleSwitcherIcon = styleSwitcher.querySelector('i');
 
-    if (storedStyle === "light") {
-      styleSwitcherIcon.classList.add("ti-sun");
+    if (storedStyle === 'light') {
+      styleSwitcherIcon.classList.add('ti-sun');
       new bootstrap.Tooltip(styleSwitcherIcon, {
-        title: "Light Mode",
-        fallbackPlacements: ["bottom"],
+        title: 'Light Mode',
+        fallbackPlacements: ['bottom'],
       });
-    } else if (storedStyle === "dark") {
-      styleSwitcherIcon.classList.add("ti-moon");
+    } else if (storedStyle === 'dark') {
+      styleSwitcherIcon.classList.add('ti-moon');
       new bootstrap.Tooltip(styleSwitcherIcon, {
-        title: "Dark Mode",
-        fallbackPlacements: ["bottom"],
+        title: 'Dark Mode',
+        fallbackPlacements: ['bottom'],
       });
     } else {
-      styleSwitcherIcon.classList.add("ti-device-desktop");
+      styleSwitcherIcon.classList.add('ti-device-desktop');
       new bootstrap.Tooltip(styleSwitcherIcon, {
-        title: "System Mode",
-        fallbackPlacements: ["bottom"],
+        title: 'System Mode',
+        fallbackPlacements: ['bottom'],
       });
     }
   }
@@ -180,42 +180,42 @@ if (document.getElementById("layout-menu")) {
   // Run switchImage function based on the stored style
   switchImage(storedStyle);
 
-  const languageDropdown = document.getElementsByClassName("dropdown-language");
+  const languageDropdown = document.getElementsByClassName('dropdown-language');
 
   if (languageDropdown.length) {
     const dropdownItems =
-      languageDropdown[0].querySelectorAll(".dropdown-item");
+      languageDropdown[0].querySelectorAll('.dropdown-item');
     const dropdownActiveItem = languageDropdown[0].querySelector(
-      ".dropdown-item.active",
+      '.dropdown-item.active',
     );
 
     directionChange(dropdownActiveItem.dataset.textDirection);
 
     for (let i = 0; i < dropdownItems.length; i++) {
-      dropdownItems[i].addEventListener("click", function () {
-        const textDirection = this.getAttribute("data-text-direction");
-        window.templateCustomizer.setLang(this.getAttribute("data-language"));
+      dropdownItems[i].addEventListener('click', function () {
+        const textDirection = this.getAttribute('data-text-direction');
+        window.templateCustomizer.setLang(this.getAttribute('data-language'));
         directionChange(textDirection);
       });
     }
     function directionChange(textDirection) {
-      if (textDirection === "rtl") {
+      if (textDirection === 'rtl') {
         if (
           localStorage.getItem(`templateCustomizer-${templateName}--Rtl`) !==
-          "true"
+          'true'
         ) {
           window.templateCustomizer
             ? window.templateCustomizer.setRtl(true)
-            : "";
+            : '';
         }
       } else {
         if (
           localStorage.getItem(`templateCustomizer-${templateName}--Rtl`) ===
-          "true"
+          'true'
         ) {
           window.templateCustomizer
             ? window.templateCustomizer.setRtl(false)
-            : "";
+            : '';
         }
       }
     }
@@ -225,7 +225,7 @@ if (document.getElementById("layout-menu")) {
 
   setTimeout(() => {
     const templateCustomizerResetBtn = document.querySelector(
-      ".template-customizer-reset-btn",
+      '.template-customizer-reset-btn',
     );
     if (templateCustomizerResetBtn) {
       templateCustomizerResetBtn.onclick = () => {
@@ -237,40 +237,40 @@ if (document.getElementById("layout-menu")) {
   // Notification
   // ------------
   const notificationMarkAsReadAll = document.querySelector(
-    ".dropdown-notifications-all",
+    '.dropdown-notifications-all',
   );
   const notificationMarkAsReadList = document.querySelectorAll(
-    ".dropdown-notifications-read",
+    '.dropdown-notifications-read',
   );
 
   // Notification: Mark as all as read
   if (notificationMarkAsReadAll) {
-    notificationMarkAsReadAll.addEventListener("click", (event) => {
+    notificationMarkAsReadAll.addEventListener('click', (event) => {
       notificationMarkAsReadList.forEach((item) => {
         item
-          .closest(".dropdown-notifications-item")
-          .classList.add("marked-as-read");
+          .closest('.dropdown-notifications-item')
+          .classList.add('marked-as-read');
       });
     });
   }
   // Notification: Mark as read/unread onclick of dot
   if (notificationMarkAsReadList) {
     notificationMarkAsReadList.forEach((item) => {
-      item.addEventListener("click", (event) => {
+      item.addEventListener('click', (event) => {
         item
-          .closest(".dropdown-notifications-item")
-          .classList.toggle("marked-as-read");
+          .closest('.dropdown-notifications-item')
+          .classList.toggle('marked-as-read');
       });
     });
   }
 
   // Notification: Mark as read/unread onclick of dot
   const notificationArchiveMessageList = document.querySelectorAll(
-    ".dropdown-notifications-archive",
+    '.dropdown-notifications-archive',
   );
   notificationArchiveMessageList.forEach((item) => {
-    item.addEventListener("click", (event) => {
-      item.closest(".dropdown-notifications-item").remove();
+    item.addEventListener('click', (event) => {
+      item.closest('.dropdown-notifications-item').remove();
     });
   });
 
@@ -287,23 +287,23 @@ if (document.getElementById("layout-menu")) {
 
   // Accordion active class
   const accordionActiveFunction = (e) => {
-    if (e.type === "show.bs.collapse" || e.type === "show.bs.collapse") {
-      e.target.closest(".accordion-item").classList.add("active");
+    if (e.type === 'show.bs.collapse' || e.type === 'show.bs.collapse') {
+      e.target.closest('.accordion-item').classList.add('active');
     } else {
-      e.target.closest(".accordion-item").classList.remove("active");
+      e.target.closest('.accordion-item').classList.remove('active');
     }
   };
 
   const accordionTriggerList = [].slice.call(
-    document.querySelectorAll(".accordion"),
+    document.querySelectorAll('.accordion'),
   );
   const accordionList = accordionTriggerList.map((accordionTriggerEl) => {
     accordionTriggerEl.addEventListener(
-      "show.bs.collapse",
+      'show.bs.collapse',
       accordionActiveFunction,
     );
     accordionTriggerEl.addEventListener(
-      "hide.bs.collapse",
+      'hide.bs.collapse',
       accordionActiveFunction,
     );
   });
@@ -331,53 +331,53 @@ if (document.getElementById("layout-menu")) {
   if (horizontalMenuTemplate) {
     // if screen size is small then set navbar fixed
     if (window.innerWidth < window.Helpers.LAYOUT_BREAKPOINT) {
-      window.Helpers.setNavbarFixed("fixed");
+      window.Helpers.setNavbarFixed('fixed');
     } else {
-      window.Helpers.setNavbarFixed("");
+      window.Helpers.setNavbarFixed('');
     }
   }
 
   // On window resize listener
   // -------------------------
   window.addEventListener(
-    "resize",
+    'resize',
     (event) => {
       // Hide open search input and set value blank
       if (window.innerWidth >= window.Helpers.LAYOUT_BREAKPOINT) {
-        if (document.querySelector(".search-input-wrapper")) {
+        if (document.querySelector('.search-input-wrapper')) {
           document
-            .querySelector(".search-input-wrapper")
-            .classList.add("d-none");
-          document.querySelector(".search-input").value = "";
+            .querySelector('.search-input-wrapper')
+            .classList.add('d-none');
+          document.querySelector('.search-input').value = '';
         }
       }
       // Horizontal Layout : Update menu based on window size
       if (horizontalMenuTemplate) {
         // if screen size is small then set navbar fixed
         if (window.innerWidth < window.Helpers.LAYOUT_BREAKPOINT) {
-          window.Helpers.setNavbarFixed("fixed");
+          window.Helpers.setNavbarFixed('fixed');
         } else {
-          window.Helpers.setNavbarFixed("");
+          window.Helpers.setNavbarFixed('');
         }
         setTimeout(() => {
           if (window.innerWidth < window.Helpers.LAYOUT_BREAKPOINT) {
-            if (document.getElementById("layout-menu")) {
+            if (document.getElementById('layout-menu')) {
               if (
                 document
-                  .getElementById("layout-menu")
-                  .classList.contains("menu-horizontal")
+                  .getElementById('layout-menu')
+                  .classList.contains('menu-horizontal')
               ) {
-                menu.switchMenu("vertical");
+                menu.switchMenu('vertical');
               }
             }
           } else {
-            if (document.getElementById("layout-menu")) {
+            if (document.getElementById('layout-menu')) {
               if (
                 document
-                  .getElementById("layout-menu")
-                  .classList.contains("menu-vertical")
+                  .getElementById('layout-menu')
+                  .classList.contains('menu-vertical')
               ) {
-                menu.switchMenu("horizontal");
+                menu.switchMenu('horizontal');
               }
             }
           }
@@ -398,7 +398,7 @@ if (document.getElementById("layout-menu")) {
   // If current layout is vertical and current window screen is > small
 
   // Auto update menu collapsed/expanded based on the themeConfig
-  if (typeof TemplateCustomizer !== "undefined") {
+  if (typeof TemplateCustomizer !== 'undefined') {
     if (window.templateCustomizer.settings.defaultMenuCollapsed) {
       window.Helpers.setCollapsed(true, false);
     } else {
@@ -407,7 +407,7 @@ if (document.getElementById("layout-menu")) {
   }
 
   // Manage menu expanded/collapsed state with local storage support If enableMenuLocalStorage = true in config.js
-  if (typeof config !== "undefined") {
+  if (typeof config !== 'undefined') {
     if (config.enableMenuLocalStorage) {
       try {
         if (
@@ -418,7 +418,7 @@ if (document.getElementById("layout-menu")) {
           window.Helpers.setCollapsed(
             localStorage.getItem(
               `templateCustomizer-${templateName}--LayoutCollapsed`,
-            ) === "true",
+            ) === 'true',
             false,
           );
         }
@@ -428,7 +428,7 @@ if (document.getElementById("layout-menu")) {
 })();
 
 // ! Removed following code if you do't wish to use jQuery. Remember that navbar search functionality will stop working on removal.
-if (typeof $ !== "undefined") {
+if (typeof $ !== 'undefined') {
   $(() => {
     // ! TODO: Required to load after DOM is ready, did this now with jQuery ready.
     window.Helpers.initSidebarToggle();
@@ -438,42 +438,42 @@ if (typeof $ !== "undefined") {
     // ? You can remove the following JS if you don't want to use search functionality.
     //----------------------------------------------------------------------------------
 
-    const searchToggler = $(".search-toggler");
-    const searchInputWrapper = $(".search-input-wrapper");
-    const searchInput = $(".search-input");
-    const contentBackdrop = $(".content-backdrop");
+    const searchToggler = $('.search-toggler');
+    const searchInputWrapper = $('.search-input-wrapper');
+    const searchInput = $('.search-input');
+    const contentBackdrop = $('.content-backdrop');
 
     // Open search input on click of search icon
     if (searchToggler.length) {
-      searchToggler.on("click", () => {
+      searchToggler.on('click', () => {
         if (searchInputWrapper.length) {
-          searchInputWrapper.toggleClass("d-none");
+          searchInputWrapper.toggleClass('d-none');
           searchInput.focus();
         }
       });
     }
     // Open search on 'CTRL+/'
-    $(document).on("keydown", (event) => {
+    $(document).on('keydown', (event) => {
       const ctrlKey = event.ctrlKey;
       const slashKey = event.which === 191;
 
       if (ctrlKey && slashKey) {
         if (searchInputWrapper.length) {
-          searchInputWrapper.toggleClass("d-none");
+          searchInputWrapper.toggleClass('d-none');
           searchInput.focus();
         }
       }
     });
     // Note: Following code is required to update container class of typeahead dropdown width on focus of search input. setTimeout is required to allow time to initiate Typeahead UI.
     setTimeout(() => {
-      const twitterTypeahead = $(".twitter-typeahead");
-      searchInput.on("focus", () => {
-        if (searchInputWrapper.hasClass("container-xxl")) {
-          searchInputWrapper.find(twitterTypeahead).addClass("container-xxl");
-          twitterTypeahead.removeClass("container-fluid");
-        } else if (searchInputWrapper.hasClass("container-fluid")) {
-          searchInputWrapper.find(twitterTypeahead).addClass("container-fluid");
-          twitterTypeahead.removeClass("container-xxl");
+      const twitterTypeahead = $('.twitter-typeahead');
+      searchInput.on('focus', () => {
+        if (searchInputWrapper.hasClass('container-xxl')) {
+          searchInputWrapper.find(twitterTypeahead).addClass('container-xxl');
+          twitterTypeahead.removeClass('container-fluid');
+        } else if (searchInputWrapper.hasClass('container-fluid')) {
+          searchInputWrapper.find(twitterTypeahead).addClass('container-fluid');
+          twitterTypeahead.removeClass('container-xxl');
         }
       });
     }, 10);
@@ -500,14 +500,14 @@ if (typeof $ !== "undefined") {
         };
 
       // Search JSON
-      const searchJson = "search-vertical.json"; // For vertical layout
-      if ($("#layout-menu").hasClass("menu-horizontal")) {
-        const searchJson = "search-horizontal.json"; // For vertical layout
+      const searchJson = 'search-vertical.json'; // For vertical layout
+      if ($('#layout-menu').hasClass('menu-horizontal')) {
+        const searchJson = 'search-horizontal.json'; // For vertical layout
       }
       // Search API AJAX call
       const searchData = $.ajax({
         url: `${assetsPath}json/${searchJson}`, //? Use your own search api instead
-        dataType: "json",
+        dataType: 'json',
         async: false,
       }).responseJSON;
       // Init typeahead on searchInput
@@ -518,17 +518,17 @@ if (typeof $ !== "undefined") {
             {
               hint: false,
               classNames: {
-                menu: "tt-menu navbar-search-suggestion",
-                cursor: "active",
+                menu: 'tt-menu navbar-search-suggestion',
+                cursor: 'active',
                 suggestion:
-                  "suggestion d-flex justify-content-between px-3 py-2 w-100",
+                  'suggestion d-flex justify-content-between px-3 py-2 w-100',
               },
             },
             // ? Add/Update blocks as per need
             // Pages
             {
-              name: "pages",
-              display: "name",
+              name: 'pages',
+              display: 'name',
               limit: 5,
               source: filterConfig(searchData.pages),
               templates: {
@@ -540,13 +540,13 @@ if (typeof $ !== "undefined") {
                   '<div class="not-found px-3 py-2">' +
                   '<h6 class="suggestions-header text-primary mb-2">Pages</h6>' +
                   '<p class="py-2 mb-0"><i class="ti ti-alert-circle ti-xs me-2"></i> No Results Found</p>' +
-                  "</div>",
+                  '</div>',
               },
             },
             // Files
             {
-              name: "files",
-              display: "name",
+              name: 'files',
+              display: 'name',
               limit: 4,
               source: filterConfig(searchData.files),
               templates: {
@@ -558,13 +558,13 @@ if (typeof $ !== "undefined") {
                   '<div class="not-found px-3 py-2">' +
                   '<h6 class="suggestions-header text-primary mb-2">Files</h6>' +
                   '<p class="py-2 mb-0"><i class="ti ti-alert-circle ti-xs me-2"></i> No Results Found</p>' +
-                  "</div>",
+                  '</div>',
               },
             },
             // Members
             {
-              name: "members",
-              display: "name",
+              name: 'members',
+              display: 'name',
               limit: 4,
               source: filterConfig(searchData.members),
               templates: {
@@ -576,51 +576,51 @@ if (typeof $ !== "undefined") {
                   '<div class="not-found px-3 py-2">' +
                   '<h6 class="suggestions-header text-primary mb-2">Members</h6>' +
                   '<p class="py-2 mb-0"><i class="ti ti-alert-circle ti-xs me-2"></i> No Results Found</p>' +
-                  "</div>",
+                  '</div>',
               },
             },
           )
           //On typeahead result render.
-          .bind("typeahead:render", () => {
+          .bind('typeahead:render', () => {
             // Show content backdrop,
-            contentBackdrop.addClass("show").removeClass("fade");
+            contentBackdrop.addClass('show').removeClass('fade');
           })
           // On typeahead select
-          .bind("typeahead:select", (ev, suggestion) => {
+          .bind('typeahead:select', (ev, suggestion) => {
             // Open selected page
-            if (suggestion.url !== "javascript:;") {
+            if (suggestion.url !== 'javascript:;') {
               window.location = baseUrl + suggestion.url;
             }
           })
           // On typeahead close
-          .bind("typeahead:close", () => {
+          .bind('typeahead:close', () => {
             // Clear search
-            searchInput.val("");
-            $this.typeahead("val", "");
+            searchInput.val('');
+            $this.typeahead('val', '');
             // Hide search input wrapper
-            searchInputWrapper.addClass("d-none");
+            searchInputWrapper.addClass('d-none');
             // Fade content backdrop
-            contentBackdrop.addClass("fade").removeClass("show");
+            contentBackdrop.addClass('fade').removeClass('show');
           });
 
         // On searchInput keyup, Fade content backdrop if search input is blank
-        searchInput.on("keyup", () => {
-          if (searchInput.val() === "") {
-            contentBackdrop.addClass("fade").removeClass("show");
+        searchInput.on('keyup', () => {
+          if (searchInput.val() === '') {
+            contentBackdrop.addClass('fade').removeClass('show');
           }
         });
       });
 
       // Init PerfectScrollbar in search result
       let psSearch;
-      $(".navbar-search-suggestion").each(function () {
+      $('.navbar-search-suggestion').each(function () {
         psSearch = new PerfectScrollbar($(this)[0], {
           wheelPropagation: false,
           suppressScrollX: true,
         });
       });
 
-      searchInput.on("keyup", () => {
+      searchInput.on('keyup', () => {
         psSearch.update();
       });
     }

@@ -15,28 +15,28 @@ $(() => {
   }
 
   // Variable declaration for table
-  const dt_product_table = $(".datatables-products");
+  const dt_product_table = $('.datatables-products');
   const productAdd = `${baseUrl}app/ecommerce/product/add`;
   const statusObj = {
-    1: { title: "Scheduled", class: "bg-label-warning" },
-    2: { title: "Publish", class: "bg-label-success" },
-    3: { title: "Inactive", class: "bg-label-danger" },
+    1: { title: 'Scheduled', class: 'bg-label-warning' },
+    2: { title: 'Publish', class: 'bg-label-success' },
+    3: { title: 'Inactive', class: 'bg-label-danger' },
   };
   const categoryObj = {
-    0: { title: "Household" },
-    1: { title: "Office" },
-    2: { title: "Electronics" },
-    3: { title: "Shoes" },
-    4: { title: "Accessories" },
-    5: { title: "Game" },
+    0: { title: 'Household' },
+    1: { title: 'Office' },
+    2: { title: 'Electronics' },
+    3: { title: 'Shoes' },
+    4: { title: 'Accessories' },
+    5: { title: 'Game' },
   };
   const stockObj = {
-    0: { title: "Out_of_Stock" },
-    1: { title: "In_Stock" },
+    0: { title: 'Out_of_Stock' },
+    1: { title: 'In_Stock' },
   };
   const stockFilterValObj = {
-    0: { title: "Out of Stock" },
-    1: { title: "In Stock" },
+    0: { title: 'Out of Stock' },
+    1: { title: 'In Stock' },
   };
 
   // E-commerce Products datatable
@@ -46,26 +46,26 @@ $(() => {
       ajax: `${assetsPath}json/ecommerce-product-list.json`, // JSON file to add data
       columns: [
         // columns according to JSON
-        { data: "id" },
-        { data: "id" },
-        { data: "product_name" },
-        { data: "category" },
-        { data: "stock" },
-        { data: "sku" },
-        { data: "price" },
-        { data: "quantity" },
-        { data: "status" },
-        { data: "" },
+        { data: 'id' },
+        { data: 'id' },
+        { data: 'product_name' },
+        { data: 'category' },
+        { data: 'stock' },
+        { data: 'sku' },
+        { data: 'price' },
+        { data: 'quantity' },
+        { data: 'status' },
+        { data: '' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           searchable: false,
           orderable: false,
           responsivePriority: 2,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // For Checkboxes
@@ -95,19 +95,19 @@ $(() => {
               // For Product badge
               const stateNum = Math.floor(Math.random() * 6);
               const states = [
-                "success",
-                "danger",
-                "warning",
-                "info",
-                "dark",
-                "primary",
-                "secondary",
+                'success',
+                'danger',
+                'warning',
+                'info',
+                'dark',
+                'primary',
+                'secondary',
               ];
               const $state = states[stateNum];
               const $name = full.product_brand;
               let $initials = $name.match(/\b\w/g) || [];
               $initials = (
-                ($initials.shift() || "") + ($initials.pop() || "")
+                ($initials.shift() || '') + ($initials.pop() || '')
               ).toUpperCase();
               $output = `<span class="avatar-initial rounded-2 bg-label-${$state}">${$initials}</span>`;
             }
@@ -152,17 +152,17 @@ $(() => {
                 '<input type="checkbox" class="switch-input" id="switch">' +
                 '<span class="switch-toggle-slider">' +
                 '<span class="switch-off">' +
-                "</span>" +
-                "</span>" +
-                "</label>",
+                '</span>' +
+                '</span>' +
+                '</label>',
               In_Stock:
                 '<label class="switch switch-primary switch-sm">' +
                 '<input type="checkbox" class="switch-input" checked="">' +
                 '<span class="switch-toggle-slider">' +
                 '<span class="switch-on">' +
-                "</span>" +
-                "</span>" +
-                "</label>",
+                '</span>' +
+                '</span>' +
+                '</label>',
             };
             return `<span class='text-truncate'>${
               stockSwitchObj[stockObj[$stock].title]
@@ -209,7 +209,7 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           searchable: false,
           orderable: false,
           render: (data, type, full, meta) =>
@@ -220,39 +220,39 @@ $(() => {
             '<div class="dropdown-menu dropdown-menu-end m-0">' +
             '<a href="javascript:0;" class="dropdown-item">View</a>' +
             '<a href="javascript:0;" class="dropdown-item">Suspend</a>' +
-            "</div>" +
-            "</div>",
+            '</div>' +
+            '</div>',
         },
       ],
-      order: [2, "asc"], //set any columns order asc/desc
+      order: [2, 'asc'], //set any columns order asc/desc
       dom:
         '<"card-header d-flex border-top rounded-0 flex-wrap py-2"' +
         '<"me-5 ms-n2 pe-5"f>' +
         '<"d-flex justify-content-start justify-content-md-end align-items-baseline"<"dt-action-buttons d-flex flex-column align-items-start align-items-md-center justify-content-sm-center mb-3 mb-md-0 pt-0 gap-4 gap-sm-0 flex-sm-row"lB>>' +
-        ">t" +
+        '>t' +
         '<"row mx-2"' +
         '<"col-sm-12 col-md-6"i>' +
         '<"col-sm-12 col-md-6"p>' +
-        ">",
+        '>',
       lengthMenu: [7, 10, 20, 50, 70, 100], //for length of menu
       language: {
-        sLengthMenu: "_MENU_",
-        search: "",
-        searchPlaceholder: "Search Product",
-        info: "Displaying _START_ to _END_ of _TOTAL_ entries",
+        sLengthMenu: '_MENU_',
+        search: '',
+        searchPlaceholder: 'Search Product',
+        info: 'Displaying _START_ to _END_ of _TOTAL_ entries',
       },
       // Buttons with Dropdown
       buttons: [
         {
-          extend: "collection",
+          extend: 'collection',
           className:
-            "btn btn-label-secondary dropdown-toggle me-3 waves-effect waves-light",
+            'btn btn-label-secondary dropdown-toggle me-3 waves-effect waves-light',
           text: '<i class="ti ti-download me-1 ti-xs"></i>Export',
           buttons: [
             {
-              extend: "print",
+              extend: 'print',
               text: '<i class="ti ti-printer me-2" ></i>Print',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5, 6, 7],
                 format: {
@@ -261,9 +261,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("product-name")) {
+                      if (item.classList?.contains('product-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -278,21 +278,21 @@ $(() => {
               customize: (win) => {
                 // Customize print view for dark
                 $(win.document.body)
-                  .css("color", headingColor)
-                  .css("border-color", borderColor)
-                  .css("background-color", bodyBg);
+                  .css('color', headingColor)
+                  .css('border-color', borderColor)
+                  .css('background-color', bodyBg);
                 $(win.document.body)
-                  .find("table")
-                  .addClass("compact")
-                  .css("color", "inherit")
-                  .css("border-color", "inherit")
-                  .css("background-color", "inherit");
+                  .find('table')
+                  .addClass('compact')
+                  .css('color', 'inherit')
+                  .css('border-color', 'inherit')
+                  .css('background-color', 'inherit');
               },
             },
             {
-              extend: "csv",
+              extend: 'csv',
               text: '<i class="ti ti-file me-2" ></i>Csv',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5, 6, 7],
                 format: {
@@ -301,9 +301,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("product-name")) {
+                      if (item.classList?.contains('product-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -317,9 +317,9 @@ $(() => {
               },
             },
             {
-              extend: "excel",
+              extend: 'excel',
               text: '<i class="ti ti-file-export me-2"></i>Excel',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5, 6, 7],
                 format: {
@@ -328,9 +328,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("product-name")) {
+                      if (item.classList?.contains('product-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -344,9 +344,9 @@ $(() => {
               },
             },
             {
-              extend: "pdf",
+              extend: 'pdf',
               text: '<i class="ti ti-file-text me-2"></i>Pdf',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5, 6, 7],
                 format: {
@@ -355,9 +355,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("product-name")) {
+                      if (item.classList?.contains('product-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -371,9 +371,9 @@ $(() => {
               },
             },
             {
-              extend: "copy",
+              extend: 'copy',
               text: '<i class="ti ti-copy me-2"></i>Copy',
-              className: "dropdown-item",
+              className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5, 6, 7],
                 format: {
@@ -382,9 +382,9 @@ $(() => {
                       return inner;
                     }
                     const el = $.parseHTML(inner);
-                    let result = "";
+                    let result = '';
                     $.each(el, (index, item) => {
-                      if (item.classList?.contains("product-name")) {
+                      if (item.classList?.contains('product-name')) {
                         result = result + item.lastChild.firstChild.textContent;
                       } else if (item.innerText === undefined) {
                         result = result + item.textContent;
@@ -402,7 +402,7 @@ $(() => {
         {
           text: '<i class="ti ti-plus me-0 me-sm-1 ti-xs"></i><span class="d-none d-sm-inline-block">Add Product</span>',
           className:
-            "add-new btn btn-primary ms-2 ms-sm-0 waves-effect waves-light",
+            'add-new btn btn-primary ms-2 ms-sm-0 waves-effect waves-light',
           action: () => {
             window.location.href = productAdd;
           },
@@ -417,13 +417,13 @@ $(() => {
               return `Details of ${data.product_name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -440,10 +440,10 @@ $(() => {
             const select = $(
               '<select id="ProductStatus" class="form-select text-capitalize"><option value="">Status</option></select>',
             )
-              .appendTo(".product_status")
-              .on("change", function () {
+              .appendTo('.product_status')
+              .on('change', function () {
                 const val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? `^${val}$` : "", true, false).draw();
+                column.search(val ? `^${val}$` : '', true, false).draw();
               });
 
             column
@@ -464,10 +464,10 @@ $(() => {
             const select = $(
               '<select id="ProductCategory" class="form-select text-capitalize"><option value="">Category</option></select>',
             )
-              .appendTo(".product_category")
-              .on("change", function () {
+              .appendTo('.product_category')
+              .on('change', function () {
                 const val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? `^${val}$` : "", true, false).draw();
+                column.search(val ? `^${val}$` : '', true, false).draw();
               });
 
             column
@@ -488,10 +488,10 @@ $(() => {
             const select = $(
               '<select id="ProductStock" class="form-select text-capitalize"><option value=""> Stock </option></select>',
             )
-              .appendTo(".product_stock")
-              .on("change", function () {
+              .appendTo('.product_stock')
+              .on('change', function () {
                 const val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? `^${val}$` : "", true, false).draw();
+                column.search(val ? `^${val}$` : '', true, false).draw();
               });
 
             column
@@ -506,19 +506,19 @@ $(() => {
           });
       },
     });
-    $(".dataTables_length").addClass("mt-2 mt-sm-0 mt-md-3 me-2");
-    $(".dt-buttons").addClass("d-flex flex-wrap");
+    $('.dataTables_length').addClass('mt-2 mt-sm-0 mt-md-3 me-2');
+    $('.dt-buttons').addClass('d-flex flex-wrap');
   }
 
   // Delete Record
-  $(".datatables-products tbody").on("click", ".delete-record", function () {
-    dt_products.row($(this).parents("tr")).remove().draw();
+  $('.datatables-products tbody').on('click', '.delete-record', function () {
+    dt_products.row($(this).parents('tr')).remove().draw();
   });
 
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
 });

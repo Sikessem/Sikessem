@@ -1,5 +1,5 @@
 $(() => {
-  const dataTablePermissions = $(".datatables-permissions");
+  const dataTablePermissions = $('.datatables-permissions');
   let dt_permission;
   const userList = `${baseUrl}app/user/list`;
   // Users List datatable
@@ -8,22 +8,22 @@ $(() => {
       ajax: `${assetsPath}json/permissions-list.json`, // JSON file to add data
       columns: [
         // columns according to JSON
-        { data: "" },
-        { data: "id" },
-        { data: "name" },
-        { data: "assigned_to" },
-        { data: "created_date" },
-        { data: "" },
+        { data: '' },
+        { data: 'id' },
+        { data: 'name' },
+        { data: 'assigned_to' },
+        { data: 'created_date' },
+        { data: '' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           orderable: false,
           searchable: false,
           responsivePriority: 2,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           targets: 1,
@@ -44,7 +44,7 @@ $(() => {
           orderable: false,
           render: (data, type, full, meta) => {
             const $assignedTo = full.assigned_to;
-            let $output = "";
+            let $output = '';
             const roleBadgeObj = {
               Admin: `<a href="${userList}"><span class="badge bg-label-primary m-1">Administrator</span></a>`,
               Manager: `<a href="${userList}"><span class="badge bg-label-warning m-1">Manager</span></a>`,
@@ -72,40 +72,40 @@ $(() => {
           // Actions
           targets: -1,
           searchable: false,
-          title: "Actions",
+          title: 'Actions',
           orderable: false,
           render: (data, type, full, meta) =>
             '<span class="text-nowrap"><button class="btn btn-sm btn-icon me-2" data-bs-target="#editPermissionModal" data-bs-toggle="modal" data-bs-dismiss="modal"><i class="ti ti-edit"></i></button>' +
             '<button class="btn btn-sm btn-icon delete-record"><i class="ti ti-trash"></i></button></span>',
         },
       ],
-      order: [[1, "asc"]],
+      order: [[1, 'asc']],
       dom:
         '<"row mx-1"' +
         '<"col-sm-12 col-md-3" l>' +
         '<"col-sm-12 col-md-9"<"dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-md-end justify-content-center flex-wrap me-1"<"me-3"f>B>>' +
-        ">t" +
+        '>t' +
         '<"row mx-2"' +
         '<"col-sm-12 col-md-6"i>' +
         '<"col-sm-12 col-md-6"p>' +
-        ">",
+        '>',
       language: {
-        sLengthMenu: "Show _MENU_",
-        search: "Search",
-        searchPlaceholder: "Search..",
+        sLengthMenu: 'Show _MENU_',
+        search: 'Search',
+        searchPlaceholder: 'Search..',
       },
       // Buttons with Dropdown
       buttons: [
         {
-          text: "Add Permission",
+          text: 'Add Permission',
           className:
-            "add-new btn btn-primary mb-3 mb-md-0 waves-effect waves-light",
+            'add-new btn btn-primary mb-3 mb-md-0 waves-effect waves-light',
           attr: {
-            "data-bs-toggle": "modal",
-            "data-bs-target": "#addPermissionModal",
+            'data-bs-toggle': 'modal',
+            'data-bs-target': '#addPermissionModal',
           },
           init: (api, node, config) => {
-            $(node).removeClass("btn-secondary");
+            $(node).removeClass('btn-secondary');
           },
         },
       ],
@@ -118,13 +118,13 @@ $(() => {
               return `Details of ${data.name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -141,10 +141,10 @@ $(() => {
             const select = $(
               '<select id="UserRole" class="form-select text-capitalize"><option value=""> Select Role </option></select>',
             )
-              .appendTo(".user_role")
-              .on("change", function () {
+              .appendTo('.user_role')
+              .on('change', function () {
                 const val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? `^${val}$` : "", true, false).draw();
+                column.search(val ? `^${val}$` : '', true, false).draw();
               });
 
             column
@@ -162,14 +162,14 @@ $(() => {
   }
 
   // Delete Record
-  $(".datatables-permissions tbody").on("click", ".delete-record", function () {
-    dt_permission.row($(this).parents("tr")).remove().draw();
+  $('.datatables-permissions tbody').on('click', '.delete-record', function () {
+    dt_permission.row($(this).parents('tr')).remove().draw();
   });
 
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
 });

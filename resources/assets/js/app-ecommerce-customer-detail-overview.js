@@ -1,13 +1,13 @@
 // Datatable (jquery)
 $(() => {
   // Variable declaration for table
-  const dt_customer_order = $(".datatables-customer-order");
+  const dt_customer_order = $('.datatables-customer-order');
   const order_details = `${baseUrl}app/ecommerce/order/details`;
   const statusObj = {
-    1: { title: "Ready to  Pickup", class: "bg-label-info" },
-    2: { title: "Dispatched", class: "bg-label-warning" },
-    3: { title: "Delivered", class: "bg-label-success" },
-    4: { title: "Out for delivery", class: "bg-label-primary" },
+    1: { title: 'Ready to  Pickup', class: 'bg-label-info' },
+    2: { title: 'Dispatched', class: 'bg-label-warning' },
+    3: { title: 'Delivered', class: 'bg-label-success' },
+    4: { title: 'Out for delivery', class: 'bg-label-primary' },
   };
 
   // orders datatable
@@ -16,23 +16,23 @@ $(() => {
       ajax: `${assetsPath}json/ecommerce-customer-order.json`, // JSON file to add data
       columns: [
         // columns according to JSON
-        { data: "" },
-        { data: "id" },
-        { data: "order" },
-        { data: "date" },
-        { data: "status" },
-        { data: "spent" },
-        { data: " " },
+        { data: '' },
+        { data: 'id' },
+        { data: 'order' },
+        { data: 'date' },
+        { data: 'status' },
+        { data: 'spent' },
+        { data: ' ' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           searchable: false,
           orderable: false,
           responsivePriority: 2,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // For Checkboxes
@@ -61,10 +61,10 @@ $(() => {
           targets: 3,
           render: (data, type, full, meta) => {
             const date = new Date(full.date); // convert the date string to a Date object
-            const formattedDate = date.toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
-              year: "numeric",
+            const formattedDate = date.toLocaleDateString('en-US', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric',
             });
             return `<span class="text-nowrap">${formattedDate}</span > `;
           },
@@ -90,7 +90,7 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           searchable: false,
           orderable: false,
           render: (data, type, full, meta) =>
@@ -99,23 +99,23 @@ $(() => {
             '<div class="dropdown-menu dropdown-menu-end m-0">' +
             '<a href="javascript:;" class="dropdown-item">View</a>' +
             '<a href="javascript:;" class="dropdown-item  delete-record">Delete</a>' +
-            "</div>" +
-            "</div>",
+            '</div>' +
+            '</div>',
         },
       ],
-      order: [[2, "desc"]],
+      order: [[2, 'desc']],
       dom:
         '<"card-header flex-column flex-md-row py-2"<"head-label text-center pt-2 pt-md-0">f' +
-        ">t" +
+        '>t' +
         '<"row mx-4"' +
         '<"col-md-12 col-xl-6 text-center text-xl-start pb-2 pb-lg-0 pe-0"i>' +
         '<"col-md-12 col-xl-6 d-flex justify-content-center justify-content-xl-end"p>' +
-        ">",
+        '>',
       lengthMenu: [6, 30, 50, 70, 100],
       language: {
-        sLengthMenu: "_MENU_",
-        search: "",
-        searchPlaceholder: "Search order",
+        sLengthMenu: '_MENU_',
+        search: '',
+        searchPlaceholder: 'Search order',
       },
       // Buttons with Dropdown
 
@@ -128,13 +128,13 @@ $(() => {
               return `Details of ${data.order}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -143,21 +143,21 @@ $(() => {
         },
       },
     });
-    $("div.head-label").html(
+    $('div.head-label').html(
       '<h5 class="card-title mb-0 text-nowrap">Orders placed</h5>',
     );
   }
 
   // Delete Record
-  $(".datatables-orders tbody").on("click", ".delete-record", function () {
-    dt_order.row($(this).parents("tr")).remove().draw();
+  $('.datatables-orders tbody').on('click', '.delete-record', function () {
+    dt_order.row($(this).parents('tr')).remove().draw();
   });
 
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
 });
 

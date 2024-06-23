@@ -1,84 +1,84 @@
 (() => {
-  const startBtn = document.querySelector("#shepherd-example");
+  const startBtn = document.querySelector('#shepherd-example');
 
   function setupTour(tour) {
     const backBtnClass =
-      "btn btn-sm btn-label-secondary md-btn-flat waves-effect waves-light";
+      'btn btn-sm btn-label-secondary md-btn-flat waves-effect waves-light';
     const nextBtnClass =
-      "btn btn-sm btn-primary btn-next waves-effect waves-light";
+      'btn btn-sm btn-primary btn-next waves-effect waves-light';
     tour.addStep({
-      title: "Navbar",
-      text: "This is your navbar",
-      attachTo: { element: ".navbar", on: "bottom" },
+      title: 'Navbar',
+      text: 'This is your navbar',
+      attachTo: { element: '.navbar', on: 'bottom' },
       buttons: [
         {
           action: tour.cancel,
           classes: backBtnClass,
-          text: "Skip",
+          text: 'Skip',
         },
         {
-          text: "Next",
+          text: 'Next',
           classes: nextBtnClass,
           action: tour.next,
         },
       ],
     });
     tour.addStep({
-      title: "Card",
-      text: "This is a card",
-      attachTo: { element: ".tour-card", on: "top" },
+      title: 'Card',
+      text: 'This is a card',
+      attachTo: { element: '.tour-card', on: 'top' },
       buttons: [
         {
-          text: "Skip",
+          text: 'Skip',
           classes: backBtnClass,
           action: tour.cancel,
         },
         {
-          text: "Back",
+          text: 'Back',
           classes: backBtnClass,
           action: tour.back,
         },
         {
-          text: "Next",
+          text: 'Next',
           classes: nextBtnClass,
           action: tour.next,
         },
       ],
     });
     tour.addStep({
-      title: "Footer",
-      text: "This is the Footer",
-      attachTo: { element: ".footer", on: "top" },
+      title: 'Footer',
+      text: 'This is the Footer',
+      attachTo: { element: '.footer', on: 'top' },
       buttons: [
         {
-          text: "Skip",
+          text: 'Skip',
           classes: backBtnClass,
           action: tour.cancel,
         },
         {
-          text: "Back",
+          text: 'Back',
           classes: backBtnClass,
           action: tour.back,
         },
         {
-          text: "Next",
+          text: 'Next',
           classes: nextBtnClass,
           action: tour.next,
         },
       ],
     });
     tour.addStep({
-      title: "Upgrade",
-      text: "Click here to upgrade plan",
-      attachTo: { element: ".footer-link", on: "top" },
+      title: 'Upgrade',
+      text: 'Click here to upgrade plan',
+      attachTo: { element: '.footer-link', on: 'top' },
       buttons: [
         {
-          text: "Back",
+          text: 'Back',
           classes: backBtnClass,
           action: tour.back,
         },
         {
-          text: "Finish",
+          text: 'Finish',
           classes: nextBtnClass,
           action: tour.cancel,
         },
@@ -106,64 +106,64 @@
   }
 
   // ! Documentation Tour only
-  const startBtnDocs = document.querySelector("#shepherd-docs-example");
+  const startBtnDocs = document.querySelector('#shepherd-docs-example');
 
   function setupTourDocs(tour) {
     const backBtnClass =
-      "btn btn-sm btn-label-secondary md-btn-flat waves-effect waves-light";
+      'btn btn-sm btn-label-secondary md-btn-flat waves-effect waves-light';
     const nextBtnClass =
-      "btn btn-sm btn-primary btn-next waves-effect waves-light";
+      'btn btn-sm btn-primary btn-next waves-effect waves-light';
     tour.addStep({
-      title: "Navbar",
-      text: "This is your navbar",
-      attachTo: { element: ".navbar", on: "bottom" },
+      title: 'Navbar',
+      text: 'This is your navbar',
+      attachTo: { element: '.navbar', on: 'bottom' },
       buttons: [
         {
           action: tour.cancel,
           classes: backBtnClass,
-          text: "Skip",
+          text: 'Skip',
         },
         {
-          text: "Next",
+          text: 'Next',
           classes: nextBtnClass,
           action: tour.next,
         },
       ],
     });
     tour.addStep({
-      title: "Footer",
-      text: "This is the Footer",
-      attachTo: { element: ".footer", on: "top" },
+      title: 'Footer',
+      text: 'This is the Footer',
+      attachTo: { element: '.footer', on: 'top' },
       buttons: [
         {
-          text: "Skip",
+          text: 'Skip',
           classes: backBtnClass,
           action: tour.cancel,
         },
         {
-          text: "Back",
+          text: 'Back',
           classes: backBtnClass,
           action: tour.back,
         },
         {
-          text: "Next",
+          text: 'Next',
           classes: nextBtnClass,
           action: tour.next,
         },
       ],
     });
     tour.addStep({
-      title: "Social Link",
-      text: "Click here share on social media",
-      attachTo: { element: ".footer-link", on: "top" },
+      title: 'Social Link',
+      text: 'Click here share on social media',
+      attachTo: { element: '.footer-link', on: 'top' },
       buttons: [
         {
-          text: "Back",
+          text: 'Back',
           classes: backBtnClass,
           action: tour.back,
         },
         {
-          text: "Finish",
+          text: 'Finish',
           classes: nextBtnClass,
           action: tour.cancel,
         },

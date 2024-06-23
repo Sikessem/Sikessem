@@ -1,22 +1,22 @@
 (() => {
   // Snow Theme
   // --------------------------------------------------------------------
-  const snowEditor = new Quill("#snow-editor", {
-    bounds: "#snow-editor",
+  const snowEditor = new Quill('#snow-editor', {
+    bounds: '#snow-editor',
     modules: {
       formula: true,
-      toolbar: "#snow-toolbar",
+      toolbar: '#snow-toolbar',
     },
-    theme: "snow",
+    theme: 'snow',
   });
 
   // Bubble Theme
   // --------------------------------------------------------------------
-  const bubbleEditor = new Quill("#bubble-editor", {
+  const bubbleEditor = new Quill('#bubble-editor', {
     modules: {
-      toolbar: "#bubble-toolbar",
+      toolbar: '#bubble-toolbar',
     },
-    theme: "bubble",
+    theme: 'bubble',
   });
 
   // Full Toolbar
@@ -30,7 +30,7 @@
         size: [],
       },
     ],
-    ["bold", "italic", "underline", "strike"],
+    ['bold', 'italic', 'underline', 'strike'],
     [
       {
         color: [],
@@ -41,47 +41,47 @@
     ],
     [
       {
-        script: "super",
+        script: 'super',
       },
       {
-        script: "sub",
+        script: 'sub',
       },
     ],
     [
       {
-        header: "1",
+        header: '1',
       },
       {
-        header: "2",
+        header: '2',
       },
-      "blockquote",
-      "code-block",
+      'blockquote',
+      'code-block',
     ],
     [
       {
-        list: "ordered",
+        list: 'ordered',
       },
       {
-        list: "bullet",
+        list: 'bullet',
       },
       {
-        indent: "-1",
+        indent: '-1',
       },
       {
-        indent: "+1",
+        indent: '+1',
       },
     ],
-    [{ direction: "rtl" }],
-    ["link", "image", "video", "formula"],
-    ["clean"],
+    [{ direction: 'rtl' }],
+    ['link', 'image', 'video', 'formula'],
+    ['clean'],
   ];
-  const fullEditor = new Quill("#full-editor", {
-    bounds: "#full-editor",
-    placeholder: "Type Something...",
+  const fullEditor = new Quill('#full-editor', {
+    bounds: '#full-editor',
+    placeholder: 'Type Something...',
     modules: {
       formula: true,
       toolbar: fullToolbar,
     },
-    theme: "snow",
+    theme: 'snow',
   });
 })();

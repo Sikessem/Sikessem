@@ -1,14 +1,14 @@
 // Edit permission form validation
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener('DOMContentLoaded', (e) => {
   (() => {
     FormValidation.formValidation(
-      document.getElementById("editPermissionForm"),
+      document.getElementById('editPermissionForm'),
       {
         fields: {
           editPermissionName: {
             validators: {
               notEmpty: {
-                message: "Please enter permission name",
+                message: 'Please enter permission name',
               },
             },
           },
@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
           bootstrap5: new FormValidation.plugins.Bootstrap5({
             // Use this for enabling/changing valid/invalid class
             // eleInvalidClass: '',
-            eleValidClass: "",
-            rowSelector: ".col-sm-9",
+            eleValidClass: '',
+            rowSelector: '.col-sm-9',
           }),
           submitButton: new FormValidation.plugins.SubmitButton(),
           // Submit the form when all fields are valid

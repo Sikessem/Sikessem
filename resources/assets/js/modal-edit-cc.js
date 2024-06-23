@@ -1,23 +1,23 @@
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener('DOMContentLoaded', (e) => {
   (() => {
     const editCreditCardMaskEdit = document.querySelector(
-      ".credit-card-mask-edit",
+      '.credit-card-mask-edit',
     );
     const editExpiryDateMaskEdit = document.querySelector(
-      ".expiry-date-mask-edit",
+      '.expiry-date-mask-edit',
     );
-    const editCVVMaskEdit = document.querySelector(".cvv-code-mask-edit");
+    const editCVVMaskEdit = document.querySelector('.cvv-code-mask-edit');
 
     // Credit Card
     if (editCreditCardMaskEdit) {
       new Cleave(editCreditCardMaskEdit, {
         creditCard: true,
         onCreditCardTypeChanged: (type) => {
-          if (type !== "" && type !== "unknown") {
-            document.querySelector(".card-type-edit").innerHTML =
+          if (type !== '' && type !== 'unknown') {
+            document.querySelector('.card-type-edit').innerHTML =
               `<img src="${assetsPath}img/icons/payments/${type}-cc.png" height="28"/>`;
           } else {
-            document.querySelector(".card-type-edit").innerHTML = "";
+            document.querySelector('.card-type-edit').innerHTML = '';
           }
         },
       });
@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     if (editExpiryDateMaskEdit) {
       new Cleave(editExpiryDateMaskEdit, {
         date: true,
-        delimiter: "/",
-        datePattern: ["m", "y"],
+        delimiter: '/',
+        datePattern: ['m', 'y'],
       });
     }
 
@@ -41,12 +41,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
     }
 
     // Credit card form validation
-    FormValidation.formValidation(document.getElementById("editCCForm"), {
+    FormValidation.formValidation(document.getElementById('editCCForm'), {
       fields: {
         modalEditCard: {
           validators: {
             notEmpty: {
-              message: "Please enter your credit card number",
+              message: 'Please enter your credit card number',
             },
           },
         },
@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
         bootstrap5: new FormValidation.plugins.Bootstrap5({
           // Use this for enabling/changing valid/invalid class
           // eleInvalidClass: '',
-          eleValidClass: "",
-          rowSelector: ".col-12",
+          eleValidClass: '',
+          rowSelector: '.col-12',
         }),
         submitButton: new FormValidation.plugins.SubmitButton(),
         // Submit the form when all fields are valid
@@ -65,11 +65,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
         autoFocus: new FormValidation.plugins.AutoFocus(),
       },
       init: (instance) => {
-        instance.on("plugins.message.placed", (e) => {
+        instance.on('plugins.message.placed', (e) => {
           //* Move the error message out of the `input-group` element
-          if (e.element.parentElement.classList.contains("input-group")) {
+          if (e.element.parentElement.classList.contains('input-group')) {
             e.element.parentElement.insertAdjacentElement(
-              "afterend",
+              'afterend',
               e.messageElement,
             );
           }

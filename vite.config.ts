@@ -5,7 +5,7 @@ import {
   mergeInput,
   vite,
   viteConfig,
-} from "./sikessem.config";
+} from './sikessem.config';
 
 export default vite(
   mergeConfig(viteConfig, {
@@ -13,8 +13,8 @@ export default vite(
       laravel({
         ...laravelConfig,
         input: mergeInput(laravelConfig.input, [
-          "resources/design/app.scss",
-          "resources/design/app.ts",
+          'resources/design/app.scss',
+          'resources/design/app.ts',
         ]),
       }),
     ],

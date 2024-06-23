@@ -1,6 +1,6 @@
 $(() => {
   // Variable declaration for table
-  const dt_invoice_table = $(".invoice-list-table");
+  const dt_invoice_table = $('.invoice-list-table');
 
   // Invoice datatable
   if (dt_invoice_table.length) {
@@ -8,24 +8,24 @@ $(() => {
       ajax: `${assetsPath}json/invoice-list.json`, // JSON file to add data
       columns: [
         // columns according to JSON
-        { data: "" },
-        { data: "invoice_id" },
-        { data: "invoice_status" },
-        { data: "issued_date" },
-        { data: "client_name" },
-        { data: "total" },
-        { data: "balance" },
-        { data: "invoice_status" },
-        { data: "action" },
+        { data: '' },
+        { data: 'invoice_id' },
+        { data: 'invoice_status' },
+        { data: 'issued_date' },
+        { data: 'client_name' },
+        { data: 'total' },
+        { data: 'balance' },
+        { data: 'invoice_status' },
+        { data: 'action' },
       ],
       columnDefs: [
         {
           // For Responsive
-          className: "control",
+          className: 'control',
           responsivePriority: 2,
           searchable: false,
           targets: 0,
-          render: (data, type, full, meta) => "",
+          render: (data, type, full, meta) => '',
         },
         {
           // Invoice ID
@@ -48,9 +48,9 @@ $(() => {
               Sent: '<span class="badge badge-center rounded-pill bg-label-secondary w-px-30 h-px-30"><i class="ti ti-circle-check ti-sm"></i></span>',
               Draft:
                 '<span class="badge badge-center rounded-pill bg-label-primary w-px-30 h-px-30"><i class="ti ti-device-floppy ti-sm"></i></span>',
-              "Past Due":
+              'Past Due':
                 '<span class="badge badge-center rounded-pill bg-label-danger w-px-30 h-px-30"><i class="ti ti-info-circle ti-sm"></i></span>',
-              "Partial Payment":
+              'Partial Payment':
                 '<span class="badge badge-center rounded-pill bg-label-success w-px-30 h-px-30"><i class="ti ti-circle-half-2 ti-sm"></i></span>',
               Paid: '<span class="badge badge-center rounded-pill bg-label-warning w-px-30 h-px-30"><i class="ti ti-chart-pie ti-sm"></i></span>',
               Downloaded:
@@ -76,18 +76,18 @@ $(() => {
               // For Avatar badge
               const stateNum = Math.floor(Math.random() * 6);
               const states = [
-                "success",
-                "danger",
-                "warning",
-                "info",
-                "primary",
-                "secondary",
+                'success',
+                'danger',
+                'warning',
+                'info',
+                'primary',
+                'secondary',
               ];
               const $state = states[stateNum];
               const $name = full.client_name;
               let $initials = $name.match(/\b\w/g) || [];
               $initials = (
-                ($initials.shift() || "") + ($initials.pop() || "")
+                ($initials.shift() || '') + ($initials.pop() || '')
               ).toUpperCase();
               $output = `<span class="avatar-initial rounded-circle bg-label-${$state}">${$initials}</span>`;
             }
@@ -112,8 +112,8 @@ $(() => {
             // Creates full output for row
             const $row_output = `<span class="d-none">${moment(
               $due_date,
-            ).format("YYYYMMDD")}</span>${moment($due_date).format(
-              "DD MMM YYYY",
+            ).format('YYYYMMDD')}</span>${moment($due_date).format(
+              'DD MMM YYYY',
             )}`;
             $due_date;
             return $row_output;
@@ -126,7 +126,7 @@ $(() => {
           render: (data, type, full, meta) => {
             const $balance = full.balance;
             if ($balance === 0) {
-              const $badge_class = "bg-label-success";
+              const $badge_class = 'bg-label-success';
               return `<span class="badge ${$badge_class}" text-capitalized> Paid </span>`;
             }
             return `<span class="d-none">${$balance}</span>${$balance}`;
@@ -139,33 +139,33 @@ $(() => {
         {
           // Actions
           targets: -1,
-          title: "Actions",
+          title: 'Actions',
           searchable: false,
           orderable: false,
           render: (data, type, full, meta) =>
             `<div class="d-flex align-items-center"><a href="javascript:;" data-bs-toggle="tooltip" class="text-body" data-bs-placement="top" title="Send Mail"><i class="ti ti-mail mx-2 ti-sm"></i></a><a href="${baseUrl}app/invoice/preview" data-bs-toggle="tooltip" class="text-body" data-bs-placement="top" title="Preview Invoice"><i class="ti ti-eye mx-2 ti-sm"></i></a><div class="dropdown"><a href="javascript:;" class="btn dropdown-toggle hide-arrow text-body p-0" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical ti-sm"></i></a><div class="dropdown-menu dropdown-menu-end"><a href="javascript:;" class="dropdown-item">Download</a><a href="${baseUrl}app/invoice/edit" class="dropdown-item">Edit</a><a href="javascript:;" class="dropdown-item">Duplicate</a><div class="dropdown-divider"></div><a href="javascript:;" class="dropdown-item delete-record text-danger">Delete</a></div></div></div>`,
         },
       ],
-      order: [[1, "desc"]],
+      order: [[1, 'desc']],
       dom:
         '<"row mx-1"' +
         '<"col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start gap-2"l<"dt-action-buttons text-xl-end text-lg-start text-md-end text-start mt-md-0 mt-3"B>>' +
         '<"col-12 col-md-6 d-flex align-items-center justify-content-end flex-column flex-md-row pe-3 gap-md-3"f<"invoice_status mb-3 mb-md-0">>' +
-        ">t" +
+        '>t' +
         '<"row mx-2"' +
         '<"col-sm-12 col-md-6"i>' +
         '<"col-sm-12 col-md-6"p>' +
-        ">",
+        '>',
       language: {
-        sLengthMenu: "Show _MENU_",
-        search: "",
-        searchPlaceholder: "Search Invoice",
+        sLengthMenu: 'Show _MENU_',
+        search: '',
+        searchPlaceholder: 'Search Invoice',
       },
       // Buttons with Dropdown
       buttons: [
         {
           text: '<i class="ti ti-plus me-md-1"></i><span class="d-md-inline-block d-none">Create Invoice</span>',
-          className: "btn btn-primary waves-effect waves-light",
+          className: 'btn btn-primary waves-effect waves-light',
           action: (e, dt, button, config) => {
             window.location = `${baseUrl}app/invoice/add`;
           },
@@ -180,13 +180,13 @@ $(() => {
               return `Details of ${data.full_name}`;
             },
           }),
-          type: "column",
+          type: 'column',
           renderer: (api, rowIdx, columns) => {
             const data = $.map(columns, (col, i) =>
-              col.title !== "" // ? Do not show row in modal popup if title is blank (for check box)
+              col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                 ? `<tr data-dt-row="${col.rowIndex}" data-dt-column="${col.columnIndex}"><td>${col.title}:</td> <td>${col.data}</td></tr>`
-                : "",
-            ).join("");
+                : '',
+            ).join('');
 
             return data
               ? $('<table class="table"/><tbody />').append(data)
@@ -203,10 +203,10 @@ $(() => {
             const select = $(
               '<select id="UserRole" class="form-select"><option value=""> Select Status </option></select>',
             )
-              .appendTo(".invoice_status")
-              .on("change", function () {
+              .appendTo('.invoice_status')
+              .on('change', function () {
                 const val = $.fn.dataTable.util.escapeRegex($(this).val());
-                column.search(val ? `^${val}$` : "", true, false).draw();
+                column.search(val ? `^${val}$` : '', true, false).draw();
               });
 
             column
@@ -224,7 +224,7 @@ $(() => {
   }
 
   // On each datatable draw, initialize tooltip
-  dt_invoice_table.on("draw.dt", () => {
+  dt_invoice_table.on('draw.dt', () => {
     const tooltipTriggerList = [].slice.call(
       document.querySelectorAll('[data-bs-toggle="tooltip"]'),
     );
@@ -237,14 +237,14 @@ $(() => {
   });
 
   // Delete Record
-  $(".invoice-list-table tbody").on("click", ".delete-record", function () {
-    dt_invoice.row($(this).parents("tr")).remove().draw();
+  $('.invoice-list-table tbody').on('click', '.delete-record', function () {
+    dt_invoice.row($(this).parents('tr')).remove().draw();
   });
 
   // Filter form control to default size
   // ? setTimeout used for multilingual table initialization
   setTimeout(() => {
-    $(".dataTables_filter .form-control").removeClass("form-control-sm");
-    $(".dataTables_length .form-select").removeClass("form-select-sm");
+    $('.dataTables_filter .form-control').removeClass('form-control-sm');
+    $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
 });

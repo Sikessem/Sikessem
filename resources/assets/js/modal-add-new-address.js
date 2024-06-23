@@ -1,13 +1,13 @@
 // Select2 (jquery)
 $(() => {
-  const select2 = $(".select2");
+  const select2 = $('.select2');
 
   // Select2 Country
   if (select2.length) {
     select2.each(function () {
       const $this = $(this);
       $this.wrap('<div class="position-relative"></div>').select2({
-        placeholder: "Select value",
+        placeholder: 'Select value',
         dropdownParent: $this.parent(),
       });
     });
@@ -15,38 +15,38 @@ $(() => {
 });
 
 // Add New Address form validation
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   (() => {
     // initCustomOptionCheck on modal show to update the custom select
-    const addNewAddress = document.getElementById("addNewAddress");
-    addNewAddress.addEventListener("show.bs.modal", (event) => {
+    const addNewAddress = document.getElementById('addNewAddress');
+    addNewAddress.addEventListener('show.bs.modal', (event) => {
       // Init custom option check
       window.Helpers.initCustomOptionCheck();
     });
 
     FormValidation.formValidation(
-      document.getElementById("addNewAddressForm"),
+      document.getElementById('addNewAddressForm'),
       {
         fields: {
           modalAddressFirstName: {
             validators: {
               notEmpty: {
-                message: "Please enter your first name",
+                message: 'Please enter your first name',
               },
               regexp: {
                 regexp: /^[a-zA-Zs]+$/,
-                message: "The first name can only consist of alphabetical",
+                message: 'The first name can only consist of alphabetical',
               },
             },
           },
           modalAddressLastName: {
             validators: {
               notEmpty: {
-                message: "Please enter your last name",
+                message: 'Please enter your last name',
               },
               regexp: {
                 regexp: /^[a-zA-Zs]+$/,
-                message: "The last name can only consist of alphabetical",
+                message: 'The last name can only consist of alphabetical',
               },
             },
           },
@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
           bootstrap5: new FormValidation.plugins.Bootstrap5({
             // Use this for enabling/changing valid/invalid class
             // eleInvalidClass: '',
-            eleValidClass: "",
-            rowSelector: ".col-12",
+            eleValidClass: '',
+            rowSelector: '.col-12',
           }),
           submitButton: new FormValidation.plugins.SubmitButton(),
           // Submit the form when all fields are valid

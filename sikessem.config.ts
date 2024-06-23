@@ -1,12 +1,12 @@
-import fs from "node:fs";
-export { defineConfig as vite, mergeConfig, mergeAlias } from "vite";
-export { default as laravel } from "laravel-vite-plugin";
+import fs from 'node:fs';
+export { defineConfig as vite, mergeConfig, mergeAlias } from 'vite';
+export { default as laravel } from 'laravel-vite-plugin';
 
 import type {
   ConfigEnv as ViteConfigEnv,
   Plugin as VitePlugin,
   UserConfig as ViteUserConfig,
-} from "vite";
+} from 'vite';
 
 export interface LaravelConfig {
   /**
@@ -84,16 +84,16 @@ export interface LaravelPlugin extends VitePlugin {
   config: (config: ViteUserConfig, env: ViteConfigEnv) => ViteUserConfig;
 }
 
-export type DevServerUrl = `${"http" | "https"}://${string}:${number}`;
+export type DevServerUrl = `${'http' | 'https'}://${string}:${number}`;
 
 export const refreshPaths = [
-  "app/Livewire/**",
-  "app/View/Components/**",
-  "lang/**",
-  "resources/lang/**",
-  "resources/views/**",
-  "routes/**",
-].filter((path) => fs.existsSync(path.replace(/\*\*$/, "")));
+  'app/Livewire/**',
+  'app/View/Components/**',
+  'lang/**',
+  'resources/lang/**',
+  'resources/views/**',
+  'routes/**',
+].filter((path) => fs.existsSync(path.replace(/\*\*$/, '')));
 
 export const laravelConfig: LaravelConfig = {
   input: [],
@@ -103,7 +103,7 @@ export const laravelConfig: LaravelConfig = {
 export const viteConfig: ViteUserConfig = {
   resolve: {
     alias: {
-      "@assets": "/resources/assets",
+      '@assets': '/resources/assets',
     },
   },
 };
