@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\front_pages;
+namespace App\Http\Controllers\Vuexy\FrontPages;
 
 use App\Http\Controllers\Controller;
 
@@ -10,6 +10,6 @@ class Pricing extends Controller
     {
         $pageConfigs = ['myLayout' => 'front'];
 
-        return view('content.front-pages.pricing-page', ['pageConfigs' => $pageConfigs]);
+        return view('content.vuexy.front-pages.pricing-page', ['pageConfigs' => $pageConfigs]);
     }
 }

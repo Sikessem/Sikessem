@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\front_pages;
+namespace App\Http\Controllers\Vuexy\FrontPages;
 
 use App\Http\Controllers\Controller;
 
@@ -10,6 +10,6 @@ class HelpCenterArticle extends Controller
     {
         $pageConfigs = ['myLayout' => 'front'];
 
-        return view('content.front-pages.help-center-article', ['pageConfigs' => $pageConfigs]);
+        return view('content.vuexy.front-pages.help-center-article', ['pageConfigs' => $pageConfigs]);
     }
 }
