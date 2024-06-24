@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\pages;
+namespace App\Http\Controllers\Vuexy\Pages;
 
 use App\Http\Controllers\Controller;
 
@@ -8,6 +8,6 @@ class UserProfile extends Controller
 {
     public function index()
     {
-        return view('content.pages.pages-profile-user');
+        return view('content.vuexy.pages.profile-user');
     }
 }

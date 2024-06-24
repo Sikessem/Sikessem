@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\pages;
+namespace App\Http\Controllers\Vuexy\Pages;
 
 use App\Http\Controllers\Controller;
 
@@ -10,6 +10,6 @@ class MiscNotAuthorized extends Controller
     {
         $pageConfigs = ['myLayout' => 'blank'];
 
-        return view('content.pages.pages-misc-not-authorized', ['pageConfigs' => $pageConfigs]);
+        return view('content.vuexy.pages.misc-not-authorized', ['pageConfigs' => $pageConfigs]);
     }
 }

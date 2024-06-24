@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\pages;
+namespace App\Http\Controllers\Vuexy\Pages;
 
 use App\Http\Controllers\Controller;
 
@@ -10,6 +10,6 @@ class MiscComingSoon extends Controller
     {
         $pageConfigs = ['myLayout' => 'blank'];
 
-        return view('content.pages.pages-misc-comingsoon', ['pageConfigs' => $pageConfigs]);
+        return view('content.vuexy.pages.misc-comingsoon', ['pageConfigs' => $pageConfigs]);
     }
 }

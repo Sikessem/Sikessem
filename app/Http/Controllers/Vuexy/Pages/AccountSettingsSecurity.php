@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\pages;
+namespace App\Http\Controllers\Vuexy\Pages;
 
 use App\Http\Controllers\Controller;
 
@@ -8,6 +8,6 @@ class AccountSettingsSecurity extends Controller
 {
     public function index()
     {
-        return view('content.pages.pages-account-settings-security');
+        return view('content.vuexy.pages.account-settings-security');
     }
 }
