@@ -1,15 +1,5 @@
 <?php
 
-use App\Http\Controllers\form_elements\BasicInput;
-use App\Http\Controllers\form_elements\CustomOptions;
-use App\Http\Controllers\form_elements\Editors;
-use App\Http\Controllers\form_elements\Extras;
-use App\Http\Controllers\form_elements\FileUpload;
-use App\Http\Controllers\form_elements\InputGroups;
-use App\Http\Controllers\form_elements\Picker;
-use App\Http\Controllers\form_elements\Selects;
-use App\Http\Controllers\form_elements\Sliders;
-use App\Http\Controllers\form_elements\Switches;
 use App\Http\Controllers\form_layouts\HorizontalForm;
 use App\Http\Controllers\form_layouts\StickyActions;
 use App\Http\Controllers\form_layouts\VerticalForm;
@@ -107,6 +97,16 @@ use App\Http\Controllers\Vuexy\EcommerceSettingsNotifications;
 use App\Http\Controllers\Vuexy\EcommerceSettingsPayments;
 use App\Http\Controllers\Vuexy\EcommerceSettingsShipping;
 use App\Http\Controllers\Vuexy\Email;
+use App\Http\Controllers\Vuexy\Form\Elements\BasicInput;
+use App\Http\Controllers\Vuexy\Form\Elements\CustomOptions;
+use App\Http\Controllers\Vuexy\Form\Elements\Editors;
+use App\Http\Controllers\Vuexy\Form\Elements\Extras;
+use App\Http\Controllers\Vuexy\Form\Elements\FileUpload;
+use App\Http\Controllers\Vuexy\Form\Elements\InputGroups;
+use App\Http\Controllers\Vuexy\Form\Elements\Picker;
+use App\Http\Controllers\Vuexy\Form\Elements\Selects;
+use App\Http\Controllers\Vuexy\Form\Elements\Sliders;
+use App\Http\Controllers\Vuexy\Form\Elements\Switches;
 use App\Http\Controllers\Vuexy\InvoiceAdd;
 use App\Http\Controllers\Vuexy\InvoiceEdit;
 use App\Http\Controllers\Vuexy\InvoiceList;
