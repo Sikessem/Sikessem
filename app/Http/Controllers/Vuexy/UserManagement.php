@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\laravel_example;
+namespace App\Http\Controllers\Vuexy;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -12,7 +12,7 @@ class UserManagement extends Controller
     /**
      * Redirect to user-management view.
      */
-    public function UserManagement()
+    public function __invoke()
     {
         $users = User::all();
         $userCount = $users->count();
@@ -21,7 +21,7 @@ class UserManagement extends Controller
         $usersUnique = $users->unique(['email']);
         $userDuplicates = $users->diff($usersUnique)->count();
 
-        return view('content.laravel-example.user-management', [
+        return view('content.vuexy.user-management', [
             'totalUser' => $userCount,
             'verified' => $verified,
             'notVerified' => $notVerified,

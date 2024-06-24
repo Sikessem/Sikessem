@@ -8,7 +8,6 @@ use App\Http\Controllers\form_wizard\Icons as FormWizardIcons;
 use App\Http\Controllers\form_wizard\Numbered as FormWizardNumbered;
 use App\Http\Controllers\icons\FontAwesome;
 use App\Http\Controllers\icons\Tabler;
-use App\Http\Controllers\laravel_example\UserManagement;
 use App\Http\Controllers\Vuexy\AcademyCourse;
 use App\Http\Controllers\Vuexy\AcademyCourseDetails;
 use App\Http\Controllers\Vuexy\AcademyDashboard;
@@ -149,6 +148,7 @@ use App\Http\Controllers\Vuexy\UI\Toasts;
 use App\Http\Controllers\Vuexy\UI\TooltipsPopovers;
 use App\Http\Controllers\Vuexy\UI\Typography;
 use App\Http\Controllers\Vuexy\UserList;
+use App\Http\Controllers\Vuexy\UserManagement;
 use App\Http\Controllers\Vuexy\UserViewAccount;
 use App\Http\Controllers\Vuexy\UserViewBilling;
 use App\Http\Controllers\Vuexy\UserViewConnections;
@@ -352,5 +352,5 @@ Route::get('/charts/chartjs', [ChartJs::class, 'index'])->name('charts-chartjs')
 Route::get('/maps/leaflet', [Leaflet::class, 'index'])->name('maps-leaflet');
 
 // laravel example
-Route::get('/laravel/user-management', [UserManagement::class, 'UserManagement'])->name('laravel-example-user-management');
+Route::get('/user-management', UserManagement::class)->name('laravel-example-user-management');
 Route::resource('/user-list', UserManagement::class);
