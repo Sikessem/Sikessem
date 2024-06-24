@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\form_layouts;
+namespace App\Http\Controllers\Vuexy\Form\Layouts;
 
 use App\Http\Controllers\Controller;
 
@@ -8,6 +8,6 @@ class HorizontalForm extends Controller
 {
     public function index()
     {
-        return view('content.form-layout.form-layouts-horizontal');
+        return view('content.vuexy.form.layouts.horizontal');
     }
 }

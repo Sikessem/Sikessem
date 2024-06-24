@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\form_validation;
+namespace App\Http\Controllers\Vuexy\Form;
 
 use App\Http\Controllers\Controller;
 
@@ -8,6 +8,6 @@ class Validation extends Controller
 {
     public function index()
     {
-        return view('content.form-validation.form-validation');
+        return view('content.vuexy.form.validation.index');
     }
 }

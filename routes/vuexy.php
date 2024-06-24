@@ -1,11 +1,5 @@
 <?php
 
-use App\Http\Controllers\form_layouts\HorizontalForm;
-use App\Http\Controllers\form_layouts\StickyActions;
-use App\Http\Controllers\form_layouts\VerticalForm;
-use App\Http\Controllers\form_validation\Validation;
-use App\Http\Controllers\form_wizard\Icons as FormWizardIcons;
-use App\Http\Controllers\form_wizard\Numbered as FormWizardNumbered;
 use App\Http\Controllers\Vuexy\AcademyCourse;
 use App\Http\Controllers\Vuexy\AcademyCourseDetails;
 use App\Http\Controllers\Vuexy\AcademyDashboard;
@@ -66,6 +60,12 @@ use App\Http\Controllers\Vuexy\Form\Elements\Picker;
 use App\Http\Controllers\Vuexy\Form\Elements\Selects;
 use App\Http\Controllers\Vuexy\Form\Elements\Sliders;
 use App\Http\Controllers\Vuexy\Form\Elements\Switches;
+use App\Http\Controllers\Vuexy\Form\Layouts\HorizontalForm;
+use App\Http\Controllers\Vuexy\Form\Layouts\StickyActions;
+use App\Http\Controllers\Vuexy\Form\Layouts\VerticalForm;
+use App\Http\Controllers\Vuexy\Form\Validation;
+use App\Http\Controllers\Vuexy\Form\Wizard\Icons as FormWizardIcons;
+use App\Http\Controllers\Vuexy\Form\Wizard\Numbered as FormWizardNumbered;
 use App\Http\Controllers\Vuexy\FrontPages\Checkout;
 use App\Http\Controllers\Vuexy\FrontPages\HelpCenter;
 use App\Http\Controllers\Vuexy\FrontPages\HelpCenterArticle;
