@@ -160,7 +160,6 @@ use App\Http\Controllers\Vuexy\Wizard\PropertyListing;
 use Illuminate\Support\Facades\Route;
 
 // Main Page Route
-Route::get('/', fn () => view('index'));
 Route::get('/dashboard/analytics', [Analytics::class, 'index'])->name('dashboard-analytics');
 Route::get('/dashboard/crm', [Crm::class, 'index'])->name('dashboard-crm');
 
