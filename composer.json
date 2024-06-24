@@ -20,6 +20,8 @@
     "spatie/laravel-permission": "^6.8"
   },
   "require-dev": {
+    "alebatistella/duskapiconf": "^1.2",
+    "protonemedia/laravel-dusk-fakes": "^1.6",
     "sikessem/laravel-devtools": "^0.12.0"
   },
   "autoload": {
