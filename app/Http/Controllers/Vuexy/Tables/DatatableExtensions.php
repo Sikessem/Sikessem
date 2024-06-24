@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\tables;
+namespace App\Http\Controllers\Vuexy\Tables;
 
 use App\Http\Controllers\Controller;
 
@@ -8,6 +8,6 @@ class DatatableExtensions extends Controller
 {
     public function index()
     {
-        return view('content.tables.tables-datatables-extensions');
+        return view('content.vuexy.tables.datatables-extensions');
     }
 }
