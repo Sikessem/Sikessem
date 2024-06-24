@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\layouts;
+namespace App\Http\Controllers\Vuexy\Layouts;
 
 use App\Http\Controllers\Controller;
 
@@ -11,6 +11,6 @@ class CollapsedMenu extends Controller
 
         $pageConfigs = ['menuCollapsed' => true];
 
-        return view('content.layouts-example.layouts-collapsed-menu', ['pageConfigs' => $pageConfigs]);
+        return view('content.vuexy.layouts.collapsed-menu', ['pageConfigs' => $pageConfigs]);
     }
 }

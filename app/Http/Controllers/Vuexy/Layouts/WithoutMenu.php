@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\layouts;
+namespace App\Http\Controllers\Vuexy\Layouts;
 
 use App\Http\Controllers\Controller;
 
@@ -9,6 +9,6 @@ class WithoutMenu extends Controller
     public function index()
     {
 
-        return view('content.layouts-example.layouts-without-menu');
+        return view('content.vuexy.layouts.without-menu');
     }
 }

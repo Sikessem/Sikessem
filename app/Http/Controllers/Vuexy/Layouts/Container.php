@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\layouts;
+namespace App\Http\Controllers\Vuexy\Layouts;
 
 use App\Http\Controllers\Controller;
 
@@ -10,6 +10,6 @@ class Container extends Controller
     {
         $pageConfigs = ['contentLayout' => 'compact'];
 
-        return view('content.layouts-example.layouts-container', ['pageConfigs' => $pageConfigs]);
+        return view('content.vuexy.layouts.container', ['pageConfigs' => $pageConfigs]);
     }
 }

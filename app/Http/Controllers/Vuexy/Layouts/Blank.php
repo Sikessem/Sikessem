@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\layouts;
+namespace App\Http\Controllers\Vuexy\Layouts;
 
 use App\Http\Controllers\Controller;
 
@@ -10,6 +10,6 @@ class Blank extends Controller
     {
         $pageConfigs = ['myLayout' => 'blank'];
 
-        return view('content.layouts-example.layouts-blank', ['pageConfigs' => $pageConfigs]);
+        return view('content.vuexy.layouts.blank', ['pageConfigs' => $pageConfigs]);
     }
 }

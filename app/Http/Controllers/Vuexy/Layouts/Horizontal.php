@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\layouts;
+namespace App\Http\Controllers\Vuexy\Layouts;
 
 use App\Http\Controllers\Controller;
 
@@ -11,6 +11,6 @@ class Horizontal extends Controller
 
         $pageConfigs = ['myLayout' => 'horizontal'];
 
-        return view('content.dashboard.dashboards-analytics', ['pageConfigs' => $pageConfigs]);
+        return view('content.vuexy.dashboard.analytics', ['pageConfigs' => $pageConfigs]);
     }
 }
