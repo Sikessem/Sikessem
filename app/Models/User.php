@@ -11,6 +11,7 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
+use WendellAdriel\Lift\Lift;
 
 class User extends AuthUser
 {
@@ -19,6 +20,7 @@ class User extends AuthUser
     use HasPermissions;
     use HasRoles;
     use HasTeams;
+    use Lift;
     use Notifiable;
     use TwoFactorAuthenticatable;
 

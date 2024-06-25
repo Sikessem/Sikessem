@@ -18,7 +18,8 @@
     "livewire/volt": "^1.6",
     "sikessem/framework": "^0.6.0",
     "sikessem/ui": "^0.8.0",
-    "spatie/laravel-permission": "^6.8"
+    "spatie/laravel-permission": "^6.8",
+    "wendelladriel/laravel-lift": "^0.14.1"
   },
   "require-dev": {
     "alebatistella/duskapiconf": "^1.2",

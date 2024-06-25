@@ -8,6 +8,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
+use WendellAdriel\Lift\Lift;
 
 class Admin extends Authenticatable
 {
@@ -15,6 +16,7 @@ class Admin extends Authenticatable
     use HasPermissions;
     use HasProfilePhoto;
     use HasRoles;
+    use Lift;
     use Notifiable;
 
     /**
