@@ -1,3 +1,8 @@
+<?php
+use function Laravel\Folio\name;
+
+name('home');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

@@ -4,8 +4,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'index')->name('home');
-
 Route::post('/auth', AuthController::class);
 
 Route::get('lang/{locale}', [LanguageController::class, 'swap'])->name('lang');
