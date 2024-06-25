@@ -16,6 +16,7 @@
     "laravel/tinker": "^2.9",
     "livewire/livewire": "^3.5",
     "livewire/volt": "^1.6",
+    "lorisleiva/laravel-actions": "^2.8",
     "sikessem/framework": "^0.6.0",
     "sikessem/ui": "^0.8.0",
     "spatie/laravel-permission": "^6.8",
