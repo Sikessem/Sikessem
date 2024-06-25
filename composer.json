@@ -37,8 +37,7 @@
   "autoload-dev": {
     "psr-4": {
       "Tests\\": "tests/"
-    },
-    "files": ["app/Helpers/Helpers.php"]
+    }
   },
   "scripts": {
     "analyse": "phpstan analyse --ansi --memory-limit=-1 --debug",
