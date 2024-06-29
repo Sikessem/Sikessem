@@ -1,11 +1,5 @@
 {
-  "include": [
-    "resources/design/**/*",
-    "resources/views/**/*",
-    "public/lib",
-    "public/js/main.js",
-    "public/js"
-  ],
+  "include": ["resources/design/**/*", "resources/views/**/*"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "allowJs": true,
