@@ -1,6 +1,7 @@
 import focus from '@alpinejs/focus';
 import Alpine from 'alpinejs';
 import axios from 'axios';
+import './echo';
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
