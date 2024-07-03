@@ -10,8 +10,8 @@
     "devdojo/auth": "^1.0",
     "laravel/folio": "^1.1",
     "laravel/jetstream": "^5.1",
-    "laravel/octane": "^2.4",
-    "laravel/reverb": "^1.0@beta",
+    "laravel/octane": "^2.5",
+    "laravel/reverb": "^1.0",
     "laravel/sanctum": "^4.0",
     "laravel/tinker": "^2.9",
     "livewire/livewire": "^3.5",
@@ -19,7 +19,7 @@
     "lorisleiva/laravel-actions": "^2.8",
     "sikessem/framework": "^0.6.0",
     "sikessem/ui": "^0.8.0",
-    "spatie/laravel-permission": "^6.8",
+    "spatie/laravel-permission": "^6.9",
     "wendelladriel/laravel-lift": "^0.14.1"
   },
   "require-dev": {
