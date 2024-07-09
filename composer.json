@@ -6,7 +6,6 @@
   "license": "AGPL-3.0-only",
   "version": "0.0.0",
   "require": {
-    "php": ">=8.3",
     "devdojo/auth": "^1.0",
     "laravel/folio": "^1.1",
     "laravel/jetstream": "^5.1",
@@ -75,6 +74,9 @@
     }
   },
   "config": {
+    "platform": {
+      "php": "8.3"
+    },
     "optimize-autoloader": true,
     "preferred-install": "dist",
     "sort-packages": true,
