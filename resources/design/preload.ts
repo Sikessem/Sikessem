@@ -1,11 +1,11 @@
+const preloader = document.createElement('div');
+preloader.id = 'preloader';
+document.body.appendChild(preloader);
+
 window.addEventListener('load', function() {
-  const preloader = document.getElementById('preloader');
+  preloader.classList.add('loaded');
 
-  if (preloader) {
-    preloader.classList.add('loaded');
-
-    preloader.addEventListener('transitionend', () => {
-      preloader.style.display = 'none';
-    });
-  }
+  preloader.addEventListener('transitionend', () => {
+    preloader.remove();
+  });
 });
