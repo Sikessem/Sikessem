@@ -1,14 +1,24 @@
-body {
+#preloader {
+  position: absolute;
+  z-index: 9999999999;
+  inset: 0;
   margin: 0;
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background: #fff;
 }
 
-#preloader {
-  position: absolute;
+@media (prefers-color-scheme: dark) {
+  #preloader {
+    background: #000;
+  }
+}
+
+#preloader .brand {
   width: 48px;
   height: 48px;
   animation: pulse 1s infinite;
