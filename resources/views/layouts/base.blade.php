@@ -22,7 +22,7 @@
         @yield('head')
     </head>
     <body {{ $attributes->class('font-sans antialiased text-black dark:text-white bg-indigo-50 dark:bg-indigo-950 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950') }}>
-        <div id="preloader"><div class"brand"></div></div>
+        <div id="preloader"></div>
         {!! $slot !!}
         @livewireScripts
     </body>
