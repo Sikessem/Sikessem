@@ -15,6 +15,8 @@ export default vite(
         input: mergeInput(laravelConfig.input, [
           'resources/design/app.scss',
           'resources/design/app.ts',
+          'resources/design/preload.css',
+          'resources/design/preload.ts',
         ]),
       }),
     ],
