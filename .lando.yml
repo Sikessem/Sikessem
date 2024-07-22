@@ -1,0 +1,4 @@
+name: sikessem
+recipe: laravel
+config:
+  webroot: ./public
