@@ -9,7 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('load', function() {
     preloader.classList.add('loaded');
 
+    const timeoutId = setTimeout(() => {
+      preloader.remove();
+    }, 1000);
+
     preloader.addEventListener('transitionend', () => {
+      clearTimeout(timeoutId);
       preloader.remove();
     });
   });
