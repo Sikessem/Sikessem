@@ -10,12 +10,26 @@ document.addEventListener('DOMContentLoaded', function() {
     preloader.classList.add('loaded');
 
     const timeoutId = setTimeout(() => {
-      preloader.remove();
+      remove(preloader);
     }, 1000);
 
     preloader.addEventListener('transitionend', () => {
       clearTimeout(timeoutId);
-      preloader.remove();
+      remove(preloader);
     });
   });
 });
+
+function remove(element: HTMLElement): void {
+  if (! element) {
+    return;
+  }
+  
+  if (element.remove) {
+    element.remove();
+  }
+  
+  if (element.parentNode) {
+    element.parentNode.removeChild(element);
+  }
+}
