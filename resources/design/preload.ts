@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!preloader) {
     preloader = document.createElement('div');
     preloader.id = 'preloader';
-    document.body.appendChild(preloader);
+    document.body.insertBefore(preloader, document.body.firstChild);
   }
 
   window.addEventListener('load', function() {
