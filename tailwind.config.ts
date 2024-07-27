@@ -39,7 +39,7 @@ export default {
 
   theme: {
     extend: {
-      fontFamily: new Fonts().add('figtree', true).all(),
+      fontFamily: new Fonts().add('figtree', true).add('rajdhani').all(),
     },
   },
 
