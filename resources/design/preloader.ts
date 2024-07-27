@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   let preloader = document.getElementById('preloader');
   if (!preloader) {
     preloader = document.createElement('div');
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.insertBefore(preloader, document.body.firstChild);
   }
 
-  window.addEventListener('load', function() {
+  window.addEventListener('load', () => {
     if (document.body.contains(preloader)) {
       preloader.classList.add('loaded');
 
@@ -28,14 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function remove(element: HTMLElement): void {
-  if (! element) {
+  if (!element) {
     return;
   }
-  
+
   if (element.remove) {
     element.remove();
   }
-  
+
   if (element.parentNode) {
     element.parentNode.removeChild(element);
   }
