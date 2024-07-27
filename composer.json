@@ -6,7 +6,6 @@
   "license": "AGPL-3.0-only",
   "version": "0.0.0",
   "require": {
-    "devdojo/auth": "^1.0",
     "laravel/folio": "^1.1",
     "laravel/jetstream": "^5.1",
     "laravel/octane": "^2.5",
