@@ -2,21 +2,24 @@
 
 namespace App\Models;
 
-use Devdojo\Auth\Models\User as AuthUser;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
+use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
 use WendellAdriel\Lift\Lift;
 
-class User extends AuthUser
+class User extends Authenticatable // implements MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;
+    use HasProfilePhoto;
     use HasPermissions;
     use HasRoles;
     use HasTeams;

@@ -1,7 +1,5 @@
 @props(['for'])
 
 @error($for)
-  <span {{ $attributes->merge(['class' => 'invalid-feedback']) }} role="alert">
-    <span class="fw-medium">{{ $message }}</span>
-  </span>
+    <p {{ $attributes->merge(['class' => 'text-sm text-red-600 dark:text-red-400']) }}>{{ $message }}</p>
 @enderror
