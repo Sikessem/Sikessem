@@ -132,10 +132,12 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // Animation du bouton CTA
-const ctaButton = document.querySelector('.cta-button');
-ctaButton.addEventListener('mouseover', () => {
-  ctaButton.style.animation = 'buttonPulse 0.5s ease-in-out infinite alternate';
-});
-ctaButton.addEventListener('mouseout', () => {
-  ctaButton.style.animation = 'none';
-});
+const ctaButtons = document.querySelectorAll('.cta-button');
+for (const ctaButton of ctaButtons) {
+  ctaButton.addEventListener('mouseover', () => {
+    ctaButton.style.animation = 'buttonPulse 0.5s ease-in-out infinite alternate';
+  });
+  ctaButton.addEventListener('mouseout', () => {
+    ctaButton.style.animation = 'none';
+  });
+}
