@@ -30,15 +30,9 @@ name('home');
         <div class="orb main-orb"></div>
       </div>
       <div class="hero-content container">
-        <h1>{{ config('app.title') }}</h1>
-        <p>Façonnez l'avenir avec notre technologie de pointe. Plongez dans un monde où l'innovation rencontre l'imagination.</p>
-        <form action="{{ route('auth') }}" class="auth-form" method="POST">
-          @csrf
-          <div class="form-group">
-            <input type="email" name="email" id="email" placeholder="Saisissez votre adresse email" required>
-            <button type="submit" class="cta-button">Continuer</button>
-          </div>
-        </form>
+        <h1>La Plateforme Numérique de Nouvelle Génération</h1>
+        <p>Réalisez l'impossible avec {{ config('app.title') }} : <b>Donnez vie à vos rêves !</b></p>
+        <a href="{{ route('auth.index') }}" class="cta-button">Démarrer l'aventure maintenant</a>
       </div>
     </section>
 
