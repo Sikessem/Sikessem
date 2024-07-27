@@ -33,7 +33,7 @@ name('home');
 
   <footer>
     <div class="container">
-      <p>&copy; 2023 NexusTech. Tous droits réservés.</p>
+      <p>&copy; <time datetime="{{ date('Y') }}">{{ date('Y') }}</time> {{ config('app.title') }}. Tous droits réservés.</p>
     </div>
   </footer>
 </x-base-layout>
