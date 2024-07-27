@@ -18,9 +18,110 @@ body, html {
     font-family: 'Rajdhani', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
+    line-height: 1.6;
     overflow: hidden;
     height: 100%;
     width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+header {
+    background: rgba(10, 10, 26, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links, .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links.active {
+    color: var(--primary-color);
+    text-decoration-color: var(--primary-color);
+    text-decoration-thickness: var(--primary-color);
+}
+
+.nav-links a:hover, .nav-links a:active {
+    text-decoration: underline;
+}
+
+.nav-links a:active {
+    color: var(--secondary-color);
+    text-decoration-color: var(--secondary-color);
+    text-decoration-thickness: var(--secondary-color);
+}
+
+.nav-links a:focus {
+    outline: none;
+    color: var(--tertiary-color);
+    text-decoration-color: var(--tertiary-color);
+    text-decoration-thickness: var(--tertiary-color);
+}
+
+.auth-buttons a {
+    outline: none;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--secondary-color);
+    cursor: pointer;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+.auth-buttons .login-btn {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.auth-buttons .register-btn {
+    color: var(--bg-color);
+    border-color: var(--secondary-color);
+    background-color: var(--secondary-color);
+}
+
+.auth-buttons a:hover {
+    border-color: var(--primary-color);
+}
+
+.auth-buttons .login-btn:hover {
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+}
+
+.auth-buttons .register-btn:hover {
+    background-color: var(--primary-color);
 }
 
 .hero {
@@ -30,6 +131,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    overflow: hidden;
     background: linear-gradient(45deg, rgba(10,10,26,0.8), rgba(120,120,255,0.2));
 }
 
@@ -57,7 +160,7 @@ body, html {
     }
 }
 
-.content {
+.hero-content {
     position: relative;
     z-index: 10;
     text-align: center;
@@ -65,7 +168,7 @@ body, html {
     padding: 2rem;
 }
 
-h1 {
+.hero h1 {
     font-size: 5rem;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -86,7 +189,7 @@ h1 {
     }
 }
 
-p {
+.hero p {
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 2rem;
@@ -102,13 +205,129 @@ p {
     color: var(--text-color);
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(120,120,255,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(120, 120, 255, 0.6);
+    border: none;
+    cursor: pointer;
+    outline: none;
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(120,120,255,0.6);
+    box-shadow: 0 10px 20px rgba(120, 120, 255, 0.6);
+}
+
+.login-btn.cta-button {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.auth-form {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.auth-form input {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    min-width: 280px;
+    max-width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+}
+
+.auth-form button {
+    display: inline-block;
+}
+
+.features, .pricing, .testimonials {
+    padding: 80px 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.feature-grid, .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-item, .pricing-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover, .pricing-item:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.pricing-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.testimonial-content {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-weight: 600;
+}
+
+footer {
+    background: rgba(10, 10, 26, 0.8);
+    text-align: center;
+    padding: 20px 0;
 }
 
 .orb-container {
@@ -135,6 +354,7 @@ p {
     height: 600px;
     background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
     filter: blur(60px);
+    opacity: 0.7;
     animation: orbFloat 20s ease-in-out infinite;
 }
 
