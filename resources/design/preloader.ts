@@ -3,20 +3,27 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!preloader) {
     preloader = document.createElement('div');
     preloader.id = 'preloader';
+    preloader.innerHTML = '<span>Loading&hellip;</span>';
     document.body.insertBefore(preloader, document.body.firstChild);
   }
 
   window.addEventListener('load', function() {
-    preloader.classList.add('loaded');
+    if (document.body.contains(preloader)) {
+      preloader.classList.add('loaded');
 
-    const timeoutId = setTimeout(() => {
-      remove(preloader);
-    }, 1000);
+      const timeoutId = setTimeout(() => {
+        if (window.requestAnimationFrame) {
+          window.requestAnimationFrame(() => remove(preloader));
+        } else {
+          remove(preloader);
+        }
+      }, 1000);
 
-    preloader.addEventListener('transitionend', () => {
-      clearTimeout(timeoutId);
-      remove(preloader);
-    });
+      preloader.addEventListener('transitionend', () => {
+        clearTimeout(timeoutId);
+        remove(preloader);
+      });
+    }
   });
 });
 
