@@ -14,3 +14,5 @@ document.addEventListener('mousemove', (e) => {
   const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
   document.querySelector('.auth-container').style.transform = `translate(${moveX}px, ${moveY}px)`;
 });
+
+document.querySelector('.auth-container').style.transform = 'translate(0, 0)';
