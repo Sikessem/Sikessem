@@ -13,8 +13,8 @@
         <form action="{{ route('auth') }}" id="auth-form" method="POST">
             @csrf
             <div class="input-group">
+                <input type="email" id="email" name="email" required>
                 <label for="email">Adresse email</label>
-                <input type="email" id="email" name="email" required placeholder="Entrez votre adresse email">
             </div>
             <button type="submit">Continuer</button>
         </form>
