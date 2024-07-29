@@ -6,11 +6,11 @@
   "license": "AGPL-3.0-only",
   "description": "The Sikessem Web Application",
   "engines": {
-    "bun": ">=1.1.15",
+    "bun": ">=1.1.21",
     "node": "prefer bun instead",
     "npm": "prefer bun instead"
   },
-  "packageManager": "bun@1.1.15",
+  "packageManager": "bun@1.1.21",
   "scripts": {
     "build": "vite build",
     "check": "biome ci .",
