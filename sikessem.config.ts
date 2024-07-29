@@ -104,6 +104,11 @@ export const viteConfig: ViteUserConfig = {
   resolve: {
     alias: {
       '@assets': '/resources/assets',
+      '@design': '/resources/design',
+      '@images': '/resources/assets/images',
+      '@scripts': '/resources/design/scripts',
+      '@styles': '/resources/design/styles',
+      '@types': '/resources/design/types',
     },
   },
 };

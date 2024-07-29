@@ -4,7 +4,7 @@ use function Laravel\Folio\name;
 name('home');
 ?>
 @section('head')
-    @vite(['resources/design/home.css', 'resources/design/home.js'])
+    @vite(['resources/design/styles/home.css', 'resources/design/scripts/home.js'])
 @endsection
 <x-base-layout noApp>
     <div class="wrapper">

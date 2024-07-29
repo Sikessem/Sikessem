@@ -1,5 +1,5 @@
 @section('head')
-@vite(['resources/design/auth.css', 'resources/design/auth.js'])
+@vite(['resources/design/styles/auth.css', 'resources/design/scripts/auth.js'])
 @endsection
 <x-base-layout title="Connexion" noApp>
     <div class="orbs">

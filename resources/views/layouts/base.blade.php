@@ -14,9 +14,9 @@
 
         <title>@hasSection('title') @yield('title') @elseif(isset($title)) {{ $title }} @else {{ config('app.title', 'Sikessem') }} @endif</title>
 
-        @vite(['resources/design/preloader.css', 'resources/design/preloader.ts'])
+        @vite(['resources/design/styles/preloader.css', 'resources/design/scripts/preloader.ts'])
         @if (!$noApp)
-        @vite(['resources/design/app.scss', 'resources/design/app.ts'])
+        @vite(['resources/design/styles/app.scss', 'resources/design/scripts/app.ts'])
         @endif
         @livewireStyles
         @yield('head')
