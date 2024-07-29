@@ -16,7 +16,7 @@
 
         @vite(['resources/design/styles/preloader.css', 'resources/design/scripts/preloader.ts'])
         @if (!$noApp)
-        @vite(['resources/design/styles/app.scss', 'resources/design/scripts/app.ts'])
+        @vite(['resources/design/styles/app.css', 'resources/design/scripts/app.ts'])
         @endif
         @livewireStyles
         @yield('head')

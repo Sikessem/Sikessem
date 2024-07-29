@@ -13,7 +13,7 @@ export default vite(
       laravel({
         ...laravelConfig,
         input: mergeInput(laravelConfig.input, [
-          'resources/design/styles/app.scss',
+          'resources/design/styles/app.css',
           'resources/design/scripts/app.ts',
           'resources/design/styles/auth.css',
           'resources/design/scripts/auth.js',

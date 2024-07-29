@@ -87,17 +87,16 @@ export interface LaravelPlugin extends VitePlugin {
 export type DevServerUrl = `${'http' | 'https'}://${string}:${number}`;
 
 export const refreshPaths = [
-  'app/Livewire/**',
-  'app/View/Components/**',
+  'app/View/**',
   'lang/**',
-  'resources/lang/**',
   'resources/views/**',
   'routes/**',
+  'storage/framework/views/*.php',
 ].filter((path) => fs.existsSync(path.replace(/\*\*$/, '')));
 
 export const laravelConfig: LaravelConfig = {
   input: [],
-  refresh: true,
+  refresh: refreshPaths,
 };
 
 export const viteConfig: ViteUserConfig = {
