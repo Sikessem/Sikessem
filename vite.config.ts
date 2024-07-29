@@ -1,3 +1,4 @@
+import tailwind from '@tailwindcss/vite';
 import {
   laravel,
   laravelConfig,
@@ -23,6 +24,7 @@ export default vite(
           'resources/design/scripts/preloader.ts',
         ]),
       }),
+      tailwind(),
     ],
   }),
 );
