@@ -20,7 +20,6 @@ export default vite(
           'resources/design/scripts/auth.js',
           'resources/design/styles/home.css',
           'resources/design/scripts/home.js',
-          'resources/design/styles/preloader.css',
           'resources/design/scripts/preloader.ts',
         ]),
       }),

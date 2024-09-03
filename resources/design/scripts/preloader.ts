@@ -1,3 +1,5 @@
+import '../styles/preloader.css';
+
 document.addEventListener('DOMContentLoaded', () => {
   let preloader = document.getElementById('preloader');
   if (!preloader) {
