@@ -67,8 +67,12 @@ class Particle {
     this.x += this.vx;
     this.y += this.vy;
 
-    if (this.x < 0 || this.x > window.innerWidth) this.vx *= -1;
-    if (this.y < 0 || this.y > window.innerHeight) this.vy *= -1;
+    if (this.x < 0 || this.x > window.innerWidth) {
+      this.vx *= -1;
+    }
+    if (this.y < 0 || this.y > window.innerHeight) {
+      this.vy *= -1;
+    }
 
     this.element.style.transform = `translate(${this.x}px, ${this.y}px)`;
 
@@ -83,8 +87,8 @@ for (let i = 0; i < 50; i++) {
 }
 
 // Animation interactive
-let mouseX = 0,
-  mouseY = 0;
+let mouseX = 0;
+let mouseY = 0;
 
 document.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
