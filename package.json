@@ -12,15 +12,15 @@
   },
   "packageManager": "bun@1.1.21",
   "scripts": {
-    "build": "vite build",
+    "dev": "vite",
     "check": "biome ci .",
-    "fix": "bun run format.fix && bun run lint.fix",
+    "check:types": "tsc --incremental --noEmit",
+    "fix": "bun fix:format && bun fix:lint",
+    "fix:format": "biome format --write .",
+    "fix:lint": "biome check --write .",
     "format": "biome format .",
-    "format.fix": "biome format --write .",
     "lint": "biome check .",
-    "lint.fix": "biome check --write .",
-    "start": "vite",
-    "type.check": "tsc --incremental --noEmit"
+    "prod": "vite build"
   },
   "devDependencies": {
     "@alpinejs/focus": "^3.14.1",
