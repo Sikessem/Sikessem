@@ -14,7 +14,7 @@
 
         <title>@hasSection('title') @yield('title') @elseif(isset($title)) {{ $title }} @else {{ config('app.title', 'Sikessem') }} @endif</title>
 
-        @vite('src/preloader.ts')
+        @vite(['src/styles/preloader.css', 'src/preloader.ts'])
         @if (!$noApp)
         @vite(['src/styles/app.css', 'src/app.ts'])
         @endif

@@ -21,6 +21,7 @@ export default vite(
           'src/styles/home.css',
           'src/home.js',
           'src/preloader.ts',
+          'src/styles/preloader.css',
         ]),
       }),
       tailwind(),
