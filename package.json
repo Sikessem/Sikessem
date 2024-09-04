@@ -16,8 +16,10 @@
     "check": "biome ci .",
     "check:types": "tsc --incremental --noEmit",
     "fix": "bun fix:format && bun fix:lint",
+    "fix:all": "bun fix:unsafe && bun fix",
     "fix:format": "biome format --write .",
     "fix:lint": "biome check --write .",
+    "fix:unsafe": "biome check --fix --unsafe",
     "format": "biome format .",
     "lint": "biome check .",
     "prod": "vite build"
