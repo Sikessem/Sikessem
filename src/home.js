@@ -135,7 +135,8 @@ document.addEventListener('mousemove', (e) => {
 const ctaButtons = document.querySelectorAll('.cta-button');
 for (const ctaButton of ctaButtons) {
   ctaButton.addEventListener('mouseover', () => {
-    ctaButton.style.animation = 'buttonPulse 0.5s ease-in-out infinite alternate';
+    ctaButton.style.animation =
+      'buttonPulse 0.5s ease-in-out infinite alternate';
   });
   ctaButton.addEventListener('mouseout', () => {
     ctaButton.style.animation = 'none';

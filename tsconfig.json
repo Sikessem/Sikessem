@@ -22,11 +22,7 @@
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "skipLibCheck": true,
-    "typeRoots": [
-      "./src/types",
-      "./node_modules/@types",
-      "./node_modules"
-    ],
+    "typeRoots": ["./src/types", "./node_modules/@types", "./node_modules"],
     "types": ["bun", "node", "vite/client"],
     "baseUrl": ".",
     "paths": {
