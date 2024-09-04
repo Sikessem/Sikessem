@@ -1,3 +1,3 @@
 <a href="/">
-    <x-application-mark/>
+    <x-application-mark {{ $attributes }} />
 </a>
