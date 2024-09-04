@@ -20,7 +20,7 @@
 @layer components {
     .app {
         &-brand {
-            content: url('@images/logo.svg');
+            content: url('@/assets/images/logo.svg');
         }
     }
 }

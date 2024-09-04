@@ -10,6 +10,7 @@ export default {
     './resources/views/**/*',
     './storage/framework/views/*.php',
     './app/View/**/*',
+    './src/**/*.{js,ts,jsx,tsx,html,vue,svelte,astro}',
   ],
 
   plugins: [forms, typography, styliz],

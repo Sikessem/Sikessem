@@ -1,4 +1,4 @@
-import '../styles/preloader.css';
+import './styles/preloader.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   let preloader = document.getElementById('preloader');
