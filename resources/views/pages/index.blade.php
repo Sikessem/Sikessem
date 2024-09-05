@@ -3,10 +3,7 @@ use function Laravel\Folio\name;
 
 name('home');
 ?>
-@section('head')
-    @vite(['src/home.css', 'src/home.js'])
-@endsection
-<x-base-layout noApp>
+<x-base-layout id="home" title="Welcome">
     <div class="wrapper">
         <header>
             <nav class="container">

@@ -18,8 +18,6 @@ export default vite(
           'src/app.ts',
           'src/auth.css',
           'src/auth.js',
-          'src/home.css',
-          'src/home.js',
           'src/preloader.ts',
           'src/preloader.css',
         ]),
