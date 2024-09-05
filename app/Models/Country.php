@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Country extends Model
 {
@@ -20,4 +21,9 @@ class Country extends Model
         'alpha2',
         'alpha3',
     ];
+
+    public function users(): HasManyThrough
+    {
+        return $this->hasManyThrough(User::class, UserLocation::class);
+    }
 }

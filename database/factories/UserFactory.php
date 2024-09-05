@@ -31,7 +31,6 @@ class UserFactory extends Factory
             'lastname' => fake()->name(),
             'birthdate' => fake()->date(),
             'gender' => ['male', 'female'][fake()->numberBetween(0, 1)],
-            'location' => fake()->country(),
             'username' => fake()->unique()->slug(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),

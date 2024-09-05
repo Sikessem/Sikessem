@@ -20,10 +20,9 @@ class DatabaseSeeder extends Seeder
         User::factory()->withPersonalTeam()->create([
             'firstname' => 'Kessé Emmanuel',
             'lastname' => 'Sigui',
-            'location' => 'Tunisia',
             'gender' => 'male',
             'username' => 'siguici',
             'email' => 'siguici@proton.me',
-        ]);
+        ])->has('location');
     }
 }
