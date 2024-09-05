@@ -1,4 +1,4 @@
-import { Particle } from './particle';
+import { Particle } from '@/particle';
 
 const orbContainer = document.querySelector('.orb-container');
 const mainOrb = document.querySelector('.main-orb');
