@@ -2,7 +2,7 @@
     'title' => __('Authentication')
 ])
 @section('head')
-@vite(['src/styles/auth.css', 'src/auth.js'])
+@vite(['src/auth.css', 'src/auth.js'])
 @endsection
 <x-base-layout :$title noApp>
     <div class="orbs">

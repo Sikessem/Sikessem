@@ -14,14 +14,14 @@ export default vite(
       laravel({
         ...laravelConfig,
         input: mergeInput(laravelConfig.input, [
-          'src/styles/app.css',
+          'src/app.css',
           'src/app.ts',
-          'src/styles/auth.css',
+          'src/auth.css',
           'src/auth.js',
-          'src/styles/home.css',
+          'src/home.css',
           'src/home.js',
           'src/preloader.ts',
-          'src/styles/preloader.css',
+          'src/preloader.css',
         ]),
       }),
       tailwind(),
