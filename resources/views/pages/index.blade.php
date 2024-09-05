@@ -4,8 +4,8 @@ use function Laravel\Folio\name;
 name('home');
 ?>
 <x-base-layout id="home" title="Welcome">
-    <header>
-        <nav class="container">
+    <header class="app-header">
+        <nav class="navbar">
             <x-application-brand height="40" />
             <div class="auth-buttons">
                 <a href="{{ route('login') }}" class="cta-button login-btn">Connexion</a>
@@ -14,7 +14,7 @@ name('home');
         </nav>
     </header>
 
-    <main>
+    <main class="app-wrapper">
         <section id="home" class="hero">
             <div class="bg-grid"></div>
             <div class="orb-container">
@@ -28,7 +28,7 @@ name('home');
         </section>
     </main>
 
-    <footer>
+    <footer class="app-footer">
         <div class="container">
             <p>&copy; <time datetime="{{ date('Y') }}">{{ date('Y') }}</time> {{ config('app.title') }}. Tous droits réservés.</p>
         </div>

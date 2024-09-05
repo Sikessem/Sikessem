@@ -81,79 +81,6 @@
       overflow: hidden;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 15px 20px;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(10, 10, 26, 0.8);
-      backdrop-filter: blur(10px);
-      width: 100%;
-      z-index: 1000;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--primary-color);
-    }
-
-    .auth-buttons {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .auth-buttons a {
-      outline: none;
-      text-decoration: none;
-      font-weight: 600;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      border: 1px solid var(--secondary-color);
-      cursor: pointer;
-      transition: color 0.3s ease, background 0.3s ease;
-    }
-
-    .auth-buttons .login-btn {
-      color: var(--secondary-color);
-      border-color: var(--secondary-color);
-    }
-
-    .auth-buttons .register-btn {
-      color: var(--bg-color);
-      border-color: var(--secondary-color);
-      background-color: var(--secondary-color);
-    }
-
-    .auth-buttons a:hover {
-      border-color: var(--primary-color);
-    }
-
-    .auth-buttons .login-btn:hover {
-      color: var(--primary-color);
-      background-color: var(--bg-color);
-    }
-
-    .auth-buttons .register-btn:hover {
-      background-color: var(--primary-color);
-    }
-
     .hero {
       position: relative;
       height: 100%;
@@ -295,19 +222,90 @@
       font-weight: 700;
       margin-bottom: 20px;
     }
-
-    footer {
-      background: rgba(10, 10, 26, 0.8);
-      text-align: center;
-      padding: 20px 0;
-    }
   }
 }
 
 @layer components {
-  .app {
-    &-brand {
+    .app-logo {
       content: url('@/assets/images/logo.svg');
+    }
+ 
+    .app-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 10, 26, 0.8);
+      backdrop-filter: blur(10px);
+      width: 100%;
+      z-index: 1000;
+
+      & .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .app-footer {
+      background: rgba(10, 10, 26, 0.8);
+      text-align: center;
+      padding: 20px 0;
+    }
+ 
+  .container, .navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    & a {
+      outline: none;
+      text-decoration: none;
+      font-weight: 600;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--secondary-color);
+      cursor: pointer;
+      transition: color 0.3s ease, background 0.3s ease;
+    }
+
+    & .login-btn {
+      color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+
+    & .register-btn {
+      color: var(--bg-color);
+      border-color: var(--secondary-color);
+      background-color: var(--secondary-color);
+    }
+
+    & a:hover {
+      border-color: var(--primary-color);
+    }
+
+    & .login-btn:hover {
+      color: var(--primary-color);
+      background-color: var(--bg-color);
+    }
+
+    & .register-btn:hover {
+      background-color: var(--primary-color);
     }
   }
 
