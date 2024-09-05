@@ -1,3 +1,7 @@
+import { Particle } from './particle';
+
+Particle.create(document.querySelector('.particles'));
+
 // Animation des orbes
 function animateOrbs() {
   const orbs = document.querySelectorAll('.orb');

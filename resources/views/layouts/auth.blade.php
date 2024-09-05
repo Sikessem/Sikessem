@@ -5,6 +5,7 @@
 @vite(['src/auth.css', 'src/auth.js'])
 @endsection
 <x-base-layout :$title noApp>
+    <div class="particles"></div>
     <div class="grid"></div>
 
     <div class="orbs">
