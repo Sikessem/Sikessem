@@ -1,4 +1,4 @@
-@import './rajdhani.css';
+@import '@/rajdhani.css';
 
 :root {
     --primary-color: #7878ff;
