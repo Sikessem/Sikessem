@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 @layer theme {
-    @theme {
-        --default-font-family: 'Rajdhani', var(--font-family-sans);
-    }
+  @theme {
+    --default-font-family: 'Rajdhani', var(--font-family-sans);
+  }
 }
 
 @layer base {
-    :root{
-        --font-family-rajdhani: 'Rajdhani', var(--font-family-sans);
-        --font-family-figtree: 'Figtree Variable', var(--font-family-sans);
-    }
+  :root{
+    --font-family-rajdhani: 'Rajdhani', var(--font-family-sans);
+    --font-family-figtree: 'Figtree Variable', var(--font-family-sans);
+  }
 
-    [x-cloak] {
-        @apply hidden;
-    }
+  [x-cloak] {
+    @apply hidden;
+  }
 }
 
 @layer components {
-    .app {
-        &-brand {
-            content: url('@/assets/images/logo.svg');
-        }
+  .app {
+    &-brand {
+      content: url('@/assets/images/logo.svg');
     }
+  }
 }
