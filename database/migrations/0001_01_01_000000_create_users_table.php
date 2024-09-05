@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('location')->nullable();
             $table->string('photo_path', 2048)->nullable();
             $table->text('resume')->nullable();
+            $table->string('username')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
