@@ -3,8 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -33,7 +33,12 @@ class User extends Authenticatable // implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'firstname',
+        'lastname',
+        'gender',
+        'birthdate',
+        'location',
+        'resume',
         'email',
         'password',
     ];
@@ -51,6 +56,16 @@ class User extends Authenticatable // implements MustVerifyEmail
     ];
 
     /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array<int, string>
+     */
+    protected $appends = [
+        'name',
+        'profile_photo_url',
+    ];
+
+    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
@@ -63,8 +78,10 @@ class User extends Authenticatable // implements MustVerifyEmail
         ];
     }
 
-    public function profile(): HasOne
+    public function name(): Attribute
     {
-        return $this->hasOne(Profile::class);
+        return Attribute::get(function (): string {
+            return trim("{$this->firstname} {$this->lastname}");
+        });
     }
 }
