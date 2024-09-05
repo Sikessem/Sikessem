@@ -18,7 +18,7 @@ name('home');
         <section id="home" class="hero">
             <div class="bg-grid"></div>
             <div class="orb-container">
-                <div class="orb main-orb"></div>
+                <div class="orb orb-main"></div>
             </div>
             <div class="hero-content container">
                 <h1>La Plateforme Numérique de Nouvelle Génération</h1>

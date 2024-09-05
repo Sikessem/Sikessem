@@ -1,7 +1,7 @@
 import { Particle } from '@/particle';
 
 const orbContainer = document.querySelector('.orb-container');
-const mainOrb = document.querySelector('.main-orb');
+const mainOrb = document.querySelector('.orb-main');
 const hero = document.querySelector('.hero');
 
 const orbs = [];
