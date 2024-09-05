@@ -22,7 +22,12 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input): User
     {
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:255', 'unique:users'],
+            'firstname' => ['required', 'string', 'min:2', 'max:255', 'unique:users'],
+            'lastname' => ['nullable', 'string', 'min:2', 'max:255'],
+            'birthdate' => ['nullable', 'date'],
+            'gender' => ['nullable', 'string', 'in:male,female'],
+            'location' => ['nullable', 'string', 'min:3', 'max:255'],
+            'resume' => ['nullable', 'string', 'min:1', 'max:1024'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
@@ -30,7 +35,12 @@ class CreateNewUser implements CreatesNewUsers
 
         return DB::transaction(function () use ($input) {
             return tap(User::create([
-                'name' => $input['name'],
+                'firstname' => $input['firstname'],
+                'lastname' => $input['lastname'],
+                'birthdate' => $input['birthdate'],
+                'gender' => $input['gender'],
+                'location' => $input['location'],
+                'resume' => $input['resume'],
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
             ]), function (User $user) {

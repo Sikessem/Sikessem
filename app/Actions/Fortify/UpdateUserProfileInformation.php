@@ -18,7 +18,12 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     public function update(User $user, array $input): void
     {
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($user->id)],
+            'firstname' => ['required', 'string', 'min:2', 'max:255', 'unique:users'],
+            'lastname' => ['nullable', 'string', 'min:2', 'max:255'],
+            'birthdate' => ['nullable', 'date'],
+            'gender' => ['nullable', 'string', 'in:male,female'],
+            'location' => ['nullable', 'string', 'min:3', 'max:255'],
+            'resume' => ['nullable', 'string', 'min:1', 'max:1024'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:1024'],
         ])->validateWithBag('updateProfileInformation');
@@ -32,7 +37,12 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $this->updateVerifiedUser($user, $input);
         } else {
             $user->forceFill([
-                'name' => $input['name'],
+                'firstname' => $input['firstname'],
+                'lastname' => $input['lastname'],
+                'birthdate' => $input['birthdate'],
+                'gender' => $input['gender'],
+                'location' => $input['location'],
+                'resume' => $input['resume'],
                 'email' => $input['email'],
             ])->save();
         }
@@ -46,7 +56,12 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     protected function updateVerifiedUser(User $user, array $input): void
     {
         $user->forceFill([
-            'name' => $input['name'],
+            'firstname' => $input['firstname'],
+            'lastname' => $input['lastname'],
+            'birthdate' => $input['birthdate'],
+            'gender' => $input['gender'],
+            'location' => $input['location'],
+            'resume' => $input['resume'],
             'email' => $input['email'],
             'email_verified_at' => null,
         ])->save();
