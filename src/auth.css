@@ -7,6 +7,7 @@
     --tertiary-color: #ff6b6b;
     --bg-color: #0a0a1a;
     --text-color: #ffffff;
+    --card-color: rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -45,6 +46,7 @@ html, body, #wrapper {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     transform-style: preserve-3d;
     will-change: transform;
+    background-color: var(--bg-color);
 }
 
 .auth-content {
@@ -82,7 +84,20 @@ html, body, #wrapper {
     filter: blur(.5rem);
     backdrop-filter: blur(.5rem);
     opacity: 0.5;
-}    
+}
+
+.auth-content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: var(--card-color);
+}
+
+.auth-content > * {
+    position: relative;
+    z-index: 10;
+}
 
 .grid {
     position: absolute;
@@ -141,7 +156,7 @@ form {
     transform: translateY(-50%);
     pointer-events: none;
     color: var(--text-color);
-    background-color: var(--bg-color);
+    background-color: transparent;
     border-radius: 3px;
     z-index: 1;
     font-size: 1rem;
@@ -170,11 +185,16 @@ form {
     box-shadow: 0 0 0 2px var(--primary-color);
 }
 
+.input-group input:hover ~ label {
+    opacity: 1;
+}
+
 .input-group input:focus ~ label, .input-group input:valid ~ label {
-    top: 0;
+    top: -1px;
     opacity: 1;
     font-size: 0.875rem;
-    color: var(--primary-color);
+    font-weight: bold;
+    background-color: var(--primary-color);
 }
 
 button {
