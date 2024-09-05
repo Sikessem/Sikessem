@@ -18,8 +18,12 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminSeeder::class);
         $this->call(CountrySeeder::class);
         User::factory()->withPersonalTeam()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'firstname' => 'Kessé Emmanuel',
+            'lastname' => 'Sigui',
+            'location' => 'Tunisia',
+            'gender' => 'male',
+            'username' => 'siguici',
+            'email' => 'siguici@proton.me',
         ]);
     }
 }
