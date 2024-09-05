@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -83,5 +84,10 @@ class User extends Authenticatable // implements MustVerifyEmail
         return Attribute::get(function (): string {
             return trim("{$this->firstname} {$this->lastname}");
         });
+    }
+
+    public function emails(): HasMany
+    {
+        return $this->hasMany(Email::class);
     }
 }
