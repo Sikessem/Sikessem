@@ -14,7 +14,7 @@
     box-sizing: border-box;
 }
 
-body, html {
+html, body, #wrapper {
     font-family: 'Rajdhani', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
