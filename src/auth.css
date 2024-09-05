@@ -250,14 +250,14 @@ button:hover {
     margin-top: 20px;
 }
 
-.register-link a, .forgot-password a {
+.auth-content a {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.register-link a:hover, .forgot-password a:hover {
+.auth-content a:hover {
     color: var(--primary-color);
 }
 
