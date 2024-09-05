@@ -8,6 +8,10 @@
   --bg-color: #0a0a1a;
   --text-color: #ffffff;
   --card-color: rgba(255, 255, 255, 0.05);
+  --primary-color: #7878ff;
+  --step-inactive: #2a2a3a;
+  --step-active: var(--primary-color);
+  --step-complete: var(--secondary-color);
 }
 
 * {
@@ -259,6 +263,124 @@ button:hover {
 
 .auth-content a:hover {
   color: var(--primary-color);
+}
+
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--step-inactive);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  background-color: var(--step-active);
+}
+
+.step.complete {
+  background-color: var(--step-complete);
+}
+
+.step-connector {
+  flex-grow: 1;
+  height: 2px;
+  background-color: var(--step-inactive);
+  margin: 0 5px;
+  align-self: center;
+  transition: all 0.3s ease;
+}
+
+.step-connector.active {
+  background-color: var(--step-active);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input, select {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(120, 120, 255, 0.4);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.buttons button {
+  flex: 1;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+  color: var(--primary-color);
+}
+
+.hidden {
+  display: none;
 }
 
 .orbs {
