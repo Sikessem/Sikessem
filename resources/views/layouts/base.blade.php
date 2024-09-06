@@ -1,6 +1,6 @@
 @props([
     'title',
-    'noApp' => false,
+    'assets',
 ])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -15,10 +15,8 @@
         <title>@hasSection('title') @yield('title') @elseif(isset($title)) {{ $title }} @else {{ config('app.title', 'Sikessem') }} @endif</title>
 
         @vite(['src/preloader.css', 'src/preloader.ts'])
-        @if (!$noApp)
-        @vite(['src/app.css', 'src/app.ts'])
-        @endif
         @livewireStyles
+        @vite($assets)
         @yield('head')
     </head>
     <body {{ $attributes->class('font-sans antialiased text-black dark:text-white bg-indigo-50 dark:bg-indigo-950 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950') }}>

@@ -1,10 +1,8 @@
 @props([
     'title' => __('Authentication')
 ])
-@section('head')
-@vite(['src/auth.css', 'src/auth.js'])
-@endsection
-<x-base-layout :$title noApp>
+
+<x-base-layout :$title :assets="['src/auth.css', 'src/auth.js']" {{ $attributes }}>
     <div class="particles"></div>
     <div class="grid"></div>
 

@@ -3,7 +3,7 @@ use function Laravel\Folio\name;
 
 name('home');
 ?>
-<x-base-layout id="home" title="Welcome">
+<x-app-layout id="home" title="Welcome">
     <header class="app-header">
         <nav class="navbar">
             <x-application-brand height="40" />
@@ -33,4 +33,4 @@ name('home');
             <p>&copy; <time datetime="{{ date('Y') }}">{{ date('Y') }}</time> {{ config('app.title') }}. Tous droits réservés.</p>
         </div>
     </footer>
-</x-base-layout>
+</x-app-layout>
