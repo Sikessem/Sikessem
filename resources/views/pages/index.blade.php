@@ -15,7 +15,7 @@ name('home');
     </header>
 
     <main class="app-wrapper">
-        <section id="home" class="hero">
+        <section class="hero">
             <div class="bg-grid"></div>
             <div class="orb-container">
                 <div class="orb orb-main"></div>
@@ -23,7 +23,7 @@ name('home');
             <div class="hero-content container">
                 <h1 class="title">La Plateforme Numérique de Nouvelle Génération</h1>
                 <p class="tagline">Réalisez l'impossible avec {{ config('app.title') }} : <b>Donnez vie à vos rêves !</b></p>
-                <a href="{{ route('auth') }}" class="cta button outline">Démarrer l'aventure maintenant</a>
+                <a href="{{ route('auth') }}" class="cta button lg">Démarrer l'aventure maintenant</a>
             </div>
         </section>
     </main>
