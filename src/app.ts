@@ -2,6 +2,7 @@ import '@fontsource-variable/figtree';
 import '@/bootstrap';
 import { createOrbs } from '@/orbs';
 import { Particle } from '@/particle';
+import { getDistanceBrightness } from '@/utils';
 
 import.meta.glob(['./assets/*']);
 
@@ -43,26 +44,6 @@ document.addEventListener('mousemove', (e) => {
     particle.element.style.boxShadow = `0 0 ${brightness * 10}px ${brightness * 5}px rgba(255, 255, 255, ${brightness})`;
   });
 });
-
-function getDistanceBrightness(
-  element: HTMLElement,
-  x: number,
-  y: number,
-  maxDistance = 200,
-): number {
-  return getBrightness(getDistance(element, x, y), maxDistance);
-}
-
-function getBrightness(distance: number, maxDistance = 200): number {
-  return Math.max(0, 1 - distance / maxDistance);
-}
-
-function getDistance(element: HTMLElement, x: number, y: number): number {
-  const rect = element.getBoundingClientRect();
-  const centerX = rect.left + rect.width / 2;
-  const centerY = rect.top + rect.height / 2;
-  return Math.sqrt((x - centerX) ** 2 + (y - centerY) ** 2);
-}
 
 const title = document.querySelector('.title');
 if (title) {
