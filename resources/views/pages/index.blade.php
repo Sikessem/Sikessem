@@ -23,7 +23,7 @@ name('home');
             <div class="hero-content container">
                 <h1>La Plateforme Numérique de Nouvelle Génération</h1>
                 <p>Réalisez l'impossible avec {{ config('app.title') }} : <b>Donnez vie à vos rêves !</b></p>
-                <a href="{{ route('auth') }}" class="cta-button">Démarrer l'aventure maintenant</a>
+                <a href="{{ route('auth') }}" class="cta button outline">Démarrer l'aventure maintenant</a>
             </div>
         </section>
     </main>

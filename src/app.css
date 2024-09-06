@@ -119,34 +119,6 @@
       opacity: 0.8;
     }
 
-    .cta-button {
-      display: inline-block;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--text-color);
-      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-      border-radius: 50px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 5px 15px rgba(120, 120, 255, 0.6);
-      border: none;
-      cursor: pointer;
-      outline: none;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(120, 120, 255, 0.6);
-    }
-
-    .login-btn.cta-button {
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-    }
-
     .auth-form {
       margin-top: 30px;
       display: flex;
@@ -251,6 +223,40 @@
     transform: perspective(500px) rotateX(60deg);
     transform-origin: top;
     animation: gridMove 20s linear infinite;
+  }
+
+  .button {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-color);
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(120, 120, 255, 0.6);
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(120, 120, 255, 0.6);
+    }
+
+    &.cta {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-color);
+      background-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      border-radius: 50px;
+    }
+
+    &.outline {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
   }
  
   .container, .navbar {
