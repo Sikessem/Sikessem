@@ -1,7 +1,10 @@
 import focus from '@alpinejs/focus';
-import Alpine from 'alpinejs';
 import axios from 'axios';
 import '@/echo';
+import {
+  Alpine,
+  Livewire,
+} from '../vendor/livewire/livewire/dist/livewire.esm';
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -13,4 +16,5 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 window.Alpine = Alpine;
 Alpine.plugin(focus);
-Alpine.start();
+
+Livewire.start();

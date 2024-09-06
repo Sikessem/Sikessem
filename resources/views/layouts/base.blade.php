@@ -26,6 +26,6 @@
         <div id="app">
         {!! $slot !!}
         </div>
-        @livewireScripts
+        @livewireScriptConfig
     </body>
 </html>
