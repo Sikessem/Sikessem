@@ -223,13 +223,13 @@
     font-weight: 400;
     margin-bottom: 2rem;
     opacity: 0.8;
-  }    
+  }
 
   .button {
     --color: var(--bg-color);
+    --shadow: rgba(127, 127, 127, 0.6);
     display: inline-block;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 15px rgba(120, 120, 255, 0.6);
+    box-shadow: 0 5px 15px var(--shadow);
     border: none;
     cursor: pointer;
     outline: none;
@@ -239,14 +239,14 @@
     padding: 8px 16px;
     border-radius: 6px;
     border: 1px solid transparent;
-    transition: color 0.3s ease, background 0.3s ease;
+    transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     color: var(--color);
     border-color: var(--color);
     background-color: var(--color);
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(120, 120, 255, 0.6);
+      box-shadow: 0 10px 20px var(--shadow);
     }
 
     &.lg {
