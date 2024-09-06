@@ -266,44 +266,47 @@
       }
     }
 
-    &.primary {
+    &.primary, &.secondary {
       color: var(--bg-color);
-      border-color: var(--primary-color);
-      background-color: var(--primary-color);
 
       &:hover {
-        border-color: var(--secondary-color);
-        background-color: var(--secondary-color);
+        color: var(--text-color);
+        border-color: var(--text-color);
       }
+
+      &.outline {
+        background-color: var(--bg-color);
+
+        &:hover {
+          color: var(--text-color);
+        }
+      }
+    }
+
+    &.primary {
+      border-color: var(--primary-color);
+      background-color: var(--primary-color);
 
       &.outline {
         color: var(--primary-color);
         border-color: var(--primary-color);
-        background-color: var(--bg-color);
 
         &:hover {
-          color: var(--secondary-color);
+          background-color: var(--primary-color);
         }
       }
     }
 
     &.secondary {
-      color: var(--bg-color);
       border-color: var(--secondary-color);
       background-color: var(--secondary-color);
-
-      &:hover {
-        border-color: var(--primary-color);
-        background-color: var(--primary-color);
-      }
 
       &.outline {
         color: var(--secondary-color);
         border-color: var(--secondary-color);
-        background-color: var(--bg-color);
 
         &:hover {
-          color: var(--primary-color);
+          background-color: var(--secondary-color);
         }
       }
     }
