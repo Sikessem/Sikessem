@@ -165,7 +165,7 @@
 
 @layer components {
   .app-logo {
-    content: url('@/assets/images/logo.svg');
+    content: url('@/images/logo.svg');
   }
 
   .app-header {
