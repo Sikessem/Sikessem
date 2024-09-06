@@ -227,15 +227,20 @@
 
   .button {
     display: inline-block;
-    text-decoration: none;
-    color: var(--text-color);
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    border-radius: 50px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 5px 15px rgba(120, 120, 255, 0.6);
     border: none;
     cursor: pointer;
     outline: none;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    background: var(--bg-color);
+    transition: color 0.3s ease, background 0.3s ease;
 
     &:hover {
       transform: translateY(-3px);
@@ -249,13 +254,55 @@
       color: var(--text-color);
       background-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
       border-radius: 50px;
+
+      &.outline {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
     }
 
-    &.outline {
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
+    &.primary {
+      color: var(--bg-color);
+      border-color: var(--primary-color);
+      background-color: var(--primary-color);
+
+      &:hover {
+        border-color: var(--secondary-color);
+        background-color: var(--secondary-color);
+      }
+
+      &.outline {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+        background-color: var(--bg-color);
+
+        &:hover {
+          color: var(--secondary-color);
+        }
+      }
+    }
+
+    &.secondary {
+      color: var(--bg-color);
+      border-color: var(--secondary-color);
+      background-color: var(--secondary-color);
+
+      &:hover {
+        border-color: var(--primary-color);
+        background-color: var(--primary-color);
+      }
+
+      &.outline {
+        color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        background-color: var(--bg-color);
+
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
     }
   }
  
@@ -273,46 +320,10 @@
     color: var(--primary-color);
   }
 
-  .auth-buttons {
+  .buttons {
     display: flex;
     align-items: center;
     gap: 20px;
-
-    & a {
-      outline: none;
-      text-decoration: none;
-      font-weight: 600;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      border: 1px solid var(--secondary-color);
-      cursor: pointer;
-      transition: color 0.3s ease, background 0.3s ease;
-    }
-
-    & .login-btn {
-      color: var(--secondary-color);
-      border-color: var(--secondary-color);
-    }
-
-    & .register-btn {
-      color: var(--bg-color);
-      border-color: var(--secondary-color);
-      background-color: var(--secondary-color);
-    }
-
-    & a:hover {
-      border-color: var(--primary-color);
-    }
-
-    & .login-btn:hover {
-      color: var(--primary-color);
-      background-color: var(--bg-color);
-    }
-
-    & .register-btn:hover {
-      background-color: var(--primary-color);
-    }
   }
 
   .feature, .pricing {

@@ -7,9 +7,9 @@ name('home');
     <header class="app-header">
         <nav class="navbar">
             <x-application-brand height="40" />
-            <div class="auth-buttons">
-                <a href="{{ route('login') }}" class="cta-button login-btn">Connexion</a>
-                <a href="{{ route('register') }}" class="cta-button register-btn">Inscription</a>
+            <div class="buttons">
+                <a href="{{ route('login') }}" class="button secondary outline">Connexion</a>
+                <a href="{{ route('register') }}" class="button primary">Inscription</a>
             </div>
         </nav>
     </header>
