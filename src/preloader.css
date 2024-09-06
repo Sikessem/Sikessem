@@ -19,12 +19,6 @@
   background-color: var(--bg-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  #preloader {
-    background: #000;
-  }
-}
-
 #preloader::before {
   width: 48px;
   height: 48px;
