@@ -1,5 +1,6 @@
 import '@fontsource-variable/figtree';
 import '@/bootstrap';
+import { createOrbs } from '@/orbs';
 import { Particle } from '@/particle';
 
 import.meta.glob(['./assets/*']);
@@ -8,48 +9,7 @@ const orbContainer = document.querySelector('.orb-container');
 const mainOrb = document.querySelector('.orb-main');
 const hero = document.querySelector('.hero');
 
-const orbs: HTMLDivElement[] = [];
-
-if (orbContainer) {
-  for (let i = 0; i < 5; i++) {
-    const orb = document.createElement('div');
-    orb.classList.add('orb');
-    orb.style.width = `${Math.random() * 300 + 100}px`;
-    orb.style.height = orb.style.width;
-    orb.style.background = `radial-gradient(circle, ${getRandomColor()} 0%, transparent 70%)`;
-    orb.style.left = `${Math.random() * 100}%`;
-    orb.style.top = `${Math.random() * 100}%`;
-    orb.style.filter = `blur(${Math.random() * 40 + 20}px)`;
-    orbContainer.appendChild(orb);
-
-    animateOrb(orb);
-    orbs.push(orb);
-  }
-}
-
-function getRandomColor() {
-  const colors = ['#7878ff', '#32e0c4', '#ff6b6b', '#feca57'];
-  return colors[Math.floor(Math.random() * colors.length)];
-}
-
-function animateOrb(orb: HTMLElement) {
-  const duration = Math.random() * 40 + 20;
-  const xMove = Math.random() * 40 - 20;
-  const yMove = Math.random() * 40 - 20;
-
-  orb.animate(
-    [
-      { transform: 'translate(0, 0)' },
-      { transform: `translate(${xMove}%, ${yMove}%)` },
-      { transform: 'translate(0, 0)' },
-    ],
-    {
-      duration: duration * 1000,
-      iterations: Number.POSITIVE_INFINITY,
-      easing: 'ease-in-out',
-    },
-  );
-}
+const orbs = createOrbs(orbContainer as HTMLElement | undefined);
 
 const particles = Particle.create(hero);
 
@@ -94,12 +54,12 @@ document.addEventListener('mousemove', (e) => {
   });
 });
 
-const title = document.querySelector('title');
+const title = document.querySelector('.title');
 if (title) {
   document.addEventListener('mousemove', (e) => {
     const xOffset = (e.clientX / window.innerWidth - 0.5) * 20;
     const yOffset = (e.clientY / window.innerHeight - 0.5) * 20;
-    title.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+    (title as HTMLHeadingElement).style.transform = `translate(${xOffset}px, ${yOffset}px)`;
   });
 }
 
