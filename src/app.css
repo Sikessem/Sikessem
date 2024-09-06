@@ -56,7 +56,7 @@
     scroll-behavior: smooth;
   }
 
-  html, body, #wrapper {
+  html, body, #app {
     font-family: 'Rajdhani', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -71,7 +71,7 @@
   }
 
   #home {
-    #wrapper {
+    #app {
       display: grid;
       grid-template-rows: auto 1fr auto;
       grid-template-columns: 1fr;

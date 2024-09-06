@@ -20,7 +20,7 @@
   box-sizing: border-box;
 }
 
-html, body, #wrapper {
+html, body, #app {
   font-family: 'Rajdhani', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
