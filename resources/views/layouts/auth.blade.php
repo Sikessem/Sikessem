@@ -2,7 +2,7 @@
     'title' => __('Authentication')
 ])
 
-<x-base-layout :$title :assets="['src/auth.css', 'src/auth.js']" {{ $attributes }}>
+<x-base-layout :$title :assets="['src/app.css', 'src/auth.js']" {{ $attributes }}>
     <div class="particles"></div>
     <div class="grid"></div>
 
