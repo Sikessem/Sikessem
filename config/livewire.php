@@ -155,4 +155,8 @@ return [
 
     'render_on_redirect' => false,
 
+    'navigate' => [
+        'show_progress_bar' => true,
+        'progress_bar_color' => '#0078ff',
+    ],
 ];
