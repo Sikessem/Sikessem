@@ -15,16 +15,18 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
+
 // use WendellAdriel\Lift\Lift;
 
 class User extends Authenticatable // implements MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;
-    use HasProfilePhoto;
     use HasPermissions;
+    use HasProfilePhoto;
     use HasRoles;
     use HasTeams;
+
     // use Lift;
     use Notifiable;
     use TwoFactorAuthenticatable;
