@@ -29,20 +29,29 @@ document.addEventListener('mousemove', (e) => {
   }
 
   orbs.forEach((orb) => {
-    const distance = getDistance(orb, mouseX, mouseY);
-    const brightness = getBrightness(
-      distance,
+    const brightness = getDistanceBrightness(
+      orb,
+      mouseX,
+      mouseY,
       Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2) / 2,
     );
     orb.style.filter = `blur(${40 - brightness * 20}px) brightness(${1 + brightness})`;
   });
 
   particles.forEach((particle) => {
-    const distance = getDistance(particle.element, mouseX, mouseY);
-    const brightness = getBrightness(distance);
+    const brightness = getDistanceBrightness(particle.element, mouseX, mouseY);
     particle.element.style.boxShadow = `0 0 ${brightness * 10}px ${brightness * 5}px rgba(255, 255, 255, ${brightness})`;
   });
 });
+
+function getDistanceBrightness(
+  element: HTMLElement,
+  x: number,
+  y: number,
+  maxDistance = 200,
+): number {
+  return getBrightness(getDistance(element, x, y), maxDistance);
+}
 
 function getBrightness(distance: number, maxDistance = 200): number {
   return Math.max(0, 1 - distance / maxDistance);
