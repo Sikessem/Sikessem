@@ -29,12 +29,7 @@ document.addEventListener('mousemove', (e) => {
   }
 
   orbs.forEach((orb) => {
-    const rect = orb.getBoundingClientRect();
-    const orbCenterX = rect.left + rect.width / 2;
-    const orbCenterY = rect.top + rect.height / 2;
-    const distance = Math.sqrt(
-      (mouseX - orbCenterX) ** 2 + (mouseY - orbCenterY) ** 2,
-    );
+    const distance = getDistance(orb, mouseX, mouseY);
     const maxDistance =
       Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2) / 2;
     const brightness = Math.max(0, 1 - distance / maxDistance);
@@ -42,17 +37,21 @@ document.addEventListener('mousemove', (e) => {
   });
 
   particles.forEach((particle) => {
-    const rect = particle.element.getBoundingClientRect();
-    const particleCenterX = rect.left + rect.width / 2;
-    const particleCenterY = rect.top + rect.height / 2;
-    const distance = Math.sqrt(
-      (mouseX - particleCenterX) ** 2 + (mouseY - particleCenterY) ** 2,
-    );
+    const distance = getDistance(particle.element, mouseX, mouseY);
     const maxDistance = 200;
     const brightness = Math.max(0, 1 - distance / maxDistance);
     particle.element.style.boxShadow = `0 0 ${brightness * 10}px ${brightness * 5}px rgba(255, 255, 255, ${brightness})`;
   });
 });
+
+function getDistance(element: HTMLElement, x: number, y: number) {
+    const rect = element.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    return Math.sqrt(
+      (x - centerX) ** 2 + (y - centerY) ** 2,
+    );
+}
 
 const title = document.querySelector('.title');
 if (title) {
