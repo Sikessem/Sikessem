@@ -266,7 +266,7 @@
       }
     }
 
-    &.primary, &.secondary {
+    &.primary, &.secondary, &.tertiary {
       color: var(--bg-color);
 
       &:hover {
@@ -307,6 +307,20 @@
 
         &:hover {
           background-color: var(--secondary-color);
+        }
+      }
+    }
+
+    &.tertiary {
+      border-color: var(--tertiary-color);
+      background-color: var(--tertiary-color);
+
+      &.outline {
+        color: var(--tertiary-color);
+        border-color: var(--tertiary-color);
+
+        &:hover {
+          background-color: var(--tertiary-color);
         }
       }
     }
