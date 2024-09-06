@@ -1,4 +1,6 @@
-const loaded = () => {
+import { onLoaded } from '@/utils';
+
+onLoaded(() => {
   let preloader = document.getElementById('preloader');
   if (!preloader) {
     preloader = document.createElement('div');
@@ -23,10 +25,7 @@ const loaded = () => {
       remove(preloader);
     });
   }
-};
-
-document.addEventListener('DOMContentLoaded', loaded);
-document.addEventListener('livewire:navigated', loaded);
+});
 
 function remove(element: HTMLElement): void {
   if (!element) {

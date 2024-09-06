@@ -17,3 +17,8 @@ function getDistance(element: HTMLElement, x: number, y: number): number {
   const centerY = rect.top + rect.height / 2;
   return Math.sqrt((x - centerX) ** 2 + (y - centerY) ** 2);
 }
+
+export function onLoaded(loaded: (e?: Event) => void): void {
+  document.addEventListener('DOMContentLoaded', loaded);
+  document.addEventListener('livewire:navigated', loaded);
+}
