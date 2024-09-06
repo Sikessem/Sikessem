@@ -27,13 +27,13 @@
         </div>
         @if (Route::has('password.request'))
         <div class="forgot-password">
-            <a href="{{ route('password.request') }}">Mot de passe oublié ?</a>
+            <a href="{{ route('password.request') }}" wire:navigate>Mot de passe oublié ?</a>
         </div>
         @endif
 
         @if (Route::has('register'))
         <div class="register-link">
-            Pas encore de compte ? <a href="{{ route('register') }}">S'inscrire</a>
+            Pas encore de compte ? <a href="{{ route('register') }}" wire:navigate.hover>S'inscrire</a>
         </div>
         @endif
     </form>

@@ -1,3 +1,3 @@
-<a href="{{ route('home') }}" title="{{ config('app.title') }}" class="logo">
+<a href="{{ route('home') }}" wire:navigate.hover title="{{ config('app.title') }}" class="logo">
     <x-application-logo {{ $attributes }}/>
 </a>

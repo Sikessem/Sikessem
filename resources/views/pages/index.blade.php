@@ -8,8 +8,8 @@ name('home');
         <nav class="navbar">
             <x-application-brand height="40" />
             <div class="buttons">
-                <a href="{{ route('login') }}" class="button secondary outline">Connexion</a>
-                <a href="{{ route('register') }}" class="button primary">Inscription</a>
+                <a href="{{ route('login') }}" wire:navigate class="button secondary outline">Connexion</a>
+                <a href="{{ route('register') }}" wire:navigate class="button primary">Inscription</a>
             </div>
         </nav>
     </header>
@@ -23,7 +23,7 @@ name('home');
             <div class="hero-content container">
                 <h1 class="title">La Plateforme Numérique de Nouvelle Génération</h1>
                 <p class="tagline">Réalisez l'impossible avec {{ config('app.title') }} : <b>Donnez vie à vos rêves !</b></p>
-                <a href="{{ route('auth') }}" class="cta button lg">Démarrer l'aventure maintenant</a>
+                <a href="{{ route('auth') }}" wire:navigate.hover class="cta button lg">Démarrer l'aventure maintenant</a>
             </div>
         </section>
     </main>
