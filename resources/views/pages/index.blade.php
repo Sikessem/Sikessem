@@ -21,8 +21,8 @@ name('home');
                 <div class="orb orb-main"></div>
             </div>
             <div class="hero-content container">
-                <h1>La Plateforme Numérique de Nouvelle Génération</h1>
-                <p>Réalisez l'impossible avec {{ config('app.title') }} : <b>Donnez vie à vos rêves !</b></p>
+                <h1 class="title">La Plateforme Numérique de Nouvelle Génération</h1>
+                <p class="tagline">Réalisez l'impossible avec {{ config('app.title') }} : <b>Donnez vie à vos rêves !</b></p>
                 <a href="{{ route('auth') }}" class="cta button outline">Démarrer l'aventure maintenant</a>
             </div>
         </section>

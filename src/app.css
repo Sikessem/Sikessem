@@ -100,25 +100,6 @@
       padding: 2rem;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--tertiary-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
-      animation: titleGlow 3s ease-in-out infinite alternate;
-    }
-
-    .hero p {
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 2rem;
-      opacity: 0.8;
-    }
-
     .auth-form {
       margin-top: 30px;
       display: flex;
@@ -224,6 +205,25 @@
     transform-origin: top;
     animation: gridMove 20s linear infinite;
   }
+
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+  }    
 
   .button {
     display: inline-block;
