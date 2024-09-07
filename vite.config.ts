@@ -16,7 +16,6 @@ export default vite(
         input: mergeInput(laravelConfig.input, [
           'src/app.css',
           'src/app.ts',
-          'src/auth.css',
           'src/auth.js',
           'src/preloader.ts',
           'src/preloader.css',
