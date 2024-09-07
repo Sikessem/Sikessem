@@ -36,6 +36,7 @@
     color: var(--color);
     border-color: var(--color);
     background-color: var(--color);
+    font-size: 1rem;
 
     &:hover {
       transform: translateY(-3px);
@@ -109,6 +110,33 @@
     }
   }
 
+  a, .link {
+    --color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--color);
+    text-decoration-color: var(--color);
+    font-weight: 500;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+
+    &:hover {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+
+    &.primary {
+      --color: var(--primary-color);
+    }
+
+    &.secondary {
+      --color: var(--secondary-color);
+    }
+
+    &.tertiary {
+      --color: var(--tertiary-color);
+    }
+  }
+
   h1 {
     text-align: center;
     margin-bottom: 30px;
@@ -174,36 +202,9 @@
     background-color: var(--primary-color);
   }
 
-  button {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: var(--text-color);
-    border: none;
-    padding: 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(120, 120, 255, 0.4);
-  }
-
   .links {
     margin-top: 20px;
     text-align: center;
-  }
-
-  .links a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    margin: 0 10px;
-  }
-
-  .links a:hover {
-    text-decoration: underline;
   }
 
   .button-group {
@@ -225,17 +226,6 @@
   .register-link, .forgot-password {
     text-align: center;
     margin-top: 20px;
-  }
-
-  .auth-content a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  .auth-content a:hover {
-    color: var(--primary-color);
   }
 
   .step-indicator {
@@ -339,21 +329,6 @@
   .login-link {
     text-align: center;
     margin-top: 20px;
-  }
-
-  .login-link a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  .login-link a:hover {
-    color: var(--primary-color);
-  }
-
-  .hidden {
-    display: none;
   }
 
   .container, .navbar {
