@@ -85,12 +85,12 @@
     &.cta {
       --shadow: rgba(127, 255, 255, 0.6);
       font-weight: 600;
-      background-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      background-image: var(--gradient-primary);
 
       &:hover {
         color: var(--text-color);
         border-color: var(--text-color);
-        background-image: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        background-image: var(--gradient-secondary);
       }
 
       &.outline {

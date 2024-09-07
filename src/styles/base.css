@@ -7,6 +7,8 @@
     --secondary-color: #32e0c4;
     --tertiary-color: #ff6b6b;
     --bg-color: #0a0a1a;
+    --gradient-primary: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     --text-color: #ffffff;
     --card-color: rgba(255, 255, 255, 0.05);
     --step-inactive: #2a2a3a;
