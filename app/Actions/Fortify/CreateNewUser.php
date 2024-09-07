@@ -38,7 +38,7 @@ class CreateNewUser implements CreatesNewUsers
             return tap(User::create([
                 'firstname' => $input['firstname'],
                 'lastname' => $input['lastname'] ?? null,
-                'birthdate' => $input['birthdate'],
+                'birthdate' => $input['birthdate'] ?? null,
                 'gender' => $input['gender'] ?? null,
                 'location' => $input['location'] ?? null,
                 'bio' => $input['bio'] ?? null,
