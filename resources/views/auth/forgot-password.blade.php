@@ -2,7 +2,7 @@
     <form method="POST" action="{{ route('password.email') }}">
         @csrf
 
-        <div class="input-group block">
+        <div class="field block">
             <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-label for="email" value="{{ __('Email') }}" />
         </div>

@@ -1,7 +1,7 @@
 <x-auth-layout title="Rejoignez-nous">
     <form action="{{ route('auth') }}" id="auth-form" method="POST">
         @csrf
-        <div class="input-group">
+        <div class="field">
             <input type="email" id="email" name="email" required>
             <label for="email">Adresse email</label>
         </div>

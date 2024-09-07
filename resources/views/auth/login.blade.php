@@ -2,12 +2,12 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        <div class="input-group">
+        <div class="field">
             <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-label for="email" value="{{ __('Email') }}" />
         </div>
 
-        <div class="input-group mt-4">
+        <div class="field mt-4">
             <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
             <x-label for="password" value="{{ __('Password') }}" />
         </div>

@@ -11,12 +11,12 @@
         <form method="POST" action="{{ route('two-factor.login') }}">
             @csrf
 
-            <div class="input-group mt-4" x-show="! recovery">
+            <div class="field mt-4" x-show="! recovery">
                 <x-input id="code" class="block mt-1 w-full" type="text" inputmode="numeric" name="code" autofocus x-ref="code" autocomplete="one-time-code" />
                 <x-label for="code" value="{{ __('Code') }}" />
             </div>
 
-            <div class="input-group mt-4" x-cloak x-show="recovery">
+            <div class="field mt-4" x-cloak x-show="recovery">
                 <x-input id="recovery_code" class="block mt-1 w-full" type="text" name="recovery_code" x-ref="recovery_code" autocomplete="one-time-code" />
                 <x-label for="recovery_code" value="{{ __('Recovery Code') }}" />
             </div>
