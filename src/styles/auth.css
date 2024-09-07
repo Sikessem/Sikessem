@@ -3,6 +3,10 @@
     &#app {
       @apply flex items-center justify-center;
     }
+
+    h1 {
+      @apply flex flex-col items-center justify-center text-center gap-4 mb-12 text-4xl;
+    }
   }
 
   .auth-card {

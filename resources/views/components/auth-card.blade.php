@@ -4,7 +4,7 @@
 
 <div class="auth-card">
     <div class="auth-wrapper">
-        <h1 class="flex flex-col">
+        <h1>
             <a href="/" wire:navigate.hover>
                 <x-application-mark width="48" height="48" />
             </a>
