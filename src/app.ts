@@ -4,7 +4,7 @@ import { createOrbs } from '@/orbs';
 import { Particle } from '@/particle';
 import { getDistanceBrightness } from '@/utils';
 
-import.meta.glob(['./assets/*']);
+import.meta.glob(['./images/*']);
 
 const orbContainer = document.querySelector('.orb-container');
 const mainOrb = document.querySelector('.orb-main');
