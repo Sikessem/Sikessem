@@ -27,7 +27,7 @@ class CreateNewUser implements CreatesNewUsers
             'birthdate' => ['nullable', 'date'],
             'gender' => ['nullable', 'string', 'in:male,female'],
             'location' => ['nullable', 'string', 'min:3', 'max:255'],
-            'resume' => ['nullable', 'string', 'min:1', 'max:1024'],
+            'bio' => ['nullable', 'string', 'min:1', 'max:1024'],
             'username' => ['required', 'string', 'min:5', 'max:255', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
@@ -37,12 +37,12 @@ class CreateNewUser implements CreatesNewUsers
         return DB::transaction(function () use ($input) {
             return tap(User::create([
                 'firstname' => $input['firstname'],
-                'lastname' => $input['lastname'],
+                'lastname' => $input['lastname'] ?? null,
                 'birthdate' => $input['birthdate'],
-                'gender' => $input['gender'],
-                'location' => $input['location'],
-                'resume' => $input['resume'],
-                'username' => $input['username'],
+                'gender' => $input['gender'] ?? null,
+                'location' => $input['location'] ?? null,
+                'resume' => $input['bio'] ?? null,
+                'username' => $input['username'] ?? null,
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
             ]), function (User $user) {
