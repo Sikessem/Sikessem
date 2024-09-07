@@ -75,21 +75,6 @@
       }
     }
 
-    &.primary {
-      --color: var(--primary-color);
-      --shadow: rgba(127, 127, 255, 0.6);
-    }
-
-    &.secondary {
-      --color: var(--secondary-color);
-      --shadow: rgba(127, 255, 127, 0.6);
-    }
-
-    &.tertiary {
-      --color: var(--tertiary-color);
-      --shadow: rgba(255, 127, 127, 0.6);
-    }
-
     &.cta {
       --shadow: rgba(127, 255, 255, 0.6);
       font-weight: 600;
@@ -122,18 +107,6 @@
     &:hover {
       color: var(--primary-color);
       text-decoration: underline;
-    }
-
-    &.primary {
-      --color: var(--primary-color);
-    }
-
-    &.secondary {
-      --color: var(--secondary-color);
-    }
-
-    &.tertiary {
-      --color: var(--tertiary-color);
     }
   }
 

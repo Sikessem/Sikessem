@@ -1,0 +1,16 @@
+@layer utilities {
+    .primary {
+      --color: var(--primary-color);
+      --shadow: rgba(127, 127, 255, 0.6);
+    }
+
+    .secondary {
+      --color: var(--secondary-color);
+      --shadow: rgba(127, 255, 127, 0.6);
+    }
+
+    .tertiary {
+      --color: var(--tertiary-color);
+      --shadow: rgba(255, 127, 127, 0.6);
+    }
+}
