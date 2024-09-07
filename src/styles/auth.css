@@ -12,49 +12,49 @@
     transform-style: preserve-3d;
     will-change: transform;
     background-color: var(--bg-color);
+
+    &::before, &::after {
+      --angle: 0deg;
+      content: '';
+      position: absolute;
+      z-index: -10;
+      height: 100%;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--primary-color);
+      background-image: conic-gradient(from var(--angle), transparent, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+      border-radius: 10px;
+      pointer-events: none;
+      padding: 4px;
+      animation: spin 3s linear infinite;
+      will-change: transform;
+    }
+
+    &::before {
+      filter: blur(.5rem);
+      backdrop-filter: blur(.5rem);
+      opacity: 0.5;
+    }
   }
 
   .auth-wrapper {
     background-color: var(--bg-color);
     padding: 40px;
     border-radius: 9px;
-  }
 
-  .auth-card::before, .auth-card::after {
-    --angle: 0deg;
-    content: '';
-    position: absolute;
-    z-index: -10;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--primary-color);
-    background-image: conic-gradient(from var(--angle), transparent, var(--primary-color), var(--secondary-color), var(--tertiary-color));
-    border-radius: 10px;
-    pointer-events: none;
-    padding: 4px;
-    animation: spin 3s linear infinite;
-    will-change: transform;
-  }
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-color: var(--card-color);
+    }
 
-  .auth-card::before {
-    filter: blur(.5rem);
-    backdrop-filter: blur(.5rem);
-    opacity: 0.5;
-  }
-
-  .auth-wrapper::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background-color: var(--card-color);
-  }
-
-  .auth-wrapper > * {
-    position: relative;
-    z-index: 10;
+    & > * {
+      position: relative;
+      z-index: 10;
+    }
   }
 }
