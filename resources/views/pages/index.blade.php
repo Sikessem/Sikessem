@@ -3,7 +3,7 @@ use function Laravel\Folio\name;
 
 name('home');
 ?>
-<x-app-layout id="home" title="Welcome">
+<x-app-layout class="home" title="Welcome">
     <header class="app-header">
         <nav class="navbar">
             <x-application-brand height="40" />

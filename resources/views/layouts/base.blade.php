@@ -19,9 +19,9 @@
         @vite($assets)
         @yield('head')
     </head>
-    <body {{ $attributes->class('font-sans antialiased text-black dark:text-white bg-indigo-50 dark:bg-indigo-950 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950') }}>
+    <body>
         <div id="preloader"></div>
-        <div id="app">
+        <div id="app" {{ $attributes }}>
         {!! $slot !!}
         </div>
         @livewireScriptConfig
