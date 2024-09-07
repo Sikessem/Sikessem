@@ -272,26 +272,10 @@
     box-shadow: 0 0 0 2px var(--primary-color);
   }
 
-  button {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: var(--text-color);
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(120, 120, 255, 0.4);
-  }
-
   .buttons {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 10px;
   }
 
@@ -316,11 +300,5 @@
     font-size: 2rem;
     font-weight: 700;
     color: var(--primary-color);
-  }
-
-  .buttons {
-    display: flex;
-    align-items: center;
-    gap: 20px;
   }
 }
