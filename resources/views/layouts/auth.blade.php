@@ -2,7 +2,7 @@
     'title' => __('Authentication')
 ])
 
-<x-base-layout :$title :assets="['src/app.css', 'src/auth.js']" {{ $attributes }}>
+<x-app-layout :$title :assets="['src/app.css', 'src/auth.js']" {{ $attributes }}>
     <div class="particles"></div>
     <div class="grid"></div>
 
@@ -22,4 +22,4 @@
     <x-authentication-card :$title>
         {!! $slot !!}
     </x-authentication-card>
-</x-base-layout>
+</x-app-layout>
