@@ -8,7 +8,7 @@
         <button type="submit">Rejoindre</button>
     </form>
     <div class="links">
-        <a href="{{ route('login') }}" class="login-link">Se connecter</a>
-        <a href="{{ route('register') }}" class="register-link">S'inscrire</a>
+        <a href="{{ route('login') }}" class="secondary">Se connecter</a>
+        <a href="{{ route('register') }}" class="secondary">S'inscrire</a>
     </div>
 </x-auth-layout>

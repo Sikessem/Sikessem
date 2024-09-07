@@ -30,7 +30,7 @@
             </div>
             <div class="buttons button-group">
                 @if (Route::has('login'))
-                <a wire:navigate.hover class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
+                <a wire:navigate.hover class="secondary" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
                 @endif
@@ -94,8 +94,8 @@
 
                     <div class="ms-2">
                         {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" wire:navigate class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">'.__('Terms of Service').'</a>',
-                                'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" wire:navigate class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">'.__('Privacy Policy').'</a>',
+                                'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" wire:navigate class="secondary">'.__('Terms of Service').'</a>',
+                                'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" wire:navigate class="secondary">'.__('Privacy Policy').'</a>',
                         ]) !!}
                     </div>
                 </div>
