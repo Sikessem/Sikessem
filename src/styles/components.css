@@ -18,7 +18,7 @@
     opacity: 0.8;
   }
 
-  .button {
+  button, .button {
     --color: var(--bg-color);
     --shadow: rgba(127, 127, 127, 0.6);
     display: inline-block;
