@@ -14,6 +14,20 @@
     --step-inactive: #2a2a3a;
     --step-active: var(--primary-color);
     --step-complete: var(--secondary-color);
+
+    .dash {
+      --primary-color: #6C5CE7;
+      --secondary-color: #00CEC9;
+      --accent-color: #FD79A8;
+      --background-color: #1E272E;
+      --card-bg: #2C3A47;
+      --text-color: #D1D8E0;
+      --text-muted: #A4B0BE;
+      --sidebar-width: 280px;
+      --sidebar-collapsed-width: 80px;
+      --header-height: 80px;
+      --transition-duration: 0.3s;
+    }
   }
 
   html {

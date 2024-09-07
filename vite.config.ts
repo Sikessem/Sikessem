@@ -17,6 +17,7 @@ export default vite(
           'src/app.css',
           'src/app.ts',
           'src/auth.js',
+          'src/dash.js',
           'src/preloader.ts',
         ]),
       }),
