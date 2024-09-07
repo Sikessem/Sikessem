@@ -1,4 +1,10 @@
 @layer components {
+  .auth {
+    &#app {
+      @apply flex items-center justify-center;
+    }
+  }
+
   .auth-card {
     position: relative;
     z-index: 1;
