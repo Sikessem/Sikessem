@@ -34,40 +34,40 @@
                     {{ __('Already registered?') }}
                 </a>
                 @endif
-                <button type="button" id="nextStep1">Suivant</button>
+                <x-button type="button" id="nextStep1">Suivant</x-button>
             </div>
         </div>
 
         <div id="step2Form" class="hidden">
             <div class="field">
-                <label for="firstName">Prénom</label>
-                <input type="text" id="firstName" name="firstName" required>
+                <x-input type="text" id="firstName" name="firstName" required />
+                <x-label for="firstName">Prénom</x-label>
             </div>
             <div class="field">
-                <label for="lastName">Nom</label>
-                <input type="text" id="lastName" name="lastName" required>
+                <x-input type="text" id="lastName" name="lastName" required />
+                <x-label for="lastName">Nom</x-label>
             </div>
             <div class="field">
-                <label for="birthDate">Date de naissance</label>
-                <input type="date" id="birthDate" name="birthDate" required>
+                <x-input type="date" id="birthDate" name="birthDate" required />
+                <x-label for="birthDate">Date de naissance</x-label>
             </div>
             <div class="group">
-                <button type="button" id="prevStep2">Précédent</button>
-                <button type="button" id="nextStep2">Suivant</button>
+                <x-button type="button" id="prevStep2">Précédent</x-button>
+                <x-button type="button" id="nextStep2">Suivant</x-button>
             </div>
         </div>
 
         <div id="step3Form" class="hidden">
             <div class="field">
-                <label for="username">Nom d'utilisateur</label>
-                <input type="text" id="username" name="username" required>
+                <x-label for="username">Nom d'utilisateur</x-label>
+                <x-input type="text" id="username" name="username" required />
             </div>
             <div class="field">
-                <label for="bio">Biographie</label>
+                <x-label for="bio">Biographie</x-label>
                 <textarea id="bio" name="bio" rows="3"></textarea>
             </div>
             <div class="field">
-                <label for="interests">Centres d'intérêt</label>
+                <x-label for="interests">Centres d'intérêt</x-label>
                 <select id="interests" name="interests" multiple>
                     <option value="tech">Technologie</option>
                     <option value="design">Design</option>
@@ -76,13 +76,11 @@
                 </select>
             </div>
             <div class="group">
-                <button type="button" id="prevStep3">Précédent</button>
+                <x-button type="button" id="prevStep3">Précédent</x-button>
 
-                <div class="group">
-                    <x-button class="ms-4">
-                        {{ __('Register') }}
-                    </x-button>
-                </div>
+                <x-button type="submit">
+                    {{ __('Register') }}
+                </x-button>
             </div>
         </div>
 
