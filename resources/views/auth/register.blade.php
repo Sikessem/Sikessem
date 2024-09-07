@@ -39,15 +39,15 @@
         </div>
 
         <div id="step2Form" class="hidden">
-            <div class="form-group">
+            <div class="field">
                 <label for="firstName">Prénom</label>
                 <input type="text" id="firstName" name="firstName" required>
             </div>
-            <div class="form-group">
+            <div class="field">
                 <label for="lastName">Nom</label>
                 <input type="text" id="lastName" name="lastName" required>
             </div>
-            <div class="form-group">
+            <div class="field">
                 <label for="birthDate">Date de naissance</label>
                 <input type="date" id="birthDate" name="birthDate" required>
             </div>
@@ -58,15 +58,15 @@
         </div>
 
         <div id="step3Form" class="hidden">
-            <div class="form-group">
+            <div class="field">
                 <label for="username">Nom d'utilisateur</label>
                 <input type="text" id="username" name="username" required>
             </div>
-            <div class="form-group">
+            <div class="field">
                 <label for="bio">Biographie</label>
                 <textarea id="bio" name="bio" rows="3"></textarea>
             </div>
-            <div class="form-group">
+            <div class="field">
                 <label for="interests">Centres d'intérêt</label>
                 <select id="interests" name="interests" multiple>
                     <option value="tech">Technologie</option>
