@@ -56,7 +56,7 @@
     .app-name {
       font-size: 20px;
       font-weight: 600;
-      color: #fff;
+      color: var(--text-color);
       opacity: 1;
       transition: opacity var(--transition-duration) ease;
     }
