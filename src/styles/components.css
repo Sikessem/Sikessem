@@ -118,23 +118,20 @@
   }
 
   form, .form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    @apply flex flex-col gap-4;
+  }
+
+  input, label, select, button, .input, .label, .select, .button {
+    @apply inline-flex text-base;
   }
 
   label, .label {
-    margin-bottom: 5px;
-    font-weight: 500;
+    @apply font-bold;
   }
 
   input, .input, select, .select {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
+    @apply border-none p-12 rounded-lg;
     color: var(--text-color);
-    font-size: 1rem;
     transition: all 0.3s ease;
 
     &:focus {
@@ -198,11 +195,6 @@
       font-weight: bold;
       background-color: var(--primary-color);
     }
-  }
-
-  .links {
-    margin-top: 20px;
-    text-align: center;
   }
 
   .group {
