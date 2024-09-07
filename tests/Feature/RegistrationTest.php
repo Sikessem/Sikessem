@@ -30,6 +30,7 @@ test('new users can register', function () {
         'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature(),
     ]);
 
+    $response->assertStatus(302);
     $this->assertAuthenticated();
     $response->assertRedirect(route('dashboard', absolute: false));
 })->skip(function () {
