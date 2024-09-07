@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('birthdate')->nullable();
             $table->enum('gender', ['male', 'female'])->nullable();
             $table->string('photo_path', 2048)->nullable();
-            $table->text('resume')->nullable();
+            $table->text('bio')->nullable();
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
