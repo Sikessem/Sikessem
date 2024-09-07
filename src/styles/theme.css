@@ -48,7 +48,7 @@
     }
   }
 
-  @keyframes spin {
+  @keyframes angleSpin {
     from {
       --angle: 0deg;
     }

@@ -38,7 +38,7 @@
       border-radius: 10px;
       pointer-events: none;
       padding: 4px;
-      animation: spin 3s linear infinite;
+      animation: angleSpin 3s linear infinite;
       will-change: transform;
     }
 
