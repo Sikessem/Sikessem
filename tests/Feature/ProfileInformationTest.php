@@ -26,6 +26,10 @@ test('profile information can be updated', function () {
         ->set('state', ['firstname' => 'Test Name', 'email' => 'test@example.com'])
         ->call('updateProfileInformation');
 
+    expect($testProfile->get('state'))
+        ->firstname->toEqual('Test Name')
+        ->email->toEqual('test@example.com');
+
     expect($user->fresh())
         ->firstname->toEqual('Test Name')
         ->email->toEqual('test@example.com');
