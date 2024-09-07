@@ -19,9 +19,8 @@
         @vite($assets)
         @yield('head')
     </head>
-    <body>
+    <body {{ $attributes }}>
         <div id="preloader"></div>
-        <div id="app" {{ $attributes }}>
         {!! $slot !!}
         </div>
         @livewireScriptConfig
