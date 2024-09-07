@@ -16,11 +16,11 @@ setInterval(animateOrbs, 3000);
 document.addEventListener('mousemove', (e) => {
   const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
   const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-  document.querySelector('.auth-container').style.transform =
+  document.querySelector('.auth-card').style.transform =
     `translate(${moveX}px, ${moveY}px)`;
 });
 
-document.querySelector('.auth-container').style.transform = 'translate(0, 0)';
+document.querySelector('.auth-card').style.transform = 'translate(0, 0)';
 
 document.addEventListener('DOMContentLoaded', (event) => {
   const form = document.getElementById('registerForm');
