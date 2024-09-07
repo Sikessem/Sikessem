@@ -11,8 +11,6 @@
         <div id="orb2" class="orb"></div>
     </div>
 
-    <x-validation-errors class="mb-4" />
-
     @session('status')
         <div class="mb-4 font-medium text-sm text-green-600 dark:text-green-400">
             {{ $value }}

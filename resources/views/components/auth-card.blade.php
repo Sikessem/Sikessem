@@ -12,6 +12,9 @@
                 {{ $title }}
             </span>
         </h1>
+
+        <x-validation-errors class="mb-4" />
+
         {!! $slot !!}
     </div>
 </div>
