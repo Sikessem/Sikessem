@@ -2,6 +2,7 @@
   :root {
     --font-family-rajdhani: 'Rajdhani', var(--font-family-sans);
     --font-family-figtree: 'Figtree Variable', var(--font-family-sans);
+    --color: #0078ff;
     --primary-color: #7878ff;
     --secondary-color: #32e0c4;
     --tertiary-color: #ff6b6b;
