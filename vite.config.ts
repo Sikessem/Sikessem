@@ -18,7 +18,6 @@ export default vite(
           'src/app.ts',
           'src/auth.js',
           'src/preloader.ts',
-          'src/preloader.css',
         ]),
       }),
       tailwind(),

@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import '@/styles/preloader';
 @import '@/styles/rajdhani.css';
 @import '@/styles/particle.css';
 @import '@/styles/theme';
