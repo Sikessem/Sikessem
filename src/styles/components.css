@@ -18,7 +18,7 @@
     opacity: 0.8;
   }
 
-  button, .button {
+  button:not(.link), .button {
     --color: var(--bg-color);
     --shadow: rgba(127, 127, 127, 0.6);
     display: inline-block;
@@ -95,7 +95,7 @@
     }
   }
 
-  a, .link {
+  a:not(.button), .link {
     --color: var(--text-color);
     text-decoration: none;
     cursor: pointer;
