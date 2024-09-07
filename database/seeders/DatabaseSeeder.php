@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'firstname' => 'Kessé Emmanuel',
             'lastname' => 'Sigui',
             'gender' => 'male',
+            'bio' => 'Senior Full-stack Web Developer',
             'username' => 'siguici',
             'email' => 'siguici@proton.me',
         ])->has('location');
