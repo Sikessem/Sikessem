@@ -8,12 +8,12 @@
       <div class="sidebar-toggle" id="sidebarToggle">←</div>
     </div>
     <nav class="sidebar-menu">
-      <a href="#" class="active"><span class="menu-icon">📊</span><span class="menu-text">Vue d'ensemble</span></a>
-      <a href="#applications"><span class="menu-icon">🖥️</span><span class="menu-text">Applications</span></a>
-      <a href="#databases"><span class="menu-icon">🗄️</span><span class="menu-text">Bases de données</span></a>
-      <a href="#monitoring"><span class="menu-icon">📈</span><span class="menu-text">Monitoring</span></a>
-      <a href="#logs"><span class="menu-icon">📝</span><span class="menu-text">Logs</span></a>
-      <a href="#settings"><span class="menu-icon">⚙️</span><span class="menu-text">Paramètres</span></a>
+      <a href="{{ route('dashboard') }}#" class="active"><span class="menu-icon">📊</span><span class="menu-text">Vue d'ensemble</span></a>
+      <a href="{{ route('dashboard') }}#applications"><span class="menu-icon">🖥️</span><span class="menu-text">Applications</span></a>
+      <a href="{{ route('dashboard') }}#databases"><span class="menu-icon">🗄️</span><span class="menu-text">Bases de données</span></a>
+      <a href="{{ route('dashboard') }}#monitoring"><span class="menu-icon">📈</span><span class="menu-text">Monitoring</span></a>
+      <a href="{{ route('dashboard') }}#logs"><span class="menu-icon">📝</span><span class="menu-text">Logs</span></a>
+      <a href="{{ route('dashboard') }}#settings"><span class="menu-icon">⚙️</span><span class="menu-text">Paramètres</span></a>
     </nav>
   </div>
 
