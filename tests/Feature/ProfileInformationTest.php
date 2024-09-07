@@ -16,7 +16,13 @@ test('current profile information is available', function () {
 test('profile information can be updated', function () {
     $this->actingAs($user = User::factory()->create());
 
-    Livewire::test(UpdateProfileInformationForm::class)
+    $testProfile = Livewire::test(UpdateProfileInformationForm::class);
+
+    expect($testProfile->get('state'))->toEqual(array_merge([
+        'email' => $user->email,
+    ], $user->withoutRelations()->toArray()));
+
+    $testProfile
         ->set('state', ['firstname' => 'Test Name', 'email' => 'test@example.com'])
         ->call('updateProfileInformation');
 
