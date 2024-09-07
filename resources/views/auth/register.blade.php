@@ -8,24 +8,19 @@
             <div class="step-connector"></div>
             <div class="step" id="step3">3</div>
         </div>
-        <div id="step1Form">        
+        <div id="step1Form">
             <div class="field">
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-                <x-label for="name" value="{{ __('Name') }}" />
-            </div>
-
-            <div class="field mt-4">
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                <x-input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
                 <x-label for="email" value="{{ __('Email') }}" />
             </div>
 
             <div class="field mt-4">
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <x-input id="password" type="password" name="password" required autocomplete="new-password" />
                 <x-label for="password" value="{{ __('Password') }}" />
             </div>
 
             <div class="field mt-4">
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" />
                 <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
             </div>
             <div class="group mt-4">
@@ -40,16 +35,16 @@
 
         <div id="step2Form" class="hidden">
             <div class="field">
-                <x-input type="text" id="firstName" name="firstName" required />
-                <x-label for="firstName">Prénom</x-label>
+                <x-input id="firstname" type="text" name="firtname" :value="old('firstname')" required autofocus autocomplete="name" />
+                <x-label for="firstname" value="{{ __('First Name') }}" />
             </div>
             <div class="field">
-                <x-input type="text" id="lastName" name="lastName" required />
-                <x-label for="lastName">Nom</x-label>
+                <x-input id="lastname" type="text" name="lastname" :value="old('lastname')" />
+                <x-label for="lastname" value="{{ __('Last Name') }}" />
             </div>
             <div class="field">
-                <x-input type="date" id="birthDate" name="birthDate" required />
-                <x-label for="birthDate">Date de naissance</x-label>
+                <x-input type="date" id="birthdate" name="birthdate" :value="old('birthdate')" required />
+                <x-label for="birthdate" value="{{ __('Birth Date') }}" />
             </div>
             <div class="group">
                 <x-button type="button" id="prevStep2">Précédent</x-button>
@@ -59,21 +54,12 @@
 
         <div id="step3Form" class="hidden">
             <div class="field">
-                <x-label for="username">Nom d'utilisateur</x-label>
-                <x-input type="text" id="username" name="username" required />
+                <x-input type="text" id="username" name="username" :value="old('username')" autofocus />
+                <x-label for="username" value="{{ __('Username') }}" />
             </div>
             <div class="field">
-                <x-label for="bio">Biographie</x-label>
-                <textarea id="bio" name="bio" rows="3"></textarea>
-            </div>
-            <div class="field">
-                <x-label for="interests">Centres d'intérêt</x-label>
-                <select id="interests" name="interests" multiple>
-                    <option value="tech">Technologie</option>
-                    <option value="design">Design</option>
-                    <option value="business">Business</option>
-                    <option value="marketing">Marketing</option>
-                </select>
+                <textarea id="bio" name="bio" rows="3">{{ old('bio') }}</textarea>
+                <x-label for="bio" value="{{ __('Bio') }}" />
             </div>
             <div class="group">
                 <x-button type="button" id="prevStep3">Précédent</x-button>
