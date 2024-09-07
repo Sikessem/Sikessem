@@ -27,6 +27,7 @@
       --sidebar-collapsed-width: 80px;
       --header-height: 80px;
       --transition-duration: 0.3s;
+      --box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 
       @media (prefers-color-scheme: light) {
         --primary-color: #4F46E5;
@@ -36,6 +37,7 @@
         --card-bg: #FFFFFF;
         --text-color: #1F2937;
         --text-muted: #6B7280;
+        --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       }
     }
   }

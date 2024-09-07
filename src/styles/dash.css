@@ -11,7 +11,7 @@
     .sidebar {
       width: var(--sidebar-width);
       background: linear-gradient(135deg, #6C5CE7, #4834D4);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--box-shadow);
       transition: all var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
       overflow-x: hidden;
       z-index: 1000;
