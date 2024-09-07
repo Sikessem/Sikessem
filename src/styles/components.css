@@ -121,7 +121,7 @@
     @apply flex flex-col gap-4;
   }
 
-  input, label, select, button, .input, .label, .select, .button {
+  input, label, select, button, textarea, .input, .label, .select, .button, .textarea {
     @apply inline-flex text-base;
   }
 
@@ -129,7 +129,7 @@
     @apply font-bold;
   }
 
-  input, .input, select, .select {
+  input, select, textarea, .input, .select, .textarea {
     @apply border-none p-12 rounded-lg;
     color: var(--text-color);
     transition: all 0.3s ease;
@@ -148,7 +148,7 @@
     position: relative;
     margin-bottom: 20px;
 
-    label {
+    label, .label {
       position: absolute;
       top: 50%;
       left: 10px;
@@ -166,7 +166,7 @@
       font-weight: 500;
     }
 
-    input {
+    input, textarea, .input, .textarea {
       width: 100%;
       padding: 12px;
       border: none;
@@ -176,24 +176,24 @@
       font-size: 1rem;
       color: var(--text-color);
       border-radius: 5px;
-    }
 
-    input:focus, input:valid {
-      border: none;
-      outline: none;
-      box-shadow: 0 0 0 2px var(--primary-color);
-    }
+      &:focus, &:valid {
+        border: none;
+        outline: none;
+        box-shadow: 0 0 0 2px var(--primary-color);
 
-    input:hover ~ label {
-      opacity: 1;
-    }
+        & ~ label {
+          top: -1px;
+          opacity: 1;
+          font-size: 0.875rem;
+          font-weight: bold;
+          background-color: var(--primary-color);
+        }
+      }
 
-    input:focus ~ label, input:valid ~ label {
-      top: -1px;
-      opacity: 1;
-      font-size: 0.875rem;
-      font-weight: bold;
-      background-color: var(--primary-color);
+      &:hover ~ label {
+        opacity: 1;
+      }
     }
   }
 
