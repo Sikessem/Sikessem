@@ -9,6 +9,12 @@
     --default-font-family: 'Rajdhani', var(--font-family-sans);
   }
 
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
   @keyframes titleGlow {
     0% {
       text-shadow: 0 0 10px rgba(120,120,255,0.5);

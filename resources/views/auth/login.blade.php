@@ -32,7 +32,7 @@
         @endif
 
         @if (Route::has('register'))
-        <div class="register-link">
+        <div class="inline-item">
             Pas encore de compte ? <a href="{{ route('register') }}" wire:navigate.hover>S'inscrire</a>
         </div>
         @endif

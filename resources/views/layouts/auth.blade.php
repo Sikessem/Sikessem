@@ -19,7 +19,7 @@
         </div>
     @endsession
 
-    <x-authentication-card :$title>
+    <x-auth-card :$title>
         {!! $slot !!}
-    </x-authentication-card>
+    </x-auth-card>
 </x-app-layout>

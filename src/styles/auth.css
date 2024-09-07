@@ -1,5 +1,5 @@
-@layer base {
-  .auth-container {
+@layer components {
+  .auth-card {
     position: relative;
     z-index: 1;
     padding: 1px;
@@ -14,19 +14,13 @@
     background-color: var(--bg-color);
   }
 
-  .auth-content {
+  .auth-wrapper {
     background-color: var(--bg-color);
     padding: 40px;
     border-radius: 9px;
   }
 
-  @property --angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-  }
-
-  .auth-container::before, .auth-container::after {
+  .auth-card::before, .auth-card::after {
     --angle: 0deg;
     content: '';
     position: absolute;
@@ -45,13 +39,13 @@
     will-change: transform;
   }
 
-  .auth-container::before {
+  .auth-card::before {
     filter: blur(.5rem);
     backdrop-filter: blur(.5rem);
     opacity: 0.5;
   }
 
-  .auth-content::before {
+  .auth-wrapper::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -59,9 +53,8 @@
     background-color: var(--card-color);
   }
 
-  .auth-content > * {
+  .auth-wrapper > * {
     position: relative;
     z-index: 10;
   }
-             
 }
