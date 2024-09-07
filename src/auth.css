@@ -1,0 +1,67 @@
+@layer base {
+  .auth-container {
+    position: relative;
+    z-index: 1;
+    padding: 1px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transform-style: preserve-3d;
+    will-change: transform;
+    background-color: var(--bg-color);
+  }
+
+  .auth-content {
+    background-color: var(--bg-color);
+    padding: 40px;
+    border-radius: 9px;
+  }
+
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  .auth-container::before, .auth-container::after {
+    --angle: 0deg;
+    content: '';
+    position: absolute;
+    z-index: -10;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-color);
+    background-image: conic-gradient(from var(--angle), transparent, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+    border-radius: 10px;
+    pointer-events: none;
+    padding: 4px;
+    animation: spin 3s linear infinite;
+    will-change: transform;
+  }
+
+  .auth-container::before {
+    filter: blur(.5rem);
+    backdrop-filter: blur(.5rem);
+    opacity: 0.5;
+  }
+
+  .auth-content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: var(--card-color);
+  }
+
+  .auth-content > * {
+    position: relative;
+    z-index: 10;
+  }
+             
+}

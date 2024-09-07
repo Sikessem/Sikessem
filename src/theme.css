@@ -1,0 +1,47 @@
+@layer theme {
+  @theme {
+    --default-font-family: 'Rajdhani', var(--font-family-sans);
+  }
+
+  @keyframes titleGlow {
+    0% {
+      text-shadow: 0 0 10px rgba(120,120,255,0.5);
+    }
+    100% {
+      text-shadow: 0 0 20px rgba(120,120,255,0.8), 0 0 30px rgba(50,224,196,0.6);
+    }
+  }
+
+  @keyframes gridMove {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 50px;
+    }
+  }
+
+  @keyframes orbFloat {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(5%, 5%);
+    }
+    50% {
+      transform: translate(-5%, 10%);
+    }
+    75% {
+      transform: translate(-10%, -5%);
+    }
+  }
+
+  @keyframes spin {
+    from {
+      --angle: 0deg;
+    }
+    to {
+      --angle: 360deg;
+    }
+  }
+}
