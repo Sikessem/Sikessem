@@ -35,7 +35,7 @@
 
         <div id="step2Form" class="hidden">
             <div class="field">
-                <x-input id="firstname" type="text" name="firtname" :value="old('firstname')" required autofocus autocomplete="name" />
+                <x-input id="firstname" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="name" />
                 <x-label for="firstname" value="{{ __('First Name') }}" />
             </div>
             <div class="field">
