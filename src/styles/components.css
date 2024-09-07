@@ -206,13 +206,10 @@
   }
 
   .group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.2rem;
+    @apply flex justify-between items-center gap-4;
 
     & > * {
-      flex: 1;
+      @apply flex-1;
     }
   }
 

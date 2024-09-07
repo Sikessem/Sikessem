@@ -13,14 +13,14 @@
         <form method="POST" action="{{ route('verification.send') }}">
             @csrf
 
-            <div>
+            <div class="group">
                 <x-button type="submit">
                     {{ __('Resend Verification Email') }}
                 </x-button>
             </div>
         </form>
 
-        <div>
+        <div class="group">
             <a
                 href="{{ route('profile.show') }}"
                 class="secondary"

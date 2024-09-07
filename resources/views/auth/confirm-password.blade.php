@@ -11,7 +11,7 @@
             <x-label for="password" value="{{ __('Password') }}" />
         </div>
 
-        <div class="flex justify-end mt-4">
+        <div class="group justify-end mt-4">
             <x-button class="ms-4">
                 {{ __('Confirm') }}
             </x-button>

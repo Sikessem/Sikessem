@@ -28,7 +28,7 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
                 <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
             </div>
-            <div class="buttons button-group">
+            <div class="group mt-4">
                 @if (Route::has('login'))
                 <a wire:navigate.hover class="secondary" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
@@ -51,7 +51,7 @@
                 <label for="birthDate">Date de naissance</label>
                 <input type="date" id="birthDate" name="birthDate" required>
             </div>
-            <div class="buttons">
+            <div class="group">
                 <button type="button" id="prevStep2">Précédent</button>
                 <button type="button" id="nextStep2">Suivant</button>
             </div>
@@ -75,10 +75,10 @@
                     <option value="marketing">Marketing</option>
                 </select>
             </div>
-            <div class="buttons">
+            <div class="group">
                 <button type="button" id="prevStep3">Précédent</button>
 
-                <div class="button-group">
+                <div class="group">
                     <x-button class="ms-4">
                         {{ __('Register') }}
                     </x-button>
@@ -89,7 +89,7 @@
         @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
         <div class="mt-4">
             <x-label for="terms">
-                <div class="flex items-center">
+                <div class="group">
                     <x-checkbox name="terms" id="terms" required />
 
                     <div class="ms-2">

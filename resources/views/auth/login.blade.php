@@ -13,9 +13,9 @@
         </div>
 
 
-        <div class="button-group">
+        <div class="flex justify-between items-center">
             <div class="block mt-4">
-                <label for="remember_me" class="remember-field">
+                <label for="remember_me" class="inline-flex">
                     <x-checkbox id="remember_me" name="remember" />
                     <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
                 </label>
@@ -26,14 +26,15 @@
             </x-button>
         </div>
         @if (Route::has('password.request'))
-        <div class="forgot-password">
+        <div class="flex justify-center">
             <a href="{{ route('password.request') }}" class="secondary" wire:navigate>Mot de passe oublié ?</a>
         </div>
         @endif
 
         @if (Route::has('register'))
-        <div class="inline-item">
-            Pas encore de compte ? <a href="{{ route('register') }}" class="secondary" wire:navigate.hover>S'inscrire</a>
+        <div class="inline-flex justify-center gap-2">
+            <span>Pas encore de compte ?</span>
+            <a href="{{ route('register') }}" class="secondary" wire:navigate.hover>S'inscrire</a>
         </div>
         @endif
     </form>

@@ -21,7 +21,7 @@
                 <x-label for="recovery_code" value="{{ __('Recovery Code') }}" />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="group mt-4">
                 <button type="button" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 underline cursor-pointer"
                                 x-show="! recovery"
                                 x-on:click="

@@ -7,7 +7,7 @@
         </div>
         <button type="submit">Rejoindre</button>
     </form>
-    <div class="links">
+    <div class="group">
         <a href="{{ route('login') }}" class="secondary">Se connecter</a>
         <a href="{{ route('register') }}" class="secondary">S'inscrire</a>
     </div>
