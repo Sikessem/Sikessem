@@ -13,7 +13,6 @@
       background: linear-gradient(135deg, #6C5CE7, #4834D4);
       box-shadow: var(--box-shadow);
       transition: all var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
-      overflow-x: hidden;
       z-index: 1000;
       display: flex;
       flex-direction: column;
@@ -68,15 +67,16 @@
 
     .sidebar-toggle {
       cursor: pointer;
-      font-size: 24px;
+      font-size: 25px;
+      font-weight: bolder;
       color: var(--text-color);
       position: absolute;
-      right: -15px;
+      right: -25px;
       top: 50%;
       transform: translateY(-50%);
       background-color: var(--primary-color);
-      width: 30px;
-      height: 30px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -90,7 +90,7 @@
     }
 
     .sidebar.collapsed .sidebar-toggle {
-      transform: translateY(-50%) rotate(180deg);
+      transform: translateY(-50%);
     }
 
     .sidebar-menu {
