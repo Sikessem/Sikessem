@@ -46,6 +46,8 @@ $user = auth()->user();
             </div>
         </header>
 
-        {!! $slot !!}
+        <main class="relative">
+            {!! $slot !!}
+        </main>
     </div>
 </x-app-layout>
