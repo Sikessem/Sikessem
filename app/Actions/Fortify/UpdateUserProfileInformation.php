@@ -18,13 +18,13 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     public function update(User $user, array $input): void
     {
         Validator::make($input, [
-            'firstname' => ['required', 'string', 'min:2', 'max:255', 'unique:users'],
+            'firstname' => ['nullable', 'string', 'min:2', 'max:255', 'unique:users'],
             'lastname' => ['nullable', 'string', 'min:2', 'max:255'],
             'birthdate' => ['nullable', 'date'],
             'gender' => ['nullable', 'string', 'in:male,female'],
             'bio' => ['nullable', 'string', 'min:1', 'max:1024'],
             'username' => ['nullable', 'string', 'min:5', 'max:255', Rule::unique('users')->ignore($user->id)],
-            'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
+            'email' => ['nullable', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:1024'],
         ])->validateWithBag('updateProfileInformation');
 
@@ -37,13 +37,13 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $this->updateVerifiedUser($user, $input);
         } else {
             $user->forceFill([
-                'firstname' => $input['firstname'],
-                'lastname' => $input['lastname'],
-                'birthdate' => $input['birthdate'],
-                'gender' => $input['gender'],
-                'bio' => $input['bio'],
-                'username' => $input['username'],
-                'email' => $input['email'],
+                'firstname' => $input['firstname'] ?? $user->firstname,
+                'lastname' => $input['lastname'] ?? $user->lastname ?: null,
+                'birthdate' => $input['birthdate'] ?? $user->birthdate ?: null,
+                'gender' => $input['gender'] ?? $user->gender ?: null,
+                'bio' => $input['bio'] ?? $user->bio ?: null,
+                'username' => $input['username'] ?? $user->username ?: null,
+                'email' => $input['email'] ?? $user->email,
             ])->save();
         }
     }
