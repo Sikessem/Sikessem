@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Upload;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
             'bio' => 'Senior Full-stack Web Developer',
             'username' => 'siguici',
             'email' => 'siguici@proton.me',
+            'profile_photo_path' => Upload::fromFile(__DIR__.DIRECTORY_SEPARATOR.'profile.jpeg')->toPath('profiles') ?: null,
         ])->has('location');
     }
 }
