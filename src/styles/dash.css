@@ -113,7 +113,6 @@
     .sidebar-menu a:hover, .sidebar-menu a:focus {
       background-color: var(--background-color);
       color: var(--primary-color);
-      transform: translateX(5px);
       outline: none;
     }
 
