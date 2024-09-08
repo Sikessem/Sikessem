@@ -279,17 +279,6 @@
       animation: dropdownFadeIn var(--transition-duration) ease forwards;
     }
 
-    @keyframes dropdownFadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
     .user-dropdown a {
       display: block;
       padding: 12px 20px;
