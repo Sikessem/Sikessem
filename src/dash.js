@@ -1,3 +1,5 @@
+import { onLoaded } from '@/utils';
+
 const sidebar = document.getElementById('sidebar');
 const sidebarToggle = document.getElementById('sidebarToggle');
 const menuToggle = document.getElementById('menuToggle');
@@ -61,7 +63,7 @@ document.addEventListener('click', (event) => {
 });
 
 // Animation d'entrée pour le dashboard
-window.addEventListener('load', () => {
+onLoaded(() => {
   dashboardGrid.classList.add('loaded');
   chartContainer.classList.add('loaded');
 });
