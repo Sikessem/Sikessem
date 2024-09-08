@@ -39,7 +39,7 @@ class UserFactory extends Factory
             'two_factor_secret' => null,
             'two_factor_recovery_codes' => null,
             'remember_token' => Str::random(10),
-            'profile_photo_path' => null,
+            'profile_photo_path' => fake()->image(storage_path('app/public')),
             'current_team_id' => null,
         ];
     }
