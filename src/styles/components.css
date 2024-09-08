@@ -130,7 +130,7 @@
   }
 
   input, select, textarea, .input, .select, .textarea {
-    @apply border-none p-12 rounded-lg;
+    @apply border-none outline-none rounded-lg;
     color: var(--text-color);
     transition: all 0.3s ease;
 
