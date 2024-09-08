@@ -1,3 +1,6 @@
+@php
+$user = auth()->user();
+@endphp
 <x-app-layout :assets="['src/app.css', 'src/dash.js']" title="Dashboard" class="dash">
   <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
@@ -25,13 +28,13 @@
         <input type="text" placeholder="Rechercher...">
       </div>
       <div class="user-profile" id="userProfile">
-        <img src="https://i.pravatar.cc/100" alt="Photo de profil">
+        <img src="{{ $user->profile_photo_url }}" alt="{{ $user->name }} profile photo">
         <div class="user-info">
-          <span class="user-name">Alex Dupont</span>
-          <span class="user-role">Administrateur</span>
+          <span class="user-name">{{ $user->name }}</span>
+          <span class="user-role">{{ $user->roles()->first()?->name ?: 'Member' }}</span>
         </div>
         <div class="user-dropdown" id="userDropdown">
-          <a href="#profile">Mon Profil</a>
+          <a href="{{ route('profile.show') }}">Mon Profil</a>
           <a href="#settings">Paramètres</a>
           <a href="#logout">Déconnexion</a>
         </div>
