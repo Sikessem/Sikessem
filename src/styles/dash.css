@@ -163,7 +163,7 @@
     .header {
       height: var(--header-height);
       background-color: var(--card-bg);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--box-shadow);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -172,7 +172,7 @@
       border-radius: 15px;
       transition: all var(--transition-duration) ease;
     }
-
+ 
     .menu-toggle {
       cursor: pointer;
       font-size: 24px;
@@ -187,8 +187,9 @@
       transition: all var(--transition-duration) ease;
     }
 
-    .menu-toggle:hover {
+    .menu-toggle:hover, .menu-toggle:focus {
       background-color: rgba(255, 255, 255, 0.2);
+      outline: none;
     }
 
     .search-bar {
