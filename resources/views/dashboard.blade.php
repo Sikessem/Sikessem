@@ -5,7 +5,7 @@ $user = auth()->user();
   <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="logo-container">
-        <x-application-mark />
+        <x-application-mark class="logo" color="#fff" />
         <span class="app-name">{{ config('app.title') }}</span>
       </div>
       <div class="sidebar-toggle" id="sidebarToggle">←</div>
