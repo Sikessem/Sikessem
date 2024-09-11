@@ -19,7 +19,10 @@ if (document.getElementById('app')?.dataset.page) {
     'laravel-vite-plugin/inertia-helpers'
   );
   const { createApp, h } = await import('vue');
+  const { createPinia } = await import('pinia');
   const { ZiggyVue } = await import('../vendor/tightenco/ziggy');
+
+  const pinia = createPinia();
 
   createInertiaApp({
     title: (title) =>
@@ -32,6 +35,7 @@ if (document.getElementById('app')?.dataset.page) {
     setup({ el, App, props, plugin }) {
       return createApp({ render: () => h(App, props) })
         .use(plugin)
+        .use(pinia)
         .use(ZiggyVue)
         .mount(el);
     },
