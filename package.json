@@ -34,6 +34,7 @@
     "@tailwindcss/postcss": "^4.0.0-alpha.23",
     "@tailwindcss/typography": "^0.5.15",
     "@tailwindcss/vite": "^4.0.0-alpha.23",
+    "@types/bun": "^1.1.9",
     "@types/node": "^22.5.4",
     "@vitejs/plugin-vue": "^5.1.3",
     "@vitest/coverage-v8": "^2.0.5",
