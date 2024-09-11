@@ -1,14 +1,14 @@
 @import 'tailwindcss';
-@import '@/styles/theme';
-@import '@/styles/base';
-@import '@/styles/preloader';
-@import '@/styles/auth';
-@import '@/styles/motion';
-@import '@/styles/components';
-@import '@/styles/utilities';
-@import '@/styles/home';
-@import '@/styles/auth';
-@import '@/styles/dash';
+@import './styles/theme';
+@import './styles/base';
+@import './styles/preloader';
+@import './styles/auth';
+@import './styles/motion';
+@import './styles/components';
+@import './styles/utilities';
+@import './styles/home';
+@import './styles/auth';
+@import './styles/dash';
 
 @layer components {
   .app-logo {
