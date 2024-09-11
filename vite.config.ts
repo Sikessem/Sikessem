@@ -9,7 +9,7 @@ export default defineConfig({
   },
   plugins: [
     laravel({
-      ssr: 'src/ssr.js',
+      ssr: 'src/ssr.ts',
       input: [
         'src/app.css',
         'src/app.ts',
