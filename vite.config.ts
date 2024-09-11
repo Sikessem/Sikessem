@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import laravel from 'laravel-vite-plugin';
 import { defineConfig } from 'vite';
+import vueDevTools from 'vite-plugin-vue-devtools';
 
 export default defineConfig({
   build: {
@@ -36,6 +37,9 @@ export default defineConfig({
       },
     }),
     vueJsx(),
+    vueDevTools({
+      launchEditor: 'vim',
+    }),
     tailwind(),
   ],
   resolve: {
