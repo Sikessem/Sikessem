@@ -19,6 +19,7 @@
     "sikessem/framework": "^0.6.0",
     "sikessem/ui": "^0.8.0",
     "spatie/laravel-permission": "^6.9",
+    "tightenco/ziggy": "^2.3",
     "wendelladriel/laravel-lift": "^0.14.1"
   },
   "require-dev": {
