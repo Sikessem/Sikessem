@@ -47,4 +47,7 @@ export default defineConfig({
       '@/': '/src/',
     },
   },
+  optimizeDeps: {
+    entries: ['./src/**/*.vue'],
+  },
 });
