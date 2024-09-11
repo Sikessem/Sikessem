@@ -1,27 +1,31 @@
 import tailwind from '@tailwindcss/vite';
-import {
-  laravel,
-  laravelConfig,
-  mergeConfig,
-  mergeInput,
-  vite,
-  viteConfig,
-} from './sikessem.config';
+import laravel from 'laravel-vite-plugin';
+import { defineConfig } from 'vite';
 
-export default vite(
-  mergeConfig(viteConfig, {
-    plugins: [
-      laravel({
-        ...laravelConfig,
-        input: mergeInput(laravelConfig.input, [
-          'src/app.css',
-          'src/app.ts',
-          'src/auth.js',
-          'src/dash.js',
-          'src/preloader.ts',
-        ]),
-      }),
-      tailwind(),
-    ],
-  }),
-);
+export default defineConfig({
+  plugins: [
+    laravel({
+      input: [
+        'src/app.css',
+        'src/app.ts',
+        'src/auth.js',
+        'src/dash.js',
+        'src/preloader.ts',
+      ],
+      refresh: [
+        'src/**',
+        'app/View/**',
+        'lang/**',
+        'resources/views/**',
+        'routes/**',
+        'storage/framework/views/*.php',
+      ],
+    }),
+    tailwind(),
+  ],
+  resolve: {
+    alias: {
+      '@/': '/src/',
+    },
+  },
+});
