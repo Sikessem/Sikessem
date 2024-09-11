@@ -37,6 +37,7 @@
     "@types/bun": "^1.1.9",
     "@types/node": "^22.5.4",
     "@vitejs/plugin-vue": "^5.1.3",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
     "@vitest/coverage-v8": "^2.0.5",
     "@vitest/ui": "^2.0.5",
     "alpinejs": "^3.14.1",

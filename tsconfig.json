@@ -2,6 +2,9 @@
   "include": ["src/**/*"],
   "exclude": ["node_modules"],
   "compilerOptions": {
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
     "allowJs": true,
     "target": "ESNext",
     "module": "ES2022",

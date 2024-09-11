@@ -1,5 +1,6 @@
 import tailwind from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 import laravel from 'laravel-vite-plugin';
 import { defineConfig } from 'vite';
 
@@ -34,6 +35,7 @@ export default defineConfig({
         },
       },
     }),
+    vueJsx(),
     tailwind(),
   ],
   resolve: {
