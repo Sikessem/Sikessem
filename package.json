@@ -22,7 +22,7 @@
     "fix:unsafe": "biome check --fix --unsafe",
     "format": "biome format .",
     "lint": "biome check .",
-    "prod": "vite build"
+    "prod": "vite build && vite build --ssr"
   },
   "devDependencies": {
     "@alpinejs/focus": "^3.14.1",

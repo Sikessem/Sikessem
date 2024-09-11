@@ -1,10 +1,12 @@
 import tailwind from '@tailwindcss/vite';
+import vue from '@vitejs/plugin-vue';
 import laravel from 'laravel-vite-plugin';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [
     laravel({
+      ssr: 'src/ssr.js',
       input: [
         'src/app.css',
         'src/app.ts',
@@ -20,6 +22,14 @@ export default defineConfig({
         'routes/**',
         'storage/framework/views/*.php',
       ],
+    }),
+    vue({
+      template: {
+        transformAssetUrls: {
+          base: null,
+          includeAbsolute: false,
+        },
+      },
     }),
     tailwind(),
   ],

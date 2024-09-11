@@ -1,10 +1,5 @@
-import focus from '@alpinejs/focus';
 import axios from 'axios';
 import '@/echo';
-import {
-  Alpine,
-  Livewire,
-} from '../vendor/livewire/livewire/dist/livewire.esm';
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -14,7 +9,43 @@ import {
 window.axios = axios;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-window.Alpine = Alpine;
-Alpine.plugin(focus);
+if (document.getElementById('app')?.dataset.page) {
+  const appName =
+    import.meta.env.VITE_APP_NAME ||
+    window.document.getElementsByTagName('title')[0]?.innerText ||
+    'Sikessem';
+  const { createInertiaApp } = await import('@inertiajs/vue3');
+  const { resolvePageComponent } = await import(
+    'laravel-vite-plugin/inertia-helpers'
+  );
+  const { createApp, h } = await import('vue');
+  const { ZiggyVue } = await import('../vendor/tightenco/ziggy');
 
-Livewire.start();
+  createInertiaApp({
+    title: (title) =>
+      `${!!title && title !== appName ? `${title} - ${appName}` : appName}`,
+    resolve: (name) =>
+      resolvePageComponent(
+        `../views/pages/${name}.vue`,
+        import.meta.glob('../views/pages/**/*.vue'),
+      ),
+    setup({ el, App, props, plugin }) {
+      return createApp({ render: () => h(App, props) })
+        .use(plugin)
+        .use(ZiggyVue)
+        .mount(el);
+    },
+    progress: {
+      color: '#4B5563',
+    },
+  });
+} else {
+  const { Alpine, Livewire } = await import(
+    '../vendor/livewire/livewire/dist/livewire.esm'
+  );
+  const { default: focus } = await import('@alpinejs/focus');
+
+  window.Alpine = Alpine;
+  Alpine.plugin(focus);
+  Livewire.start();
+}
