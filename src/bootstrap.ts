@@ -40,7 +40,7 @@ if (document.getElementById('app')?.dataset.page) {
         .mount(el);
     },
     progress: {
-      color: '#4B5563',
+      color: '#0078ff',
     },
   });
 } else {
