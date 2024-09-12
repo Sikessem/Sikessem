@@ -3,7 +3,7 @@
 use App\Bootstrappers\ExceptionsBootstrapper;
 use App\Bootstrappers\MiddlewareBootstrapper;
 use App\Bootstrappers\RoutingBootstrapper;
-use Sikessem\Application;
+use Illuminate\Foundation\Application;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting((new RoutingBootstrapper)(...))
