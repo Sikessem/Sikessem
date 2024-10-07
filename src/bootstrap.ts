@@ -13,7 +13,7 @@ if (document.getElementById('app')?.dataset.page) {
   const appName =
     import.meta.env.VITE_APP_NAME ||
     window.document.getElementsByTagName('title')[0]?.innerText ||
-    'Sikessem';
+    'Cosnux';
   const { createInertiaApp } = await import('@inertiajs/vue3');
   const { resolvePageComponent } = await import(
     'laravel-vite-plugin/inertia-helpers'

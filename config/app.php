@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'sikessem'),
+    'name' => env('APP_NAME', 'cosnux'),
 
-    'title' => env('APP_TITLE', 'Sikessem'),
+    'title' => env('APP_TITLE', 'Cosnux'),
 
     'description' => env('APP_DESCRIPTION'),
 

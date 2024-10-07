@@ -12,7 +12,7 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg">
         <meta name="author" content="{{ config('app.author', 'Sigui Kessé Emmanuel') }}">
 
-        <title>@hasSection('title') @yield('title') @elseif(isset($title)) {{ __($title) }} @else {{ config('app.title', 'Sikessem') }} @endif</title>
+        <title>@hasSection('title') @yield('title') @elseif(isset($title)) {{ __($title) }} @else {{ config('app.title', 'Cosnux') }} @endif</title>
 
         @vite(['src/preloader.ts'])
         @livewireStyles
