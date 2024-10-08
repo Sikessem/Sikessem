@@ -6,7 +6,7 @@
     <div class="auth-wrapper">
         <h1>
             <a href="/" wire:navigate.hover>
-                <x-application-mark width="48" height="48" />
+                <x-application-mark />
             </a>
             <span>
                 {{ $title }}
