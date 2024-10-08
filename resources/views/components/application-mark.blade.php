@@ -7,6 +7,4 @@
     'opacity' => '1',
 ])
 
-<x-application-logo :$width :height :$size :$color :$stroke :$opacity>
-{!! $slot !!}
-</x-application-logo>
+<x-application-logo replace :$width :height :$size :$color :$stroke :$opacity/>

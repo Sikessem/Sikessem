@@ -6,7 +6,7 @@ name('home');
 <x-app-layout class="home" title="Welcome">
     <header class="app-header">
         <nav class="navbar">
-            <x-application-brand height="40" />
+            <x-application-brand />
             <div class="group">
                 <a href="{{ route('login') }}" wire:navigate class="button secondary outline">Connexion</a>
                 <a href="{{ route('register') }}" wire:navigate class="button primary">Inscription</a>
