@@ -1,6 +1,6 @@
 @props([
-    'mark_color' => '#7878ff',
-    'logo_color' => '#7878ff',
+    'mark_color' => '#00ced1ff',
+    'logo_color' => '#00ced1ff',
     'color' => null,
 ])
 

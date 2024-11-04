@@ -10,9 +10,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
         <meta name="author" content="{{ config('app.author', 'Sigui Kessé Emmanuel') }}">
 
-        <title>@hasSection('title') @yield('title') @elseif(isset($title)) {{ __($title) }} @else {{ config('app.title', 'Cosnux') }} @endif</title>
+        <title>@hasSection('title') @yield('title') @elseif(isset($title)) {{ __($title) }} @else {{ config('app.title', 'Sikessem') }} @endif</title>
 
         @vite(['src/preloader.ts'])
         @livewireStyles

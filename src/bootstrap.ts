@@ -13,7 +13,7 @@ if (document.getElementById('app')?.dataset.page) {
   const appName =
     import.meta.env.VITE_APP_NAME ||
     window.document.getElementsByTagName('title')[0]?.innerText ||
-    'Cosnux';
+    'Sikessem';
   const { createInertiaApp } = await import('@inertiajs/vue3');
   const { resolvePageComponent } = await import(
     'laravel-vite-plugin/inertia-helpers'
@@ -40,7 +40,7 @@ if (document.getElementById('app')?.dataset.page) {
         .mount(el);
     },
     progress: {
-      color: '#0078ff',
+      color: '#00ced1ff',
     },
   });
 } else {
