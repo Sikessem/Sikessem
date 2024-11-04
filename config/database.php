@@ -45,7 +45,7 @@ return [
             'host' => env('DB_HOST', env('APP_HOST', '127.0.0.1')),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', env('APP_NAME', 'sikessem')),
-            'username' => env('DB_USERNAME', env('ADMIN_USERNAME', 'siguici')),
+            'username' => env('DB_USERNAME', env('ADMIN_USERNAME', 'admin')),
             'password' => env('DB_PASSWORD', env('ADMIN_PASSWORD', '')),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => env('DB_CHARSET', 'utf8mb4'),
@@ -85,7 +85,7 @@ return [
             'host' => env('PG_HOST', env('DB_HOST', env('APP_HOST', '127.0.0.1'))),
             'port' => env('PG_PORT', '5432'),
             'database' => env('PG_DATABASE', env('DB_DATABASE', env('APP_NAME', 'sikessem'))),
-            'username' => env('PG_USERNAME', env('DB_USERNAME', env('ADMIN_USERNAME', 'siguici'))),
+            'username' => env('PG_USERNAME', env('DB_USERNAME', env('ADMIN_USERNAME', 'admin'))),
             'password' => env('PG_PASSWORD', env('DB_PASSWORD', env('ADMIN_PASSWORD', ''))),
             'charset' => env('DB_CHARSET', 'utf8'),
             'prefix' => '',
@@ -100,7 +100,7 @@ return [
             'host' => env('DB_HOST', env('APP_HOST', '127.0.0.1')),
             'port' => env('DB_PORT', '1433'),
             'database' => env('DB_DATABASE', env('APP_NAME', 'sikessem')),
-            'username' => env('DB_USERNAME', env('ADMIN_USERNAME', 'siguici')),
+            'username' => env('DB_USERNAME', env('ADMIN_USERNAME', 'admin')),
             'password' => env('DB_PASSWORD', env('ADMIN_PASSWORD', '')),
             'charset' => env('DB_CHARSET', 'utf8'),
             'prefix' => '',
@@ -144,13 +144,13 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'sikessem'), '_').'_database_'),
         ],
 
         'default' => [
             'url' => env('REDIS_URL'),
             'host' => env('REDIS_HOST', env('DB_HOST', env('APP_HOST', '127.0.0.1'))),
-            'username' => env('REDIS_USERNAME', env('DB_USERNAME', env('ADMIN_USERNAME', 'siguici'))),
+            'username' => env('REDIS_USERNAME', env('DB_USERNAME', env('ADMIN_USERNAME', 'admin'))),
             'password' => env('REDIS_PASSWORD', env('DB_PASSWORD', env('ADMIN_PASSWORD', ''))),
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_DB', '0'),
@@ -159,7 +159,7 @@ return [
         'cache' => [
             'url' => env('REDIS_URL'),
             'host' => env('REDIS_HOST', env('DB_HOST', env('APP_HOST', '127.0.0.1'))),
-            'username' => env('REDIS_USERNAME', env('DB_USERNAME', env('ADMIN_USERNAME', 'siguici'))),
+            'username' => env('REDIS_USERNAME', env('DB_USERNAME', env('ADMIN_USERNAME', 'admin'))),
             'password' => env('REDIS_PASSWORD', env('DB_PASSWORD', env('ADMIN_PASSWORD', ''))),
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_CACHE_DB', '1'),

@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'name' => env('ADMIN_NAME', 'Sigui Kessé Emmanuel'),
+    'name' => env('ADMIN_NAME', 'Sikessem Admin'),
     'role' => env('ADMIN_ROLE', 'admin'),
     'guard' => env('ADMIN_GUARD', 'admin'),
-    'email' => env('ADMIN_EMAIL', 'siguici@cosnux.com'),
-    'username' => env('ADMIN_USERNAME', 'siguici'),
+    'email' => env('ADMIN_EMAIL', 'admin@sikessem.org'),
+    'username' => env('ADMIN_USERNAME', 'admin'),
     'password' => env('ADMIN_PASSWORD'),
 ];

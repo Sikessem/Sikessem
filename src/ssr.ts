@@ -5,7 +5,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createSSRApp, h } from 'vue';
 import { ZiggyVue } from '../vendor/tightenco/ziggy';
 
-const appName = import.meta.env.VITE_APP_NAME || 'Cosnux';
+const appName = import.meta.env.VITE_APP_NAME || 'Sikessem';
 
 createServer((page) =>
   createInertiaApp({
@@ -25,6 +25,9 @@ createServer((page) =>
           ...page.props.ziggy,
           location: new URL(page.props.ziggy.location),
         });
+    },
+    progress: {
+      color: '#00ced1ff',
     },
   }),
 );
