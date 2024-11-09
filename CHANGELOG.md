@@ -1,6 +1,6 @@
-# Release Notes for the Cosnux Platform
+# Release Notes for the Sikessem Platform
 
-All notable changes to [Cosnux](https://github.com/cosnux/cosnux.com) will be documented in this file.
+All notable changes to [Sikessem](https://github.com/sikessem/sikessem.org) will be documented in this file.
 
 ## [Unreleased](https://github.com/sikessem/starter/compare/v0.2.0...HEAD)
 

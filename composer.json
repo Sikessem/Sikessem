@@ -1,8 +1,8 @@
 {
-  "name": "cosnux/cosnux.com",
+  "name": "sikessem/sikessem.org",
   "type": "project",
-  "description": "The Cosnux Platform",
-  "keywords": ["cosnux", "platform", "paas", "web-application", "web-services"],
+  "description": "The Sikessem Platform",
+  "keywords": ["sikessem", "platform", "paas", "web-application", "web-services"],
   "license": "AGPL-3.0-only",
   "version": "0.0.0",
   "require": {

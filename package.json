@@ -1,11 +1,11 @@
 {
-  "name": "cosnux.com",
+  "name": "sikessem.org",
   "type": "module",
   "version": "0.0.0",
   "private": true,
   "license": "AGPL-3.0-only",
-  "description": "The Cosnux Platform",
-  "keywords": ["cosnux", "platform", "paas", "web-application", "web-services"],
+  "description": "The Sikessem Platform",
+  "keywords": ["sikessem", "platform", "paas", "web-application", "web-services"],
   "engines": {
     "bun": ">=1.1.34",
     "node": "prefer bun instead",

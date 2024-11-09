@@ -1,6 +1,6 @@
 <div align="center">
 
-[![cosnux-logo]][cosnux-link]
+[![sikessem-logo]][sikessem-link]
 
 <br>
 
@@ -12,13 +12,13 @@
 
 </div>
 
-# Cosnux
+# Sikessem
 
-Cosnux is an online network system that allows people to manage their activities and collaborate more easily and safely.
+Sikessem is an online network system that allows people to manage their activities and collaborate more easily and safely.
 
 ## 🔖 Contents
 
-- [Cosnux](#cosnux)
+- [Sikessem](#sikessem)
   - [🔖 Contents](#-contents)
   - [🎉 Getting Started](#-getting-started)
     - [⚡️ Installation](#️-installation)
@@ -43,10 +43,10 @@ Cosnux is an online network system that allows people to manage their activities
 
 ### ⚡️ Installation
 
-[Use this template](https://github.com/cosnux/cosnux.com/generate) or create a new [Cosnux project](https://packagist.org/packages/cosnux/cosnux.com) via the [Composer](https://getcomposer.org/) `create-project` command (recommended):
+[Use this template](https://github.com/sikessem/sikessem.org/generate) or create a new [Sikessem project](https://packagist.org/packages/sikessem/sikessem.org) via the [Composer](https://getcomposer.org/) `create-project` command (recommended):
 
 ```shell
-composer create-project cosnux/cosnux.com my-app
+composer create-project sikessem/sikessem.org my-app
 ```
 
 Where ***my-app*** is the name of your app.
@@ -162,20 +162,20 @@ composer debug
 
 ## 📖 Documentation
 
-The full documentation for the Cosnux Starter can be found on [this address][docs-link].
+The full documentation for the Sikessem Starter can be found on [this address][docs-link].
 
 ## 👏 Contribution
 
-The main purpose of this repository is to continue evolving Cosnux. We want to make contributing to this project as easy and transparent as possible, and we are grateful to the community for contributing bug fixes and improvements. Read below to learn how you can take part in improving Cosnux.
+The main purpose of this repository is to continue evolving Sikessem. We want to make contributing to this project as easy and transparent as possible, and we are grateful to the community for contributing bug fixes and improvements. Read below to learn how you can take part in improving Sikessem.
 
 ### [👷 Code of Conduct][conduct-link]
 
-Cosnux has adopted a Code of Conduct that we expect project participants to adhere to.
+Sikessem has adopted a Code of Conduct that we expect project participants to adhere to.
 Please read the [full text][conduct-link] so that you can understand what actions will and will not be tolerated.
 
 ### 👥 [Contributing Guide][pr-link]
 
-Read our [**Contributing Guide**][pr-link] to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to Cosnux.
+Read our [**Contributing Guide**][pr-link] to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to Sikessem.
 
 ### 🔒️ Good First Issues
 
@@ -183,54 +183,54 @@ We have a list of [good first issues][gfi] that contain bugs which have a relati
 
 ### 💬 Discussions
 
-Larger discussions and proposals are discussed in [**Cosnux's GitHub discussions**][discuss-link].
+Larger discussions and proposals are discussed in [**Sikessem's GitHub discussions**][discuss-link].
 
 ## 🔐 Security Reports
 
-If you discover a security vulnerability within [Cosnux](https://cosnux.com), please email [SIGUI Kessé Emmanuel](https://github.com/siguici) at [contact@sigui.ci](mailto:contact@sigui.ci). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within [Sikessem](https://sikessem.org), please email [SIGUI Kessé Emmanuel](https://github.com/siguici) at [contact@sigui.ci](mailto:contact@sigui.ci). All security vulnerabilities will be promptly addressed.
 
 ## 📄 License
 
-The Cosnux Starter is open-sourced software licensed under the  [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE][license-link] file for details.
+The Sikessem Starter is open-sourced software licensed under the  [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE][license-link] file for details.
 
 ---
 
 <div align="center"><sub>Made with ❤︎ by <a href="https://twitter.com/intent/follow?screen_name=siguici" style="content:url(https://img.shields.io/twitter/follow/siguici.svg?label=@siguici);margin-bottom:-6px">@siguici</a>.</sub></div>
 
-[cosnux-logo]: https://github.com/cosnux/art/blob/HEAD/images/cosnux.svg
-[cosnux-link]: https://github.com/cosnux "Cosnux"
+[sikessem-logo]: https://github.com/sikessem/art/blob/HEAD/images/sikessem.svg
+[sikessem-link]: https://github.com/sikessem "Sikessem"
 
 [php-icon]: https://img.shields.io/badge/PHP-ccc.svg?style=flat&logo=php
-[php-link]: https://github.com/cosnux/cosnux.com/search?l=php "PHP code"
+[php-link]: https://github.com/sikessem/sikessem.org/search?l=php "PHP code"
 
 [typescript-icon]: https://img.shields.io/badge/TypeScript-294E80.svg?logo=typescript
-[typescript-link]:  https://github.com/cosnux/cosnux.com/search?l=typescript "TypeScript code"
+[typescript-link]:  https://github.com/sikessem/sikessem.org/search?l=typescript "TypeScript code"
 
 [javascript-icon]: https://img.shields.io/badge/JavaScript-yellow.svg?logo=javascript
-[javascript-link]:  https://github.com/cosnux/cosnux.com/search?l=javascript "JavaScript code"
+[javascript-link]:  https://github.com/sikessem/sikessem.org/search?l=javascript "JavaScript code"
 
-[packagist-version-icon]: https://img.shields.io/packagist/v/cosnux/cosnux.com
-[packagist-version-link]: https://packagist.org/packages/cosnux/cosnux.com "Starter Releases"
+[packagist-version-icon]: https://img.shields.io/packagist/v/sikessem/sikessem.org
+[packagist-version-link]: https://packagist.org/packages/sikessem/sikessem.org "Starter Releases"
 
-[packagist-download-icon]: https://img.shields.io/packagist/dt/cosnux/cosnux.com
-[packagist-download-link]: https://packagist.org/packages/cosnux/cosnux.com "Starter Downloads"
+[packagist-download-icon]: https://img.shields.io/packagist/dt/sikessem/sikessem.org
+[packagist-download-link]: https://packagist.org/packages/sikessem/sikessem.org "Starter Downloads"
 
-[actions-icon]: https://github.com/cosnux/cosnux.com/workflows/Tests/badge.svg
-[actions-link]: https://github.com/cosnux/cosnux.com/actions "Starter status"
+[actions-icon]: https://github.com/sikessem/sikessem.org/workflows/Tests/badge.svg
+[actions-link]: https://github.com/sikessem/sikessem.org/actions "Starter status"
 
 [pr-icon]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=brightgreen
-[pr-link]: https://github.com/cosnux/.github/blob/HEAD/CONTRIBUTING.md "PRs welcome!"
+[pr-link]: https://github.com/sikessem/.github/blob/HEAD/CONTRIBUTING.md "PRs welcome!"
 
-[twitter-icon]: https://img.shields.io/twitter/follow/cosnux_news.svg?label=@cosnux_news
-[twitter-link]: https://x.com/intent/follow?screen_name=cosnux_news "Ping Cosnux"
+[twitter-icon]: https://img.shields.io/twitter/follow/sikessem_news.svg?label=@sikessem_news
+[twitter-link]: https://x.com/intent/follow?screen_name=sikessem_news "Ping Sikessem"
 
 [license-icon]: https://img.shields.io/badge/license-MIT-blue.svg
-[license-link]: https://github.com/cosnux/cosnux.com/blob/HEAD/LICENSE "Starter License"
-[conduct-link]: https://github.com/cosnux/cosnux.com/blob/HEAD/CODE_OF_CONDUCT.md
-[discuss-link]: https://github.com/orgs/cosnux/discussions
-[docs-link]: https://github.com/cosnux/cosnux.com#readme "Starter Documentation"
+[license-link]: https://github.com/sikessem/sikessem.org/blob/HEAD/LICENSE "Starter License"
+[conduct-link]: https://github.com/sikessem/sikessem.org/blob/HEAD/CODE_OF_CONDUCT.md
+[discuss-link]: https://github.com/orgs/sikessem/discussions
+[docs-link]: https://github.com/sikessem/sikessem.org#readme "Starter Documentation"
 
-[gfi]: https://github.com/cosnux/cosnux.com/labels/good%20first%20issue
+[gfi]: https://github.com/sikessem/sikessem.org/labels/good%20first%20issue
 
 [php-home]: https://php.net
 [laravel-home]: https://laravel.com "Laravel"
