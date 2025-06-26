@@ -1,22 +1,44 @@
 # Build
+/public/assets/
 /lib/
 /lib-types/
 /server/
 /public/hot
 /public/storage
-/public/static/
+/public/build/
 /storage/*.key
+/bootstrap/ssr/
+!/public/assets
+!/public/assets/*
+/public/css
+/public/js
+
+# Environment
+.env
+.env.backup
+.env.production
 
 # Development
 /node_modules/
 /vendor/
 Homestead.json
 Homestead.yaml
+bun.lockb
+yarn.lock*
+pnpm-lock.yaml
+package-lock.json
+auth.json
 
-# Environment
-.env
-.env.backup
-/pg.load
+# Logs
+logs/
+*.log
+error_log*
+lerna-debug.log*
+npm-debug.log*
+package-lock.log
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Cache
 *.cache
@@ -25,21 +47,14 @@ Homestead.yaml
 .rollup.cache
 tsconfig.tsbuildinfo
 
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-error_log*
-
 # Backups
 *.backup
 backup_*
 
 # Editor
+/.fleet
+/.idea
+.vscode/
 !.vscode/extensions.json
 .idea
 .DS_Store
@@ -57,4 +72,8 @@ backup_*
 /test-results/
 /playwright-report/
 /playwright/.cache/
-/coverage
+/.phpunit.cache
+.phpunit.result.cache
+
+# Docker
+docker-compose.override.yml

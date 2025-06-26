@@ -1,8 +1,8 @@
-import { configDefaults, defineConfig } from "vitest/config";
+import { configDefaults, defineProject } from 'vitest/config';
 
-export default defineConfig({
-    test: {
-        include: [...configDefaults.include.map((e) => `**/specs/${e}`)],
-        exclude: [...configDefaults.exclude],
-    },
+export default defineProject({
+  test: {
+    include: ['specs/*.spec.ts'],
+    exclude: [...configDefaults.exclude, '**/e2e/**'],
+  },
 });

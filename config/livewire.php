@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'class_namespace' => 'App\\View\\Widgets',
+    'class_namespace' => 'App\\View\\Islands',
 
     /*
     |--------------------------------------------------------------------------
@@ -27,7 +27,7 @@ return [
     |
     */
 
-    'view_path' => resource_path('views/widgets'),
+    'view_path' => resource_path('views/islands'),
 
     /*
     |--------------------------------------------------------------------------
@@ -155,4 +155,8 @@ return [
 
     'render_on_redirect' => false,
 
+    'navigate' => [
+        'show_progress_bar' => true,
+        'progress_bar_color' => '#00ced1ff',
+    ],
 ];
