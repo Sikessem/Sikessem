@@ -1,8 +1,12 @@
-<div align="center">
+# The [<img src="https://github.com/sikessem/art/blob/HEAD/images/logo.svg" alt="Sikessem" height="24" />][sikessem-link] Platform
 
-[![sikessem-logo]][sikessem-link]
+Sikessem is an online network system that allows people to manage their activities and collaborate more easily and safely.
 
-<br>
+> ⚡ The new way to build a future.  
+> 👀 Want to see [Sikessem][sikessem-link] in action? Just install and explore.
+No friction, no demo, just real usage.
+
+[![Preview 👁️](https://github.com/Sikessem/Art/blob/HEAD/images/preview.png)][sikessem-link]
 
 [![php-icon]][php-link]
 [![typescript-icon]][typescript-link]
@@ -10,51 +14,67 @@
 [![actions-icon]][actions-link]
 [![twitter-icon]][twitter-link]
 
-</div>
-
-# Sikessem
-
-Sikessem is an online network system that allows people to manage their activities and collaborate more easily and safely.
-
 ## 🔖 Contents
 
-- [Sikessem](#sikessem)
-  - [🔖 Contents](#-contents)
-  - [🎉 Getting Started](#-getting-started)
-    - [⚡️ Installation](#️-installation)
-    - [🗃️ Manage Database](#️-manage-database)
-    - [🌐 Starting server](#-starting-server)
-    - [🧪 Testing and debugging](#-testing-and-debugging)
-      - [🧹 Keep a modern codebase](#-keep-a-modern-codebase)
-      - [⚗️ Run static analysis](#️-run-static-analysis)
-      - [✅ Run unit tests](#-run-unit-tests)
-      - [🐛 Check all code bugs](#-check-all-code-bugs)
-  - [📋 Requirements](#-requirements)
-  - [📖 Documentation](#-documentation)
-  - [👏 Contribution](#-contribution)
-    - [👷 Code of Conduct](#-code-of-conduct)
-    - [👥 Contributing Guide](#-contributing-guide)
-    - [🔒️ Good First Issues](#️-good-first-issues)
-    - [💬 Discussions](#-discussions)
-  - [🔐 Security Reports](#-security-reports)
-  - [📄 License](#-license)
+- [🔖 Contents](#-contents)
+- [🎉 Getting Started](#-getting-started)
+- [📋 Requirements](#-requirements)
+- [📦 Available Modules](#-available-modules)
+- [⚡️ Installation](#️-installation)
+- [🗃️ Manage Database](#️-manage-database)
+- [🌐 Starting server](#-starting-server)
+- [🧪 Testing and debugging](#-testing-and-debugging)
+  - [🧹 Keep a modern codebase](#-keep-a-modern-codebase)
+  - [⚗️ Run static analysis](#️-run-static-analysis)
+  - [✅ Run unit tests](#-run-unit-tests)
+  - [🐛 Check all code bugs](#-check-all-code-bugs)
+- [📖 Documentation](#-documentation)
+- [👏 Contribution](#-contribution)
+- [👷 Code of Conduct](#-code-of-conduct)
+- [👥 Contributing Guide](#-contributing-guide)
+- [🔒️ Good First Issues](#️-good-first-issues)
+- [💬 Discussions](#-discussions)
+- [🔐 Security Reports](#-security-reports)
+- [📄 License](#-license)
+
+## 📋 Requirements
+
+- **Requires [PHP 8.2+](https://php.net/releases/)**
+(at least 8.2.14 recommended to avoid potential bugs).
+- **Requires [Bun 1.0+](https://bun.sh/)**
+(at least 1.0.21 recommended to avoid potential bugs).
+- **Requires [Composer >=2.6.6](https://getcomposer.org/)**
+to manage [PHP][php-link] dependencies.
+- **Requires [Git ~2.42.0](https://git-scm.com/)** to manage source code.
+
+## 📦 Available Modules
+
+Explore the core tools that power [Sikessem][sikessem-link]:
+
+- 🔁 `Workflow Automation`
+- 🧠 `AI Integration Layer`
+- 🔐 `Advanced Auth`
+- 📊 `Insights + Analytics`
+- ⚙️ `Customizable APIs`
+
+→ More modules available after setup.
 
 ## 🎉 Getting Started
 
 ### ⚡️ Installation
 
-[Use this template](https://github.com/sikessem/sikessem.org/generate) or create a new [Sikessem project](https://packagist.org/packages/sikessem/sikessem.org) via the [Composer](https://getcomposer.org/) `create-project` command (recommended):
+[Use this template](https://github.com/sikessem/sikessem/generate) or create a new [Sikessem project](https://packagist.org/packages/sikessem/sikessem) via the [Composer](https://getcomposer.org/) `create-project` command (recommended):
 
 ```shell
-composer create-project sikessem/sikessem.org my-app
+composer create-project sikessem/sikessem sikessem
 ```
 
-Where ***my-app*** is the name of your app.
+Where ***sikessem*** is the name of your [Sikessem][sikessem-repo] application.
 
 Access the working directory:
 
 ```shell
-cd my-app 
+cd sikessem
 ```
 
 Install PHP dependencies:
@@ -90,10 +110,10 @@ php artisan migrate:install && php artisan migrate
 Run the server in development mode:
 
 ```shell
-php artisan serve --host=my-app.local --port=8000
+php artisan serve --host=sikessem.local --port=8000
 ```
 
-Then visit [http://my-app.local:8000/](http://my-app.local:8000/)
+Then visit [http://sikessem.local:8000/](http://sikessem.local:8000/)
 
 ### 🧪 Testing and debugging
 
@@ -153,16 +173,9 @@ bun debug
 composer debug
 ```
 
-## 📋 Requirements
-
-- **Requires [PHP 8.2+](https://php.net/releases/)** (at least 8.2.14 recommended to avoid potential bugs).
-- **Requires [Bun 1.0+](https://bun.sh/)** (at least 1.0.21 recommended to avoid potential bugs).
-- **Requires [Composer >=2.6.6](https://getcomposer.org/)** to manage [PHP][php-link] dependencies.
-- **Requires [Git ~2.42.0](https://git-scm.com/)** to manage source code.
-
 ## 📖 Documentation
 
-The full documentation for the Sikessem Starter can be found on [this address][docs-link].
+The full documentation for the Sikessem Sikessem can be found on [this address][docs-link].
 
 ## 👏 Contribution
 
@@ -187,50 +200,51 @@ Larger discussions and proposals are discussed in [**Sikessem's GitHub discussio
 
 ## 🔐 Security Reports
 
-If you discover a security vulnerability within [Sikessem](https://sikessem.org), please email [SIGUI Kessé Emmanuel](https://github.com/siguici) at [contact@sigui.ci](mailto:contact@sigui.ci). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within [Sikessem](https://sikessem.com), please email [SIGUI Kessé Emmanuel](https://github.com/siguici) at [contact@sigui.ci](mailto:contact@sigui.ci). All security vulnerabilities will be promptly addressed.
 
 ## 📄 License
 
-The Sikessem Starter is open-sourced software licensed under the  [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE][license-link] file for details.
+The Sikessem Sikessem is open-sourced software licensed under the  [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE][license-link] file for details.
 
 ---
 
 <div align="center"><sub>Made with ❤︎ by <a href="https://twitter.com/intent/follow?screen_name=siguici" style="content:url(https://img.shields.io/twitter/follow/siguici.svg?label=@siguici);margin-bottom:-6px">@siguici</a>.</sub></div>
 
 [sikessem-logo]: https://github.com/sikessem/art/blob/HEAD/images/sikessem.svg
-[sikessem-link]: https://github.com/sikessem "Sikessem"
+[sikessem-link]: https://sikessem.com "Sikessem"
+[sikessem-repo]: https://github.com/sikessem/sikessem "Sikessem Source Code"
 
 [php-icon]: https://img.shields.io/badge/PHP-ccc.svg?style=flat&logo=php
-[php-link]: https://github.com/sikessem/sikessem.org/search?l=php "PHP code"
+[php-link]: https://github.com/sikessem/sikessem/search?l=php "PHP code"
 
 [typescript-icon]: https://img.shields.io/badge/TypeScript-294E80.svg?logo=typescript
-[typescript-link]:  https://github.com/sikessem/sikessem.org/search?l=typescript "TypeScript code"
+[typescript-link]:  https://github.com/sikessem/sikessem/search?l=typescript "TypeScript code"
 
 [javascript-icon]: https://img.shields.io/badge/JavaScript-yellow.svg?logo=javascript
-[javascript-link]:  https://github.com/sikessem/sikessem.org/search?l=javascript "JavaScript code"
+[javascript-link]:  https://github.com/sikessem/sikessem/search?l=javascript "JavaScript code"
 
-[packagist-version-icon]: https://img.shields.io/packagist/v/sikessem/sikessem.org
-[packagist-version-link]: https://packagist.org/packages/sikessem/sikessem.org "Starter Releases"
+[packagist-version-icon]: https://img.shields.io/packagist/v/sikessem/sikessem
+[packagist-version-link]: https://packagist.org/packages/sikessem/sikessem "Sikessem Releases"
 
-[packagist-download-icon]: https://img.shields.io/packagist/dt/sikessem/sikessem.org
-[packagist-download-link]: https://packagist.org/packages/sikessem/sikessem.org "Starter Downloads"
+[packagist-download-icon]: https://img.shields.io/packagist/dt/sikessem/sikessem
+[packagist-download-link]: https://packagist.org/packages/sikessem/sikessem "Sikessem Downloads"
 
-[actions-icon]: https://github.com/sikessem/sikessem.org/workflows/Tests/badge.svg
-[actions-link]: https://github.com/sikessem/sikessem.org/actions "Starter status"
+[actions-icon]: https://github.com/sikessem/sikessem/workflows/Tests/badge.svg
+[actions-link]: https://github.com/sikessem/sikessem/actions "Sikessem status"
 
 [pr-icon]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=brightgreen
 [pr-link]: https://github.com/sikessem/.github/blob/HEAD/CONTRIBUTING.md "PRs welcome!"
 
-[twitter-icon]: https://img.shields.io/twitter/follow/sikessem_news.svg?label=@sikessem_news
-[twitter-link]: https://x.com/intent/follow?screen_name=sikessem_news "Ping Sikessem"
+[twitter-icon]: https://img.shields.io/twitter/follow/SikessemHQ.svg?label=@SikessemHQ
+[twitter-link]: https://x.com/intent/follow?screen_name=SikessemHQ "Ping SikessemHQ"
 
 [license-icon]: https://img.shields.io/badge/license-MIT-blue.svg
-[license-link]: https://github.com/sikessem/sikessem.org/blob/HEAD/LICENSE "Starter License"
-[conduct-link]: https://github.com/sikessem/sikessem.org/blob/HEAD/CODE_OF_CONDUCT.md
+[license-link]: https://github.com/sikessem/sikessem/blob/HEAD/LICENSE "Sikessem License"
+[conduct-link]: https://github.com/sikessem/sikessem/blob/HEAD/CODE_OF_CONDUCT.md
 [discuss-link]: https://github.com/orgs/sikessem/discussions
-[docs-link]: https://github.com/sikessem/sikessem.org#readme "Starter Documentation"
+[docs-link]: https://github.com/sikessem/sikessem#readme "Sikessem Documentation"
 
-[gfi]: https://github.com/sikessem/sikessem.org/labels/good%20first%20issue
+[gfi]: https://github.com/sikessem/sikessem/labels/good%20first%20issue
 
 [php-home]: https://php.net
 [laravel-home]: https://laravel.com "Laravel"
