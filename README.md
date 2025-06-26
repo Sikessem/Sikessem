@@ -22,7 +22,7 @@ Just install and explore.
 
 ## ✨ What is Sikessem?
 
-Sikessem is a **next-generation digital platform**. It lets users:
+[Sikessem][sikessem-link] is a **next-generation digital platform**. It lets users:
 
 - Create **spaces** (personal, professional, collaborative…)
 - Generate, organize, and evolve content from simple notes to full websites
