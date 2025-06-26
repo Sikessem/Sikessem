@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Http\Upload;
-use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,18 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->withPersonalTeam()->create();
+        // \App\Models\User::factory(10)->create();
 
-        $this->call(AdminSeeder::class);
-        $this->call(CountrySeeder::class);
-        User::factory()->withPersonalTeam()->create([
-            'firstname' => 'Kessé Emmanuel',
-            'lastname' => 'Sigui',
-            'gender' => 'male',
-            'bio' => 'Senior Full-stack Web Developer',
-            'username' => 'siguici',
-            'email' => 'siguici@proton.me',
-            'profile_photo_path' => Upload::fromFile(__DIR__.DIRECTORY_SEPARATOR.'profile.jpeg')->toPath('profiles') ?: null,
-        ])->has('location');
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }
