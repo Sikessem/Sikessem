@@ -7,7 +7,6 @@
 @import './styles/components';
 @import './styles/utilities';
 @import './styles/home';
-@import './styles/auth';
 @import './styles/dash';
 
 @layer components {

@@ -1,20 +1,37 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
-    "ignore": ["node_modules", "vendor", "storage", "public", "bootstrap"]
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/vendor",
+      "!**/storage",
+      "!**/public",
+      "!**/bootstrap"
+    ]
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
       "style": {
         "useBlockStatements": "error",
-        "useShorthandArrayType": "error",
         "noShoutyConstants": "warn",
-        "noParameterAssign": "off"
+        "noParameterAssign": "off",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error",
+        "useConsistentArrayType": {
+          "level": "error",
+          "options": { "syntax": "shorthand" }
+        }
       },
       "complexity": {
         "noForEach": "off"
