@@ -21,6 +21,7 @@
 # Development
 /node_modules/
 /vendor/
+.phpactor.json
 Homestead.json
 Homestead.yaml
 bun.lockb
