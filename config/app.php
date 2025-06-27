@@ -56,13 +56,13 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://sikessem.com'),
 
     'asset_url' => env('ASSET_URL'),
 
-    'scheme' => env('APP_SCHEME', 'http'),
+    'scheme' => env('APP_SCHEME', 'https'),
 
-    'host' => env('APP_HOST', 'localhost'),
+    'host' => env('APP_HOST', 'sikessem.com'),
 
     'port' => (int) env('APP_PORT', 80),
 
